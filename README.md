@@ -16,7 +16,8 @@ config adds improvments for the following languages:
 To install, clone this repo to `~/.emacs.d`. Please backup your old `~/.emacs`
 and `~/.emacs.d` before you join the journey :-)
 
-```git clone https://github.com/zhengfaxiang/emacs.d.git ~/.emacs.d
+```
+git clone https://github.com/zhengfaxiang/emacs.d.git ~/.emacs.d
 ```
 
 Then just fire up your Emacs, further third-party packages will be automatically
