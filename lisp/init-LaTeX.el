@@ -9,6 +9,16 @@
       TeX-save-query nil
       reftex-plug-into-AUCTeX t)
 
+(cond
+     ((executable-find "okular")
+      (setq TeX-view-program-selection
+            '((output-pdf "Okular")
+              (output-dvi "Okular"))))
+     ((executable-find "evince")
+      (setq TeX-view-program-selection
+            '((output-pdf "Evince")
+              (output-dvi "Evince")))))
+
 (setq TeX-view-program-selection
        '((output-pdf "Evince")
          (output-dvi "Evince")))
