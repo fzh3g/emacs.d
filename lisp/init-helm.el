@@ -16,7 +16,7 @@
 (global-set-key (kbd "C-c h M-:") 'helm-eval-expression-with-eldoc)
 (global-set-key (kbd "C-x C-o") 'helm-find-files)
 (global-set-key (kbd "C-c h g") 'helm-do-grep)
-(global-set-key (kbd "M-g .") 'helm-do-ag)
+(global-set-key (kbd "C-M-g") 'helm-do-ag)
 (global-set-key (kbd "C-h a") 'helm-apropos)
 (global-set-key (kbd "C-c h C-c w") 'helm-wikipedia-suggest)
 
