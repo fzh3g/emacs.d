@@ -9,7 +9,6 @@ config adds improvments for the following languages:
 * C/C++
 * Python
 * LaTeX
-* Lisp
 
 ## Installation ##
 
