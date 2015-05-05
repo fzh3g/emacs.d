@@ -110,7 +110,9 @@
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence
-      '("C-x" "C-c" "C-c h"  "C-c @" "C-c C-x" "C-x 4"))
+      '("C-x" "C-x 4" "C-x 5" "C-x 8" "C-x r" "C-x v" "C-x a" "C-x n" "C-x a"
+        "C-x @" "C-x c" "C-c" "C-c h" "C-c @" "C-c C-x" "C-c c" "C-c &"
+        "C-c !"))
 (setq guide-key/popup-window-position 'bottom)
 (guide-key-mode 1)
 
