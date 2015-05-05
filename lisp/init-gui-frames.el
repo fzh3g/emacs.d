@@ -7,7 +7,7 @@
 (setq inhibit-startup-echo-area-message t)
 
 (setq-default initial-scratch-message
-              (concat ";; Happy hacking " (or user-login-name "") "!\n\n"))
+              (concat ";;Happy hacking " (or user-login-name "") "! *★,°*:.☆\(￣▽￣)/$:*.°★* \n"))
 
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
@@ -60,7 +60,7 @@
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
-      '(" ϕωϕ • "
+      '("(｡・`ω´･) • "
 	(:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name))
 		 "%b"))))
 
