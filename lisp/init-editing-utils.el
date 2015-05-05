@@ -103,6 +103,17 @@
 ;(set-face-background 'highlight-indentation-face "#e3e3d3")
 ;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
+(require 'diff-hl)
+(add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
+(add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+
+(require 'guide-key)
+(setq guide-key/guide-key-sequence
+      '("C-x" "C-c" "C-c h"  "C-c @" "C-c C-x" "C-x 4"))
+(setq guide-key/popup-window-position 'bottom)
+(guide-key-mode 1)
+
 ;; anzu
 (require 'anzu)
 (global-anzu-mode t)

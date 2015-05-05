@@ -43,7 +43,6 @@
 (defvar fx-installed-packages
   '(ace-jump-mode
     anzu
-    async
     auctex
     buffer-move
     cdlatex
@@ -54,20 +53,18 @@
     company-irony
     company-math
     cyberpunk-theme
-    dash
+    diff-hl
     dired+
     ein
     elpy
-    epl
     exec-path-from-shell
     expand-region
-    f
     fill-column-indicator
-    find-file-in-project
     flx
     flx-ido
     flycheck
     flyspell-lazy
+    guide-key
     helm
     helm-ag
     helm-gtags
@@ -83,23 +80,17 @@
     ido-vertical-mode
     irony
     irony-eldoc
-    json
-    let-alist
     markdown-mode
     math-symbol-lists
     multiple-cursors
     nyan-mode
-    pkg-info
     projectile
     pyvenv
     rainbow-delimiters
-    request
-    s
     session
     smartparens
     sr-speedbar
     undo-tree
-    websocket
     window-numbering
     yasnippet)
   "A list of packages to ensure are installed at launch.")
