@@ -41,4 +41,4 @@
 	    (TeX-fold-mode t)
 	    (visual-line-mode t)))
 
-(provide 'init-LaTeX)
+(provide 'init-latex)

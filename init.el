@@ -44,7 +44,7 @@
 (require 'init-hippie-expand)
 (require 'init-programming)
 (require 'init-org)
-(require 'init-LaTeX)
+(require 'init-latex)
 (require 'init-python-mode)
 (require 'init-cc-mode)
 (require 'init-shell)
