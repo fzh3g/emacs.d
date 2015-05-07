@@ -171,7 +171,7 @@
 (global-set-key (kbd "C-S-p")
                 (lambda ()
                   (interactive)
-                  (ignore-errors (forward-line 5))))
+                  (ignore-errors (previous-line 5))))
 
 (global-set-key (kbd "C-S-f")
                 (lambda ()
