@@ -49,7 +49,6 @@
 
 ;; file column indicator
 (require 'fill-column-indicator)
-(setq default-fill-column 80)
 (setq fill-column 80)
 (setq fci-column 80)
 (add-hook 'prog-mode-hook 'fci-mode)
@@ -81,7 +80,7 @@
   (global-set-key (kbd "C-M--") 'text-scale-decrease))
 
 ;; time management
-(setq display-time-24hr-format t)
+(setq-default display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (display-time)
 

@@ -1,17 +1,16 @@
 ;; some basic preferences
-(setq-default
- mouse-yank-at-point t
- buffers-menu-max-size 30
- case-fold-search t
- compilation-scroll-output t
- set-mark-command-repeat-pop t
- visible-bell t
- delete-selection-mode t)
+(setq-default mouse-yank-at-point t
+              buffers-menu-max-size 30
+              case-fold-search t
+              compilation-scroll-output t
+              set-mark-command-repeat-pop t
+              visible-bell t
+              delete-selection-mode t)
 
 ;; http://www.quora.com/Whats-the-best-way-to-edit-remote-files-from-Emacs
-(setq tramp-default-method "ssh")
-(setq tramp-auto-save-directory "~/.backups/tramp/")
-(setq tramp-chunksize 8192)
+(setq-default tramp-default-method "ssh")
+(setq-default tramp-auto-save-directory "~/.backups/tramp/")
+(setq-default tramp-chunksize 8192)
 
 ;; sudo save
 (defun sudo-save ()
@@ -30,10 +29,10 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
-(setq python-indent 4)
-(setq python-indent-offset 4)
-(setq python-indent-guess-indent-offset nil)
-(setq python-guess-indent nil)
+(setq-default python-indent 4)
+(setq-default python-indent-offset 4)
+(setq-default python-indent-guess-indent-offset nil)
+(setq-default python-guess-indent nil)
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 (defun my:newline-at-end-of-line ()
@@ -51,9 +50,9 @@
   (add-hook hook 'line-number-mode))
 (add-hook 'linum-mode-hook
           (lambda ()
-            (setq linum--width
-              (length (number-to-string
-                       (count-lines (point-min) (point-max)))))))
+            (setq-default linum--width
+                          (length (number-to-string
+                                   (count-lines (point-min) (point-max)))))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -71,15 +70,15 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode t)
-(setq global-auto-revert-non-file-buffers t
-      auto-revert-verbose nil)
+(setq-default global-auto-revert-non-file-buffers t
+              auto-revert-verbose nil)
 
 
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
 ;; doc view
-(setq doc-view-continuous t)
+(setq-default doc-view-continuous t)
 
 
 (require 'expand-region)
@@ -167,12 +166,12 @@
 (global-set-key (kbd "C-S-n")
                 (lambda ()
                   (interactive)
-                  (ignore-errors (next-line 5))))
+                  (ignore-errors (forward-line 5))))
 
 (global-set-key (kbd "C-S-p")
                 (lambda ()
                   (interactive)
-                  (ignore-errors (previous-line 5))))
+                  (ignore-errors (forward-line 5))))
 
 (global-set-key (kbd "C-S-f")
                 (lambda ()

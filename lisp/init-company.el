@@ -5,11 +5,11 @@
 (setq company-auto-complete nil)
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 2)
-(setq company-dabbrev-downcase nil)
 (setq company-show-numbers t)
-(setq company-transformaers 'company-sort-by-occurence)
 (setq company-tooltip-align-annotations t)
 (setq company-begin-commands '(self-insert-command))
+(setq-default company-dabbrev-downcase nil)
+(setq-default company-transformaers 'company-sort-by-occurence)
 
 (add-hook 'company-mode-hook
 	  '(lambda ()

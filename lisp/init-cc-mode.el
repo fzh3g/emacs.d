@@ -19,16 +19,16 @@
              (irony-eldoc)))
 
 (defun prelude-c-mode-common-defaults ()
-  (setq c-default-style '((java-mode . "java")
-                        (awk-mode . "awk")
-                        (c-mode . "k&r")
-                        (c++-mode . "stroustrup")
-                        (other . "linux"))
-        c-basic-offset 4)
-  (setq cc-search-directories
+  (setq-default c-default-style '((java-mode . "java")
+                                  (awk-mode . "awk")
+                                  (c-mode . "k&r")
+                                  (c++-mode . "stroustrup")
+                                  (other . "linux")))
+  (setq-default c-basic-offset 4)
+  (setq-default cc-search-directories
         '("." "/usr/include" "/usr/local/include/*" "../*/include"))
   (c-set-offset 'substatement-open 0))
 
 
-(setq c-mode-common-hook 'prelude-c-mode-common-defaults)
+(setq-default c-mode-common-hook 'prelude-c-mode-common-defaults)
 (provide 'init-cc-mode)

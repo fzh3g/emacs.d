@@ -1,7 +1,7 @@
 (require 'dired+)
 
 ;; search file name only when focus is over file
-(setq dired-isearch-filenames 'dwim)
+(setq-default dired-isearch-filenames 'dwim)
 (setq-default diredp-hide-details-initially-flag nil)
 (setq dired-dwim-target t)
 (eval-after-load 'dired

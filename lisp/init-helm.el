@@ -29,30 +29,30 @@
           '(lambda ()
              (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
 (add-hook 'eshell-mode-hook
-          #'(lambda ()
-              (define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
+          '(lambda ()
+             (local-set-key (kbd "C-c C-l") 'helm-eshell-history)))
 ;; minibuffer history
 ;(define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
 
 (when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
+  (setq-default helm-google-suggest-use-curl-p t))
 
-(setq helm-split-window-in-side-p t
-      helm-move-to-line-cycle-in-source t
-      helm-ff-search-library-in-sexp t
-      helm-scroll-amount 8
-      helm-candidate-number-limit 500
-      helm-ff-file-name-history-use-recentf t)
+(setq-default helm-split-window-in-side-p t
+              helm-move-to-line-cycle-in-source t
+              helm-ff-search-library-in-sexp t
+              helm-scroll-amount 8
+              helm-candidate-number-limit 500
+              helm-ff-file-name-history-use-recentf t)
 
-(setq helm-M-x-fuzzy-match t
-      helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match t
-      helm-semantic-fuzzy-match t
-      helm-imenu-fuzzy-match t
-      helm-locate-fuzzy-match t
-      helm-apropos-fuzzy-match t
-      helm-ag-fuzzy-match t
-      helm-lisp-fuzzy-completion t)
+(setq-default helm-M-x-fuzzy-match t
+              helm-buffers-fuzzy-matching t
+              helm-recentf-fuzzy-match t
+              helm-semantic-fuzzy-match t
+              helm-imenu-fuzzy-match t
+              helm-locate-fuzzy-match t
+              helm-apropos-fuzzy-match t
+              helm-ag-fuzzy-match t
+              helm-lisp-fuzzy-completion t)
 
 (setq helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
 (setq helm-ag-insert-at-point 'symbol)
