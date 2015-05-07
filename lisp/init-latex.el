@@ -1,13 +1,13 @@
 (setq LaTeX-indent-level 4)
 (setq-default TeX-master nil)
 (setq-default TeX-engine 'xetex)
-(setq TeX-auto-untabify t
-      TeX-show-compilation t
-      TeX-auto-save t
-      TeX-parse-self t
-      LaTeX-syntactic-comments t
-      TeX-save-query nil
-      reftex-plug-into-AUCTeX t)
+(setq-default TeX-auto-untabify t
+              TeX-show-compilation t
+              TeX-auto-save t
+              TeX-parse-self t
+              LaTeX-syntactic-comments t
+              TeX-save-query nil
+              reftex-plug-into-AUCTeX t)
 
 (cond
      ((executable-find "okular")
@@ -17,11 +17,12 @@
      ((executable-find "evince")
       (setq TeX-view-program-selection
             '((output-pdf "Evince")
-              (output-dvi "Evince")))))
+              (output-dvi "Evince"))))
+     (t
+      (setq TeX-view-program-selection
+            '((output-pdf "xdg-open")
+              (output-dvi "xdg-open")))))
 
-(setq TeX-view-program-selection
-       '((output-pdf "Evince")
-         (output-dvi "Evince")))
 
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (add-hook 'latex-mode-hook 'turn-on-cdlatex)
