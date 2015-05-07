@@ -45,6 +45,7 @@
     exec-path-from-shell
     expand-region
     fill-column-indicator
+    find-file-in-project
     flx
     flx-ido
     flycheck
