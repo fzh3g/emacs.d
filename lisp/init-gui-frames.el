@@ -70,10 +70,10 @@
      'default nil :font "MonacoB 10"))
 
 ;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset
-                      (font-spec :family "Microsoft Yahei" :size 12)))
+;(dolist (charset '(kana han symbol cjk-misc bopomofo))
+;    (set-fontset-font (frame-parameter nil 'font)
+;                      charset
+;                      (font-spec :family "Microsoft Yahei" :size 12)))
 
 ;; change font size
 (when (display-graphic-p)
