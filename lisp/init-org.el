@@ -17,6 +17,8 @@
                 ("j" "Journal" entry (file+datetree "~/org/journal.org" "Journal")
                  "* %?\nEntered on %U\n %i\n %a")))
 
+(setq truncate-lines nil)
+
 (setq-default org-startup-indented t
               org-log-done 'time
               org-log-done 'note
