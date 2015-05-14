@@ -65,9 +65,19 @@
 		 "%b"))))
 
 ;; change font for better looking text
-(if (member "MonacoB" (font-family-list))
-    (set-face-attribute
-     'default nil :font "MonacoB 10"))
+(cond
+ ((member "Menlo" (font-family-list))
+  (set-face-attribute
+   'default nil :font "Menlo 10"))
+ ((member "MonacoB" (font-family-list))
+  (set-face-attribute
+   'default nil :font "MonacoB 10"))
+ ((member "Consolas" (font-family-list))
+  (set-face-attribute
+   'default nil :font "Consolas 11"))
+ ((member "Dejavu Sans Mono" (font-family-list))
+  (set-face-attribute
+   'default nil :font "Dejavu Sans Mono 10")))
 
 ;; Chinese Font
 ;(dolist (charset '(kana han symbol cjk-misc bopomofo))
