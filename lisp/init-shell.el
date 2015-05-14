@@ -28,7 +28,6 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ; http://stackoverflow.com/questions/25094855/visible-ansi-escape-sequences-when-running-emacs-shell-these-are-not-ansi-color
-; https://bbs.archlinux.org/viewtopic.php?id=151738
 ;; add following to ~/.zshrc
 ;;if [[ -n $EMACS]]; then
 ;;    export TERM=dumb
