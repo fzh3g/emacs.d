@@ -44,7 +44,7 @@
 
 ;; show column number and line number
 ;(global-linum-mode t)
-(dolist (hook '(prog-mode-hook text-mode-hook))
+(dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
   (add-hook hook 'linum-mode)
   (add-hook hook 'column-number-mode)
   (add-hook hook 'line-number-mode))
@@ -103,8 +103,8 @@
 ;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 (require 'diff-hl)
-(add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
-(add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
+(dolist (hook '(prog-mode-hook vc-dir-mode-hook conf-mode-hook))
+  (add-hook hook 'turn-on-diff-hl-mode))
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 (require 'guide-key)
