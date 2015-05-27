@@ -81,6 +81,11 @@
     yasnippet)
   "A list of packages to ensure are installed at launch.")
 
+
+; fetch the list of packages available
+(unless package-archive-contents
+    (package-refresh-contents))
+
 ;; Install a package only if it's not already installed.
 (dolist (pkg fx-installed-packages)
   (unless (package-installed-p pkg)

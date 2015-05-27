@@ -55,7 +55,7 @@
 (add-hook 'prog-mode-hook 'fci-mode)
 
 ;; make the fringe thinner (default is 8 in pixels)
-(fringe-mode 6)
+;(fringe-mode 6)
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
