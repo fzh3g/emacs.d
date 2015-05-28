@@ -66,12 +66,12 @@
 
 ;; change font for better looking text
 (cond
- ((member "Menlo" (font-family-list))
-  (set-face-attribute
-   'default nil :font "Menlo 10"))
  ((member "MonacoB" (font-family-list))
   (set-face-attribute
    'default nil :font "MonacoB 10"))
+ ((member "Menlo" (font-family-list))
+  (set-face-attribute
+   'default nil :font "Menlo 10"))
  ((member "Consolas" (font-family-list))
   (set-face-attribute
    'default nil :font "Consolas 11"))
