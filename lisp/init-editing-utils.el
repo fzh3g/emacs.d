@@ -12,6 +12,9 @@
 (setq-default tramp-auto-save-directory "~/.backups/tramp/")
 (setq-default tramp-chunksize 8192)
 
+; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
+(setq vc-follow-symlinks t)
+
 ;; sudo save
 (defun sudo-save ()
   (interactive)
