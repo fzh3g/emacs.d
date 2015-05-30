@@ -14,6 +14,7 @@
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
 
+(defconst *is-a-mac* (eq system-type 'darwin))
 ;;----------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------
@@ -26,6 +27,7 @@
 (require 'init-modeline)
 (require 'init-frame-hooks)
 (require 'init-theme)
+(require 'init-osx-keys)
 (require 'init-xterm)
 (require 'init-gui-frames)
 (require 'init-windows)
@@ -52,7 +54,8 @@
 (require 'init-smartparens)
 (require 'init-gnuplot)
 (require 'init-markdown)
-
+(when *is-a-mac*
+  (require 'osx-location))
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
@@ -68,6 +71,20 @@
   (server-start))
 
 ;;----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;; Locales
 ;;----------------------------------------------------------------------
 (require 'init-locales)
