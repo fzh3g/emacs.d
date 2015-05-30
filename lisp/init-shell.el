@@ -31,7 +31,7 @@
 ;;    export TERM=xterm-256color
 ;;fi
 
-
+(add-to-list 'auto-mode-alist '("\\.*conf\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.profile\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.bash_history\\'" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.sh\\'" . sh-mode))
