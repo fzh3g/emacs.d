@@ -70,6 +70,7 @@
     math-symbol-lists
     multiple-cursors
     nyan-mode
+    osx-location
     projectile
     pyvenv
     rainbow-delimiters
