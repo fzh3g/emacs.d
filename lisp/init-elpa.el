@@ -66,6 +66,7 @@
     ido-vertical-mode
     irony
     irony-eldoc
+    lua-mode
     markdown-mode
     math-symbol-lists
     multiple-cursors

@@ -15,6 +15,9 @@
               gc-cons-percentage 0.5)
 
 (defconst *is-a-mac* (eq system-type 'darwin))
+(defconst *linux* (eq system-type 'gnu/linux))
+(defconst *win32* (eq system-type 'windows-nt))
+(defconst *cygwin* (eq system-type 'cygwin))
 ;;----------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------
@@ -54,6 +57,7 @@
 (require 'init-smartparens)
 (require 'init-gnuplot)
 (require 'init-markdown)
+(require 'init-lua-mode)
 (when *is-a-mac*
   (require 'osx-location))
 ;;----------------------------------------------------------------------
@@ -71,20 +75,6 @@
   (server-start))
 
 ;;----------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;; Locales
 ;;----------------------------------------------------------------------
 (require 'init-locales)
