@@ -37,15 +37,14 @@
     company-cmake
     company-irony
     company-math
+    company-statistics
     cyberpunk-theme
     diff-hl
     dired+
-    ein
     elpy
     exec-path-from-shell
     expand-region
     fill-column-indicator
-    find-file-in-project
     flx
     flx-ido
     flycheck
@@ -70,8 +69,6 @@
     markdown-mode
     math-symbol-lists
     multiple-cursors
-    nyan-mode
-    osx-location
     projectile
     pyvenv
     rainbow-delimiters
