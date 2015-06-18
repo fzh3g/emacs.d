@@ -29,7 +29,7 @@ eshell/
 semanticdb/
 *.swp
 *~
-abbrev_defs
+\#*\#abbrev_defs
 /swank
 /swank
 /.mc-lists.el
@@ -54,3 +54,4 @@ projectile.cache
 /idlwave
 /request
 /.directory
+/company-statistics-cache.el
