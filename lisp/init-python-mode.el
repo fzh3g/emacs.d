@@ -9,15 +9,6 @@
 (add-hook 'pyvenv-post-activate-hook 'pyvenv-restart-python)
 
 ;;----------------------------------------------------------------------
-;; ipython notebook
-;;----------------------------------------------------------------------
-(require 'ein)
-(setq ein:complete-on-dot t)
-(setq ein:notebook-modes '(ein:notebook-mumamo-mode ein:notebook-python-mode))
-(setq ein:query-timeout 1000)
-
-
-;;----------------------------------------------------------------------
 ;; python shell
 ;;----------------------------------------------------------------------
 ;(require 'python)
