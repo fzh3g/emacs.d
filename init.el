@@ -52,14 +52,14 @@
 (require 'init-latex)
 (require 'init-python-mode)
 (require 'init-cc-mode)
+(require 'init-fortran)
 (require 'init-shell)
 (require 'init-editing-utils)
 (require 'init-smartparens)
 (require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
-(when *is-a-mac*
-  (require 'osx-location))
+
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
