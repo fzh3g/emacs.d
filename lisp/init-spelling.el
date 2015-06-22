@@ -33,11 +33,19 @@
 
 (put 'web-mode 'flyspell-mode-predicate 'web-mode-flyspell-verify)
 
-(require 'flyspell-lazy)
-(flyspell-lazy-mode 1)
+(eval-after-load 'flyspell
+  '(progn
+	 (require 'flyspell-lazy)
+	 (flyspell-lazy-mode 1)))
+
+(dolist (hook '(text-mode-hook TeX-mode-hook org-mode-hook markdown-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
 
 ;; better performance
-(setq flyspell-issue-message-flag nil)
+(setq-default flyspell-issue-message-flag nil)
 
 ;; if (aspell installed) { use aspell}
 ;; else if (hunspell installed) { use hunspell }
@@ -82,19 +90,19 @@
 
 (cond
  ((executable-find "aspell")
-  (setq ispell-program-name "aspell"))
+  (setq-default ispell-program-name "aspell"))
  ((executable-find "hunspell")
-  (setq ispell-program-name "hunspell")
+  (setq-default ispell-program-name "hunspell")
   ;; just reset dictionary to the safe one "en_US" for hunspell.
   ;; if we need use different dictionary, we specify it in command line arguments
-  (setq ispell-local-dictionary "en_US")
-  (setq ispell-local-dictionary-alist
+  (setq-default ispell-local-dictionary "en_US")
+  (setq-default ispell-local-dictionary-alist
         '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil nil nil utf-8))))
- (t (setq ispell-program-name nil)))
+ (t (setq-default ispell-program-name nil)))
 
 ;; ispell-cmd-args is useless, it's the list of *extra* command line arguments we will append to the ispell process when ispell-send-string()
 ;; ispell-extra-args is the command arguments which will *always* be used when start ispell process
-(setq ispell-extra-args (flyspell-detect-ispell-args t))
+(setq-default ispell-extra-args (flyspell-detect-ispell-args t))
 ;; (setq ispell-cmd-args (flyspell-detect-ispell-args))
 (defadvice ispell-word (around my-ispell-word activate)
   (let ((old-ispell-extra-args ispell-extra-args))
@@ -105,30 +113,41 @@
     (ispell-kill-ispell t)
     ))
 
+(defadvice flyspell-auto-correct-word (around my-flyspell-auto-correct-word activate)
+  (let ((old-ispell-extra-args ispell-extra-args))
+    (ispell-kill-ispell t)
+    ;; use emacs original arguments
+    (setq ispell-extra-args (flyspell-detect-ispell-args))
+    ad-do-it
+    ;; restore our own ispell arguments
+    (setq ispell-extra-args old-ispell-extra-args)
+    (ispell-kill-ispell t)
+    ))
+
 ;; Add spell-checking in comments for all programming language modes
 
 (dolist (hook '(lisp-mode-hook
-                   emacs-lisp-mode-hook
-                   scheme-mode-hook
-                   clojure-mode-hook
-                   ruby-mode-hook
-                   idl-mode
-                   idlwave-mode
-                   yaml-mode
-                   python-mode-hook
-                   shell-mode-hook
-                   php-mode-hook
-                   css-mode-hook
-                   haskell-mode-hook
-                   caml-mode-hook
-                   c++-mode-hook
-                   c-mode-hook
-                   lua-mode-hook
-                   crontab-mode-hook
-                   perl-mode-hook
-                   tcl-mode-hook
-                   js2-mode-hook))
-    (add-hook hook 'flyspell-prog-mode))
+                emacs-lisp-mode-hook
+                scheme-mode-hook
+                clojure-mode-hook
+                ruby-mode-hook
+                idl-mode
+                idlwave-mode
+                yaml-mode
+                python-mode-hook
+                shell-mode-hook
+                php-mode-hook
+                css-mode-hook
+                haskell-mode-hook
+                caml-mode-hook
+                c++-mode-hook
+                c-mode-hook
+                lua-mode-hook
+                crontab-mode-hook
+                perl-mode-hook
+                tcl-mode-hook
+                js2-mode-hook))
+  (add-hook hook 'flyspell-prog-mode))
 ;; you can also use "M-x ispell-word" or hotkey "M-$". It pop up a multiple choice
 ;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
 (global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
