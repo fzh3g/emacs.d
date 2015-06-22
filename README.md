@@ -43,11 +43,9 @@ system package manager
 
 ### Python ###
 
-* [Elpy](https://github.com/jorgenschaefer/elpy) is used for *IDE-like*
-experience
-* Install `jedi`, `rope`, `flake8` and `importmagic` through `pip install`
-* `elpy-rpc-backend` is set to `jedi` in `init-python-mode.el`, change it to
-`rope` if you like
+* [anaconda-mode](https://github.com/proofit404/anaconda-mode) is used for
+*IDE-like* experience
+* Install `jedi`, `service_factory` through `pip install`
 * If you're coding with multiple versions of Python, install
 [virtualenv](https://virtualenv.pypa.io/en/latest/)
 through `pip install`. After modified your virtualenv, use
