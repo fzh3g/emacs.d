@@ -52,7 +52,8 @@
 (setq fci-rule-column 80)
 (setq fill-column 80)
 (setq fci-column 80)
-(add-hook 'prog-mode-hook 'fci-mode)
+(dolist (hook '(prog-mode-hook markdown-mode-hook))
+  (add-hook hook 'fci-mode))
 
 ;; make the fringe thinner (default is 8 in pixels)
 ;(fringe-mode 6)
