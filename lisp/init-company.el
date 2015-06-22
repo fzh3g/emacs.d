@@ -28,10 +28,13 @@
   (add-to-list 'company-backends 'company-irony)
   (add-to-list 'company-backends 'company-c-headers))
 
+(defun my:company-for-python ()
+  (add-to-list 'company-backends 'company-anaconda))
 
 (add-hook 'TeX-mode-hook 'my:company-for-latex)
 (add-hook 'c-mode-hook 'my:company-for-c)
 (add-hook 'c++-mode-hook 'my:company-for-c)
 (add-hook 'cmake-mode-hook 'my:company-for-c)
+(add-hook 'python-mode-hook 'my:company-for-python)
 
 (provide 'init-company)
