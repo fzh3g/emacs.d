@@ -27,11 +27,13 @@
 ;; list of installed packages
 (defvar fx-installed-packages
   '(ace-jump-mode
+    anaconda-mode
     anzu
     auctex
     buffer-move
     cdlatex
     company
+    company-anaconda
     company-auctex
     company-c-headers
     company-cmake
@@ -41,7 +43,6 @@
     cyberpunk-theme
     diff-hl
     dired+
-    elpy
     exec-path-from-shell
     expand-region
     fill-column-indicator
@@ -52,7 +53,6 @@
     guide-key
     helm
     helm-ag
-    helm-gtags
     helm-projectile
     helm-swoop
     highlight-indentation
