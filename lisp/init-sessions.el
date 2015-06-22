@@ -55,8 +55,8 @@
  backup-by-copying t
  version-control t
  delete-old-versions t
- kept-old-versions 2
- kept-new-versions 3
+ kept-old-versions 3
+ kept-new-versions 2
  )
 (setq vc-make-backend-sym nil)
 
