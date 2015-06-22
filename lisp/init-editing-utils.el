@@ -60,13 +60,13 @@
 (global-set-key (kbd "S-<return>") 'my:newline-at-end-of-line)
 
 ;; show column number and line number
-;(global-linum-mode t)
 (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
   (add-hook hook 'linum-mode)
   (add-hook hook 'column-number-mode)
   (add-hook hook 'line-number-mode))
 (add-hook 'linum-mode-hook
           (lambda ()
+            (setq-default linum-delay t)
             (setq-default linum--width
                           (length (number-to-string
                                    (count-lines (point-min) (point-max)))))))
@@ -79,8 +79,10 @@
 
 ;; nice scrolling
 (setq scroll-margin 0
+      scroll-step 1
       scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
+      scroll-preserve-screen-position 1
+      auto-window-vscroll nil)
 
 
 ;; Change "yes or no" to "y or n"
@@ -126,10 +128,9 @@
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence
-      '("C-x" "C-x 4" "C-x 5" "C-x 8" "C-x r" "C-x v" "C-x a" "C-x n" "C-x a"
-        "C-x @" "C-x c" "C-c" "C-c h" "C-c @" "C-c C-x" "C-c c" "C-c &"
-        "C-c !"))
+      '("C-x" "C-c"))
 (setq guide-key/popup-window-position 'bottom)
+(setq guide-key/recursive-key-sequence-flag t)
 (guide-key-mode 1)
 
 ;; anzu
