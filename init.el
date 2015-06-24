@@ -55,11 +55,12 @@
 (require 'init-fortran)
 (require 'init-shell)
 (require 'init-editing-utils)
+(require 'init-regexp)
 (require 'init-smartparens)
 (require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
-
+(require 'init-gtags)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
