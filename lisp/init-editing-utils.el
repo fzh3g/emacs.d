@@ -61,15 +61,16 @@
 
 ;; show column number and line number
 (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
-  (add-hook hook 'linum-mode)
   (add-hook hook 'column-number-mode)
-  (add-hook hook 'line-number-mode))
-(add-hook 'linum-mode-hook
-          (lambda ()
-            (setq-default linum-delay t)
-            (setq-default linum--width
-                          (length (number-to-string
-                                   (count-lines (point-min) (point-max)))))))
+  (add-hook hook 'line-number-mode)
+;  (add-hook hook 'linum-mode)
+;  (setq-default linum-delay t)
+  )
+;(add-hook 'linum-mode-hook
+;          (lambda ()
+;            (setq-default linum--width
+;                          (length (number-to-string
+;                                   (count-lines (point-min) (point-max)))))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -80,7 +81,7 @@
 ;; nice scrolling
 (setq scroll-margin 0
       scroll-step 1
-      scroll-conservatively 100000
+      scroll-conservatively 10000
       scroll-preserve-screen-position 1
       auto-window-vscroll nil)
 
