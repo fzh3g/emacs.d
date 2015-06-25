@@ -64,32 +64,6 @@
 (helm-autoresize-mode t)
 (setq helm-autoresize-max-height 50)
 
-;(require 'helm-gtags)
-;(setq
-; helm-gtags-ignore-case t
-; helm-gtags-auto-update t
-; helm-gtags-use-input-at-cursor t
-; helm-gtags-pulse-at-cursor t
-; helm-gtags-prefix-key "\C-cg"
-;  helm-gtags-suggested-key-mapping t)
-;
-;(add-hook 'c-mode-hook 'helm-gtags-mode)
-;(add-hook 'c++-mode-hook 'helm-gtags-mode)
-;(add-hook 'python-mode-hook 'helm-gtags-mode)
-;(add-hook 'dired-mode-hook 'helm-gtags-mode)
-;(add-hook 'eshell-mode-hook 'helm-gtags-mode)
-;
-;(add-hook 'helm-gtags-mode-hook
-;          '(lambda ()
-;             (local-set-key (kbd "C-j") 'helm-gtags-select)
-;             (local-set-key (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-;             (local-set-key (kbd "C-c g t") 'helm-gtags-find-tag)
-;             (local-set-key (kbd "C-c g r") 'helm-gtags-find-rtag)
-;             (local-set-key (kbd "C-c g s") 'helm-gtags-find-symbol)
-;             (local-set-key (kbd "C-c g d") 'helm-gtags-dwim)
-;             (local-set-key (kbd "C-c g t") 'helm-gtags-pop-stack)))
-
-
 ;; helm swoop
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
