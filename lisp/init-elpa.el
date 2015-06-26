@@ -70,6 +70,7 @@
     markdown-mode
     math-symbol-lists
     multiple-cursors
+    nlinum
     projectile
     pyvenv
     rainbow-delimiters
