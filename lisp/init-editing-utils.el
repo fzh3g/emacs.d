@@ -60,17 +60,13 @@
 (global-set-key (kbd "S-<return>") 'my:newline-at-end-of-line)
 
 ;; show column number and line number
+(require 'nlinum)
 (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
   (add-hook hook 'column-number-mode)
   (add-hook hook 'line-number-mode)
-;  (add-hook hook 'linum-mode)
-;  (setq-default linum-delay t)
+  (add-hook hook 'nlinum-mode)
+  (setq-default linum-delay t)
   )
-;(add-hook 'linum-mode-hook
-;          (lambda ()
-;            (setq-default linum--width
-;                          (length (number-to-string
-;                                   (count-lines (point-min) (point-max)))))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
