@@ -12,9 +12,9 @@
 ;;----------------------------------------------------------------------
 ;; By default Emacs will initiate GC every 0.76 MB allocated
 ;; (gc-cons-threshold == 800000).
-;; we increase this to 512MB
+;; we increase this to 1GB
 ;; @see http://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html
-(setq-default gc-cons-threshold (* 1024 1024 512)
+(setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
 
 ;;----------------------------------------------------------------------
@@ -53,11 +53,12 @@
 (require 'init-fortran)
 (require 'init-shell)
 (require 'init-editing-utils)
+(require 'init-regexp)
 (require 'init-smartparens)
 (require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
-
+(require 'init-gtags)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------

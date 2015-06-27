@@ -11,7 +11,6 @@
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
-(global-set-key (kbd "C-c q") 'auto-fill-mode)
 
 (defun my:local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t))
@@ -60,7 +59,7 @@
       sr-speedbar-width 27
       sr-speedbar-default-width 27
       sr-speedbar-max-width 36
-      sr-speedbar-right-side nil)
+      sr-speedbar-right-side t)
 (global-set-key (kbd "<f6>") 'sr-speedbar-toggle)
 
 ;;iedit-mode

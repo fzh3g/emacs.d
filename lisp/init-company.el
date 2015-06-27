@@ -24,6 +24,7 @@
   (add-to-list 'company-backends 'company-math-symbols-latex))
 
 (defun my:company-for-c ()
+  (setq company-backends (delete 'company-semantic company-backends))
   (add-to-list 'company-backends 'company-cmake)
   (add-to-list 'company-backends 'company-irony)
   (add-to-list 'company-backends 'company-c-headers))

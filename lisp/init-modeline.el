@@ -4,13 +4,15 @@
                ;'(:eval (window-numbering-get-number-string))
                " "
                ;; the buffer name; the file name as a tool tip
-               '(:eval (propertize " %b " 'face 'font-lock-doc-face
+               '(:eval (propertize " %b "
+                                   'face 'font-lock-function-name-face
                                    'help-echo (buffer-file-name)))
                " "
                ;; the current major mode for the buffer.
                
                "["
-               '(:eval (propertize "%m" 'face 'font-lock-type-face
+               '(:eval (propertize "%m"
+                                   'face 'font-lock-type-face
                                    'help-echo buffer-file-coding-system))
                " "
                ;; insert vs overwrite mode, input-method in a tooltip
@@ -39,13 +41,13 @@
                ;; line and column
                "(" ;; '%02' to set to 2 chars at least; prevents flickering
                "%02l" "," "%02c"
-               ;; (propertize "%02l" 'face 'font-lock-type-face) ","
-               ;; (propertize "%02c" 'face 'font-lock-type-face)
                ")"
                " "
                ;; relative position
                "["
-               (propertize "%p" 'face 'font-lock-constant-face)
+               (propertize "%p"
+                           'face 'font-lock-constant-face
+                           )
                "]"
                " "
                ;; add the time, with the date and the emacs uptime in the tooltip
@@ -60,12 +62,15 @@
                " "
                ;; date
                '(:eval (propertize (format-time-string "%Y-%02m-%02d %3a")
-                                   'face 'font-lock-keyword-face))
+                                   'face 'font-lock-keyword-face
+                                   ))
                " "
                ;; user
                "("
                "@"
-               (propertize user-login-name 'face 'font-lock-variable-name-face)
+               (propertize user-login-name
+                           'face 'font-lock-variable-name-face
+                           )
                ")"
                " "
                "--"

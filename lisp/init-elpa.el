@@ -49,10 +49,10 @@
     flx
     flx-ido
     flycheck
-    flyspell-lazy
     guide-key
     helm
     helm-ag
+    helm-gtags
     helm-projectile
     helm-swoop
     highlight-indentation
@@ -66,9 +66,11 @@
     irony
     irony-eldoc
     lua-mode
+    magit
     markdown-mode
     math-symbol-lists
     multiple-cursors
+    nlinum
     projectile
     pyvenv
     rainbow-delimiters
@@ -76,6 +78,7 @@
     smartparens
     sr-speedbar
     undo-tree
+    visual-regexp-steroids
     window-numbering
     yasnippet)
   "A list of packages to ensure are installed at launch.")
