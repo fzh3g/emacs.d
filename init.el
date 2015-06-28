@@ -61,6 +61,7 @@
 (require 'init-markdown)
 (require 'init-lua-mode)
 (require 'init-gtags)
+(require 'init-git)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
