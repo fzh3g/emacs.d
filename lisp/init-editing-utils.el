@@ -118,12 +118,6 @@
 ;(set-face-background 'highlight-indentation-face "#e3e3d3")
 ;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
-(require 'diff-hl)
-(dolist
-    (hook '(prog-mode-hook vc-dir-mode-hook conf-mode-hook markdown-mode-hook))
-  (add-hook hook 'turn-on-diff-hl-mode))
-(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
-
 (require 'guide-key)
 (setq guide-key/guide-key-sequence
       '("C-x" "C-c"))

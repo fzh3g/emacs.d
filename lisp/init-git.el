@@ -1,4 +1,10 @@
 (require 'magit)
+(require 'diff-hl)
+
+(dolist
+    (hook '(prog-mode-hook vc-dir-mode-hook conf-mode-hook markdown-mode-hook))
+  (add-hook hook 'turn-on-diff-hl-mode))
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
 (global-set-key (kbd "M-<f12>") 'magit-status)
 
