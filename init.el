@@ -1,8 +1,14 @@
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
+(defconst *is-a-mac* (eq system-type 'darwin))
+(defconst *linux* (eq system-type 'gnu/linux))
+(defconst *win32* (eq system-type 'windows-nt))
+(defconst *cygwin* (eq system-type 'cygwin))
+
+(when *win32*
+  (setenv "HOME" "c:/cygwin64/home/Faxiang"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
 
 ;;----------------------------------------------------------------------
 ;; Less GC, more memory
@@ -14,16 +20,11 @@
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
 
-(defconst *is-a-mac* (eq system-type 'darwin))
-(defconst *linux* (eq system-type 'gnu/linux))
-(defconst *win32* (eq system-type 'windows-nt))
-(defconst *cygwin* (eq system-type 'cygwin))
 ;;----------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
-
 ;;----------------------------------------------------------------------
 ;; Load configs for spesific features and modes
 ;;----------------------------------------------------------------------
