@@ -23,8 +23,6 @@
     (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
 (global-set-key (kbd "C-x M-s") 'sudo-save)
 
-(global-set-key (kbd "<f8>") 'toggle-read-only)
-
 ;; http://emacswiki.org/emacs/RevertBuffer
 (global-set-key
   (kbd "<f5>")
