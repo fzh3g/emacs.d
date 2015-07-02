@@ -3,7 +3,6 @@
 (add-hook 'python-mode-hook
           '(lambda ()
              (anaconda-mode)
-             (setq electric-indent-chars (delq ?: electric-indent-chars))
              ))
 
 ;;----------------------------------------------------------------------
