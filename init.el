@@ -63,6 +63,7 @@
 (require 'init-lua-mode)
 (require 'init-gtags)
 (require 'init-git)
+(require 'init-matlab)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
