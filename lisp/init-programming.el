@@ -43,14 +43,12 @@
 
 ;; projectile
 (require 'projectile)
-(require 'helm-projectile)
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
 (setq projectile-indexing-method 'alien)
 (add-hook 'prog-mode-hook
           '(lambda ()
-             (projectile-mode)
-             (helm-projectile-on)))
+             (projectile-mode)))
 
 ;; speedbar
 (require 'sr-speedbar)

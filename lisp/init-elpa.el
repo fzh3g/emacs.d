@@ -53,7 +53,6 @@
     helm
     helm-ag
     helm-gtags
-    helm-projectile
     helm-swoop
     highlight-indentation
     highlight-symbol
