@@ -31,7 +31,8 @@
              (my:local-comment-auto-fill)))
 
 ;; hs-minor-mode
-(add-hook 'prog-mode-hook 'hs-minor-mode)
+(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook LaTeX-mode-hook))
+  (add-hook hook 'hs-minor-mode))
 (add-hook 'hs-minor-mode-hook
           '(lambda ()
              (local-set-key (kbd "M-<left>") 'hs-hide-block)
