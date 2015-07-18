@@ -1,5 +1,6 @@
 (setq LaTeX-indent-level 4)
 (setq-default TeX-master nil)
+(setq-default TeX-newline-function 'newline-and-indent)
 (setq-default TeX-engine 'xetex)
 (setq-default TeX-auto-untabify t
               TeX-show-compilation t
@@ -31,7 +32,9 @@
 	  (lambda ()
             (imenu-add-menubar-index)
             (LaTeX-math-mode t)
-	    (reftex-mode t)))
+            (overwrite-mode nil)
+            (reftex-mode t)))
+
 (add-hook 'TeX-mode-hook
 	  (lambda ()
 	    (outline-minor-mode t)
