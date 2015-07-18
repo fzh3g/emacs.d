@@ -15,6 +15,9 @@
 ; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
+;; disable overwrite mode
+(put 'overwrite-mode 'disabled t)
+
 ;; sudo save
 (defun sudo-save ()
   (interactive)
