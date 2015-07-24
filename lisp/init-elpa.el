@@ -68,6 +68,7 @@
     magit
     markdown-mode
     math-symbol-lists
+    matlab-mode
     multiple-cursors
     nlinum
     projectile
