@@ -1,7 +1,7 @@
 ;; save a list of open files in ~/.emacs.d/.emacs.desktop
 ;; save the desktop file automatically if it already exists
 (setq desktop-path '("~/.emacs.d"))
-(setq desktop-save 'ask-if-new)
+(setq-default desktop-save 'if-exists)
 (desktop-save-mode 1)
 (defadvice desktop-read (around trace-desktop-errors)
   (let ((debug-on-error t))
@@ -22,25 +22,25 @@
 
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
-(setq desktop-globals-to-save
-      (append '((extended-command-history . 128)
-                (file-name-history        . 128)
-                (ido-last-directory-list  . 128)
-                (kill-ring                . 128)
-                (ido-work-file-list       . 128)
-                (grep-history             . 128)
-                (compile-history          . 128)
-                (minibuffer-history       . 128)
-                (query-replace-history    . 128)
-                (read-expression-history  . 128)
-                (regexp-history           . 128)
-                (regexp-search-ring       . 128)
-                (search-ring              . 128)
-                (comint-input-ring        . 128)
-                (shell-command-history    . 128)
-                (evil-ex                  . 128)
-                desktop-missing-file-warning
-                register-alist)))
+(setq-default desktop-globals-to-save
+              (append '((extended-command-history . 128)
+                        (file-name-history        . 128)
+                        (ido-last-directory-list  . 128)
+                        (kill-ring                . 128)
+                        (ido-work-file-list       . 128)
+                        (grep-history             . 128)
+                        (compile-history          . 128)
+                        (minibuffer-history       . 128)
+                        (query-replace-history    . 128)
+                        (read-expression-history  . 128)
+                        (regexp-history           . 128)
+                        (regexp-search-ring       . 128)
+                        (search-ring              . 128)
+                        (comint-input-ring        . 128)
+                        (shell-command-history    . 128)
+                        (evil-ex                  . 128)
+                        desktop-missing-file-warning
+                        register-alist)))
 
 ; https://github.com/emacs-helm/helm/issues/94
 (setq session-save-print-spec '(t nil 40000))
@@ -58,6 +58,7 @@
  kept-old-versions 3
  kept-new-versions 2
  )
-(setq vc-make-backend-sym nil)
+
+;(setq-default vc-make-backend-sym nil)
 
 (provide 'init-sessions)
