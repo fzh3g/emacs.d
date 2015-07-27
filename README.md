@@ -8,6 +8,9 @@ config adds improvments for the following languages:
 
 * C/C++
 * Python
+* Fortran
+* Lua
+* Matlab
 * LaTeX
 
 ## Installation ##
