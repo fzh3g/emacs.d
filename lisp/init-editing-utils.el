@@ -12,6 +12,10 @@
 (setq-default tramp-auto-save-directory "~/.backups/tramp/")
 (setq-default tramp-chunksize 8192)
 
+;; https://github.com/syl20bnr/spacemacs/issues/1921
+(setq-default tramp-ssh-controlmaster-options
+              "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
 ; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
