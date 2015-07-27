@@ -56,3 +56,5 @@ projectile.cache
 /.directory
 /company-statistics-cache.el
 /srecode-map.el
+/lisp/flycheck_init-git.el
+/lisp/flycheck_init-gtags.el
