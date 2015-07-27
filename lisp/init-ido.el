@@ -23,5 +23,4 @@
 
 (setq ido-default-buffer-method 'selected-window)
 
-
 (provide 'init-ido)
