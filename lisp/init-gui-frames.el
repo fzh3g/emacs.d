@@ -9,6 +9,9 @@
 (setq-default initial-scratch-message
               (concat ";;Happy hacking " (or user-login-name "") "! *★,°*:.☆\(￣▽￣)/$:*.°★* \n"))
 
+;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
+(setq ad-redefinition-action 'accept)
+
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq indicate-empty-lines t)
 
