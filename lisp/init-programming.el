@@ -61,7 +61,4 @@
       sr-speedbar-right-side t)
 (global-set-key (kbd "<f6>") 'sr-speedbar-toggle)
 
-;;iedit-mode
-;(global-set-key (kbd "C-c ; i") 'iedit-mode-toggle-on-function)
-
 (provide 'init-programming)
