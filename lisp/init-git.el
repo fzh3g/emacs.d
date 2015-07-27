@@ -8,8 +8,6 @@
 
 (global-set-key (kbd "M-<f12>") 'magit-status)
 
-(setq magit-last-seen-setup-instructions "1.4.0")
-
 (setq-default magit-save-some-buffers nil
               magit-process-popup-time 10
               magit-completing-read-function 'magit-ido-completing-read)
@@ -35,7 +33,7 @@
   (after-load 'magit
               (add-hook 'magit-mode-hook (lambda () (local-unset-key (kbd "M-h"))))))
 
-(setq magit-auto-revert-mode t)
+(setq-default magit-auto-revert-mode t)
 
 (provide 'init-git)
 ;;; init-git.el ends here
