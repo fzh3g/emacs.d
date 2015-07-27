@@ -9,17 +9,6 @@
   (setenv "HOME" "c:/cygwin64/home/Faxiang"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
-;;----------------------------------------------------------------------
-;; Less GC, more memory
-;;----------------------------------------------------------------------
-;; By default Emacs will initiate GC every 0.76 MB allocated
-;; (gc-cons-threshold == 800000).
-;; we increase this to 1GB
-;; @see http://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html
-(setq-default gc-cons-threshold 100000000
-              gc-cons-percentage 0.5)
-
 ;;----------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------
@@ -38,7 +27,6 @@
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-sessions)
 (require 'init-dired)
 (require 'init-isearch)
 (require 'init-recentf)
@@ -46,12 +34,10 @@
 (require 'init-yasnippet)
 (require 'init-company)
 (require 'init-ido)
-(require 'init-helm)
 (require 'init-hippie-expand)
 (require 'init-programming)
 (require 'init-org)
 (require 'init-latex)
-(require 'init-python-mode)
 (require 'init-cc-mode)
 (require 'init-fortran)
 (require 'init-shell)
@@ -61,9 +47,13 @@
 (require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
-(require 'init-gtags)
-(require 'init-git)
 (require 'init-matlab)
+(require 'init-python-mode)
+(require 'init-helm)
+(require 'init-gtags)
+(require 'init-sessions)
+(require 'init-git)
+
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
