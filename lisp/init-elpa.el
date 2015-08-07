@@ -26,10 +26,10 @@
 
 ;; list of installed packages
 (defvar fx-installed-packages
-  '(ace-jump-mode
-    anaconda-mode
+  '(anaconda-mode
     anzu
     auctex
+    avy
     buffer-move
     cdlatex
     company
