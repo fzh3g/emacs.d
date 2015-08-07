@@ -1,9 +1,7 @@
 ;; flycheck
 (require 'flycheck)
 
-(if (fboundp 'global-flycheck-mode)
-    (global-flycheck-mode +1)
-  (add-hook 'prog-mode-hook 'flycheck-mode))
+(add-hook 'prog-mode-hook 'flycheck-mode)
 
 
 (setq flycheck-display-errors-function

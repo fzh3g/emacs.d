@@ -32,6 +32,7 @@
 	  (lambda ()
             (imenu-add-menubar-index)
             (LaTeX-math-mode t)
+            (flycheck-mode -1)
             (reftex-mode t)))
 
 (add-hook 'TeX-mode-hook
