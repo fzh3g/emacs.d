@@ -78,7 +78,7 @@
     smartparens
     sr-speedbar
     undo-tree
-    visual-regexp-steroids
+    visual-regexp
     window-numbering
     yasnippet)
   "A list of packages to ensure are installed at launch.")
