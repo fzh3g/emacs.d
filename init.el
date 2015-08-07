@@ -5,8 +5,6 @@
 (defconst *win32* (eq system-type 'windows-nt))
 (defconst *cygwin* (eq system-type 'cygwin))
 
-(when *win32*
-  (setenv "HOME" "c:/cygwin64/home/Faxiang"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 ;;----------------------------------------------------------------------
