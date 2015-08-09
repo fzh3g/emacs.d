@@ -49,14 +49,4 @@
           '(lambda ()
              (projectile-mode)))
 
-;; speedbar
-(require 'sr-speedbar)
-(setq speedbar-show-unknown-files t
-      speedbar-use-images nil
-      sr-speedbar-width 27
-      sr-speedbar-default-width 27
-      sr-speedbar-max-width 36
-      sr-speedbar-right-side t)
-(global-set-key (kbd "<f6>") 'sr-speedbar-toggle)
-
 (provide 'init-programming)

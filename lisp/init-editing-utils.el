@@ -109,6 +109,19 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-window-width 32
+      neo-create-file-auto-open t
+      neo-banner-message nil
+      neo-show-updir-line nil
+      neo-mode-line-type 'neotree
+      neo-smart-open t
+      neo-dont-be-alone t
+      neo-persist-show nil
+      neo-show-hidden-files t
+      neo-auto-indent-point t)
+
 (require 'highlight-symbol)
 (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
