@@ -29,7 +29,6 @@
     auctex
     avy
     buffer-move
-    cdlatex
     company
     company-anaconda
     company-auctex
@@ -68,13 +67,13 @@
     math-symbol-lists
     matlab-mode
     multiple-cursors
+    neotree
     nlinum
     projectile
     pyvenv
     rainbow-delimiters
     session
     smartparens
-    sr-speedbar
     undo-tree
     visual-regexp
     window-numbering

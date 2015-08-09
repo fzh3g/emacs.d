@@ -24,10 +24,6 @@
             '((output-pdf "xdg-open")
               (output-dvi "xdg-open")))))
 
-
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-(add-hook 'latex-mode-hook 'turn-on-cdlatex)
-
 (add-hook 'LaTeX-mode-hook
 	  (lambda ()
             (imenu-add-menubar-index)
