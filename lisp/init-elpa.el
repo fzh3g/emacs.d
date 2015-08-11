@@ -33,7 +33,6 @@
     company-anaconda
     company-auctex
     company-c-headers
-    company-cmake
     company-irony
     company-math
     company-statistics
