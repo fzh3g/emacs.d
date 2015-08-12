@@ -76,6 +76,8 @@
     pyvenv
     rainbow-delimiters
     session
+    smart-mode-line
+    smart-mode-line-powerline-theme
     smartparens
     undo-tree
     use-package
