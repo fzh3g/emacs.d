@@ -1,4 +1,3 @@
-;;;
 ; http://www.emacswiki.org/emacs/ShellMode
 (global-set-key (kbd "C-x t") 'alt-shell-dwim)
 (defun alt-shell-dwim (arg)
@@ -17,7 +16,6 @@
 	 	   (generate-new-buffer-name "*shell*")
 	 	 (car shell-buffer-list))))
      (shell name)))
-
 
 ;; ansi color
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)

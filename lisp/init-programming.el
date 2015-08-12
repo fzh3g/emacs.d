@@ -1,11 +1,12 @@
 ;; flycheck
-(require 'flycheck)
-
-(add-hook 'prog-mode-hook 'flycheck-mode)
-
-
-(setq flycheck-display-errors-function
-      #'flycheck-display-error-messages-unless-error-list)
+(use-package flycheck
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'flycheck-mode)
+  :config
+  (use-package flycheck-pos-tip
+    :defer t
+    :init (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
@@ -41,12 +42,19 @@
              (local-set-key (kbd "C-c @ c") 'hs-toggle-hiding)))
 
 ;; projectile
-(require 'projectile)
-(setq projectile-enable-caching t)
-(setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'alien)
-(add-hook 'prog-mode-hook
-          '(lambda ()
-             (projectile-mode)))
+(use-package projectile
+  :defer t
+  :init
+  (progn
+    (setq projectile-enable-caching t)
+    (setq projectile-cache-file (concat fx-cache-directory
+                                        "projectile.cache"))
+    (setq projectile-known-projects-file (concat fx-cache-directory
+                                                 "projectile-bookmarks.eld"))
+    (setq projectile-completion-system 'helm)
+    (setq projectile-indexing-method 'alien)
+    (add-hook 'prog-mode-hook
+              '(lambda ()
+                 (projectile-mode)))))
 
 (provide 'init-programming)

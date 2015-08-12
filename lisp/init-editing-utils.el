@@ -7,28 +7,11 @@
               visible-bell t
               delete-selection-mode t)
 
-;; http://www.quora.com/Whats-the-best-way-to-edit-remote-files-from-Emacs
-(setq-default tramp-default-method "ssh")
-(setq-default tramp-auto-save-directory "~/.backups/tramp/")
-(setq-default tramp-chunksize 8192)
-
-;; https://github.com/syl20bnr/spacemacs/issues/1921
-(setq-default tramp-ssh-controlmaster-options
-              "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-
 ; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
 ;; disable overwrite mode
 (put 'overwrite-mode 'disabled t)
-
-;; sudo save
-(defun sudo-save ()
-  (interactive)
-  (if (not buffer-file-name)
-      (write-file (concat "/sudo:root@localhost:" (ido-read-file-name "File:")))
-    (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
-(global-set-key (kbd "C-x M-s") 'sudo-save)
 
 ;; http://emacswiki.org/emacs/RevertBuffer
 (global-set-key
@@ -51,10 +34,6 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
-(setq-default python-indent 4)
-(setq-default python-indent-offset 4)
-(setq-default python-indent-guess-indent-offset nil)
-(setq-default python-guess-indent nil)
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 (defun my:newline-at-end-of-line ()
@@ -65,13 +44,24 @@
 (global-set-key (kbd "S-<return>") 'my:newline-at-end-of-line)
 
 ;; show column number and line number
-(require 'nlinum)
-(dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
-  (add-hook hook 'column-number-mode)
-  (add-hook hook 'line-number-mode)
-  (add-hook hook 'nlinum-mode)
-  (setq-default linum-delay t)
-  )
+(use-package nlinum
+  :init (setq-default linum-delay t)
+  :config
+  (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+    (add-hook hook 'column-number-mode)
+    (add-hook hook 'line-number-mode)
+    (add-hook hook 'nlinum-mode)))
+
+;; fill column indicator
+(use-package fill-column-indicator
+  :init
+  (progn
+    (setq fill-column 80)
+    (setq-default fci-rule-column 80)
+    (setq-default fci-column 80))
+  :config
+  (dolist (hook '(prog-mode-hook markdown-mode-hook))
+    (add-hook hook 'fci-mode)))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -86,7 +76,6 @@
       scroll-preserve-screen-position 1
       auto-window-vscroll nil)
 
-
 ;; Change "yes or no" to "y or n"
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -94,83 +83,91 @@
 (setq-default global-auto-revert-non-file-buffers t
               auto-revert-verbose nil)
 
-
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
 ;; doc view
 (setq-default doc-view-continuous t)
 
+(use-package expand-region
+  :bind
+  (("C-@" . er/expand-region)
+   ("C-M-@" . er/contract-region)))
 
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
-(global-set-key (kbd "C-M-@") 'er/contract-region)
+(use-package undo-tree
+  :init (global-undo-tree-mode))
 
-(require 'undo-tree)
-(global-undo-tree-mode)
+(use-package neotree
+  :defer t
+  :bind (("<f8>" . neotree-toggle))
+  :config (setq neo-window-width 28
+                neo-create-file-auto-open t
+                neo-banner-message nil
+                neo-show-updir-line nil
+                neo-mode-line-type 'neotree
+                neo-smart-open t
+                neo-dont-be-alone t
+                neo-persist-show nil
+                neo-show-hidden-files t
+                neo-auto-indent-point t))
 
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-window-width 32
-      neo-create-file-auto-open t
-      neo-banner-message nil
-      neo-show-updir-line nil
-      neo-mode-line-type 'neotree
-      neo-smart-open t
-      neo-dont-be-alone t
-      neo-persist-show nil
-      neo-show-hidden-files t
-      neo-auto-indent-point t)
+(use-package highlight-symbol
+  :defer t
+  :init
+  (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
+    (add-hook hook 'highlight-symbol-mode)
+    (add-hook hook 'highlight-symbol-nav-mode)))
 
-(require 'highlight-symbol)
-(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
-  (add-hook hook 'highlight-symbol-mode)
-  (add-hook hook 'highlight-symbol-nav-mode))
+(use-package rainbow-delimiters
+  :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(use-package highlight-indentation
+  :init (add-hook 'prog-mode-hook 'highlight-indentation-mode))
 
-(require 'highlight-indentation)
-(add-hook 'prog-mode-hook 'highlight-indentation-mode)
 ;(add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
 ;(set-face-background 'highlight-indentation-face "#e3e3d3")
 ;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
-(require 'guide-key)
-(setq guide-key/guide-key-sequence
-      '("C-x" "C-c"))
-(setq guide-key/popup-window-position 'bottom)
-(setq guide-key/recursive-key-sequence-flag t)
-(guide-key-mode 1)
+(use-package guide-key
+  :init
+  (progn
+    (setq guide-key/guide-key-sequence
+          '("C-x" "C-c"))
+    (setq guide-key/popup-window-position 'bottom)
+    (setq guide-key/recursive-key-sequence-flag t)
+    (guide-key-mode 1)))
 
 ;; anzu
-(require 'anzu)
-(global-anzu-mode t)
-(global-set-key (kbd "M-%") 'anzu-query-replace)
-(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
-(custom-set-variables
- '(anzu-mode-lighter "")
- '(anzu-deactivate-region t)
- '(anzu-search-threshold 1000)
- '(anzu-replace-to-string-separator " => "))
+(use-package anzu
+  :defer t
+  :init (global-anzu-mode t)
+  :bind (("M-%" . anzu-query-replace)
+         ("C-M-%" . anzu-query-replace-regexp))
+  :config
+  (custom-set-variables
+   '(anzu-mode-lighter "")
+   '(anzu-deactivate-region t)
+   '(anzu-search-threshold 1000)
+   '(anzu-replace-to-string-separator " => ")))
 
 ;; avy
-(require 'avy)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
-(global-set-key (kbd "M-g w") 'avy-goto-subword-1)
+(use-package avy
+  :bind
+  (("C-:" . avy-goto-char)
+   ("C-'" . avy-goto-char-2)
+   ("M-g f" . avy-goto-line)
+   ("M-g w" . avy-goto-subword-1)))
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
-(global-set-key (kbd "C-c c r") 'set-rectangular-region-anchor)
-(global-set-key (kbd "C-c c c") 'mc/edit-lines)
-(global-set-key (kbd "C-c c e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)
+         ("C-S-<mouse-1>" . mc/add-cursor-on-click)
+         ("C-c c r" . set-rectangular-region-anchor)
+         ("C-c c c" . mc/edit-lines)
+         ("C-c c e" . mc/edit-ends-of-lines)
+         ("C-c c a" . mc/edit-beginnings-of-lines)))
 
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)

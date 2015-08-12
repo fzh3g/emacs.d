@@ -1,4 +1,4 @@
-(require 'matlab)
-(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
+(use-package matlab-load
+  :defer t)
 
 (provide 'init-matlab)

@@ -1,26 +1,34 @@
-;; Use C-f during file selection to regular find-file
-(require 'ido-ubiquitous)
-(require 'idomenu)
-(require 'flx-ido)
-(require 'ido-hacks nil t)
+(use-package ido
+  :init
+  (progn
+    (ido-mode 1)
+    (setq ido-save-directory-list-file (concat fx-cache-directory "ido.last"))
+    (setq-default ido-use-faces nil
+                  ido-use-filename-at-point 'guess
+                  ido-auto-merge-work-directories-length 0
+                  ido-use-virtual-buffers t
+                  ido-default-buffer-method 'selected-window)))
 
-(ido-mode t)
-(ido-ubiquitous-mode t)
-;(ido-everywhere t)
-(if (commandp 'ido-vertical-mode)
-    (progn
-      (ido-vertical-mode 1)
-      (setq-default ido-vertical-define-keys 'C-n-C-p-up-down-left-right)))
-;; http://sachachua.com/blog/2014/03/emacs-basics-call-commands-name-m-x-tips-better-completion-using-ido-helm/
+(use-package flx-ido
+  :init
+  (progn
+    (setq-default ido-enable-flex-matching t)
+    (flx-ido-mode 1)))
 
-(if (commandp 'flx-ido-mode)
-    (flx-ido-mode 1))
-(setq-default ido-enabble-flex-matching t)
-(setq ido-use-faces nil)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-auto-merge-work-directories-length 0)
-(setq ido-use-virtual-buffers t)
+(use-package ido-vertical-mode
+  :init
+  (progn
+    (setq-default ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+    (ido-vertical-mode 1)))
 
-(setq ido-default-buffer-method 'selected-window)
+(use-package ido-ubiquitous
+  :init
+  (ido-ubiquitous-mode 1))
+
+(use-package ido-hacks
+  :defer t)
+
+(use-package idomenu
+  :defer t)
 
 (provide 'init-ido)

@@ -1,39 +1,47 @@
-(require 'magit)
-(require 'diff-hl)
+(use-package diff-hl
+  :init
+  (progn
+    (setq diff-hl-side 'right)
+    (global-diff-hl-mode)
+    (unless (display-graphic-p)
+      (setq diff-hl-side 'left)
+      (diff-hl-margin-mode))))
 
-(dolist
-    (hook '(prog-mode-hook vc-dir-mode-hook conf-mode-hook markdown-mode-hook))
-  (add-hook hook 'turn-on-diff-hl-mode))
-(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+(use-package magit
+  :commands (magit-status
+             magit-blame-mode
+             magit-log
+             magit-commit)
+  :init
+  (progn
+    (setq magit-completing-read-function 'magit-builtin-completing-read
+          magit-save-some-buffers nil
+          magit-process-popup-time 10)
 
-(global-set-key (kbd "M-<f12>") 'magit-status)
+    (when *win32*
+      (setenv "GIT_ASKPASS" "git-gui--askpass"))
 
-(setq-default magit-save-some-buffers nil
-              magit-process-popup-time 10
-              magit-completing-read-function 'magit-ido-completing-read)
+    (global-set-key (kbd "M-<f12>") 'magit-status))
+  :config
+  (progn
+    ;; Don't let magit-status mess up window configurations
+    ;; http://whattheemacsd.com/setup-magit.el-01.html
+    (defadvice magit-status (around magit-fullscreen activate)
+      (window-configuration-to-register :magit-fullscreen)
+      ad-do-it
+      (delete-other-windows))
 
-(eval-after-load 'magit
-  '(progn
-     ;; Don't let magit-status mess up window configurations
-     ;; http://whattheemacsd.com/setup-magit.el-01.html
-     (defadvice magit-status (around magit-fullscreen activate)
-       (window-configuration-to-register :magit-fullscreen)
-       ad-do-it
-       (delete-other-windows))
+    (defun magit-quit-session ()
+      "Restores the previous window configuration and kills the magit buffer"
+      (interactive)
+      (kill-buffer)
+      (jump-to-register :magit-fullscreen))
 
-     (defun magit-quit-session ()
-       "Restores the previous window configuration and kills the magit buffer"
-       (interactive)
-       (kill-buffer)
-       (jump-to-register :magit-fullscreen))
+    (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)))
-
-(when *is-a-mac*
-  (after-load 'magit
-              (add-hook 'magit-mode-hook (lambda () (local-unset-key (kbd "M-h"))))))
-
-(setq-default magit-auto-revert-mode t)
+    (when *is-a-mac*
+      (after-load 'magit
+                  (add-hook 'magit-mode-hook (lambda () (local-unset-key (kbd "M-h"))))))))
 
 (provide 'init-git)
 ;;; init-git.el ends here

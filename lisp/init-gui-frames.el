@@ -6,8 +6,9 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
 
+(setq initial-major-mode 'text-mode)
 (setq-default initial-scratch-message
-              (concat ";;Happy hacking " (or user-login-name "") "! *★,°*:.☆\(￣▽￣)/$:*.°★* \n"))
+              (concat "Happy hacking " (or user-login-name "") "! *★,°*:.☆\(￣▽￣)/$:*.°★* \n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
@@ -50,14 +51,6 @@
 ;; Toggle line highlighting in all buffers
 (global-hl-line-mode t)
 
-;; file column indicator
-(require 'fill-column-indicator)
-(setq fci-rule-column 80)
-(setq fill-column 80)
-(setq fci-column 80)
-(dolist (hook '(prog-mode-hook markdown-mode-hook))
-  (add-hook hook 'fci-mode))
-
 ;; make the fringe thinner (default is 8 in pixels)
 ;(fringe-mode 6)
 
@@ -67,6 +60,16 @@
       '("(｡・`ω´･) • "
 	(:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name))
 		 "%b"))))
+
+;; change font size
+(when (display-graphic-p)
+  (global-set-key (kbd "C-M-=") 'text-scale-increase)
+  (global-set-key (kbd "C-M--") 'text-scale-decrease))
+
+;; time management
+(setq-default display-time-24hr-format t)
+(setq display-time-day-and-date t)
+(display-time)
 
 ;; change font for better looking text
 (set-face-attribute
@@ -94,15 +97,6 @@
 ;                      charset
 ;                      (font-spec :family "Microsoft Yahei" :size 12)))
 
-;; change font size
-(when (display-graphic-p)
-  (global-set-key (kbd "C-M-=") 'text-scale-increase)
-  (global-set-key (kbd "C-M--") 'text-scale-decrease))
-
-;; time management
-(setq-default display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(display-time)
 
 (provide 'init-gui-frames)
 

@@ -2,7 +2,13 @@
 (setq auto-mode-alist
       (cons '("\\.\\(md\\|markdown\\)\\'" . markdown-mode) auto-mode-alist))
 
-(defun markdown-imenu-create-index ()
+
+(use-package markdown-mode
+  :mode "\\.\\(m[k]d\\|markdown\\)\\'"
+  :defer t
+  :init
+  (progn
+    (defun markdown-imenu-create-index ()
   (let* ((root '(nil . nil))
          cur-alist
          (cur-level 0)
@@ -48,8 +54,14 @@
             (setq cur-level level)))))
       (cdr root))))
 
-(add-hook 'markdown-mode-hook
-          '(lambda ()
-             (setq imenu-create-index-function 'markdown-imenu-create-index)))
+    (add-hook 'markdown-mode-hook
+              '(lambda ()
+                 (setq imenu-create-index-function 'markdown-imenu-create-index))))
+  :config
+  (progn
+    (when (fboundp 'sp-local-pair)
+      (sp-local-pair 'markdown-mode "`" nil :actions '(:rem autoskip))
+      (sp-local-pair 'markdown-mode "'" nil :actions nil))
+    ))
 
 (provide 'init-markdown)
