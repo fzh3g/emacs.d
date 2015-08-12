@@ -29,13 +29,14 @@
     auctex
     avy
     buffer-move
+    cmake-mode
     company
     company-anaconda
     company-auctex
     company-c-headers
-    company-cmake
     company-irony
     company-math
+    company-quickhelp
     company-statistics
     cyberpunk-theme
     diff-hl
@@ -46,7 +47,9 @@
     flx
     flx-ido
     flycheck
+    flycheck-pos-tip
     guide-key
+    gnuplot
     helm
     helm-ag
     helm-gtags
@@ -75,6 +78,7 @@
     session
     smartparens
     undo-tree
+    use-package
     visual-regexp
     window-numbering
     yasnippet)
@@ -90,5 +94,6 @@
   (unless (package-installed-p pkg)
     (package-install pkg)))
 
+(require 'use-package)
 
 (provide 'init-elpa)
