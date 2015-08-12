@@ -80,6 +80,7 @@ font's name).
 ## References ##
 
 * [purcell's emacs.d](https://github.com/purcell/emacs.d)
+* [spacemacs](https://github.com/syl20bnr/spacemacs)
 * [Prelude](https://github.com/bbatsov/prelude)
 * [oh-my-emacs](https://github.com/xiaohanyu/oh-my-emacs)
 * [redguardtoo's emacs.d](https://github.com/redguardtoo/emacs.d)
