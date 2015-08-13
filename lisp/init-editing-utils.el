@@ -167,7 +167,9 @@
          ("C-c c r" . set-rectangular-region-anchor)
          ("C-c c c" . mc/edit-lines)
          ("C-c c e" . mc/edit-ends-of-lines)
-         ("C-c c a" . mc/edit-beginnings-of-lines)))
+         ("C-c c a" . mc/edit-beginnings-of-lines))
+  :init
+  (setq mc/list-file (concat fx-cache-directory ".mc-lists.el")))
 
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
