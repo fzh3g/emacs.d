@@ -132,7 +132,7 @@
   :init
   (progn
     (setq guide-key/guide-key-sequence
-          '("C-x" "C-c"))
+          '("C-x" "C-c" "C-h"))
     (setq guide-key/popup-window-position 'bottom)
     (setq guide-key/recursive-key-sequence-flag t)
     (guide-key-mode 1)))
