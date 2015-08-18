@@ -35,7 +35,7 @@
     (highlight-symbol-mode . "")
     (helm-mode . "")
     (smartparens-mode . "")
-    (helm-gtags-mode . "τ")
+    (helm-gtags-mode . "t")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (hi-lock-mode . "")
