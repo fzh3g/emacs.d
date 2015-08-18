@@ -65,9 +65,9 @@
 (use-package company-anaconda
   :defer t
   :init
-  (add-hook 'python-mode-hook
-            '(lambda ()
-               (add-to-list 'company-backends 'company-anaconda))))
+  (eval-after-load "company"
+    '(progn
+       (add-to-list 'company-backends 'company-anaconda))))
 
 (defun fx/company-for-c-c++ ()
   (setq company-backends (delete 'company-semantic company-backends))
