@@ -36,7 +36,7 @@
     (add-hook 'eshell-mode-hook
               '(lambda ()
                  (local-set-key (kbd "C-c C-l") 'helm-eshell-history)))
-    
+
     ;(setq-default helm-autoresize-max-height 50)
     (helm-mode 1)
     (helm-autoresize-mode t))
@@ -45,6 +45,7 @@
    ("M-y" . helm-show-kill-ring)
    ("C-x b" . helm-mini)
    ("C-h o" . helm-occur)
+   ("C-h i" . helm-imenu)
    ("C-h <SPC>" . helm-all-mark-rings)
    ("C-c h x" . helm-register)
    ("C-c h M-:" . helm-eval-expression-with-eldoc)
@@ -52,7 +53,7 @@
    ("C-c h g" . helm-do-grep)
    ("C-h a" . helm-apropos)
    ("C-c h C-c w" . helm-wikipedia-suggest)))
-    
+
 (use-package helm-ag
   :defer t
   :init
