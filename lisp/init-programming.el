@@ -28,6 +28,9 @@
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
+;; imenu
+(global-set-key (kbd "C-M-i") 'imenu)
+
 (add-hook 'prog-mode-hook
           '(lambda ()
              (subword-mode)
