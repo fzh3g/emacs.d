@@ -30,9 +30,9 @@
 ;;----------------------------------------------------------------------
 ;; Load configs for spesific features and modes
 ;;----------------------------------------------------------------------
-(require 'init-modeline)
 (require 'init-frame-hooks)
 (require 'init-theme)
+(require 'init-modeline)
 (require 'init-osx-keys)
 (require 'init-xterm)
 (require 'init-gui-frames)
