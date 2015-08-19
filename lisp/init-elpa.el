@@ -72,6 +72,7 @@
     multiple-cursors
     neotree
     nlinum
+    pdf-tools
     projectile
     pyvenv
     rainbow-delimiters
