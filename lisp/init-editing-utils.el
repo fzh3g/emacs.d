@@ -58,7 +58,8 @@
   (progn
     (setq fill-column 80)
     (setq-default fci-rule-column 80)
-    (setq-default fci-column 80))
+    (setq-default fci-column 80)
+    (setq fci-rule-color "#073642"))
   :config
   (dolist (hook '(prog-mode-hook markdown-mode-hook))
     (add-hook hook 'fci-mode)))
