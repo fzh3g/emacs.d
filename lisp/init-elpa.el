@@ -29,6 +29,7 @@
     avy
     buffer-move
     cmake-mode
+    color-theme-sanityinc-solarized
     company
     company-anaconda
     company-auctex
