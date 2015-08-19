@@ -11,7 +11,6 @@
 ;; load-path
 ;;----------------------------------------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (defconst fx-cache-directory
   (expand-file-name ".cache/" user-emacs-directory))
 ;;----------------------------------------------------------------------
@@ -70,6 +69,7 @@
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 ;;----------------------------------------------------------------------
