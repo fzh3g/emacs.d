@@ -16,7 +16,6 @@
   '(progn
      (sanityinc/package-maybe-enable-signatures)))
 
-
 ;; Fire up package.el
 
 (setq package-enable-at-startup nil)
@@ -77,8 +76,6 @@
     pyvenv
     rainbow-delimiters
     session
-    smart-mode-line
-    smart-mode-line-powerline-theme
     smartparens
     undo-tree
     use-package
