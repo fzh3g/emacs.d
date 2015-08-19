@@ -89,6 +89,11 @@
 ;; doc view
 (setq-default doc-view-continuous t)
 
+;; pdf tools
+(use-package pdf-tools
+  :defer t
+  :init (pdf-tools-install))
+
 (use-package expand-region
   :bind
   (("C-@" . er/expand-region)
