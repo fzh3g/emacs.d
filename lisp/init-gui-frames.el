@@ -68,7 +68,7 @@
 
 ;; time management
 (setq-default display-time-24hr-format t)
-(setq display-time-day-and-date t)
+;(setq display-time-day-and-date t)
 (display-time)
 
 ;; change font for better looking text
