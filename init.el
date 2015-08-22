@@ -66,6 +66,7 @@
 (require 'init-sessions)
 (require 'init-git)
 (require 'init-cc-mode)
+(require 'init-yaml)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------

@@ -82,6 +82,7 @@
     use-package
     visual-regexp
     window-numbering
+    yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")
 
