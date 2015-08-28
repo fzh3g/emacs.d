@@ -87,6 +87,13 @@
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
+;; image-dired
+(setq-default image-dired-dir (concat fx-cache-directory "image-dired/")
+              image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
+              image-dired-db-file (concat image-dired-dir ".image-dired_db")
+              image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
+              image-dired-temp-rotate-image-file (concat image-dired-dir ".image-dired_rotate_temp"))
+
 ;; doc view
 (setq-default doc-view-continuous t)
 
