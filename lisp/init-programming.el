@@ -52,19 +52,19 @@
 
 ;; projectile
 (use-package projectile
-  :defer t
   :diminish projectile-mode
   :init
   (progn
     (setq projectile-enable-caching t)
+    (setq projectile-sort-order 'recentf)
     (setq projectile-cache-file (concat fx-cache-directory
                                         "projectile.cache"))
     (setq projectile-known-projects-file (concat fx-cache-directory
                                                  "projectile-bookmarks.eld"))
     (setq projectile-completion-system 'helm)
     (setq projectile-indexing-method 'alien)
-    (add-hook 'prog-mode-hook
+    (add-hook 'after-init-hook
               '(lambda ()
-                 (projectile-mode)))))
+                 (projectile-global-mode)))))
 
 (provide 'init-programming)
