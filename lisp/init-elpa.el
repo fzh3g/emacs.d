@@ -38,7 +38,6 @@
     company-math
     company-quickhelp
     company-statistics
-    cyberpunk-theme
     diff-hl
     dired+
     exec-path-from-shell
