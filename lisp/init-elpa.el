@@ -1,7 +1,7 @@
 (require 'package)
 
 ;; Standard package repositories
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
@@ -64,6 +64,7 @@
     ido-vertical-mode
     irony
     irony-eldoc
+    less-css-mode
     lua-mode
     magit
     markdown-mode
@@ -76,11 +77,14 @@
     projectile
     pyvenv
     rainbow-delimiters
+    sass-mode
+    scss-mode
     session
     smartparens
     undo-tree
     use-package
     visual-regexp
+    web-mode
     window-numbering
     yaml-mode
     yasnippet)

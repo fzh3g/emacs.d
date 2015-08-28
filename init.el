@@ -67,6 +67,8 @@
 (require 'init-git)
 (require 'init-cc-mode)
 (require 'init-yaml)
+(require 'init-web)
+(require 'init-css)
 ;;----------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------
