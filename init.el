@@ -8,13 +8,13 @@
 (defconst *win32* (eq system-type 'windows-nt))
 (defconst *cygwin* (eq system-type 'cygwin))
 ;;----------------------------------------------------------------------
-;; load-path
+;; Load-path
 ;;----------------------------------------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (defconst fx-cache-directory
   (expand-file-name ".cache/" user-emacs-directory))
 ;;----------------------------------------------------------------------
-;; debug on error
+;; Debug on error
 ;;----------------------------------------------------------------------
 (setq debug-on-error nil)
 ;;----------------------------------------------------------------------
@@ -24,14 +24,13 @@
 ;;----------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------
-(require 'init-elpa)      ;; Machinery for installing required packages
-(require 'init-exec-path) ;; Set up $PATH
-(require 'init-tramp)
+(require 'init-elpa)       ;; Machinery for installing required packages
+(require 'init-exec-path)  ;; Set up $PATH
+(require 'init-tramp)      ;; Tramp setting
 ;;----------------------------------------------------------------------
-;; Load configs for spesific features and modes
+;; Configs for UI and window actions
 ;;----------------------------------------------------------------------
 (require 'init-frame-hooks)
-(require 'init-theme)
 (require 'init-modeline)
 (require 'init-osx-keys)
 (require 'init-xterm)
@@ -39,32 +38,51 @@
 (require 'init-windows)
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
+(require 'init-theme)
+(require 'init-smartparens)
+;;----------------------------------------------------------------------
+;; Configs for some defult modes
+;;----------------------------------------------------------------------
 (require 'init-ibuffer)
 (require 'init-dired)
 (require 'init-isearch)
-(require 'init-recentf)
 (require 'init-spelling)
-(require 'init-smartparens)
+;;----------------------------------------------------------------------
+;; History and desktop saving
+;;----------------------------------------------------------------------
+(require 'init-recentf)
+(require 'init-sessions)
+;;----------------------------------------------------------------------
+;; Auto Completion
+;;----------------------------------------------------------------------
 (require 'init-company)
 (require 'init-hippie-expand)
 (require 'init-yasnippet)
 (require 'init-ido)
 (require 'init-helm)
+;;----------------------------------------------------------------------
+;; Better settings for editing and programming
+;;----------------------------------------------------------------------
 (require 'init-editing-utils)
 (require 'init-programming)
+;;----------------------------------------------------------------------
+;; Additional tools for efficiency
+;;----------------------------------------------------------------------
+(require 'init-regexp)
+(require 'init-gtags)
+(require 'init-shell)
+(require 'init-git)
+;;----------------------------------------------------------------------
+;; Languages
+;;----------------------------------------------------------------------
 (require 'init-org)
 (require 'init-latex)
 (require 'init-python-mode)
 (require 'init-fortran)
-(require 'init-shell)
-(require 'init-regexp)
 (require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
 (require 'init-matlab)
-(require 'init-gtags)
-(require 'init-sessions)
-(require 'init-git)
 (require 'init-cc-mode)
 (require 'init-yaml)
 (require 'init-web)
