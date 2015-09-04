@@ -18,6 +18,9 @@
 
 (setq kill-ring-max 128)
 
+(setq session-save-file (concat fx-cache-directory ".session"))
+(setq session-save-print-spec '(t nil 40000))
+
 (use-package desktop
   :init
   (progn
