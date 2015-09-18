@@ -72,6 +72,7 @@
     multiple-cursors
     neotree
     nlinum
+    paradox
     pdf-tools
     projectile
     pyvenv
@@ -100,5 +101,8 @@
     (package-install pkg)))
 
 (require 'use-package)
+
+(use-package paradox
+  :defer t)
 
 (provide 'init-elpa)
