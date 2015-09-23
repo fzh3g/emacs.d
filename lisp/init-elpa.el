@@ -73,7 +73,6 @@
     neotree
     nlinum
     paradox
-    pdf-tools
     projectile
     pyvenv
     rainbow-delimiters
