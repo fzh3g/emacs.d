@@ -47,7 +47,12 @@
 (use-package nlinum
   :init (setq-default linum-delay t)
   :config
-  (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook yaml-mode-hook))
+  (dolist (hook '(prog-mode-hook
+                  text-mode-hook
+                  conf-mode-hook
+                  yaml-mode-hook
+                  matlab-mode-hook
+                  css-mode-hook))
     (add-hook hook 'column-number-mode)
     (add-hook hook 'line-number-mode)
     (add-hook hook 'nlinum-mode)))
@@ -98,9 +103,9 @@
 (setq-default doc-view-continuous t)
 
 ;; pdf tools
-(use-package pdf-tools
-  :defer t
-  :init (pdf-tools-install))
+;(use-package pdf-tools
+;  :defer t
+;  :init (pdf-tools-install))
 
 (use-package expand-region
   :bind
