@@ -4,18 +4,18 @@
 ;            '(lambda ()
 ;               (load-theme 'cyberpunk t))))
 
-(use-package color-theme-sanityinc-solarized
+(use-package color-theme-sanityinc-tomorrow
   :init
   (defun light ()
     "Activate a light color theme."
     (interactive)
-    (color-theme-sanityinc-solarized-light))
+    (color-theme-sanityinc-tomorrow-day))
 
   (defun dark ()
     "Activate a dark color theme."
     (interactive)
-    (color-theme-sanityinc-solarized-dark))
+    (color-theme-sanityinc-tomorrow-night))
 
-  (add-hook 'after-init-hook 'color-theme-sanityinc-solarized-dark))
+  (add-hook 'after-init-hook 'color-theme-sanityinc-tomorrow-night))
 
 (provide 'init-theme)
