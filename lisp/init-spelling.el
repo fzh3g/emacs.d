@@ -56,7 +56,4 @@
     (ispell-kill-ispell t)
     ))
 
-;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
-(global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
-
 (provide 'init-spelling)
