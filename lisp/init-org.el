@@ -79,7 +79,6 @@
      'org-babel-load-languages
      '((R . t)
        (C . t)
-       (C++ . t)
        (ditaa . t)
        (dot . t)
        (emacs-lisp . t)
