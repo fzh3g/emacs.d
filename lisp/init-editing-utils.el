@@ -51,6 +51,7 @@
                   text-mode-hook
                   conf-mode-hook
                   yaml-mode-hook
+                  markdown-mode-hook
                   matlab-mode-hook
                   css-mode-hook))
     (add-hook hook 'column-number-mode)
