@@ -19,7 +19,7 @@
           org-agenda-window-setup 'curent-window
           org-agenda-inhibit-startup t
           org-agenda-use-tag-inheritance nil)
-    
+
     (setq org-clock-persistence-insinuate t
           org-clock-persist t
           org-clock-in-resume t
@@ -51,11 +51,35 @@
     (bind-key "C-c l" 'org-store-link))
   :config
   (progn
+    ;; http://wenshanren.org/?p=327
+    (defun org-insert-src-block (src-code-type)
+      "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
+      (interactive
+       (let ((src-code-types
+              '("emacs-lisp" "python" "C" "sh" "java" "js" "clojure" "C++" "css"
+                "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
+                "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
+                "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
+                "scheme" "sqlite")))
+         (list (completing-read "Source code type: " src-code-types))))
+      (progn
+        (newline-and-indent)
+        (insert (format "#+BEGIN_SRC %s\n" src-code-type))
+        (newline-and-indent)
+        (insert "#+END_SRC\n")
+        (previous-line 2)
+        (org-edit-src-code)))
+
+    (bind-key "C-c s e" 'org-edit-src-code)
+    (bind-key "C-c s i" 'org-insert-src-block)
+
     (setq truncate-lines nil
           word-wrap t)
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((R . t)
+       (C . t)
+       (C++ . t)
        (ditaa . t)
        (dot . t)
        (emacs-lisp . t)
