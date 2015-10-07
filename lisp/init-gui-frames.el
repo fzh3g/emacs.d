@@ -8,7 +8,7 @@
 
 (setq initial-major-mode 'text-mode)
 (setq-default initial-scratch-message
-              (concat "Welcome to Emacs ~ Happy hacking ~~ *★,°*:.☆\(￣▽￣)/$:*.°★* \n"))
+              (concat "Welcome to Emacs ~ Happy hacking ~~"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
