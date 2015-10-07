@@ -48,9 +48,9 @@
   :init (setq-default linum-delay t)
   :config
   (dolist (hook '(prog-mode-hook
-                  text-mode-hook
                   conf-mode-hook
                   yaml-mode-hook
+                  web-mode-hook
                   markdown-mode-hook
                   matlab-mode-hook
                   css-mode-hook))
