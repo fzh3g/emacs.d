@@ -34,6 +34,4 @@
    ("\\.eco\\'"        . web-mode)
    ("\\.djhtml\\'"     . web-mode)))
 
-(add-hook 'web-mode-hook (highlight-indentation-mode -1))
-
 (provide 'init-web)

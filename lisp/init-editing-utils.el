@@ -141,7 +141,11 @@
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package highlight-indentation
-  :init (add-hook 'prog-mode-hook 'highlight-indentation-mode))
+  :init
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (unless web-mode-hook
+                (highlight-indentation-mode)))))
 
 ;(add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
 ;(set-face-background 'highlight-indentation-face "#e3e3d3")
