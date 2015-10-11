@@ -4,7 +4,7 @@
               case-fold-search t
               compilation-scroll-output t
               set-mark-command-repeat-pop t
-              visible-bell t
+              visible-bell nil
               delete-selection-mode t)
 
 ; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
