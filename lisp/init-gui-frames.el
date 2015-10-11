@@ -8,13 +8,16 @@
 
 (setq initial-major-mode 'text-mode)
 (setq-default initial-scratch-message
-              (concat "Welcome to Emacs ~ Happy hacking ~~\n"))
+              (concat "Welcome to Emacs ~ Happy hacking ~~\n\n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
 
 ;; Show a marker in the left fringe for lines not in the buffer
-(setq indicate-empty-lines t)
+(setq-default indicate-empty-lines t)
+(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
+(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
+(set-fringe-bitmap-face 'tilde 'font-lock-type-face)
 
 ;; Window size and features
 (when (fboundp 'tool-bar-mode)
@@ -73,7 +76,7 @@
 
 ;; change font for better looking text
 (set-face-attribute
-   'default nil :font "Monofur for Powerline 12")
+   'default nil :font "Monaco 11")
 ;(cond
 ; ((member "Monofur for Powerline" (font-family-list))
 ;  (set-face-attribute
