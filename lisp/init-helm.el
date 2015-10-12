@@ -82,5 +82,12 @@
    ("C-c M-i" . helm-multi-swoop)
    ("C-x M-i" . helm-multi-swoop-all)))
 
+(use-package helm-c-yasnippet
+  :defer t
+  :init
+  (progn
+    (setq helm-yas-space-match-any-greedy t)
+    (global-set-key (kbd "C-c y") 'helm-yas-complete)))
+
 (provide 'init-helm)
 

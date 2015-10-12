@@ -51,6 +51,7 @@
     gnuplot
     helm
     helm-ag
+    helm-c-yasnippet
     helm-gtags
     helm-swoop
     highlight-indentation
