@@ -52,7 +52,7 @@
     (dolist (mode '(c-mode c++-mode java-mode js2-mode sh-mode))
       (sp-local-pair mode
                      "{"
-                     nil
+                     "}"
                      :post-handlers
                      '((ome-create-newline-and-enter-sexp "RET"))))
     
