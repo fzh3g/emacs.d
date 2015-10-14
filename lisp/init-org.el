@@ -95,5 +95,9 @@
        (sql . nil)
        (sqlite . t)))))
 
+(use-package org-bullets
+  :defer t
+  :init (add-hook 'org-mode-hook 'org-bullets-mode))
+
 (provide 'init-org)
 ;;; init-org.el ends here

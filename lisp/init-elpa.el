@@ -74,6 +74,7 @@
     multiple-cursors
     neotree
     nlinum
+    org-bullets
     paradox
     projectile
     pyvenv
