@@ -51,6 +51,9 @@
     (bind-key "C-c l" 'org-store-link))
   :config
   (progn
+    ;;http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
+    (eval-after-load "org"
+      '(require 'ox-md nil t))
     ;; http://wenshanren.org/?p=327
     (defun org-insert-src-block (src-code-type)
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
