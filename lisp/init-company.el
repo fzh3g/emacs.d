@@ -12,14 +12,7 @@
                   company-show-numbers t
                   company-begin-commands '(self-insert-command)
                   company-auto-complete nil
-                  company-tooltip-align-annotations t)
-    
-    ;; Nicer looking faces
-    (custom-set-faces
-     '(company-tooltip-common
-       ((t (:inherit company-tooltip :weight bold :underline nil))))
-     '(company-tooltip-common-selection
-       ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))))
+                  company-tooltip-align-annotations t)))
 
 (use-package company-statistics
   :defer t
