@@ -10,7 +10,27 @@
                   company-show-numbers t
                   company-auto-complete nil
                   company-frontends '(company-pseudo-tooltip-frontend)
-                  company-tooltip-align-annotations t))
+                  company-tooltip-align-annotations t)
+    (setq-default company-ispell-dictionary (concat
+                                             user-emacs-directory
+                                             "misc/english-words.txt")))
+
+  (dolist (hook '(text-mode-hook TeX-mode-hook org-mode-hook markdown-mode-hook))
+    (add-hook hook
+              '(lambda ()
+                 (make-local-variable 'company-backends)
+                 (add-to-list 'company-backends 'company-ispell)
+                 (message "company-ispell enabled!"))))
+  (defun toggle-company-ispell ()
+    (interactive)
+    (cond
+     ((memq 'company-ispell company-backends)
+      (setq company-backends (delete 'company-ispell company-backends))
+      (message "company-ispell disabled"))
+     (t
+      (make-local-variable 'company-backends)
+      (add-to-list 'company-backends 'company-ispell)
+      (message "company-ispell enabled!"))))
 
   (defvar-local company-fci-mode-on-p nil)
   (add-hook 'after-init-hook 'global-company-mode)
@@ -55,6 +75,8 @@
       (add-hook hook
                 '(lambda ()
                    (add-to-list 'company-backends 'company-math-symbols-latex))))))
+
+
 
 (defun fx/company-for-tex ()
   (use-package company-auctex
