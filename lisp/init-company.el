@@ -12,23 +12,6 @@
                   company-frontends '(company-pseudo-tooltip-frontend)
                   company-tooltip-align-annotations t))
 
-  (dolist (hook '(text-mode-hook LaTeX-mode-hook org-mode-hook markdown-mode-hook))
-    (add-hook hook
-              '(lambda ()
-                 (make-local-variable 'company-backends)
-                 (add-to-list 'company-backends 'company-ispell))))
-
-  (defun toggle-company-ispell ()
-    (interactive)
-    (cond
-     ((memq 'company-ispell company-backends)
-      (setq company-backends (delete 'company-ispell company-backends))
-      (message "company-ispell disabled"))
-     (t
-      (make-local-variable 'company-backends)
-      (add-to-list 'company-backends 'company-ispell)
-      (message "company-ispell enabled!"))))
-
   (defvar-local company-fci-mode-on-p nil)
   (add-hook 'after-init-hook 'global-company-mode)
   (defun company-turn-off-fci (&rest ignore)
