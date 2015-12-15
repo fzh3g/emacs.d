@@ -9,7 +9,6 @@ config adds improvments for the following languages:
 * C/C++
 * Python
 * Fortran
-* Lua
 * Matlab
 * LaTeX
 
@@ -71,11 +70,6 @@ the editing experience for the C, C++ and Object-C languages.
   `sudo pacman -S texlive-most texlive-langcjk`
   * Fedora user, install texlive by `sudo yum -S texlive-all`
   * SuSE user, install texlive by `sudo zypper in texlive-xetex`
-* If you write Chinese, do modify your
-`/usr/share/texmf-dist/tex/latex/ctex/fontset/ctex-xecjk-winfonts.def`:
-match the fonts' name with the output of `fc-list | grep -i foo` (here `foo` is a
-font's name).
-
 
 ## References ##
 
