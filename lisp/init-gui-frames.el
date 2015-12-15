@@ -54,6 +54,9 @@
 ;; Toggle line highlighting in all buffers
 (global-hl-line-mode t)
 
+;; Show paren mode
+(show-paren-mode 1)
+
 ;; make the fringe thinner (default is 8 in pixels)
 ;(fringe-mode 6)
 

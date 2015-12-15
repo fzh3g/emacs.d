@@ -7,7 +7,7 @@
                   sp-navigate-close-if-unbalanced t
                   sp-show-pair-from-inside t
                   sp-cancel-autoskip-on-backward-movement nil)
-    (show-smartparens-global-mode t)
+    ;(show-smartparens-global-mode t)
     (smartparens-global-mode t))
   :config
   (progn
