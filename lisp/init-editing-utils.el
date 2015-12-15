@@ -176,9 +176,9 @@
 ;; avy
 (use-package avy
   :bind
-  (("C-:" . avy-goto-char)
-   ("C-'" . avy-goto-char-2)
-   ("M-g f" . avy-goto-line)
+  (("C-;" . avy-goto-char)
+   ("C-'" . avy-goto-line)
+   ("M-g f" . avy-goto-char-2)
    ("M-g w" . avy-goto-subword-1)))
 
 (use-package multiple-cursors
