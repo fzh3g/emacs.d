@@ -45,7 +45,7 @@ system package manager
 
 ### Python ###
 
-* [anaconda-mode](https://github.com/proofit404/anaconda-mode) is used for
+* [emacs-jedi](https://github.com/tkf/emacs-jedi) is used for
 *IDE-like* experience
 * Install `jedi`, `service_factory` through `pip install`
 * If you're coding with multiple versions of Python, install
