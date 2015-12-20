@@ -1,8 +1,13 @@
-;; anaconda mode
-(use-package anaconda-mode
+;; jedi
+(use-package jedi-core
   :defer t
   :init
-  (add-hook 'python-mode-hook 'anaconda-mode))
+  (progn
+    (setq jedi:complete-on-dot t)
+    (setq jedi:use-shortcuts t)
+    (add-hook 'python-mode-hook
+              '(lambda ()
+                 (jedi:setup)))))
 
 (use-package pyvenv
   :defer t)
@@ -12,6 +17,7 @@
   :init
   (progn
     (defun python-default ()
+      (eldoc-mode -1)
       (setq python-indent 4
             python-indent-offset 4
             python-indent-guess-indent-offset nil
@@ -20,16 +26,7 @@
 
     (defun python-setup-shell ()
       (if (executable-find "ipython")
-          (setq python-shell-interpreter "ipython"
-                python-shell-interpreter-args " "
-                python-shell-prompt-regexp "In \\[[0-9]+\\]: "
-                python-shell-prompt-output-regexp "Out\\[[0-9]+]: "
-                python-shell-completion-setup-code
-                "from IPython.core.completerlib import module_completion"
-                python-shell-completion-module-string-code
-                "';'.join(module_completion('''%s'''))\n"
-                python-shell-completion-string-code
-                "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+          (setq python-shell-interpreter "ipython")
         (setq python-shell-interpreter "python")))
 
     (add-hook 'python-mode-hook

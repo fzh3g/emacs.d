@@ -23,18 +23,17 @@
 
 ;; list of installed packages
 (defvar fx-installed-packages
-  '(anaconda-mode
-    anzu
+  '(anzu
     auctex
     avy
     buffer-move
     cmake-mode
     color-theme-sanityinc-tomorrow
     company
-    company-anaconda
     company-auctex
     company-c-headers
     company-irony
+    company-jedi
     company-math
     company-quickhelp
     company-statistics
@@ -64,6 +63,7 @@
     ido-vertical-mode
     irony
     irony-eldoc
+    jedi-core
     less-css-mode
     lua-mode
     magit

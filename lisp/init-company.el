@@ -61,12 +61,12 @@
     :defer t
     :init (company-auctex-init)))
 
-(use-package company-anaconda
+(use-package company-jedi
   :defer t
   :init
   (eval-after-load "company"
     '(progn
-       (add-to-list 'company-backends 'company-anaconda))))
+       (add-to-list 'company-backends 'company-jedi))))
 
 (defun fx/company-for-c-c++ ()
   (setq company-backends (delete 'company-semantic company-backends))
