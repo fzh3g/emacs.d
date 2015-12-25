@@ -69,7 +69,6 @@
 ;; Additional tools for efficiency
 ;;----------------------------------------------------------------------
 (require 'init-regexp)
-;(require 'init-gtags)
 (require 'init-shell)
 (require 'init-git)
 ;;----------------------------------------------------------------------
