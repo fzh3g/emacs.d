@@ -8,11 +8,8 @@
   (use-package flycheck-pos-tip
     :defer t
     :init
-    (progn
-      (defun my-flycheck-pos-tip-error-messages (errors)
-        (when (not (company-search-mode))
-          (flycheck-pos-tip-error-messages errors)))
-      (setq flycheck-display-errors-function 'my-flycheck-pos-tip-error-messages))))
+    (with-eval-after-load 'flycheck
+      (flycheck-pos-tip-mode))))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
