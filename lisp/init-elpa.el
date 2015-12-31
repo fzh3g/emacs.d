@@ -34,7 +34,6 @@
     company-c-headers
     company-irony
     company-jedi
-    company-math
     company-quickhelp
     company-statistics
     diff-hl

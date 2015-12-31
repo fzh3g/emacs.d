@@ -45,17 +45,6 @@
   :defer t
   :init (add-hook 'company-mode-hook 'company-quickhelp-mode))
 
-(use-package company-math
-  :defer t
-  :init
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-math-symbols-unicode))
-  (progn
-    (dolist (hook '(TeX-mode-hook LaTeX-mode-hook latex-mode-hook))
-      (add-hook hook
-                '(lambda ()
-                   (add-to-list 'company-backends 'company-math-symbols-latex))))))
-
 (defun fx/company-for-tex ()
   (use-package company-auctex
     :defer t
