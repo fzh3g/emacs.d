@@ -76,8 +76,6 @@
     (bind-key "C-c s e" 'org-edit-src-code)
     (bind-key "C-c s i" 'org-insert-src-block)
 
-    (setq truncate-lines nil
-          word-wrap t)
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((R . t)
