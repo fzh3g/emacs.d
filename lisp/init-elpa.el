@@ -38,6 +38,7 @@
     company-statistics
     diff-hl
     dired+
+    dracula-theme
     exec-path-from-shell
     expand-region
     fill-column-indicator
