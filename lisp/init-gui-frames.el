@@ -79,7 +79,7 @@
 
 ;; change font for better looking text
 (set-face-attribute
-   'default nil :font "Monaco 11")
+   'default nil :font "Source Code Pro 11")
 ;(cond
 ; ((member "Monofur for Powerline" (font-family-list))
 ;  (set-face-attribute
