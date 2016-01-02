@@ -14,10 +14,7 @@
     (dolist (hook '(c-mode-hook
                     c++-mode-hook
                     objc-mode-hook))
-      (add-hook hook
-                '(lambda ()
-                   (irony-mode)
-                   (highlight-indentation-mode))))
+      (add-hook hook 'irony-mode))
     
     ;; replace the `completion-at-point' and `complete-symbol' bindings in
     ;; irony-mode's buffers by irony-mode's function

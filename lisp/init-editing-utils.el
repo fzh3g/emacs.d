@@ -61,8 +61,11 @@
 ;; fill column indicator
 (use-package fill-column-indicator
   :init
-  (dolist (hook '(prog-mode-hook markdown-mode-hook))
-    (add-hook hook 'fci-mode)))
+  (progn
+    (setq fci-rule-width 1)
+    (setq fci-rule-color "dimgray")
+    (dolist (hook '(prog-mode-hook markdown-mode-hook))
+      (add-hook hook 'fci-mode))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -134,16 +137,13 @@
 (use-package rainbow-delimiters
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(use-package highlight-indentation
+(use-package indent-guide
+  :defer t
   :init
-  (add-hook 'prog-mode-hook
-            (lambda ()
-              (unless web-mode-hook
-                (highlight-indentation-mode)))))
-
-;(add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
-;(set-face-background 'highlight-indentation-face "#e3e3d3")
-;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+  (progn
+    (setq indent-guide-delay 0.3)
+    (setq indent-guide-recursive t)
+    (add-hook 'prog-mode-hook 'indent-guide-mode)))
 
 (use-package guide-key
   :init

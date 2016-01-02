@@ -52,7 +52,6 @@
     helm-ag
     helm-c-yasnippet
     helm-swoop
-    highlight-indentation
     highlight-symbol
     ibuffer-vc
     ido-completing-read+
@@ -60,6 +59,7 @@
     idomenu
     ido-ubiquitous
     ido-vertical-mode
+    indent-guide
     irony
     irony-eldoc
     jedi-core
