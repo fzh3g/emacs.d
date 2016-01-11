@@ -73,6 +73,7 @@
     neotree
     nlinum
     org-bullets
+    page-break-lines
     paradox
     projectile
     pyvenv

@@ -100,10 +100,11 @@
 ;; doc view
 (setq-default doc-view-continuous t)
 
-;; pdf tools
-;(use-package pdf-tools
-;  :defer t
-;  :init (pdf-tools-install))
+;; page break lines
+(use-package page-break-lines
+  :defer t
+  :init
+  (global-page-break-lines-mode))
 
 (use-package expand-region
   :bind
