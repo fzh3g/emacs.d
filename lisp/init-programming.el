@@ -11,12 +11,6 @@
     (with-eval-after-load 'flycheck
       (flycheck-pos-tip-mode))))
 
-;; auto-fill-mode
-(add-hook 'change-log-mode-hook 'turn-on-auto-fill)
-
-(defun my:local-comment-auto-fill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments) t))
-
 ;; whitespace
 (use-package whitespace
   :defer t
@@ -31,8 +25,11 @@
                              tab-mark))
     (global-set-key (kbd "C-c w") 'whitespace-mode)))
 
-;; imenu
-(global-set-key (kbd "C-M-i") 'imenu)
+;; auto-fill-mode
+(add-hook 'change-log-mode-hook 'turn-on-auto-fill)
+
+(defun my:local-comment-auto-fill ()
+  (set (make-local-variable 'comment-auto-fill-only-comments) t))
 
 (add-hook 'prog-mode-hook
           '(lambda ()
