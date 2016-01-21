@@ -27,8 +27,13 @@
           org-clock-into-drawer t
           org-clock-out-remove-zero-time-clocks t)
 
+    (setq org-latex-pdf-process
+      '("xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"))
+
     (setq org-default-notes-file "~/.notes.org")
-    
+
     (setq org-directory "~/org/")
     (setq org-capture-templates
           '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
@@ -44,7 +49,7 @@
           (quote ((sequence "TODO(t)" "|" "DONE(d)")
                   (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
                   (sequence "|" "CANCELLED(c)"))))
-    
+
     (bind-key "C-c c" 'org-capture)
     (bind-key "C-c b" 'org-iswitchb)
     (bind-key "C-c a" 'org-agenda)
