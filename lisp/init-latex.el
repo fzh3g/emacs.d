@@ -1,5 +1,3 @@
-(setq LaTeX-indent-level 4)
-
 (use-package tex
   :defer t
   :init
