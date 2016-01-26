@@ -15,19 +15,20 @@
                   reftex-plug-into-AUCTeX t))
 
   ;; default viewer
-  (cond
-   ((executable-find "okular")
-    (setq TeX-view-program-selection
-          '((output-pdf "Okular")
-            (output-dvi "Okular"))))
-   ((executable-find "evince")
-    (setq TeX-view-program-selection
-          '((output-pdf "Evince")
-            (output-dvi "Evince"))))
-   (t
-    (setq TeX-view-program-selection
-          '((output-pdf "xdg-open")
-            (output-dvi "xdg-open")))))
+  (when *linux*
+    (cond
+     ((executable-find "okular")
+      (setq TeX-view-program-selection
+            '((output-pdf "Okular")
+              (output-dvi "Okular"))))
+     ((executable-find "evince")
+      (setq TeX-view-program-selection
+            '((output-pdf "Evince")
+              (output-dvi "Evince"))))
+     (t
+      (setq TeX-view-program-selection
+            '((output-pdf "xdg-open")
+              (output-dvi "xdg-open"))))))
 
   (add-hook 'LaTeX-mode-hook
             (lambda ()
