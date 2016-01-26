@@ -2,8 +2,7 @@
 ;; clean mode-line
 ;;----------------------------------------------------------------------
 (defvar mode-line-cleaner-alist
-  `((anaconda-mode . "")
-    (company-mode . "")
+  `((company-mode . "")
     (yas-minor-mode . "")
     (hs-minor-mode . "")
     (eldoc-mode . "")
@@ -13,7 +12,6 @@
     (highlight-symbol-mode . "")
     (helm-mode . "")
     (smartparens-mode . "")
-    (helm-gtags-mode . "t")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (hi-lock-mode . "")
