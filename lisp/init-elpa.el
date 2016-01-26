@@ -82,6 +82,7 @@
     scss-mode
     session
     smartparens
+    solarized-theme
     undo-tree
     use-package
     visual-regexp
