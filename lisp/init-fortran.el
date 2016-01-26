@@ -4,7 +4,6 @@
   :init
   (add-hook 'fortran-mode-hook
             '(lambda ()
-               (highlight-indentation-mode)
                (flycheck-mode -1))))
 
 (use-package f90-mode
@@ -13,7 +12,6 @@
   :init (add-hook 'f90-mode-hook
                   '(lambda ()
                      (abbrev-mode 1)
-                     (highlight-indentation-mode)
                      (flycheck-mode -1))))
 
 (provide 'init-fortran)
