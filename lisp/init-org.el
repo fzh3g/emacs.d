@@ -34,21 +34,15 @@
 
     (setq org-default-notes-file "~/.notes.org")
 
-    (setq org-directory "~/org/")
     (setq org-capture-templates
-          '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-             "* TODO %?\n %i\n %a")
-            ("b" "Bug" entry (file+headline "~/org/bug.org" "Bugs")
-             "* %?\nEntered on %U\n %i\n %a")
-            ("n" "Note" entry (file+headline "~/org/notes.org" "Notes")
-             "* %?\nEntered on %U\n %i\n %a")
-            ("j" "Journal" entry (file+datetree "~/org/journal.org" "Journal")
-             "* %?\nEntered on %U\n %i\n %a")))
+          '(("t" "Todo" entry (file "")
+             "* TODO %?\n%i\n %a" :clock-resume t)
+            ("n" "Note" entry (file "")
+             "* %? :NOTE:\n%U\n%i\n %a" :clock-resume t)))
 
     (setq org-todo-keywords
-          (quote ((sequence "TODO(t)" "|" "DONE(d)")
-                  (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
-                  (sequence "|" "CANCELLED(c)"))))
+          (quote ((sequence "TODO(t)" "DONE(d@/!)")
+                  (sequence "WAIT(w@/!)" "CANCELLED(c@/!)"))))
 
     (bind-key "C-c c" 'org-capture)
     (bind-key "C-c b" 'org-iswitchb)
