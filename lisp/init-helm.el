@@ -36,6 +36,9 @@
     (add-hook 'eshell-mode-hook
               '(lambda ()
                  (local-set-key (kbd "C-c C-l") 'helm-eshell-history)))
+    (add-hook 'idlwave-shell-mode-hook
+              '(lambda ()
+                 (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
 
     ;(setq-default helm-autoresize-max-height 50)
     (helm-mode 1)
