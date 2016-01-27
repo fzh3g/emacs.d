@@ -32,7 +32,7 @@
         "xelatex -interaction nonstopmode -output-directory %o %f"
         "xelatex -interaction nonstopmode -output-directory %o %f"))
 
-    (setq org-default-notes-file "~/.notes.org")
+    (setq org-default-notes-file "~/org/capture.org")
 
     (setq org-capture-templates
           '(("t" "Todo" entry (file "")
