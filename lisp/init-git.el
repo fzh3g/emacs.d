@@ -17,11 +17,13 @@
     (setq magit-completing-read-function 'magit-builtin-completing-read
           magit-save-some-buffers nil
           magit-process-popup-time 10)
+    (add-hook 'git-commit-mode-hook 'fci-mode)
 
     (when *win32*
       (setenv "GIT_ASKPASS" "git-gui--askpass"))
 
     (global-set-key (kbd "M-<f12>") 'magit-status))
+    (global-set-key (kbd "C-x g") 'magit-status))
   :config
   (progn
     ;; Don't let magit-status mess up window configurations
