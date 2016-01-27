@@ -29,6 +29,6 @@
   :defer t)
 
 (use-package idomenu
-  :defer t)
+  :bind ("C-h i" . helm-imenu))
 
 (provide 'init-ido)
