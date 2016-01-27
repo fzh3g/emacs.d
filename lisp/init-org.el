@@ -14,11 +14,19 @@
           org-tags-column 80
           org-src-fontify-natively t)
 
-    (setq org-agenda-include-diary t
+    (setq org-agenda-include-diary nil
+          org-agenda-compact-blocks t
+          org-agenda-sticky t
           org-agenda-start-day nil
           org-agenda-window-setup 'curent-window
           org-agenda-inhibit-startup t
           org-agenda-use-tag-inheritance nil)
+
+    (setq org-refile-targets '((nil :maxlevel . 5)
+                               (org-agenda-files :maxlevel . 5))
+          org-refile-use-cache nil
+          org-refile-use-outline-path t
+          org-outline-path-complete-in-steps nil)
 
     (setq org-clock-persistence-insinuate t
           org-clock-persist t
