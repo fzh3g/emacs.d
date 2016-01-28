@@ -31,9 +31,22 @@
     (setq org-clock-persistence-insinuate t
           org-clock-persist t
           org-clock-in-resume t
-          org-clock-in-switch-to-state "STARTED"
+          ;org-clock-in-switch-to-state "STARTED"
           org-clock-into-drawer t
           org-clock-out-remove-zero-time-clocks t)
+    (setq org-time-clocksum-format
+          '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
+
+    ;;; Show the clocked-in task - if any - in the header line
+    (defun sanityinc/show-org-clock-in-header-line ()
+      (setq-default header-line-format '((" " org-mode-line-string " "))))
+
+    (defun sanityinc/hide-org-clock-from-header-line ()
+      (setq-default header-line-format nil))
+
+    (add-hook 'org-clock-in-hook 'sanityinc/show-org-clock-in-header-line)
+    (add-hook 'org-clock-out-hook 'sanityinc/hide-org-clock-from-header-line)
+    (add-hook 'org-clock-cancel-hook 'sanityinc/hide-org-clock-from-header-line)
 
     (setq org-latex-pdf-process
       '("xelatex -interaction nonstopmode -output-directory %o %f"
@@ -70,11 +83,11 @@
                 "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
                 "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
                 "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
-                "scheme" "sqlite")))
+                "scheme" "sqlite" "idl")))
          (list (completing-read "Source code type: " src-code-types))))
       (progn
         (newline-and-indent)
-        (insert (format "#+BEGIN_SRC %s\n" src-code-type))
+        (insert (format "#+BEGIN_SRC %s :results output\n" src-code-type))
         (newline-and-indent)
         (insert "#+END_SRC\n")
         (previous-line 2)
