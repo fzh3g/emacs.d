@@ -8,6 +8,7 @@
   :init
   (add-hook 'after-init-hook
             '(lambda ()
+               (setq solarized-scale-org-headlines nil)
                (setq solarized-use-more-italic t)
                (load-theme 'solarized-dark t)))
   :config
