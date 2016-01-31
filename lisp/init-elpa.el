@@ -44,7 +44,6 @@
     flx-ido
     flycheck
     flycheck-pos-tip
-    guide-key
     gnuplot
     helm
     helm-ag
@@ -87,6 +86,7 @@
     visual-regexp
     web-mode
     window-numbering
+    which-key
     yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")

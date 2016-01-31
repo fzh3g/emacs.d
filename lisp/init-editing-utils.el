@@ -146,14 +146,14 @@
     (setq indent-guide-recursive nil)
     (add-hook 'prog-mode-hook 'indent-guide-mode)))
 
-(use-package guide-key
+(use-package which-key
   :init
   (progn
-    (setq guide-key/guide-key-sequence
-          '("C-x" "C-c" "C-h"))
-    (setq guide-key/popup-window-position 'bottom)
-    (setq guide-key/recursive-key-sequence-flag t)
-    (guide-key-mode 1)))
+    (setq which-key-use-C-h-for-paging t
+          which-key-prevent-C-h-from-cycling t
+          which-key-sort-order 'which-key-key-order-alpha
+          which-key-special-keys nil)
+    (which-key-mode)))
 
 ;; anzu
 (use-package anzu
