@@ -5,7 +5,8 @@
     (global-diff-hl-mode)
     (unless (display-graphic-p)
       (setq diff-hl-side 'left)
-      (diff-hl-margin-mode))))
+      (diff-hl-margin-mode))
+    (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)))
 
 (use-package magit
   :commands (magit-status
