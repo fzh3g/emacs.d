@@ -40,11 +40,6 @@
                                                   "company-statistics-cache.el"))
     (add-hook 'company-mode-hook 'company-statistics-mode)))
 
-(use-package company-quickhelp
-  :if (display-graphic-p)
-  :defer t
-  :init (add-hook 'company-mode-hook 'company-quickhelp-mode))
-
 (defun fx/company-for-tex ()
   (use-package company-auctex
     :defer t
