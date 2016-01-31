@@ -67,7 +67,6 @@
     lua-mode
     magit
     markdown-mode
-    math-symbol-lists
     matlab-mode
     mmm-mode
     multiple-cursors
