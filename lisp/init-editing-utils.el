@@ -153,7 +153,8 @@
           which-key-prevent-C-h-from-cycling t
           which-key-sort-order 'which-key-key-order-alpha
           which-key-special-keys nil)
-    (which-key-mode)))
+    (which-key-mode)
+    (which-key-setup-side-window-right-bottom)))
 
 ;; anzu
 (use-package anzu
