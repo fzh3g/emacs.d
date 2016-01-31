@@ -120,5 +120,8 @@
   :defer t
   :init (add-hook 'org-mode-hook 'org-bullets-mode))
 
+(use-package htmlize
+  :defer t)
+
 (provide 'init-org)
 ;;; init-org.el ends here

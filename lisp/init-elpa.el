@@ -52,6 +52,7 @@
     helm-c-yasnippet
     helm-swoop
     highlight-symbol
+    htmlize
     ibuffer-vc
     ido-completing-read+
     ido-hacks
