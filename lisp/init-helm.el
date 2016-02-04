@@ -55,6 +55,7 @@
    ("C-x C-o" . helm-find-files)
    ("C-c h g" . helm-do-grep)
    ("C-h a" . helm-apropos)
+   ("C-h r" . helm-mark-ring)
    ("C-c h C-c w" . helm-wikipedia-suggest)))
 
 (use-package helm-ag
