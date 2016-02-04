@@ -102,7 +102,6 @@
 
 ;; page break lines
 (use-package page-break-lines
-  :defer t
   :init
   (global-page-break-lines-mode))
 
