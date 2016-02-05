@@ -48,11 +48,6 @@
     (add-hook 'org-clock-out-hook 'sanityinc/hide-org-clock-from-header-line)
     (add-hook 'org-clock-cancel-hook 'sanityinc/hide-org-clock-from-header-line)
 
-    (setq org-latex-pdf-process
-      '("xelatex -interaction nonstopmode -output-directory %o %f"
-        "xelatex -interaction nonstopmode -output-directory %o %f"
-        "xelatex -interaction nonstopmode -output-directory %o %f"))
-
     (setq org-default-notes-file "~/org/capture.org")
 
     (setq org-capture-templates
@@ -74,6 +69,22 @@
     ;;http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
     (eval-after-load "org"
       '(require 'ox-md nil t))
+    ;; org-latex
+    (require 'ox-latex)
+    (add-to-list 'org-latex-packages-alist '("" "minted"))
+    (setq org-latex-listings 'minted)
+    (setq org-latex-minted-options
+          '(("frame" "leftline")
+            ("bgcolor" "lightgray")
+            ("framesep" "2mm")
+            ("numbersep" "5pt")
+            ("fontsize" "\\footnotesize")
+            ("mathescape" "")
+            ("linenos" "")))
+    (setq org-latex-pdf-process
+          '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
     ;; http://wenshanren.org/?p=327
     (defun org-insert-src-block (src-code-type)
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
@@ -83,7 +94,7 @@
                 "calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
                 "octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
                 "haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
-                "scheme" "sqlite" "idlwave")))
+                "scheme" "sqlite" "idl")))
          (list (completing-read "Source code type: " src-code-types))))
       (progn
         (newline-and-indent)
