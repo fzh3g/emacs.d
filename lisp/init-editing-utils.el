@@ -142,7 +142,8 @@
   :init
   (progn
     (setq indent-guide-delay 0.3)
-    (setq indent-guide-recursive nil)
+    (setq indent-guide-recursive t)
+    (setq indent-guide-threshold 0)
     (add-hook 'prog-mode-hook 'indent-guide-mode)))
 
 (use-package which-key
