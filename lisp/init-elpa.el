@@ -1,7 +1,7 @@
 (require 'package)
 
 ;; Standard package repositories
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
@@ -35,7 +35,6 @@
     company-statistics
     diff-hl
     dired+
-    dracula-theme
     exec-path-from-shell
     expand-region
     fill-column-indicator
