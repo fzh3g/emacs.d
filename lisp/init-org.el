@@ -116,7 +116,6 @@
        (mathematica . t)
        (maxima . t)
        (octave . t)
-       (julia . t)
        (dot . t)
        (emacs-lisp . t)
        (gnuplot . t)
