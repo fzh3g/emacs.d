@@ -17,11 +17,9 @@
   :init
   (progn
     (defun python-default ()
-      (eldoc-mode -1)
       (setq python-indent 4
             python-indent-offset 4
-            python-indent-guess-indent-offset nil
-            python-guess-indent nil)
+            electric-indent-chars (delq ?: electric-indent-chars))
       (local-set-key (kbd "C-j") 'newline-and-indent))
 
     (defun python-setup-shell ()
