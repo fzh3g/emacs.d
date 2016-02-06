@@ -1,23 +1,17 @@
-;(use-package dracula-theme
-;  :init
-;  (add-hook 'after-init-hook
-;            '(lambda ()
-;               (load-theme 'dracula t))))
-
 (use-package solarized-theme
   :init
   (add-hook 'after-init-hook
             '(lambda ()
                (setq solarized-scale-org-headlines nil)
                (setq solarized-use-more-italic t)
-               (load-theme 'solarized-dark t)))
+               (load-theme 'solarized-light t)))
   :config
   (progn
-    (defun light ()
+    (defun light-theme ()
       "Activate a light color theme."
       (interactive)
       (load-theme 'solarized-light t))
-    (defun dark ()
+    (defun dark-theme ()
       "Activate a dark color theme."
       (interactive)
       (load-theme 'solarized-dark t))))
