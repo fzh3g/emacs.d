@@ -8,7 +8,7 @@
 
 (setq initial-major-mode 'text-mode)
 (setq-default initial-scratch-message
-              (concat "Welcome to Emacs ~ Happy hacking ~~\n\n"))
+              (concat "Welcome to Emacs ~ Happy hacking ~\n\n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
@@ -59,15 +59,13 @@
 ;; Show paren mode
 (show-paren-mode 1)
 
-;; make the fringe thinner (default is 8 in pixels)
-;(fringe-mode 6)
-
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
       '("(｡・`ω´･) • "
-	(:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name))
-		 "%b"))))
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 ;; change font size
 (when (display-graphic-p)
@@ -80,24 +78,7 @@
 (display-time)
 
 ;; change font for better looking text
-(set-face-attribute
-   'default nil :font "Source Code Pro 11")
-;(cond
-; ((member "Monofur for Powerline" (font-family-list))
-;  (set-face-attribute
-;   'default nil :font "Monofur for Powerline 13"))
-; ((member "MonacoB" (font-family-list))
-;  (set-face-attribute
-;   'default nil :font "MonacoB 10"))
-; ((member "Menlo" (font-family-list))
-;  (set-face-attribute
-;   'default nil :font "Menlo 10"))
-; ((member "Consolas" (font-family-list))
-;  (set-face-attribute
-;   'default nil :font "Consolas 11"))
-; ((member "Dejavu Sans Mono" (font-family-list))
-;  (set-face-attribute
-;   'default nil :font "Dejavu Sans Mono 10")))
+(set-face-attribute 'default nil :font "Fira Mono Bold 11")
 
 ;; Chinese Font
 ;(dolist (charset '(kana han symbol cjk-misc bopomofo))
