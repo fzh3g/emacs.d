@@ -19,7 +19,6 @@
 ;; Fire up package.el
 
 (setq package-enable-at-startup nil)
-(package-initialize)
 
 ;; list of installed packages
 (defvar fx-installed-packages
