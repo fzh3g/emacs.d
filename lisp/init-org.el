@@ -110,22 +110,24 @@
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((R . t)
-       (C . t)
-       (ditaa . t)
+       (ruby . t)
+       (python . t)
+       (matlab . t)
+       (mathematica . t)
+       (maxima . t)
+       (octave . t)
+       (julia . t)
        (dot . t)
        (emacs-lisp . t)
        (gnuplot . t)
+       (sh . t)
        (haskell . nil)
        (latex . t)
-       (ledger . t)
+       (ledger . nil)
        (ocaml . nil)
-       (octave . t)
-       (python . t)
-       (ruby . t)
        (screen . nil)
-       (sh . t)
        (sql . nil)
-       (sqlite . t)))))
+       (sqlite . nil)))))
 
 (use-package org-bullets
   :defer t
