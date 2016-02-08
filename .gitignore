@@ -31,7 +31,7 @@ semanticdb/
 *~
 \#*\#abbrev_defs
 /swank
-/swank
+/server
 /.mc-lists.el
 TAGS
 GTAGS
