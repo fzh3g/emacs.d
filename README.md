@@ -41,13 +41,12 @@ recommended instructions:
 * `flyspell` is used for automatic spell checking
 * Install `aspell` & `aspell-en` or `hunspell` & `hunspell-en` through your
 system package manager
-* Dictionary was set to `en_US` in `init-spelling.el`. You can modify it.
 
 ### Python ###
 
-* [emacs-jedi](https://github.com/tkf/emacs-jedi) is used for
-*IDE-like* experience
+* [emacs-jedi](https://github.com/tkf/emacs-jedi) is used for auto completion
 * Install `jedi`, `service_factory` through `pip install`
+* Don't forget <kbd>M-x jedi:install-server</kbd> before using python-mode
 * If you're coding with multiple versions of Python, install
 [virtualenv](https://virtualenv.pypa.io/en/latest/)
 through `pip install`. After modified your virtualenv, use
