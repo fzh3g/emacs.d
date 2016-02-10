@@ -63,7 +63,7 @@
   :init
   (progn
     (setq fci-rule-width 1)
-    (setq fci-rule-color "dimgray")
+    ;(setq fci-rule-color "dimgray")
     (dolist (hook '(prog-mode-hook markdown-mode-hook))
       (add-hook hook 'fci-mode))))
 
