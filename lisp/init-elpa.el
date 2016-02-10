@@ -55,7 +55,6 @@
     idomenu
     ido-ubiquitous
     ido-vertical-mode
-    indent-guide
     irony
     irony-eldoc
     jedi-core

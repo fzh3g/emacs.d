@@ -137,15 +137,6 @@
 (use-package rainbow-delimiters
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(use-package indent-guide
-  :defer t
-  :init
-  (progn
-    (setq indent-guide-delay 0.3)
-    (setq indent-guide-recursive t)
-    (setq indent-guide-threshold 0)
-    (add-hook 'prog-mode-hook 'indent-guide-mode)))
-
 (use-package which-key
   :init
   (progn
