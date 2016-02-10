@@ -10,7 +10,7 @@
                   company-show-numbers t
                   company-auto-complete nil
                   company-frontends '(company-pseudo-tooltip-frontend)
-                  company-tooltip-align-annotations t))
+                  company-tooltip-align-annotations t)
 
   (defvar-local company-fci-mode-on-p nil)
   (add-hook 'after-init-hook 'global-company-mode)
@@ -30,7 +30,7 @@
 
   (add-hook 'company-completion-started-hook 'company-turn-off-fci)
   (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
+  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)))
 
 (use-package company-statistics
   :defer t
