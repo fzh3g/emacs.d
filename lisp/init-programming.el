@@ -59,6 +59,10 @@
     (setq projectile-indexing-method 'native)
     (add-hook 'after-init-hook
               '(lambda ()
-                 (projectile-global-mode)))))
+                 (projectile-global-mode)))
+    ;; performance issue on org-mode
+    (add-hook 'org-mode-hook
+              '(lambda ()
+                 (projectile-mode -1)))))
 
 (provide 'init-programming)
