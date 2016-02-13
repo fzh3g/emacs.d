@@ -4,7 +4,7 @@
             '(lambda ()
                (setq solarized-scale-org-headlines nil)
                (setq solarized-use-more-italic t)
-               (load-theme 'solarized-light t)))
+               (load-theme 'solarized-dark t)))
   :config
   (progn
     (defun light-theme ()
