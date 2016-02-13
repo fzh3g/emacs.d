@@ -27,6 +27,7 @@
     avy
     buffer-move
     cmake-mode
+    color-theme-sanityinc-tomorrow
     company
     company-auctex
     company-c-headers
