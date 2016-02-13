@@ -3,13 +3,7 @@
   :defer t
   :diminish flycheck-mode
   :init
-  (add-hook 'prog-mode-hook 'flycheck-mode)
-  :config
-  (use-package flycheck-pos-tip
-    :defer t
-    :init
-    (with-eval-after-load 'flycheck
-      (flycheck-pos-tip-mode))))
+  (add-hook 'prog-mode-hook 'flycheck-mode))
 
 ;; whitespace
 (use-package whitespace
@@ -62,7 +56,7 @@
     (setq projectile-known-projects-file (concat fx-cache-directory
                                                  "projectile-bookmarks.eld"))
     (setq projectile-completion-system 'helm)
-    (setq projectile-indexing-method 'alien)
+    (setq projectile-indexing-method 'native)
     (add-hook 'after-init-hook
               '(lambda ()
                  (projectile-global-mode)))))

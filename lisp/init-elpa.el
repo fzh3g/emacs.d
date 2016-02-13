@@ -41,7 +41,6 @@
     flx
     flx-ido
     flycheck
-    flycheck-pos-tip
     gnuplot
     helm
     helm-ag
