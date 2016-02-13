@@ -74,7 +74,7 @@
 (setq kill-whole-line t)
 
 ;; nice scrolling
-(setq scroll-margin 0
+(setq scroll-margin 5
       scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position 1
