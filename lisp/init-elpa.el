@@ -45,6 +45,7 @@
     helm
     helm-ag
     helm-c-yasnippet
+    helm-flx
     helm-swoop
     highlight-symbol
     htmlize

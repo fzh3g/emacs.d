@@ -1,30 +1,29 @@
 (use-package helm
   :init
   (progn
-    (require 'helm-config)
-    (setq-default helm-split-window-in-side-p t
-                  helm-prevent-escaping-from-minibuffer t
-                  helm-bookmark-show-location t
-                  helm-always-two-windows t
-                  helm-display-header-line nil
-                  helm-move-to-line-cycle-in-source t
-                  helm-ff-search-library-in-sexp t
-                  helm-candidate-number-limit 500
-                  helm-ff-file-name-history-use-recentf t)
+    (setq helm-split-window-in-side-p t
+          helm-prevent-escaping-from-minibuffer t
+          helm-bookmark-show-location t
+          helm-always-two-windows t
+          helm-display-header-line nil
+          helm-move-to-line-cycle-in-source t
+          helm-ff-search-library-in-sexp t
+          helm-candidate-number-limit 500
+          helm-ff-file-name-history-use-recentf t)
 
     ;; fuzzy matching setting
-    (setq-default helm-M-x-fuzzy-match t
-                  helm-buffers-fuzzy-matching t
-                  helm-recentf-fuzzy-match t
-                  helm-semantic-fuzzy-match t
-                  helm-imenu-fuzzy-match t
-                  helm-locate-fuzzy-match t
-                  helm-apropos-fuzzy-match t
-                  helm-ag-fuzzy-match t
-                  helm-lisp-fuzzy-completion t)
+    (setq helm-M-x-fuzzy-match t
+          helm-buffers-fuzzy-matching t
+          helm-recentf-fuzzy-match t
+          helm-semantic-fuzzy-match t
+          helm-imenu-fuzzy-match t
+          helm-locate-fuzzy-match t
+          helm-apropos-fuzzy-match t
+          helm-ag-fuzzy-match t
+          helm-lisp-fuzzy-completion t)
 
     (when (executable-find "curl")
-      (setq-default helm-google-suggest-use-curl-p t))
+      (setq helm-google-suggest-use-curl-p t))
 
     ;; shell history.
     (add-hook 'shell-mode-hook
@@ -40,8 +39,8 @@
               '(lambda ()
                  (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
 
-    ;(setq-default helm-autoresize-max-height 50)
     (helm-mode 1)
+    (setq helm-autoresize-min-height 10)
     (helm-autoresize-mode t))
   :bind
   (("M-x" . helm-M-x)
@@ -57,6 +56,13 @@
    ("C-h a" . helm-apropos)
    ("C-h r" . helm-mark-ring)
    ("C-c h C-c w" . helm-wikipedia-suggest)))
+
+(use-package helm-flx
+  :defer t
+  :init
+  (progn
+    (setq helm-flx-for-helm-find-files nil)
+    (helm-flx-mode)))
 
 (use-package helm-ag
   :defer t
@@ -94,4 +100,3 @@
     (global-set-key (kbd "C-c y") 'helm-yas-complete)))
 
 (provide 'init-helm)
-
