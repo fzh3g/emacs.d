@@ -56,7 +56,7 @@
     (setq projectile-known-projects-file (concat fx-cache-directory
                                                  "projectile-bookmarks.eld"))
     (setq projectile-completion-system 'helm)
-    (setq projectile-indexing-method 'native)
+    (setq projectile-indexing-method 'alien)
     (add-hook 'after-init-hook
               '(lambda ()
                  (projectile-global-mode)))
