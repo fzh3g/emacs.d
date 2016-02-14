@@ -17,6 +17,8 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (defconst fx-cache-directory
   (expand-file-name ".cache/" user-emacs-directory))
+(if (not (file-exists-p fx-cache-directory))
+    (make-directory fx-cache-directory))
 ;;--------------------------------------------------------------------
 ;; Debug on error
 ;;--------------------------------------------------------------------
