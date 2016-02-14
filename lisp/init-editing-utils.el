@@ -169,15 +169,14 @@
    ("M-g w" . avy-goto-subword-1)))
 
 (use-package multiple-cursors
-  :bind (("C-S-c C-S-c" . mc/edit-lines)
-         ("C->" . mc/mark-next-like-this)
+  :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)
          ("C-S-<mouse-1>" . mc/add-cursor-on-click)
-         ("C-c c r" . set-rectangular-region-anchor)
-         ("C-c c c" . mc/edit-lines)
-         ("C-c c e" . mc/edit-ends-of-lines)
-         ("C-c c a" . mc/edit-beginnings-of-lines))
+         ("C-S-c r" . set-rectangular-region-anchor)
+         ("C-S-c c" . mc/edit-lines)
+         ("C-S-c e" . mc/edit-ends-of-lines)
+         ("C-S-c a" . mc/edit-beginnings-of-lines))
   :init
   (setq mc/list-file (concat fx-cache-directory ".mc-lists.el")))
 
@@ -194,7 +193,7 @@
 (global-set-key (kbd "C-S-p")
                 (lambda ()
                   (interactive)
-                  (ignore-errors (previous-line 5))))
+                  (ignore-errors (forward-line -5))))
 
 (global-set-key (kbd "C-S-f")
                 (lambda ()
