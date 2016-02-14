@@ -100,4 +100,12 @@
     (setq helm-yas-space-match-any-greedy t)
     (global-set-key (kbd "C-c y") 'helm-yas-complete)))
 
+(use-package helm-descbinds
+  :defer t
+  :init
+  (progn
+    (setq helm-descbinds-window-style 'split)
+    (add-hook 'helm-mode-hook 'helm-descbinds-mode)
+    (global-set-key (kbd "C-h b") 'helm-descbinds)))
+
 (provide 'init-helm)

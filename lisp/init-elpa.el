@@ -46,6 +46,7 @@
     helm
     helm-ag
     helm-c-yasnippet
+    helm-descbinds
     helm-flx
     helm-swoop
     highlight-symbol
