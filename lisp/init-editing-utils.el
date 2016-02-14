@@ -63,9 +63,20 @@
   :init
   (progn
     (setq fci-rule-width 1)
-    ;(setq fci-rule-color "dimgray")
+    (setq fci-rule-column 80)
+    ;; (setq fci-rule-color "dimgray")
+
     (dolist (hook '(prog-mode-hook markdown-mode-hook))
-      (add-hook hook 'fci-mode))))
+      (add-hook hook 'fci-mode))
+
+    (defun fx/auto-fci-mode (&optional unused)
+      "Automatically turn off fci-mode when window is too narrow"
+      (if (< (window-width) fci-rule-column)
+          (fci-mode -1)
+        (fci-mode 1)))
+
+    (add-hook 'after-change-major-mode-hook 'fx/auto-fci-mode)
+    (add-hook 'window-configuration-change-hook 'fx/auto-fci-mode)))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -143,9 +154,13 @@
     (setq which-key-use-C-h-for-paging t
           which-key-prevent-C-h-from-cycling t
           which-key-sort-order 'which-key-key-order-alpha
+          which-key-popup-type 'side-window
+          which-key-side-window-location '(right bottom)
+          which-key-max-description-length 23
+          which-key-side-window-max-width 0.5
+          which-key-side-window-max-height 0.4
           which-key-special-keys nil)
-    (which-key-mode)
-    (which-key-setup-side-window-right-bottom)))
+    (which-key-mode)))
 
 ;; anzu
 (use-package anzu
