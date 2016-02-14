@@ -13,11 +13,24 @@
     (setq whitespace-style '(face
                              trailing
                              tabs
-                             spaces
+                             tab-mark
                              empty
+                             spaces
                              space-mark
-                             tab-mark))
-    (global-set-key (kbd "C-c w") 'whitespace-mode)))
+                             newline
+                             newline-mark
+                             indentation::space
+                             indentation::tab))
+    (global-set-key (kbd "C-c w") 'whitespace-mode))
+  :config
+  (progn
+    (set-face-attribute 'whitespace-space nil
+                        :background nil)
+    (set-face-attribute 'whitespace-tab nil
+                        :background nil)
+    (set-face-attribute 'whitespace-indentation nil
+                        :background nil)
+    ))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
