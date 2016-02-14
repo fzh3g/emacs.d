@@ -18,7 +18,6 @@
     (setq magit-completing-read-function 'magit-builtin-completing-read
           magit-save-some-buffers nil
           magit-process-popup-time -1)
-    (add-hook 'git-commit-mode-hook 'fci-mode)
 
     (when *win32*
       (setenv "GIT_ASKPASS" "git-gui--askpass"))

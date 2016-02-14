@@ -63,20 +63,12 @@
   :init
   (progn
     (setq fci-rule-width 1)
-    (setq fci-rule-column 80)
+    ;; (setq fci-rule-column 80)
     ;; (setq fci-rule-color "dimgray")
-
-    (dolist (hook '(prog-mode-hook markdown-mode-hook))
-      (add-hook hook 'fci-mode))
-
-    (defun fx/auto-fci-mode (&optional unused)
-      "Automatically turn off fci-mode when window is too narrow"
-      (if (< (window-width) fci-rule-column)
-          (fci-mode -1)
-        (fci-mode 1)))
-
-    (add-hook 'after-change-major-mode-hook 'fx/auto-fci-mode)
-    (add-hook 'window-configuration-change-hook 'fx/auto-fci-mode)))
+    (dolist (hook '(prog-mode-hook
+                    markdown-mode-hook
+                    git-commit-mode-hook))
+      (add-hook hook 'fci-mode))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
