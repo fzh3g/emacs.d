@@ -21,7 +21,7 @@
 (setq package-enable-at-startup nil)
 
 ;; list of installed packages
-(defvar fx-installed-packages
+(defvar fx-packages
   '(anzu
     auctex
     avy
@@ -91,15 +91,32 @@
     yasnippet)
   "A list of packages to ensure are installed at launch.")
 
+;; Check if all packages in `fx-packages' are installed
+(defvar fx-packages-all-installed-p t
+  "Non-nil means all packages in `fx-packages' are installed.")
 
-; fetch the list of packages available
-(unless package-archive-contents
-    (package-refresh-contents))
+(defun fx-packages-check-all-installed ()
+  "Check if all packages needed installed."
+  (dolist (pkg fx-packages)
+    (unless (package-installed-p pkg)
+     (setq fx-packages-all-installed-p nil))))
 
-;; Install a package only if it's not already installed.
-(dolist (pkg fx-installed-packages)
-  (unless (package-installed-p pkg)
-    (package-install pkg)))
+;; Install packages
+(defun fx-install-packages ()
+  "Install packages in `fx-packages'."
+  (fx-packages-check-all-installed)
+  (unless fx-packages-all-installed-p
+    (package-refresh-contents)
+    (dolist (pkg fx-packages)
+      (unless (package-installed-p pkg)
+        (package-install pkg)))
+    (fx-packages-check-all-installed)
+    (if fx-packages-check-all-installed
+        (message "%s" "All packages in `fx-packages' are installed !")
+      (message "%s" "Error occured installing packages :-("))))
+
+;; Run package installation
+(fx-install-packages)
 
 (require 'use-package)
 
