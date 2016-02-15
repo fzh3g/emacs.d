@@ -77,7 +77,6 @@
           '(("frame" "leftline")
             ("bgcolor" "lightgray")
             ("framesep" "2mm")
-            ("numbersep" "5pt")
             ("fontsize" "\\footnotesize")
             ("mathescape" "")
             ("linenos" "")))
@@ -91,10 +90,10 @@
       (interactive
        (let ((src-code-types
               '("asymptote" "awk" "calc" "C" "clojure" "css" "C++"
-                "emacs-lisp" "fortran" "gnuplot" "haskell" "java" "js"
-                "latex" "ledger" "lisp" "mathematica" "matlab" "octave"
-                "ocaml" "perl" "python" "R" "ruby" "sass" "scala" "sh"
-                "scheme" "sql" "sqlite")))
+                "emacs-lisp" "fortran" "gnuplot" "haskell" "idl" "java"
+                "js" "latex" "ledger" "lisp" "mathematica" "matlab"
+                "octave" "ocaml" "perl" "python" "R" "ruby" "sass" "scala"
+                "sh" "scheme" "sql" "sqlite")))
          (list (completing-read "Source code type: " src-code-types))))
       (progn
         (newline-and-indent)
