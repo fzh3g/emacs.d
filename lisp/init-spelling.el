@@ -8,7 +8,9 @@
     (setq flyspell-issue-message-flag nil)
     (cond
      ((executable-find "aspell")
-      (setq ispell-program-name "aspell"))
+      (setq ispell-program-name "aspell"
+            ispell-extra-args '("--sug-mode=ultra"
+                                "--lang=en_US")))
      ((executable-find "hunspell")
       (setq ispell-program-name "hunspell")
       ;; just reset dictionary to the safe one "en_US" for hunspell.
