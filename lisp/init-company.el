@@ -30,7 +30,16 @@
 
   (add-hook 'company-completion-started-hook 'company-turn-off-fci)
   (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)))
+  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
+  :config
+  (progn
+    (defun fx/toggle-shell-auto-completion-based-on-path ()
+      "Suppress automatic completion on remote paths."
+      (if (file-remote-p default-directory)
+          (setq-local company-idle-delay nil)
+        (setq-local company-idle-delay 0.2)))
+    (add-hook 'eshell-directory-change-hook
+              'fx/toggle-shell-auto-completion-based-on-path)))
 
 (use-package company-statistics
   :defer t
