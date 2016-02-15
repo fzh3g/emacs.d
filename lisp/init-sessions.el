@@ -42,7 +42,6 @@
                             (search-ring              . 128)
                             (comint-input-ring        . 128)
                             (shell-command-history    . 128)
-                            (evil-ex                  . 128)
                             desktop-missing-file-warning
                             register-alist))) 
     (desktop-save-mode 1)))
@@ -54,9 +53,7 @@
     (setq savehist-file (concat fx-cache-directory "savehist")
           history-length 2048
           savehist-autosave-interval 60
-          savehist-additional-variables '(mark-ring
-                                          global-mark-ring
-                                          search-ring
+          savehist-additional-variables '(search-ring
                                           regexp-search-ring
                                           extended-command-history))
     (savehist-mode t)))
