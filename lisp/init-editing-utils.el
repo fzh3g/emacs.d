@@ -1,11 +1,11 @@
 ;; some basic preferences
-(setq-default mouse-yank-at-point t
-              buffers-menu-max-size 30
-              case-fold-search t
-              compilation-scroll-output t
-              set-mark-command-repeat-pop t
-              visible-bell t
-              delete-selection-mode t)
+(setq mouse-yank-at-point t
+      buffers-menu-max-size 30
+      case-fold-search t
+      compilation-scroll-output t
+      set-mark-command-repeat-pop t
+      visible-bell t
+      delete-selection-mode t)
 
 ; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
@@ -45,7 +45,7 @@
 
 ;; show column number and line number
 (use-package nlinum
-  :init (setq-default linum-delay t)
+  :init (setq linum-delay t)
   :config
   (dolist (hook '(prog-mode-hook
                   conf-mode-hook
@@ -87,21 +87,21 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode t)
-(setq-default global-auto-revert-non-file-buffers t
-              auto-revert-verbose nil)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
 
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
 ;; image-dired
-(setq-default image-dired-dir (concat fx-cache-directory "image-dired/")
-              image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
-              image-dired-db-file (concat image-dired-dir ".image-dired_db")
-              image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
-              image-dired-temp-rotate-image-file (concat image-dired-dir ".image-dired_rotate_temp"))
+(setq image-dired-dir (concat fx-cache-directory "image-dired/")
+      image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
+      image-dired-db-file (concat image-dired-dir ".image-dired_db")
+      image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
+      image-dired-temp-rotate-image-file (concat image-dired-dir ".image-dired_rotate_temp"))
 
 ;; doc view
-(setq-default doc-view-continuous t)
+(setq doc-view-continuous t)
 
 ;; page break lines
 (use-package page-break-lines
@@ -190,6 +190,9 @@
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
+
+;; uncomment region
+(global-set-key (kbd "C-M-|") 'uncomment-region)
 
 ;; Move more quickly
 (global-set-key (kbd "C-S-n")
