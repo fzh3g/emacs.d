@@ -36,6 +36,7 @@
     company-statistics
     diff-hl
     dired+
+    eshell-prompt-extras
     exec-path-from-shell
     expand-region
     fill-column-indicator
@@ -67,6 +68,7 @@
     matlab-mode
     mmm-mode
     multiple-cursors
+    multi-term
     neotree
     nlinum
     org-plus-contrib
@@ -79,6 +81,7 @@
     sass-mode
     scss-mode
     session
+    shell-pop
     smartparens
     solarized-theme
     undo-tree
@@ -87,6 +90,7 @@
     web-mode
     window-numbering
     which-key
+    xterm-color
     yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")
