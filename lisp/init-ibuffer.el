@@ -2,33 +2,33 @@
   :bind (("C-x C-b" . ibuffer))
   :init
   (progn
-    (setq-default ibuffer-show-empty-filter-groups nil)
-    (setq-default ibuffer-filter-group-name-face 'font-lock-doc-face)
-   )
+    (setq ibuffer-show-empty-filter-groups nil)
+    (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
+    )
   :config
   (progn
     (use-package ibuffer-vc
       :init
       (progn
-        (setq-default ibuffer-formats
-                      '((mark modified read-only vc-status-mini " "
-                              (name 18 18 :left :elide)
-                              " "
-                              (size-h 9 -1 :right)
-                              " "
-                              (mode 16 16 :left :elide)
-                              " "
-                              filename-and-process)
-                        (mark modified read-only vc-status-mini " "
-                              (name 18 18 :left :elide)
-                              " "
-                              (size-h 9 -1 :right)
-                              " "
-                              (mode 16 16 :left :elide)
-                              " "
-                              (vc-status 16 16 :left)
-                              " "
-                              filename-and-process)))
+        (setq ibuffer-formats
+              '((mark modified read-only vc-status-mini " "
+                      (name 18 18 :left :elide)
+                      " "
+                      (size-h 9 -1 :right)
+                      " "
+                      (mode 16 16 :left :elide)
+                      " "
+                      filename-and-process)
+                (mark modified read-only vc-status-mini " "
+                      (name 18 18 :left :elide)
+                      " "
+                      (size-h 9 -1 :right)
+                      " "
+                      (mode 16 16 :left :elide)
+                      " "
+                      (vc-status 16 16 :left)
+                      " "
+                      filename-and-process)))
         (defun ibuffer-set-up-preferred-filters ()
           (ibuffer-vc-set-filter-groups-by-vc-root)
           (unless (eq ibuffer-sorting-mode 'filename/process)

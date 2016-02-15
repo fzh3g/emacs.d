@@ -3,16 +3,16 @@
   :init
   (progn
     (setq LaTeX-indent-level 4)
-    (setq-default TeX-newline-function 'newline-and-indent)
-    (setq-default TeX-engine 'xetex)
-    (setq-default TeX-auto-untabify t
-                  TeX-master nil
-                  TeX-show-compilation t
-                  TeX-auto-save t
-                  TeX-parse-self t
-                  LaTeX-syntactic-comments t
-                  TeX-save-query nil
-                  reftex-plug-into-AUCTeX t))
+    (setq TeX-newline-function 'newline-and-indent)
+    (setq TeX-engine 'xetex)
+    (setq TeX-auto-untabify t
+          TeX-master nil
+          TeX-show-compilation t
+          TeX-auto-save t
+          TeX-parse-self t
+          LaTeX-syntactic-comments t
+          TeX-save-query nil
+          reftex-plug-into-AUCTeX t))
 
   ;; default viewer
   (when *linux*

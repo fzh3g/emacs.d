@@ -9,14 +9,14 @@
 (setq initial-major-mode 'text-mode)
 (setq initial-scratch-message
       (concat "\n"
-              "        ::::::::::   :::   :::       :::      ::::::::   :::::::: \n"
-              "       :+:         :+:+: :+:+:    :+: :+:   :+:    :+: :+:    :+: \n"
-              "      +:+        +:+ +:+:+ +:+  +:+   +:+  +:+        +:+         \n"
-              "     +#++:++#   +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++   \n"
-              "    +#+        +#+       +#+ +#+     +#+ +#+               +#+    \n"
-              "   #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#     \n"
-              "  ########## ###       ### ###     ###  ########   ########       \n\n"
-              "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥ HAPPY ♥♥♥♥♥♥♥ HACKING ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥\n\n"))
+              "          ::::::::::   :::   :::       :::      ::::::::   :::::::: \n"
+              "         :+:         :+:+: :+:+:    :+: :+:   :+:    :+: :+:    :+: \n"
+              "        +:+        +:+ +:+:+ +:+  +:+   +:+  +:+        +:+         \n"
+              "       +#++:++#   +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++   \n"
+              "      +#+        +#+       +#+ +#+     +#+ +#+               +#+    \n"
+              "     #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#     \n"
+              "    ########## ###       ### ###     ###  ########   ########       \n\n"
+              "  ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥ HAPPY ♥♥♥♥♥♥♥ HACKING ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥\n\n\n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
@@ -46,14 +46,14 @@
 (global-set-key (kbd "<f11>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "M-<f11>") 'toggle-frame-maximized)
 (global-set-key (kbd "M-C-8") (lambda ()
-				(interactive)
-				(adjust-opacity nil -5)))
+                                (interactive)
+                                (adjust-opacity nil -5)))
 (global-set-key (kbd "M-C-9") (lambda ()
-				(interactive)
-				(adjust-opacity nil 5)))
+                                (interactive)
+                                (adjust-opacity nil 5)))
 (global-set-key (kbd "M-C-0") (lambda ()
-				(interactive)
-				(modify-frame-parameters nil `((alpha . 100)))))
+                                (interactive)
+                                (modify-frame-parameters nil `((alpha . 100)))))
 
 (add-hook 'after-make-frame-functions
           (lambda (frame)
@@ -65,7 +65,7 @@
 (global-hl-line-mode t)
 
 ;; Show paren mode
-(show-paren-mode 1)
+;; (show-paren-mode 1)
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
@@ -81,18 +81,18 @@
   (global-set-key (kbd "C-M--") 'text-scale-decrease))
 
 ;; time management
-(setq-default display-time-24hr-format t)
-;(setq display-time-day-and-date t)
+(setq display-time-24hr-format t)
+;; (setq display-time-day-and-date t)
 (display-time)
 
 ;; change font for better looking text
 (set-face-attribute 'default nil :font "Fira Mono Bold 11")
 
 ;; Chinese Font
-;(dolist (charset '(kana han symbol cjk-misc bopomofo))
-;    (set-fontset-font (frame-parameter nil 'font)
-;                      charset
-;                      (font-spec :family "Microsoft Yahei" :size 12)))
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;   (set-fontset-font (frame-parameter nil 'font)
+;;                     charset
+;;                     (font-spec :family "Microsoft Yahei" :size 12)))
 
 
 (provide 'init-gui-frames)

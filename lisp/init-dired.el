@@ -1,10 +1,10 @@
 (use-package dired+
   :init
   (progn
-    (setq-default dired-recursive-deletes 'always)
-    (setq-default dired-isearch-filenames 'dwim)
-    (setq-default diredp-hide-details-initially-flag nil)
-    (setq-default dired-dwim-target t))
+    (setq dired-recursive-deletes 'always)
+    (setq dired-isearch-filenames 'dwim)
+    (setq diredp-hide-details-initially-flag nil)
+    (setq dired-dwim-target t))
   :config
   (progn
     (when (fboundp 'global-dired-hide-details-mode)
