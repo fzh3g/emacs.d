@@ -86,6 +86,7 @@
     solarized-theme
     undo-tree
     use-package
+    vimrc-mode
     visual-regexp
     web-mode
     window-numbering

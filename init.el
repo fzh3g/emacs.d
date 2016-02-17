@@ -92,6 +92,7 @@
 (require 'init-yaml)
 (require 'init-web)
 (require 'init-css)
+(require 'init-vimrc)
 ;;--------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;--------------------------------------------------------------------
