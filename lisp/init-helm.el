@@ -97,7 +97,8 @@
   :defer t
   :init
   (progn
-    (setq helm-yas-space-match-any-greedy t)
+    (setq helm-yas-space-match-any-greedy t
+          helm-yas-display-key-on-candidate t)
     (global-set-key (kbd "C-c y") 'helm-yas-complete)))
 
 (use-package helm-descbinds
