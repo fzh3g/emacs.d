@@ -1,5 +1,5 @@
 (use-package yasnippet
-  :commands yas-global-mode
+  :commands (yas-global-mode yas-minor-mode)
   :init
   (progn
     ;; disable yas minor mode map
@@ -7,6 +7,9 @@
     (setq yas-minor-mode-map (make-sparse-keymap))
 
     (setq yas-triggers-in-field t)
+    ;; on multiple keys, fall back to completing read
+    ;; typically this means helm
+    (setq yas-prompt-functions '(yas-completing-prompt))
 
     (define-key yas-minor-mode-map (kbd "M-s-/") 'yas-next-field)
     
