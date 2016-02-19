@@ -68,7 +68,15 @@
     (dolist (hook '(prog-mode-hook
                     markdown-mode-hook
                     git-commit-mode-hook))
-      (add-hook hook 'fci-mode))))
+      (add-hook hook 'fci-mode))
+    ;; Regenerate fci-mode line images after switching themes
+    (defun sanityinc/fci-enabled-p ()
+      (bound-and-true-p fci-mode))
+    (defadvice enable-theme (after recompute-fci-face activate)
+      (dolist (buffer (buffer-list))
+        (with-current-buffer buffer
+          (when (sanityinc/fci-enabled-p)
+            (turn-on-fci-mode)))))))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
