@@ -84,6 +84,7 @@
     shell-pop
     smartparens
     solarized-theme
+    spaceline
     undo-tree
     use-package
     vimrc-mode

@@ -37,7 +37,6 @@
 ;; Configs for UI and window actions
 ;;--------------------------------------------------------------------
 (require 'init-frame-hooks)
-(require 'init-modeline)
 (require 'init-osx-keys)
 (require 'init-xterm)
 (require 'init-gui-frames)
@@ -45,6 +44,7 @@
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
 (require 'init-theme)
+(require 'init-modeline)
 (require 'init-smartparens)
 ;;--------------------------------------------------------------------
 ;; Configs for some defult modes

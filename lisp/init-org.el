@@ -38,17 +38,6 @@
     (setq org-time-clocksum-format
           '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
 
-    ;;; Show the clocked-in task - if any - in the header line
-    (defun sanityinc/show-org-clock-in-header-line ()
-      (setq-default header-line-format '((" " org-mode-line-string " "))))
-
-    (defun sanityinc/hide-org-clock-from-header-line ()
-      (setq-default header-line-format nil))
-
-    (add-hook 'org-clock-in-hook 'sanityinc/show-org-clock-in-header-line)
-    (add-hook 'org-clock-out-hook 'sanityinc/hide-org-clock-from-header-line)
-    (add-hook 'org-clock-cancel-hook 'sanityinc/hide-org-clock-from-header-line)
-
     (setq org-default-notes-file "~/org/capture.org")
 
     (setq org-capture-templates
