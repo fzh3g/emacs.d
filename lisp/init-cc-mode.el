@@ -35,6 +35,6 @@
           ("\\.cmake\\'" . cmake-mode))
    :init (add-to-list 'company-backends
                       '(company-cmake :with company-yasnippet))))
-
+(add-hook 'cmake-mode-hook 'fx/company-for-cmake)
 
 (provide 'init-cc-mode)
