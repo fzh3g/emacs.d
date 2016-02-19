@@ -23,6 +23,7 @@
 
 (use-package ido-ubiquitous
   :init
+  (defvar ido-default-item nil)
   (ido-ubiquitous-mode 1))
 
 (use-package ido-hacks
