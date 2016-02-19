@@ -83,7 +83,6 @@
     session
     shell-pop
     smartparens
-    solarized-theme
     spaceline
     undo-tree
     use-package
