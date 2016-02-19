@@ -54,12 +54,11 @@
     :defer t
     :init (company-auctex-init)))
 
-(use-package company-jedi
-  :defer t
-  :init
-  (eval-after-load "company"
-    '(progn
-       (add-to-list 'company-backends 'company-jedi))))
+(defun fx/company-for-python ()
+  (use-package company-jedi
+   :defer t
+   :init
+   (add-to-list 'company-backends 'company-jedi)))
 
 (defun fx/company-for-c-c++ ()
   (setq company-backends (delete 'company-semantic company-backends))
@@ -72,6 +71,8 @@
 
 (dolist (hook '(LaTeX-mode-hook TeX-mode-hook))
   (add-hook hook 'fx/company-for-tex))
+
+(add-hook 'python-mode-hook 'fx/company-for-python)
 
 (dolist (hook '(c-mode-hook c++-mode-hook objc-mode-hook))
   (add-hook hook 'fx/company-for-c-c++))
