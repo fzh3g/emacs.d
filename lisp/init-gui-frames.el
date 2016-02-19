@@ -81,7 +81,8 @@
   (global-set-key (kbd "C-M--") 'text-scale-decrease))
 
 ;; time management
-(setq display-time-24hr-format t)
+;; (setq display-time-24hr-format t)
+(setq display-time-default-load-average nil)
 ;; (setq display-time-day-and-date t)
 (display-time)
 
