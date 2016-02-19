@@ -59,7 +59,6 @@
     ido-ubiquitous
     ido-vertical-mode
     irony
-    irony-eldoc
     jedi-core
     less-css-mode
     lua-mode

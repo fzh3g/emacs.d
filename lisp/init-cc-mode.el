@@ -27,15 +27,14 @@
     (add-hook 'irony-mode-hook 'my-irony-mode-hook)
     (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
 
-(use-package irony-eldoc
-  :defer t
-  :init
-  (add-hook 'irony-mode-hook 'irony-eldoc))
-
-(use-package cmake-mode
-  :defer t
-  :mode (("CMakeLists\\.txt\\'" . cmake-mode)
-         ("\\.cmake\\'" . cmake-mode)))
+(defun fx/company-for-cmake ()
+  (make-variable-buffer-local 'company-backends)
+  (use-package cmake-mode
+   :defer t
+   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
+          ("\\.cmake\\'" . cmake-mode))
+   :init (add-to-list 'company-backends
+                      '(company-cmake :with company-yasnippet))))
 
 
 (provide 'init-cc-mode)
