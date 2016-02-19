@@ -86,8 +86,13 @@
 (display-time)
 
 ;; change font for better looking text
-(set-face-attribute 'default nil :font "Fira Mono Bold 11")
-
+(cond
+ (*linux*
+  (set-face-attribute 'default nil :font "Monaco for Powerline 11"))
+ (*is-a-mac*
+  (set-face-attribute 'default nil :font "Monaco for Powerline 14"))
+ (t
+  (set-face-attribute 'default nil :font "Monaco for Powerline 12")))
 ;; Chinese Font
 ;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
 ;;   (set-fontset-font (frame-parameter nil 'font)
