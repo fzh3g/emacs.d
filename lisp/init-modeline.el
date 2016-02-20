@@ -1,10 +1,10 @@
 ;; spaceline
-(use-package spaceline
-  :init
-  (require 'spaceline-config)
-  (spaceline-toggle-minor-modes-off)
-  (setq powerline-default-separator 'wave)
-  (spaceline-spacemacs-theme))
+(use-package spaceline-config
+  :config
+  (progn
+    (spaceline-spacemacs-theme)
+    (setq powerline-default-separator 'wave)
+    (spaceline-toggle-minor-modes-off)))
 
 ;;----------------------------------------------------------------------
 ;; clean mode-line
