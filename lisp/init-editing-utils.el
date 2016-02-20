@@ -199,9 +199,6 @@
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
 
-;; uncomment region
-(global-set-key (kbd "C-M-|") 'uncomment-region)
-
 ;; Move more quickly
 (global-set-key (kbd "C-S-n")
                 (lambda ()
