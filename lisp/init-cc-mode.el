@@ -1,8 +1,6 @@
 (defun fx/c-mode-common-setup ()
   (setq c-default-style "linux")
   (setq c-basic-offset 4)
-  (setq cc-search-directories
-        '("." "/usr/include" "/usr/local/include/*" "../*/include"))
   (c-set-offset 'substatement-open 0))
 
 (add-hook 'c-mode-common-hook 'fx/c-mode-common-setup)
