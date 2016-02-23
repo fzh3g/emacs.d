@@ -79,15 +79,15 @@
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
       (interactive
        (let ((src-code-types
-              '("asymptote" "awk" "calc" "C" "clojure" "css" "C++"
+              '("asymptote" "awk" "calc" "C" "clojure" "css" "C++" "ditaa"
                 "emacs-lisp" "fortran" "gnuplot" "haskell" "idl" "java"
                 "js" "latex" "ledger" "lisp" "mathematica" "matlab"
-                "octave" "ocaml" "perl" "python" "R" "ruby" "sass" "scala"
-                "sh" "scheme" "sql" "sqlite")))
+                "octave" "ocaml" "perl" "plantuml" "python" "R" "ruby"
+                "sass" "scala" "sh" "scheme" "sql" "sqlite")))
          (list (completing-read "Source code type: " src-code-types))))
       (progn
         (newline-and-indent)
-        (insert (format "#+BEGIN_SRC %s :results output\n" src-code-type))
+        (insert (format "#+BEGIN_SRC %s\n" src-code-type))
         (newline-and-indent)
         (insert "#+END_SRC\n")
         (previous-line 2)
@@ -106,8 +106,10 @@
        (maxima . t)
        (octave . t)
        (dot . t)
+       (ditaa . t)
        (emacs-lisp . t)
        (gnuplot . t)
+       (plantuml . t)
        (sh . t)
        (haskell . nil)
        (latex . t)
