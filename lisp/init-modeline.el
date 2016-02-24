@@ -22,6 +22,8 @@
     (smartparens-mode . "")
     (hi-lock-mode . "")
     (which-key-mode . "")
+    (page-break-lines-mode . "")
+    (subword-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (python-mode . "Py")
