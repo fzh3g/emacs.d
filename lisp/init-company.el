@@ -39,10 +39,9 @@
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
   :config
   (progn
-    (eval-after-load "company"
-      '(progn
-         (setq company-backends (mapcar 'fx//show-snippets-in-company
-                                        company-backends))))
+    (define-key company-active-map (kbd "C-h") 'company-abort)
+    (setq company-backends (mapcar 'fx//show-snippets-in-company
+                                   company-backends))
     (defun fx/toggle-shell-auto-completion-based-on-path ()
       "Suppress automatic completion on remote paths."
       (if (file-remote-p default-directory)
