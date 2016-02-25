@@ -133,24 +133,6 @@
                      :wrap "C-("
                      :pre-handlers '(my-add-space-before-sexp-insertion)
                      :post-handlers '(my-add-space-after-sexp-insertion)))
-    
-
-    (defun ome-create-newline-and-enter-sexp (&rest _ignored)
-      "Open a new brace or bracket expression, with relevant newlines and indent. "
-      (previous-line)
-      (indent-according-to-mode)
-      (forward-line)
-      (newline)
-      (indent-according-to-mode)
-      (forward-line -1)
-      (indent-according-to-mode))
-
-    (dolist (mode '(c-mode c++-mode java-mode js2-mode sh-mode))
-      (sp-local-pair mode
-                     "{"
-                     "}"
-                     :post-handlers
-                     '((ome-create-newline-and-enter-sexp "RET"))))
 
     ;; C++
     (sp-with-modes '(c-mode c++-mode java-mode js2-mode sh-mode)

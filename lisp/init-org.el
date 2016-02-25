@@ -56,9 +56,8 @@
     (bind-key "C-c l" 'org-store-link))
   :config
   (progn
-    ;;http://stackoverflow.com/questions/22988092/emacs-org-mode-export-markdown
-    (eval-after-load "org"
-      '(require 'ox-md nil t))
+    ;; markdown export
+    (require 'ox-md)
     ;; org-latex
     (require 'ox-latex)
     (add-to-list 'org-latex-packages-alist '("" "minted"))
