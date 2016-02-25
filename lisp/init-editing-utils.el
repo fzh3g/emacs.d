@@ -179,7 +179,7 @@
 (use-package avy
   :bind
   (("C-:" . avy-goto-char)
-   ("C-'" . avy-goto-line)
+   ("C-S-l" . avy-goto-line)
    ("M-g f" . avy-goto-char-2)
    ("M-g w" . avy-goto-subword-1)))
 
