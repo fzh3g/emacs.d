@@ -112,22 +112,9 @@
        (sql . t)
        (sqlite . t)))
 
-    (setq org-src-lang-modes
-          '(("ocaml" . tuareg)
-            ("elisp" . emacs-lisp)
-            ("ditaa" . artist)
-            ("asymptote" . asy)
-            ("dot" . fundamental)
-            ("sqlite" . sql)
-            ("calc" . fundamental)
-            ("C" . c)
-            ("cpp" . c++)
-            ("C++" . c++)
-            ("screen" . shell-script)
-            ("shell" . sh)
-            ("bash" . sh)
-            ("idl" . idlwave)
-            ("fortran" . f90)))))
+    ;; edit src blocks with specific modes
+    (add-to-list 'org-src-lang-modes '("idl" . idlwave))
+    (add-to-list 'org-src-lang-modes '("fortran" . f90))))
 
 (use-package org-bullets
   :defer t
