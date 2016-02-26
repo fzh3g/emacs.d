@@ -78,11 +78,11 @@
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
       (interactive
        (let ((src-code-types
-              '("asymptote" "awk" "calc" "C" "clojure" "css" "C++" "ditaa"
-                "emacs-lisp" "fortran" "gnuplot" "haskell" "idl" "java"
-                "js" "latex" "ledger" "lisp" "mathematica" "matlab"
-                "octave" "ocaml" "perl" "plantuml" "python" "R" "ruby"
-                "sass" "scala" "sh" "scheme" "sql" "sqlite")))
+              '("asymptote" "awk" "calc" "C" "css" "C++" "ditaa"
+                "emacs-lisp" "fortran" "gnuplot" "idl" "java"
+                "js" "latex" "lisp" "matlab" "perl" "plantuml"
+                "python" "R" "ruby" "sass" "screen" "sh" "scheme"
+                "sql" "sqlite")))
          (list (completing-read "Source code type: " src-code-types))))
       (progn
         (newline-and-indent)
@@ -101,22 +101,33 @@
        (ruby . t)
        (python . t)
        (matlab . t)
-       (mathematica . t)
-       (maxima . t)
-       (octave . t)
        (dot . t)
        (ditaa . t)
        (emacs-lisp . t)
        (gnuplot . t)
        (plantuml . t)
        (sh . t)
-       (haskell . nil)
        (latex . t)
-       (ledger . nil)
-       (ocaml . nil)
-       (screen . nil)
-       (sql . nil)
-       (sqlite . nil)))))
+       (screen . t)
+       (sql . t)
+       (sqlite . t)))
+
+    (setq org-src-lang-modes
+          '(("ocaml" . tuareg)
+            ("elisp" . emacs-lisp)
+            ("ditaa" . artist)
+            ("asymptote" . asy)
+            ("dot" . fundamental)
+            ("sqlite" . sql)
+            ("calc" . fundamental)
+            ("C" . c)
+            ("cpp" . c++)
+            ("C++" . c++)
+            ("screen" . shell-script)
+            ("shell" . sh)
+            ("bash" . sh)
+            ("idl" . idlwave)
+            ("fortran" . f90)))))
 
 (use-package org-bullets
   :defer t
