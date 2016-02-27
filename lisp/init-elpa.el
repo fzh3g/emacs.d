@@ -33,6 +33,7 @@
     company-c-headers
     company-irony
     company-jedi
+    company-quickhelp
     company-statistics
     diff-hl
     dired+

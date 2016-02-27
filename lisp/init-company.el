@@ -50,6 +50,16 @@
     (add-hook 'eshell-directory-change-hook
               'fx/toggle-shell-auto-completion-based-on-path)))
 
+(use-package company-quickhelp
+  :if (display-graphic-p)
+  :defer t
+  :init
+  (progn
+    (add-hook 'company-mode-hook 'company-quickhelp-mode)
+    (with-eval-after-load 'company
+      (setq company-frontends
+            (delq 'company-echo-metadata-frontend company-frontends)))))
+
 (use-package company-statistics
   :defer t
   :init
