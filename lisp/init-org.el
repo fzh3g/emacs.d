@@ -105,10 +105,10 @@
        (ditaa . t)
        (emacs-lisp . t)
        (gnuplot . t)
+       (js . t)
        (plantuml . t)
+       (perl . t)
        (sh . t)
-       (latex . t)
-       (screen . t)
        (sql . t)
        (sqlite . t)))
 
