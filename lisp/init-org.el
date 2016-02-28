@@ -80,7 +80,7 @@
        (let ((src-code-types
               '("asymptote" "awk" "calc" "C" "css" "C++" "ditaa"
                 "emacs-lisp" "fortran" "gnuplot" "idl" "java"
-                "js" "latex" "lisp" "matlab" "perl" "plantuml"
+                "js" "latex" "lisp" "matlab" "octave" "perl" "plantuml"
                 "python" "R" "ruby" "sass" "screen" "sh" "scheme"
                 "sql" "sqlite")))
          (list (completing-read "Source code type: " src-code-types))))
@@ -101,6 +101,7 @@
        (ruby . t)
        (python . t)
        (matlab . t)
+       (octave . t)
        (dot . t)
        (ditaa . t)
        (emacs-lisp . t)
