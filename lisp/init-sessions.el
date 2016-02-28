@@ -26,24 +26,24 @@
   (progn
     (setq desktop-path (list fx-cache-directory))
     (setq desktop-save 'if-exists)
-    (setq-default desktop-globals-to-save
-                  (append '((extended-command-history . 128)
-                            (file-name-history        . 128)
-                            (ido-last-directory-list  . 128)
-                            (kill-ring                . 128)
-                            (ido-work-file-list       . 128)
-                            (grep-history             . 128)
-                            (compile-history          . 128)
-                            (minibuffer-history       . 128)
-                            (query-replace-history    . 128)
-                            (read-expression-history  . 128)
-                            (regexp-history           . 128)
-                            (regexp-search-ring       . 128)
-                            (search-ring              . 128)
-                            (comint-input-ring        . 128)
-                            (shell-command-history    . 128)
-                            desktop-missing-file-warning
-                            register-alist))) 
+    (setq desktop-globals-to-save
+          (append '((extended-command-history . 128)
+                    (file-name-history        . 128)
+                    (ido-last-directory-list  . 128)
+                    (kill-ring                . 128)
+                    (ido-work-file-list       . 128)
+                    (grep-history             . 128)
+                    (compile-history          . 128)
+                    (minibuffer-history       . 128)
+                    (query-replace-history    . 128)
+                    (read-expression-history  . 128)
+                    (regexp-history           . 128)
+                    (regexp-search-ring       . 128)
+                    (search-ring              . 128)
+                    (comint-input-ring        . 128)
+                    (shell-command-history    . 128)
+                    desktop-missing-file-warning
+                    register-alist)))
     (desktop-save-mode 1)))
 
 (use-package savehist
