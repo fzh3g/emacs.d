@@ -1,7 +1,6 @@
 ;; flycheck
 (use-package flycheck
   :defer t
-  :diminish flycheck-mode
   :init
   (add-hook 'prog-mode-hook 'flycheck-mode))
 
@@ -59,7 +58,6 @@
 
 ;; projectile
 (use-package projectile
-  :diminish projectile-mode
   :init
   (progn
     (setq projectile-enable-caching t)
