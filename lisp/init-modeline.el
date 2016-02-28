@@ -23,6 +23,7 @@
     (hi-lock-mode . "")
     (which-key-mode . "")
     (page-break-lines-mode . "")
+    (projectile-mode . "")
     (subword-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
