@@ -100,16 +100,23 @@
           (and (= (1+ (line-beginning-position)) me)
                (eq 32 (char-after me)))))
     (sp-with-modes 'org-mode
-      (sp-local-pair "*" "*" :actions '(insert wrap) :unless '(sp-point-after-word-p sp-point-at-bol-p) :wrap "C-*" :skip-match 'sp--org-skip-asterisk)
+      (sp-local-pair "*" "*"
+                     :actions '(insert wrap)
+                     :unless '(sp-point-after-word-p sp-point-at-bol-p)
+                     :wrap "C-*"
+                     :post-handlers '(("[d1]" "SPC"))
+                     :skip-match 'sp--org-skip-asterisk)
       (sp-local-pair "_" "_" :unless '(sp-point-after-word-p) :wrap "C-_")
-      (sp-local-pair "/" "/" :unless '(sp-point-after-word-p) :post-handlers '(("[d1]" "SPC")))
-      (sp-local-pair "~" "~" :unless '(sp-point-after-word-p) :post-handlers '(("[d1]" "SPC")))
-      (sp-local-pair "=" "=" :unless '(sp-point-after-word-p) :post-handlers '(("[d1]" "SPC")))
+      (sp-local-pair "/" "/"
+                     :unless '(sp-point-after-word-p)
+                     :post-handlers '(("[d1]" "SPC")))
+      (sp-local-pair "~" "~"
+                     :unless '(sp-point-after-word-p)
+                     :post-handlers '(("[d1]" "SPC")))
+      (sp-local-pair "=" "="
+                     :unless '(sp-point-after-word-p)
+                     :post-handlers '(("[d1]" "SPC")))
       (sp-local-pair "«" "»"))
-
-    ;; html-mode
-    (sp-with-modes '(html-mode sgml-mode)
-      (sp-local-pair "<" ">"))
 
     ;; lisp modes
     (defun my-add-space-after-sexp-insertion (id action _context)
