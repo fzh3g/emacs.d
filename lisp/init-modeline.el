@@ -4,6 +4,7 @@
   (progn
     (spaceline-spacemacs-theme)
     (setq powerline-default-separator 'wave)
+    (spaceline-toggle-buffer-encoding-abbrev-off)
     (spaceline-toggle-minor-modes-off)))
 
 ;;----------------------------------------------------------------------
