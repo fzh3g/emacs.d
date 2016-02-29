@@ -36,8 +36,8 @@ When you add a new element to the alist, keep in mind that you
 must pass the correct minor/major mode symbol and a string you
 want to use in the modeline *in lieu of* the original.")
 
-
 (defun clean-mode-line ()
+  "Clean minor/major mode in modeline."
   (interactive)
   (dolist (cleaner mode-line-cleaner-alist)
     (let* ((mode (car cleaner))
@@ -49,9 +49,7 @@ want to use in the modeline *in lieu of* the original.")
       (when (eq mode major-mode)
         (setq mode-name mode-str)))))
 
-
 (add-hook 'after-change-major-mode-hook 'clean-mode-line)
-
 
 ;; (defvar fx-projectile-mode-line
 ;;   '(:propertize

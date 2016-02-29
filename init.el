@@ -10,7 +10,6 @@
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *linux* (eq system-type 'gnu/linux))
 (defconst *win32* (eq system-type 'windows-nt))
-(defconst *cygwin* (eq system-type 'cygwin))
 ;;--------------------------------------------------------------------
 ;; Load-path
 ;;--------------------------------------------------------------------
