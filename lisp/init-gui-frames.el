@@ -78,7 +78,9 @@
 ;; change font size
 (when (display-graphic-p)
   (global-set-key (kbd "C-M-=") 'text-scale-increase)
-  (global-set-key (kbd "C-M--") 'text-scale-decrease))
+  (global-set-key (kbd "C-M--") 'text-scale-decrease)
+  (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+  (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease))
 
 ;; time management
 ;; (setq display-time-24hr-format t)
@@ -95,11 +97,9 @@
  (t
   (set-face-attribute 'default nil :font "Monaco for Powerline 12")))
 ;; Chinese Font
-;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;; (dolist (charset '(han cjk-misc bopomofo))
 ;;   (set-fontset-font (frame-parameter nil 'font)
 ;;                     charset
-;;                     (font-spec :family "Microsoft Yahei" :size 12)))
-
+;;                     (font-spec :family "STKaiti")))
 
 (provide 'init-gui-frames)
-
