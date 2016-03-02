@@ -32,7 +32,7 @@
     (setq org-clock-persistence-insinuate t
           org-clock-persist t
           org-clock-in-resume t
-          ;org-clock-in-switch-to-state "STARTED"
+          org-clock-in-switch-to-state "STARTED"
           org-clock-into-drawer t
           org-clock-out-remove-zero-time-clocks t)
     (setq org-time-clocksum-format
@@ -47,7 +47,7 @@
              "* %? :NOTE:\n%U\n%i\n %a" :clock-resume t)))
 
     (setq org-todo-keywords
-          (quote ((sequence "TODO(t)" "DONE(d@/!)")
+          (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d@/!)")
                   (sequence "WAIT(w@/!)" "CANCELLED(c@/!)"))))
 
     (bind-key "C-c c" 'org-capture)
