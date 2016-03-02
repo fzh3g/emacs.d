@@ -74,7 +74,6 @@
     org-plus-contrib
     org-bullets
     page-break-lines
-    paradox
     projectile
     pyvenv
     rainbow-delimiters
@@ -116,7 +115,7 @@
       (unless (package-installed-p pkg)
         (package-install pkg)))
     (fx-packages-check-all-installed)
-    (if fx-packages-check-all-installed
+    (if fx-packages-all-installed-p
         (message "%s" "All packages in `fx-packages' are installed !")
       (message "%s" "Error occured installing packages :-("))))
 
@@ -124,8 +123,5 @@
 (fx-install-packages)
 
 (require 'use-package)
-
-(use-package paradox
-  :defer t)
 
 (provide 'init-elpa)
