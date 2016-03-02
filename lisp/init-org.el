@@ -94,8 +94,10 @@
         (previous-line 2)
         (org-edit-src-code)))
 
-    (bind-key "C-c s e" 'org-edit-src-code)
-    (bind-key "C-c s i" 'org-insert-src-block)
+    (add-hook 'org-mode-hook
+              '(lambda ()
+                 (local-set-key (kbd "C-c s e") 'org-edit-src-code)
+                 (local-set-key (kbd "C-c s i") 'org-insert-src-block)))
 
     (org-babel-do-load-languages
      'org-babel-load-languages
