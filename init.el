@@ -35,9 +35,7 @@
 ;;--------------------------------------------------------------------
 ;; Configs for UI and window actions
 ;;--------------------------------------------------------------------
-(require 'init-frame-hooks)
 (require 'init-osx-keys)
-(require 'init-xterm)
 (require 'init-gui-frames)
 (require 'init-windows)
 (require 'init-move-window-buffer)

@@ -91,6 +91,10 @@
       scroll-preserve-screen-position 1
       auto-window-vscroll nil)
 
+;; mouse scrolling
+(global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
+(global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
+
 ;; Change "yes or no" to "y or n"
 (fset 'yes-or-no-p 'y-or-n-p)
 
