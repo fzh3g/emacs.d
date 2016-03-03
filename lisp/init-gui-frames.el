@@ -15,8 +15,7 @@
               "       +#++:++#   +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++   \n"
               "      +#+        +#+       +#+ +#+     +#+ +#+               +#+    \n"
               "     #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#     \n"
-              "    ########## ###       ### ###     ###  ########   ########       \n\n"
-              "  ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥ HAPPY ♥♥♥♥♥♥♥ HACKING ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥\n\n\n"))
+              "    ########## ###       ### ###     ###  ########   ########       \n\n\n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
@@ -74,13 +73,6 @@
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
-
-;; change font size
-(when (display-graphic-p)
-  (global-set-key (kbd "C-M-=") 'text-scale-increase)
-  (global-set-key (kbd "C-M--") 'text-scale-decrease)
-  (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
-  (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease))
 
 ;; time management
 ;; (setq display-time-24hr-format t)
