@@ -2,7 +2,9 @@
   :init
   (add-hook 'after-init-hook
             '(lambda ()
-               (load-theme 'sanityinc-tomorrow-day t)))
+               (load-theme 'sanityinc-tomorrow-night t)
+               (when (fboundp 'powerline-reset)
+                 (powerline-reset))))
   :config
   (progn
     (defun light-theme ()
