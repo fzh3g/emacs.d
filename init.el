@@ -37,6 +37,7 @@
 ;;--------------------------------------------------------------------
 (require 'init-osx-keys)
 (require 'init-gui-frames)
+(require 'init-fonts)
 (require 'init-windows)
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
