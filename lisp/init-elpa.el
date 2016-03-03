@@ -17,7 +17,7 @@
      (sanityinc/package-maybe-enable-signatures)))
 
 ;; Fire up package.el
-
+(package-initialize)
 (setq package-enable-at-startup nil)
 
 ;; list of installed packages
