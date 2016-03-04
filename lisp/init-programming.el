@@ -70,6 +70,9 @@
     (setq projectile-indexing-method 'alien)
     (add-hook 'after-init-hook
               '(lambda ()
-                 (projectile-global-mode)))))
+                 (projectile-global-mode)))
+    (setq projectile-mode-line
+          '(:eval (when (ignore-errors (projectile-project-root))
+                    (concat " [" (projectile-project-name) "]"))))))
 
 (provide 'init-programming)
