@@ -1,23 +1,9 @@
-(use-package color-theme-sanityinc-tomorrow
-  :init
-  (add-hook 'after-init-hook
-            '(lambda ()
-               (load-theme 'sanityinc-tomorrow-night t)
-               (when (fboundp 'powerline-reset)
-                 (powerline-reset))))
+(use-package moe-theme
   :config
   (progn
-    (defun light-theme ()
-      "Load a light color theme."
-      (interactive)
-      (load-theme 'sanityinc-tomorrow-day t)
-      (when (fboundp 'powerline-reset)
-        (powerline-reset)))
-    (defun dark-theme ()
-      "Load a dark color theme."
-      (interactive)
-      (load-theme 'sanityinc-tomorrow-night t)
-      (when (fboundp 'powerline-reset)
-        (powerline-reset)))))
+    (setq moe-light-pure-white-background-in-terminal t)
+    (moe-light)
+    (moe-theme-set-color 'blue)
+    (powerline-moe-theme)))
 
 (provide 'init-theme)

@@ -38,11 +38,11 @@
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-fonts)
+(require 'init-modeline)
+(require 'init-theme)
 (require 'init-windows)
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
-(require 'init-theme)
-(require 'init-modeline)
 (require 'init-smartparens)
 ;;--------------------------------------------------------------------
 ;; Configs for some defult modes

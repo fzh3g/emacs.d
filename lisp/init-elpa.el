@@ -27,7 +27,6 @@
     avy
     buffer-move
     cmake-mode
-    color-theme-sanityinc-tomorrow
     company
     company-auctex
     company-c-headers
@@ -67,6 +66,7 @@
     markdown-mode
     matlab-mode
     mmm-mode
+    moe-theme
     multiple-cursors
     multi-term
     neotree
@@ -82,7 +82,6 @@
     session
     shell-pop
     smartparens
-    spaceline
     undo-tree
     use-package
     vimrc-mode
