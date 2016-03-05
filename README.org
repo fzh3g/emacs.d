@@ -43,20 +43,18 @@ system package manager
 
 ** Python
 
-- [emacs-jedi](https://github.com/tkf/emacs-jedi) is used for auto completion
+- [[https://github.com/tkf/emacs-jedi][emacs-jedi]] is used for auto completion
 - Install =jedi=, =service_factory= through =pip install=
 - Don't forget ~M-x jedi:install-server~ before using python-mode
 - If you're coding with multiple versions of Python, install
-[virtualenv](https://virtualenv.pypa.io/en/latest/)
-through =pip install=. After modified your virtualenv, use
+[[https://virtualenv.pypa.io/en/latest/][virtualenv]] through =pip install=. After modified your virtualenv, use
 ~M-x pyvenv-activate~ to activate it.
 
 ** C/C++
 
-- [irony-mode](https://github.com/Sarcasm/irony-mode) is used to improve
-the editing experience for the C, C++ and Object-C languages.
-- Install [libclang](http://clang.llvm.org/doxygen/group__CINDEX.html) and
-[cmake](http://www.cmake.org/) through your system package manager
+- [[https://github.com/Sarcasm/irony-mode][irony-mode]] is used to improve the editing experience for the C, C++ and
+Object-C languages.
+- Install [[http://clang.llvm.org/doxygen/group__CINDEX.html][libclang]] and [[http://www.cmake.org/][cmake]] through your system package manager
 - ~M-x irony-install-server~ to install =irony-server=
 
 ** LaTeX
@@ -71,8 +69,8 @@ Make sure TeX is installed. If you are a
 
 * References
 
-- [purcell's emacs.d](https://github.com/purcell/emacs.d)
-- [spacemacs](https://github.com/syl20bnr/spacemacs)
-- [Prelude](https://github.com/bbatsov/prelude)
-- [oh-my-emacs](https://github.com/xiaohanyu/oh-my-emacs)
-- [redguardtoo's emacs.d](https://github.com/redguardtoo/emacs.d)
+- [[https://github.com/purcell/emacs.d][purcell's emacs.d]]
+- [[https://github.com/syl20bnr/spacemacs][spacemacs]]
+- [[https://github.com/bbatsov/prelude][Prelude]]
+- [[https://github.com/xiaohanyu/oh-my-emacs][oh-my-emacs]]
+- [[https://github.com/redguardtoo/emacs.d][redguardtoo's emacs.d]]
