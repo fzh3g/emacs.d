@@ -1,0 +1,78 @@
+#+TITLE: zhengfaxiang's Emacs config
+
+* Introduction
+
+This is zhengfaxiang's Emacs configuration tree. It contains some reasonable 
+config for better coding experience, which runs smoothly in my Archlinux. This
+config adds improvments for the following languages:
+- C/C++
+- Python
+- Fortran
+- Matlab
+- LaTeX
+
+* Installation
+
+To install, clone this repo to =~/.emacs.d=. Please backup your old
+=~/.emacs= and =~/.emacs.d= before you join the journey :-)
+
+#+begin_src sh
+  git clone https://github.com/zhengfaxiang/emacs.d.git ~/.emacs.d
+#+end_src
+
+Then just fire up your Emacs, further third-party packages will be
+automatically downloaded and installed.
+
+* Update
+
+Update this config by entering =~/.emacs.d= and typing =git pull=. You
+also need to update the third-party packages by:
+
+~M-x package-list-packages~, then ~U~ followed by ~x~.
+
+* Before you start
+
+For fully enjoy the powerfull features of this configuration, there's
+some recommended instructions:
+
+** Spelling
+
+- =flyspell= is used for automatic spell checking
+- Install =aspell= & =aspell-en= or =hunspell= & =hunspell-en= through your
+system package manager
+
+** Python
+
+- [emacs-jedi](https://github.com/tkf/emacs-jedi) is used for auto completion
+- Install =jedi=, =service_factory= through =pip install=
+- Don't forget ~M-x jedi:install-server~ before using python-mode
+- If you're coding with multiple versions of Python, install
+[virtualenv](https://virtualenv.pypa.io/en/latest/)
+through =pip install=. After modified your virtualenv, use
+~M-x pyvenv-activate~ to activate it.
+
+** C/C++
+
+- [irony-mode](https://github.com/Sarcasm/irony-mode) is used to improve
+the editing experience for the C, C++ and Object-C languages.
+- Install [libclang](http://clang.llvm.org/doxygen/group__CINDEX.html) and
+[cmake](http://www.cmake.org/) through your system package manager
+- ~M-x irony-install-server~ to install =irony-server=
+
+** LaTeX
+
+Make sure TeX is installed. If you are a
+- Ubuntu/Debian/Mint user, install texlive by
+  =sudo apt-get install texlive-full=
+- Arch Linux user, install texlive by
+  =sudo pacman -S texlive-most texlive-langcjk=
+- Fedora user, install texlive by =sudo yum -S texlive-all=
+- SuSE user, install texlive by =sudo zypper in texlive-xetex=
+
+* References
+
+- [purcell's emacs.d](https://github.com/purcell/emacs.d)
+- [spacemacs](https://github.com/syl20bnr/spacemacs)
+- [Prelude](https://github.com/bbatsov/prelude)
+- [oh-my-emacs](https://github.com/xiaohanyu/oh-my-emacs)
+- [redguardtoo's emacs.d](https://github.com/redguardtoo/emacs.d)
