@@ -39,7 +39,7 @@ some recommended instructions:
 
 - =flyspell= is used for automatic spell checking
 - Install =aspell= & =aspell-en= or =hunspell= & =hunspell-en= through your
-system package manager
+  system package manager
 
 ** Python
 
@@ -47,13 +47,13 @@ system package manager
 - Install =jedi=, =service_factory= through =pip install=
 - Don't forget ~M-x jedi:install-server~ before using python-mode
 - If you're coding with multiple versions of Python, install
-[[https://virtualenv.pypa.io/en/latest/][virtualenv]] through =pip install=. After modified your virtualenv, use
-~M-x pyvenv-activate~ to activate it.
+  [[https://virtualenv.pypa.io/en/latest/][virtualenv]] through =pip install=. After modified your virtualenv, use
+  ~M-x pyvenv-activate~ to activate it.
 
 ** C/C++
 
 - [[https://github.com/Sarcasm/irony-mode][irony-mode]] is used to improve the editing experience for the C, C++ and
-Object-C languages.
+  Object-C languages.
 - Install [[http://clang.llvm.org/doxygen/group__CINDEX.html][libclang]] and [[http://www.cmake.org/][cmake]] through your system package manager
 - ~M-x irony-install-server~ to install =irony-server=
 
