@@ -74,6 +74,7 @@
     org-plus-contrib
     org-bullets
     page-break-lines
+    powerline
     projectile
     pyvenv
     rainbow-delimiters
