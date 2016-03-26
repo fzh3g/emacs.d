@@ -1,4 +1,4 @@
-#+TITLE: zhengfaxiang's Emacs config
+#+TITLE:  Emacs config
 
 * Introduction
 
