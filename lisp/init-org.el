@@ -49,7 +49,18 @@
     (setq org-todo-keywords
           (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d@/!)")
                   (sequence "WAIT(w@/!)" "CANCELLED(c@/!)"))))
+    (defun org-summary-todo (n-done n-not-done)
+      "Switch entry to DONE when all subentries are done, to TODO otherwise."
+      (let (org-log-done org-log-states)   ; turn off logging
+        (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+    (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+    (setq org-agenda-files (list "~/workspace/Org/TODO/work.org"
+                                 "~/workspace/Org/TODO/study.org"
+                                 "~/workspace/Org/TODO/entertainment.org"
+                             ))
+
+    
     (bind-key "C-c c" 'org-capture)
     (bind-key "C-c b" 'org-iswitchb)
     (bind-key "C-c a" 'org-agenda)
