@@ -1,3 +1,3 @@
-(use-package atom-one-dark-theme)
+(use-package underwater-theme)
 
 (provide 'init-theme)
