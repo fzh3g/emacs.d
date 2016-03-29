@@ -3,6 +3,7 @@
   :config
   (progn
     (setq powerline-default-separator 'wave)
+    (powerline-default-theme)
     ))
 
 ;;----------------------------------------------------------------------
