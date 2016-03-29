@@ -79,10 +79,10 @@
             (helm-do-ag dir)
           (message "error: Not in a project.")))))
   :bind
-  (("M-s a a" . helm-do-ag)
-   ("M-s a f" . helm-do-ag-this-file)
-   ("M-s a b" . helm-do-ag-buffers)
-   ("M-s a p" . fx/helm-project-do-ag)))
+  (("C-M-g a" . helm-do-ag)
+   ("C-M-g f" . helm-do-ag-this-file)
+   ("C-M-g b" . helm-do-ag-buffers)
+   ("C-M-g p" . fx/helm-project-do-ag)))
 
 (use-package helm-swoop
   :defer t
