@@ -3,7 +3,7 @@
   (progn
     (setq dired-recursive-deletes 'always)
     (setq dired-isearch-filenames 'dwim)
-    (setq diredp-hide-details-initially-flag nil)
+    (setq diredp-hide-details-initially-flag t)
     (setq dired-dwim-target t))
   :config
   (progn
