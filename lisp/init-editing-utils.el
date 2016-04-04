@@ -122,8 +122,8 @@
 
 (use-package expand-region
   :bind
-  (("C-}" . er/expand-region)
-   ("C-{" . er/contract-region)))
+  (("C-M-]" . er/expand-region)
+   ("C-M-[" . er/contract-region)))
 
 (use-package undo-tree
   :init (global-undo-tree-mode))
