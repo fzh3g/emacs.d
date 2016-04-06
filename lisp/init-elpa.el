@@ -83,6 +83,7 @@
     session
     shell-pop
     smartparens
+    toc-org
     undo-tree
     use-package
     vimrc-mode

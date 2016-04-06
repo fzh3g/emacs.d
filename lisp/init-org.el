@@ -125,6 +125,13 @@
   :defer t
   :init (add-hook 'org-mode-hook 'org-bullets-mode))
 
+(use-package toc-org
+    :defer t
+    :init
+    (progn
+      (setq toc-org-max-depth 10)
+      (add-hook 'org-mode-hook 'toc-org-enable)))
+
 (use-package htmlize
   :defer t)
 
