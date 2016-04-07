@@ -54,6 +54,7 @@
    ("C-x C-o" . helm-find-files)
    ("C-c h g" . helm-do-grep)
    ("C-h a" . helm-apropos)
+   ("C-h b" . helm-bookmarks)
    ("C-h r" . helm-mark-ring)
    ("C-h u" . helm-resume)
    ("C-c h C-c w" . helm-wikipedia-suggest)))
@@ -117,6 +118,6 @@
   (progn
     (setq helm-descbinds-window-style 'split)
     (add-hook 'helm-mode-hook 'helm-descbinds-mode)
-    (global-set-key (kbd "C-h b") 'helm-descbinds)))
+    (global-set-key (kbd "C-h k") 'helm-descbinds)))
 
 (provide 'init-helm)
