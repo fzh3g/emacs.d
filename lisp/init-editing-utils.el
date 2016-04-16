@@ -130,7 +130,7 @@
 
 (use-package neotree
   :defer t
-  :bind (("<f4>" . neotree-toggle))
+  :bind (("<f8>" . neotree-toggle))
   :config (setq neo-window-width 28
                 neo-create-file-auto-open t
                 neo-banner-message nil
