@@ -65,12 +65,13 @@
     (add-to-list 'org-latex-packages-alist '("" "minted"))
     (setq org-latex-listings 'minted)
     (setq org-latex-minted-options
-          '(("frame" "leftline")
-            ("bgcolor" "lightgray")
+          '(;; ("frame" "leftline")
+            ;; ("bgcolor" "lightgray")
             ("framesep" "2mm")
             ("fontsize" "\\footnotesize")
             ("mathescape" "")
-            ("linenos" "")))
+            ("linenos" "")
+            ))
     (setq org-latex-pdf-process
           '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
             "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
