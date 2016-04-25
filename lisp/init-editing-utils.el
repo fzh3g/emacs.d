@@ -192,10 +192,10 @@
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)
          ("C-S-<mouse-1>" . mc/add-cursor-on-click)
-         ("C-S-c r" . set-rectangular-region-anchor)
-         ("C-S-c c" . mc/edit-lines)
-         ("C-S-c e" . mc/edit-ends-of-lines)
-         ("C-S-c a" . mc/edit-beginnings-of-lines))
+         ("C-c m r" . set-rectangular-region-anchor)
+         ("C-c m c" . mc/edit-lines)
+         ("C-c m e" . mc/edit-ends-of-lines)
+         ("C-c m a" . mc/edit-beginnings-of-lines))
   :init
   (setq mc/list-file (concat fx-cache-directory ".mc-lists.el")))
 
