@@ -159,9 +159,8 @@
           which-key-prevent-C-h-from-cycling t
           which-key-sort-order 'which-key-key-order-alpha
           which-key-popup-type 'side-window
-          which-key-side-window-location '(right bottom)
-          which-key-max-description-length 23
-          which-key-side-window-max-width 0.5
+          which-key-side-window-location 'bottom
+          which-key-max-description-length 26
           which-key-side-window-max-height 0.4
           which-key-special-keys nil)
     (which-key-mode)))
