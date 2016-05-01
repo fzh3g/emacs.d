@@ -13,7 +13,8 @@
           org-edit-timestamp-down-means-later t
           org-fast-tag-selection-single-key 'expert
           org-tags-column 80
-          org-src-fontify-natively t)
+          org-src-fontify-natively t
+          org-ellipsis "⤵")
 
     (setq org-agenda-include-diary nil
           org-agenda-compact-blocks t
