@@ -23,6 +23,7 @@
     (hi-lock-mode . "")
     (which-key-mode . "")
     (page-break-lines-mode . "")
+    (irony-mode . "")
     ;; (projectile-mode . "")
     (subword-mode . "")
     (auto-revert-mode . "")
