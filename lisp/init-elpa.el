@@ -67,6 +67,7 @@
     matlab-mode
     mmm-mode
     moe-theme
+    monokai-theme
     multiple-cursors
     multi-term
     neotree
