@@ -143,7 +143,7 @@
 
     ;; C++
     (sp-with-modes '(c-mode c++-mode java-mode js2-mode sh-mode)
-      (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET"))))
+      (sp-local-pair "{" "}" :post-handlers '(("||\n[i]" "RET"))))
     (sp-local-pair 'c++-mode "/*" "*/" :post-handlers '((" | " "SPC")
                                                         ("* ||\n[i]" "RET")))
 ))
