@@ -26,7 +26,6 @@
     auctex
     avy
     buffer-move
-    chinese-fonts-setup
     cmake-mode
     company
     company-auctex
