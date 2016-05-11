@@ -33,7 +33,6 @@
 ;; indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-(setq tab-width 4)
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 (defun my:newline-at-end-of-line ()
