@@ -12,7 +12,8 @@
           TeX-parse-self t
           LaTeX-syntactic-comments t
           TeX-save-query nil
-          reftex-plug-into-AUCTeX t))
+          reftex-plug-into-AUCTeX t)
+    (setq TeX-command-extra-options "-shell-escape"))
 
   ;; default viewer
   (when *linux*
