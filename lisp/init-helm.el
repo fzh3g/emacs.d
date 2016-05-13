@@ -80,10 +80,10 @@
             (helm-do-ag dir)
           (message "error: Not in a project.")))))
   :bind
-  (("C-M-g a" . helm-do-ag)
-   ("C-M-g f" . helm-do-ag-this-file)
-   ("C-M-g b" . helm-do-ag-buffers)
-   ("C-M-g p" . fx/helm-project-do-ag)))
+  (("M-s a a" . helm-do-ag)
+   ("M-s a f" . helm-do-ag-this-file)
+   ("M-s a b" . helm-do-ag-buffers)
+   ("M-s a p" . fx/helm-project-do-ag)))
 
 (use-package helm-swoop
   :defer t
@@ -99,10 +99,10 @@
     (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
     (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop))
   :bind
-  (("M-i" . helm-swoop)
+  (("M-s s" . helm-swoop)
    ("M-I" . helm-swoop-back-to-last-point)
-   ("C-c M-i" . helm-multi-swoop)
-   ("C-x M-i" . helm-multi-swoop-all)))
+   ("M-s S" . helm-multi-swoop)
+   ("M-s C-s" . helm-multi-swoop-all)))
 
 (use-package helm-c-yasnippet
   :defer t
