@@ -56,7 +56,6 @@ some recommended instructions:
   Object-C languages.
 - Install [[http://clang.llvm.org/doxygen/group__CINDEX.html][libclang]] and [[http://www.cmake.org/][cmake]] through your system package manager
 - ~M-x irony-install-server~ to install =irony-server=
-
 ** LaTeX
 
 Make sure TeX is installed. If you are a
@@ -66,6 +65,11 @@ Make sure TeX is installed. If you are a
   =sudo pacman -S texlive-most texlive-langcjk=
 - Fedora user, install texlive by =sudo yum -S texlive-all=
 - SuSE user, install texlive by =sudo zypper in texlive-xetex=
+
+** Searching
+
+[[https://github.com/ggreer/the_silver_searcher][Ag]] (aka the silver searcher) is required by =helm-ag= for gorgeous code
+searching experience.
 
 * References
 
