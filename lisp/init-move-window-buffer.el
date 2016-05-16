@@ -10,9 +10,9 @@
   :defer t
   :init (setq-default buffer-move-behavior 'move)
   :bind
-  (("C-S-<up>" . buf-move-up)
-   ("C-S-<down>" . buf-move-down)
-   ("C-S-<left>" . buf-move-left)
-   ("C-S-<right>". buf-move-right)))
+  (("C-x C-m <up>" . buf-move-up)
+   ("C-x C-m <down>" . buf-move-down)
+   ("C-x C-m <left>" . buf-move-left)
+   ("C-x C-m <right>". buf-move-right)))
 
 (provide 'init-move-window-buffer)
