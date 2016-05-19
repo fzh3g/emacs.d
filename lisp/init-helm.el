@@ -70,7 +70,7 @@
   :defer t
   :init
   (progn
-    (setq helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
+    (setq helm-ag-base-command "ag --nocolor --nogroup")
     (setq helm-ag-insert-at-point 'symbol)
     (defun fx/helm-project-do-ag ()
       "Search in current project with `ag'."
