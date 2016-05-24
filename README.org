@@ -1,5 +1,17 @@
 #+TITLE: zhengfaxiang's Emacs config
 
+* Table of Contents                                                             :toc:
+ - [[#introduction][Introduction]]
+ - [[#installation][Installation]]
+ - [[#update][Update]]
+ - [[#before-you-start][Before you start]]
+   - [[#spelling][Spelling]]
+   - [[#python][Python]]
+   - [[#cc][C/C++]]
+   - [[#latex][LaTeX]]
+   - [[#searching][Searching]]
+ - [[#references][References]]
+
 * Introduction
 
 This is zhengfaxiang's Emacs configuration tree. It contains some reasonable 
