@@ -70,20 +70,12 @@
   :defer t
   :init
   (progn
-    (setq helm-ag-base-command "ag --nocolor --nogroup")
-    (setq helm-ag-insert-at-point 'symbol)
-    (defun fx/helm-project-do-ag ()
-      "Search in current project with `ag'."
-      (interactive)
-      (let ((dir (projectile-project-root)))
-        (if dir
-            (helm-do-ag dir)
-          (message "error: Not in a project.")))))
+    (setq helm-ag-base-command "ag --nocolor --nogroup"))
   :bind
   (("C-S-s a a" . helm-do-ag)
    ("C-S-s a f" . helm-do-ag-this-file)
    ("C-S-s a b" . helm-do-ag-buffers)
-   ("C-S-s a p" . fx/helm-project-do-ag)))
+   ("C-S-s a p" . helm-do-ag-project-root)))
 
 (use-package helm-swoop
   :defer t
