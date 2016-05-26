@@ -1,5 +1,5 @@
 ;; change font for better looking text
-(set-face-attribute 'default nil :font "Monaco:pixelsize=14")
+(set-face-attribute 'default nil :font "Monaco for Powerline:pixelsize=14")
 (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font)
                     charset
