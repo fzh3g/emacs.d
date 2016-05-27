@@ -4,35 +4,6 @@
   :init
   (add-hook 'prog-mode-hook 'flycheck-mode))
 
-;; whitespace
-(use-package whitespace
-  :defer t
-  :init
-  (progn
-    (setq whitespace-style '(face
-                             trailing
-                             tabs
-                             tab-mark
-                             empty
-                             spaces
-                             space-mark
-                             newline
-                             newline-mark
-                             indentation::space))
-    (global-set-key (kbd "C-c w") 'whitespace-mode))
-  :config
-  (progn
-    (set-face-attribute 'whitespace-space nil
-                        :background nil
-                        :foreground (face-attribute
-                                     'font-lock-warning-face
-                                     :foreground))
-    (set-face-attribute 'whitespace-tab nil
-                        :background nil)
-    (set-face-attribute 'whitespace-indentation nil
-                        :background nil)
-    ))
-
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
 
@@ -44,7 +15,6 @@
              (subword-mode)
              ;; eldoc, show API doc in minibuffer echo area
              (eldoc-mode)
-             (setq show-trailing-whitespace t)
              (my:local-comment-auto-fill)))
 
 ;; hs-minor-mode
