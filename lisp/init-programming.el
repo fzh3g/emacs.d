@@ -18,8 +18,7 @@
                              space-mark
                              newline
                              newline-mark
-                             indentation::space
-                             indentation::tab))
+                             indentation::space))
     (global-set-key (kbd "C-c w") 'whitespace-mode))
   :config
   (progn
