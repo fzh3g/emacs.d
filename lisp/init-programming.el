@@ -24,7 +24,10 @@
   :config
   (progn
     (set-face-attribute 'whitespace-space nil
-                        :background nil)
+                        :background nil
+                        :foreground (face-attribute
+                                     'font-lock-warning-face
+                                     :foreground))
     (set-face-attribute 'whitespace-tab nil
                         :background nil)
     (set-face-attribute 'whitespace-indentation nil
@@ -42,6 +45,7 @@
              (subword-mode)
              ;; eldoc, show API doc in minibuffer echo area
              (eldoc-mode)
+             (setq show-trailing-whitespace t)
              (my:local-comment-auto-fill)))
 
 ;; hs-minor-mode
