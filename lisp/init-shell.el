@@ -68,7 +68,7 @@
     (add-hook 'term-mode-hook
               '(lambda ()
                  (define-key term-raw-map (kbd "C-c C-t") 'multi-term)))
-    
+
     (defun term-send-tab ()
       "Send tab in term mode."
       (interactive)
@@ -150,13 +150,5 @@
            (t (comint-simple-send proc command))))))
 (add-hook 'shell-mode-hook 'shell-comint-input-sender-hook)
 
-(add-to-list 'auto-mode-alist '("\\.*conf\\'" . conf-mode))
-(add-to-list 'auto-mode-alist '("\\.profile\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.bash_history\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.sh\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.bashrc\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.zshrc\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.zsh_history\\'" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
-
 (provide 'init-shell)
+;;; init-shell.el ends here
