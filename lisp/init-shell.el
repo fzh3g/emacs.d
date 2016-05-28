@@ -4,7 +4,7 @@
 (defvar fx-default-shell (if *win32*
                              'eshell
                            'ansi-term)
-  "Default shell to use in emacs. Possible values are `eshell', `shell'
+  "Default shell to use in Emacs.  Possible values are `eshell', `shell',
 `term', `ansi-term' and `multi-term'.")
 
 ;; eshell
@@ -132,7 +132,7 @@
 
 (defun shell-comint-input-sender-hook ()
   "Check certain shell commands.
- Executes the appropriate behavior for certain commands."
+Executes the appropriate behavior for certain commands."
   (setq comint-input-sender
         (lambda (proc command)
           (cond
