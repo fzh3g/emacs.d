@@ -180,10 +180,8 @@
 ;; avy
 (use-package avy
   :bind
-  (("C-:" . avy-goto-char)
-   ("C-S-l" . avy-goto-line)
-   ("M-g f" . avy-goto-char-2)
-   ("M-g w" . avy-goto-subword-1)))
+  (("C-:" . avy-goto-word-or-subword-1)
+   ("C-S-l" . avy-goto-line)))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
