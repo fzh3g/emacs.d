@@ -5,12 +5,10 @@
              emoji-cheat-sheet-plus-display-mode)
   :init
   (progn
-    (defun fx//delay-emoji-cheat-sheet-hook ()
-      (run-at-time 0.1 nil 'emoji-cheat-sheet-plus-display-mode))
     (dolist (hook '(prog-mode-hook
                     markdown-mode-hook
                     org-mode-hook))
-      (add-hook hook 'fx//delay-emoji-cheat-sheet-hook))
+      (add-hook hook 'emoji-cheat-sheet-plus-display-mode))
     (global-set-key (kbd "C-c e i") 'emoji-cheat-sheet-plus-insert)
     (global-set-key (kbd "C-c e b") 'emoji-cheat-sheet-plus-buffer)))
 
