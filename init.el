@@ -70,6 +70,7 @@
 (require 'init-editing-utils)
 (require 'init-programming)
 (require 'init-whitespace)
+(require 'init-emoji)
 ;;--------------------------------------------------------------------
 ;; Additional tools for efficiency
 ;;--------------------------------------------------------------------
