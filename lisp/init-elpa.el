@@ -37,7 +37,7 @@
     company-statistics
     diff-hl
     dired+
-    emoji-cheat-sheet-plus
+    emojify
     eshell-prompt-extras
     exec-path-from-shell
     expand-region
