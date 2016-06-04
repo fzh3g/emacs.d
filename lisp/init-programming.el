@@ -2,7 +2,12 @@
 (use-package flycheck
   :defer t
   :init
-  (add-hook 'prog-mode-hook 'flycheck-mode))
+  (progn
+    (add-hook 'prog-mode-hook 'flycheck-mode)
+    (add-hook 'c++-mode-hook
+              '(lambda ()
+                 (setq flycheck-gcc-language-standard "c++11"
+                       flycheck-clang-language-standard "c++11")))))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
