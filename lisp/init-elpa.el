@@ -30,12 +30,14 @@
     company
     company-auctex
     company-c-headers
+    company-emoji
     company-irony
     company-jedi
     company-quickhelp
     company-statistics
     diff-hl
     dired+
+    emoji-cheat-sheet-plus
     eshell-prompt-extras
     exec-path-from-shell
     expand-region
