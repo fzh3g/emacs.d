@@ -1,5 +1,5 @@
 (use-package org
-  :mode ("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode)
+  :mode ("\\.\\(org\\|org_archive\\)$" . org-mode)
   :defer t
   :init
   (progn
