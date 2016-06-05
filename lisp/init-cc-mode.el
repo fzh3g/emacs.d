@@ -35,4 +35,13 @@
                       '(company-cmake :with company-yasnippet))))
 (add-hook 'cmake-mode-hook 'fx/company-for-cmake)
 
+(use-package gdb-mi
+  :defer t
+  :init
+  (setq
+   ;; use gdb-many-windows by default when `M-x gdb'
+   gdb-many-windows t
+   ;; Non-nil means display source file containing the main routine at startup
+   gdb-show-main t))
+
 (provide 'init-cc-mode)
