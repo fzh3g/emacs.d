@@ -1,4 +1,4 @@
-;; Emoji support :cat: :thumbsup:
+;; Emoji support 🐱 👍
 (use-package emojify
   :defer t
   :init
