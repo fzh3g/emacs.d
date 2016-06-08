@@ -12,7 +12,7 @@
     (setq yas-prompt-functions '(yas-completing-prompt))
 
     (define-key yas-minor-mode-map (kbd "M-s-/") 'yas-next-field)
-    
+
     (defun fx/load-yasnippet ()
       (unless yas-global-mode
         (progn
@@ -42,12 +42,14 @@
     (defvar smartparens-enabled-initially t
       "Stored whether smartparens is originally enabled or not.")
 
-    (add-hook 'yas-before-expand-snippet-hook (lambda ()
-                                                ;; If enabled, smartparens will mess snippets expanded by `hippie-expand`
-                                                (setq smartparens-enabled-initially smartparens-mode)
-                                                (smartparens-mode -1)))
-    (add-hook 'yas-after-exit-snippet-hook (lambda ()
-                                             (when smartparens-enabled-initially
-                                               (smartparens-mode 1))))))
+    (add-hook 'yas-before-expand-snippet-hook
+              (lambda ()
+                ;; If enabled, smartparens will mess snippets expanded by `hippie-expand`
+                (setq smartparens-enabled-initially smartparens-mode)
+                (smartparens-mode -1)))
+    (add-hook 'yas-after-exit-snippet-hook
+              (lambda ()
+                (when smartparens-enabled-initially
+                  (smartparens-mode 1))))))
 
 (provide 'init-yasnippet)
