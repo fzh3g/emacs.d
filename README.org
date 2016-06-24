@@ -14,7 +14,7 @@
 
 * Introduction
 
-This is zhengfaxiang's Emacs configuration tree. It contains some reasonable 
+This is zhengfaxiang's Emacs configuration tree. It contains some reasonable
 config for better coding experience, which runs smoothly in my Archlinux. This
 config adds improvments for the following languages:
 - C/C++
@@ -55,8 +55,10 @@ some recommended instructions:
 
 ** Python
 
-- [[https://github.com/tkf/emacs-jedi][emacs-jedi]] is used for auto completion
-- Install =jedi=, =service_factory= through =pip install=
+- [[https://github.com/tkf/emacs-jedi][emacs-jedi]] is used for auto completion. Install =jedi=, =service_factory=
+  by =pip= or system package manager.
+- Install =flake8=, =pylint= by =pip= or system package manager for syntax
+  checking.
 - Don't forget ~M-x jedi:install-server~ before using python-mode
 - If you're coding with multiple versions of Python, install
   [[https://virtualenv.pypa.io/en/latest/][virtualenv]] through =pip install=. After modified your virtualenv, use
