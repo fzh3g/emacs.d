@@ -82,7 +82,7 @@ Make sure TeX is installed. If you are a
 
 ** Searching
 
-[[https://github.com/ggreer/the_silver_searcher][Ag]] (aka the silver searcher) is required by =helm-ag= for gorgeous code
+[[https://github.com/ggreer/the_silver_searcher][Ag]] (aka the silver searcher) is required by =helm-ag= for nice code
 searching experience.
 
 * References
