@@ -23,9 +23,7 @@
     (powerline-default-theme)
     ))
 
-;;----------------------------------------------------------------------
 ;; clean mode-line
-;;----------------------------------------------------------------------
 (defvar mode-line-cleaner-alist
   `((company-mode . "")
     (yas-minor-mode . "")
