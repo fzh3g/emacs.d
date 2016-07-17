@@ -1,3 +1,20 @@
+;;; init-yasnippet.el --- Emacs configuration for Yasnippet
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for yasnippet.
+
+;;; Code:
+
 (use-package yasnippet
   :commands (yas-global-mode yas-minor-mode)
   :init
@@ -53,3 +70,4 @@
                   (smartparens-mode 1))))))
 
 (provide 'init-yasnippet)
+;;; init-yasnippet.el ends here

@@ -1,3 +1,20 @@
+;;; init-lua-mode.el --- Emacs configuration for Lua
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for lua-mode.
+
+;;; Code:
+
 (use-package lua-mode
   :defer t
   :mode "\\.lua\\'"
@@ -13,3 +30,4 @@
                 ("Variable" "^ *local +\\([^ ]+\\).*$" 1)))))
 
 (provide 'init-lua-mode)
+;;; init-lua-mode.el ends here

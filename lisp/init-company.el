@@ -1,3 +1,20 @@
+;;; init-company.el --- Emacs configuration for company-mode
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for automatic completion using company-mode.
+
+;;; Code:
+
 (defun fx//show-snippets-in-company (backend)
   (if (and (listp backend) (member 'company-yasnippet backend))
       backend
@@ -114,3 +131,4 @@
   (add-hook hook 'fx/company-for-c-c++))
 
 (provide 'init-company)
+;;; init-company.el ends here

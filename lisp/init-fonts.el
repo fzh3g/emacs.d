@@ -1,3 +1,20 @@
+;;; init-fonts.el --- Emacs configuration for fonts
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for fonts including Chinese fonts and emoji fonts.
+
+;;; Code:
+
 ;; change font for better looking text
 (set-face-attribute 'default nil :font "Monaco for Powerline:pixelsize=14")
 (dolist (charset '(kana han cjk-misc bopomofo))
@@ -27,3 +44,4 @@
 (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
 
 (provide 'init-fonts)
+;;; init-fonts.el ends here

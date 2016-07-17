@@ -1,3 +1,20 @@
+;;; init-modeline.el --- Emacs configuration for modeline
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for modeline with powerline.
+
+;;; Code:
+
 ;; spaceline
 (use-package powerline
   :config
@@ -155,3 +172,4 @@ want to use in the modeline *in lieu of* the original.")
 ;;                ))
 
 (provide 'init-modeline)
+;;; init-modeline.el ends here

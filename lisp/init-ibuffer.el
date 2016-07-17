@@ -1,3 +1,20 @@
+;;; init-ibuffer.el --- Emacs configuration for ibuffer
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for ibuffer
+
+;;; Code:
+
 (use-package ibuffer
   :bind (("C-x C-b" . ibuffer))
   :init
@@ -42,3 +59,4 @@
        (t (format "%8d" (buffer-size)))))))
 
 (provide 'init-ibuffer)
+;;; init-ibuffer.el ends here

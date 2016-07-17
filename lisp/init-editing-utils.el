@@ -1,3 +1,20 @@
+;;; init-editing-utils.el --- Emacs configuration for editing
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for better editing experience.
+
+;;; Code:
+
 ;; some basic preferences
 (setq mouse-yank-at-point t
       buffers-menu-max-size 30
@@ -5,13 +22,26 @@
       compilation-scroll-output t
       set-mark-command-repeat-pop t
       visible-bell t
-      delete-selection-mode t)
+      delete-selection-mode t
+      kill-whole-line t)
 
-; http://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
+;; cursor don't blink
+(blink-cursor-mode -1)
+
+; https://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
 ;; disable overwrite mode
 (put 'overwrite-mode 'disabled t)
+
+;; warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
+;; indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+(define-key global-map(kbd "RET") 'newline-and-indent)
 
 ;; http://emacswiki.org/emacs/RevertBuffer
 (global-set-key
@@ -27,29 +57,19 @@
         (revert-buffer :ignore-auto :noconfirm)
       (error "The buffer has been modified"))))
 
-;; warn when opening files bigger than 100MB
-(setq large-file-warning-threshold 100000000)
+(global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
 
-;; indentation
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+;; join line
+(global-set-key (kbd "C-c j") 'join-line)
+(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
 
-(define-key global-map(kbd "RET") 'newline-and-indent)
+;; Change "yes or no" to "y or n"
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; show column number and line number
-(use-package nlinum
-  :init (setq linum-delay t)
-  :config
-  (dolist (hook '(prog-mode-hook
-                  conf-mode-hook
-                  yaml-mode-hook
-                  web-mode-hook
-                  markdown-mode-hook
-                  matlab-mode-hook
-                  css-mode-hook))
-    (add-hook hook 'column-number-mode)
-    (add-hook hook 'line-number-mode)
-    (add-hook hook 'nlinum-mode)))
+;; doc view
+(setq doc-view-continuous t)
 
 ;; fill column indicator
 (use-package fill-column-indicator
@@ -70,43 +90,6 @@
         (with-current-buffer buffer
           (when (sanityinc/fci-enabled-p)
             (turn-on-fci-mode)))))))
-
-;; the blinking cursor is nothing, but an annoyance
-(blink-cursor-mode -1)
-
-;; kill whole line
-(setq kill-whole-line t)
-
-;; nice scrolling
-(setq scroll-margin 5
-      scroll-step 1
-      scroll-conservatively 10000
-      scroll-preserve-screen-position 1
-      auto-window-vscroll nil)
-
-;; mouse scrolling
-(global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
-(global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
-
-;; Change "yes or no" to "y or n"
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(global-auto-revert-mode t)
-(setq global-auto-revert-non-file-buffers t
-      auto-revert-verbose nil)
-
-(when (fboundp 'global-prettify-symbols-mode)
-  (global-prettify-symbols-mode))
-
-;; image-dired
-(setq image-dired-dir (concat fx-cache-directory "image-dired/")
-      image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
-      image-dired-db-file (concat image-dired-dir ".image-dired_db")
-      image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
-      image-dired-temp-rotate-image-file (concat image-dired-dir ".image-dired_rotate_temp"))
-
-;; doc view
-(setq doc-view-continuous t)
 
 ;; page break lines
 (use-package page-break-lines
@@ -201,29 +184,5 @@
     (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
     ))
 
-;; join line
-(global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
-
-;; Move more quickly
-(global-set-key (kbd "C-S-n")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-line 5))))
-
-(global-set-key (kbd "C-S-p")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-line -5))))
-
-(global-set-key (kbd "C-S-f")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-char 5))))
-
-(global-set-key (kbd "C-S-b")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (backward-char 5))))
-
 (provide 'init-editing-utils)
+;;; init-editing-utils.el ends here

@@ -1,5 +1,21 @@
-;;; This file bootstraps the configuration, which is divided into
-;;; a number of other files.
+;;; init.el --- Emacs main configuration file.
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; This file bootstraps the configuration, which is divided into
+;; a number of other files.
+
+;;; Code:
+
 ;;--------------------------------------------------------------------
 ;; Added by Package.el.
 ;;--------------------------------------------------------------------
@@ -67,6 +83,7 @@
 ;;--------------------------------------------------------------------
 ;; Better settings for editing and programming
 ;;--------------------------------------------------------------------
+(require 'init-linum-and-scroll)
 (require 'init-editing-utils)
 (require 'init-programming)
 (require 'init-whitespace)

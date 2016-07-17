@@ -1,3 +1,20 @@
+;;; init-markdown.el --- Emacs configuration for Markdown
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for markdown-mode.
+
+;;; Code:
+
 (use-package markdown-mode
   :mode "\\.\\(m[k]d\\|markdown\\)\\'"
   :defer t
@@ -85,3 +102,4 @@ If SUBMODE is not provided, use `LANG-mode' by default."
     (my-mmm-markdown-auto-class "shell" 'shell-script-mode)))
 
 (provide 'init-markdown)
+;;; init-markdown.el ends here

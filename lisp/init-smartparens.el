@@ -1,3 +1,20 @@
+;;; init-smartparens.el --- Emacs configuration for smartparens
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for smartparens.
+
+;;; Code:
+
 (use-package smartparens
   :defer t
   :init
@@ -149,3 +166,4 @@
 ))
 
 (provide 'init-smartparens)
+;;; init-smartparens.el ends here

@@ -1,3 +1,20 @@
+;;; init-fortran.el --- Emacs configuration for fortran
+;;
+;; Copyright (c) 2015-2016 Faxiang Zheng
+;;
+;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
+;; URL: https://github.com/zhengfaxiang/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; License: GPLv3
+
+;;; Commentary:
+
+;; Some configuration for fortran-mode and f90-mode.
+
+;;; Code:
+
 (use-package fortran-mode
   :defer t
   :mode "\\.\\(f\\|F\\)$"
@@ -15,3 +32,4 @@
                       (flycheck-mode -1))))
 
 (provide 'init-fortran)
+;;; init-fortran.el ends here
