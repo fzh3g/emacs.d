@@ -110,5 +110,8 @@
 ;; Locales
 (require 'init-locales)
 
+;; Init time
+(require 'init-benchmark)
+
 (provide 'init)
 ;;; init.el ends here
