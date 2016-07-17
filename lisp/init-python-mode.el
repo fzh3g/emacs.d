@@ -6,8 +6,8 @@
     (setq jedi:complete-on-dot t)
     (setq jedi:use-shortcuts t)
     (add-hook 'python-mode-hook
-              '(lambda ()
-                 (jedi:setup)))))
+              #'(lambda ()
+                  (jedi:setup)))))
 
 (use-package pyvenv
   :defer t)
@@ -28,8 +28,8 @@
         (setq python-shell-interpreter "python")))
 
     (add-hook 'python-mode-hook
-              '(lambda ()
-                 (python-default)
-                 (python-setup-shell)))))
+              #'(lambda ()
+                  (python-default)
+                  (python-setup-shell)))))
 
 (provide 'init-python-mode)

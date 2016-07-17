@@ -50,8 +50,8 @@
           (cdr root))))
 
     (add-hook 'markdown-mode-hook
-              '(lambda ()
-                 (setq imenu-create-index-function 'markdown-imenu-create-index))))
+              #'(lambda ()
+                  (setq imenu-create-index-function 'markdown-imenu-create-index))))
   :config
   (progn
     (when (fboundp 'sp-local-pair)

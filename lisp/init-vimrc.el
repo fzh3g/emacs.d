@@ -5,7 +5,7 @@
   :init
   (progn
     (add-hook 'vimrc-mode-hook
-              '(lambda ()
-                 (rainbow-delimiters-mode-disable)))))
+              #'(lambda ()
+                  (rainbow-delimiters-mode-disable)))))
 
 (provide 'init-vimrc)

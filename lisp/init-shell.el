@@ -66,8 +66,8 @@
   :config
   (progn
     (add-hook 'term-mode-hook
-              '(lambda ()
-                 (define-key term-raw-map (kbd "C-c C-t") 'multi-term)))
+              #'(lambda ()
+                  (define-key term-raw-map (kbd "C-c C-t") 'multi-term)))
 
     (defun term-send-tab ()
       "Send tab in term mode."
@@ -123,12 +123,12 @@
                        'multiterm
                      fx-default-shell)))
         (call-interactively (intern (format "shell-pop-%S" shell)))))
-    (global-set-key (kbd "C-x t '") 'fx/default-pop-shell)
-    (global-set-key (kbd "C-x t e") 'shell-pop-eshell)
-    (global-set-key (kbd "C-x t s") 'shell-pop-shell)
-    (global-set-key (kbd "C-x t m") 'shell-pop-multiterm)
-    (global-set-key (kbd "C-x t t") 'shell-pop-ansi-term)
-    (global-set-key (kbd "C-x t T") 'shell-pop-term)))
+    (global-set-key (kbd "C-x t '") #'fx/default-pop-shell)
+    (global-set-key (kbd "C-x t e") #'shell-pop-eshell)
+    (global-set-key (kbd "C-x t s") #'shell-pop-shell)
+    (global-set-key (kbd "C-x t m") #'shell-pop-multiterm)
+    (global-set-key (kbd "C-x t t") #'shell-pop-ansi-term)
+    (global-set-key (kbd "C-x t T") #'shell-pop-term)))
 
 (defun shell-comint-input-sender-hook ()
   "Check certain shell commands.

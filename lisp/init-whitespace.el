@@ -15,9 +15,9 @@
                              indentation::space))
     (global-set-key (kbd "C-c w") 'whitespace-mode)
     (add-hook 'prog-mode-hook
-              '(lambda ()
-                 (setq show-trailing-whitespace t)
-                 (add-hook 'before-save-hook 'whitespace-cleanup))))
+              #'(lambda ()
+                  (setq show-trailing-whitespace t)
+                  (add-hook 'before-save-hook 'whitespace-cleanup))))
   :config
   (progn
     (set-face-attribute 'whitespace-space nil

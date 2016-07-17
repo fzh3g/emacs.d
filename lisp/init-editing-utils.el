@@ -42,6 +42,7 @@
   (newline-and-indent))
 (global-set-key (kbd "S-<return>") 'my:newline-at-end-of-line)
 
+
 ;; show column number and line number
 (use-package nlinum
   :init (setq linum-delay t)
@@ -197,7 +198,7 @@
 
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
+(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
 
 ;; Move more quickly
 (global-set-key (kbd "C-S-n")

@@ -17,8 +17,8 @@
   (split-window-horizontally)
   (set-window-buffer (next-window) (other-buffer)))
 
-(global-set-key "\C-x2" 'fx/split-window-vertically)
-(global-set-key "\C-x3" 'fx/split-window-horizontally)
+(global-set-key "\C-x2" #'fx/split-window-vertically)
+(global-set-key "\C-x3" #'fx/split-window-horizontally)
 
 ;; Rearrange split windows
 (defun fx/split-window-horizontally-instead ()
@@ -33,7 +33,7 @@
     (delete-other-windows)
     (fx/split-window-vertically)))
 
-(global-set-key "\C-x|" 'fx/split-window-horizontally-instead)
-(global-set-key "\C-x_" 'fx/split-window-vertically-instead)
+(global-set-key "\C-x|" #'fx/split-window-horizontally-instead)
+(global-set-key "\C-x_" #'fx/split-window-vertically-instead)
 
 (provide 'init-windows)

@@ -27,17 +27,17 @@
 
     ;; shell history.
     (add-hook 'shell-mode-hook
-              '(lambda ()
-                 (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
+              #'(lambda ()
+                  (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
     (add-hook 'inferior-python-mode-hook
-              '(lambda ()
-                 (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
+              #'(lambda ()
+                  (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
     (add-hook 'eshell-mode-hook
-              '(lambda ()
-                 (local-set-key (kbd "C-c C-l") 'helm-eshell-history)))
+              #'(lambda ()
+                  (local-set-key (kbd "C-c C-l") 'helm-eshell-history)))
     (add-hook 'idlwave-shell-mode-hook
-              '(lambda ()
-                 (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
+              #'(lambda ()
+                  (local-set-key (kbd "C-c C-l") 'helm-comint-input-ring)))
 
     (helm-mode 1)
     (setq helm-autoresize-min-height 10)
