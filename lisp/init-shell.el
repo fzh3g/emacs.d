@@ -65,12 +65,19 @@
   (progn
     ;; Comint and Shell
     (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
-    (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
-    (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region)
+    (setq comint-output-filter-functions (remove
+                                          'ansi-color-process-output
+                                          comint-output-filter-functions))
+    (setq font-lock-unfontify-region-function
+          'xterm-color-unfontify-region)
     (with-eval-after-load 'esh-mode
-      (add-hook 'eshell-mode-hook (lambda () (setq xterm-color-preserve-properties t)))
+      (add-hook 'eshell-mode-hook
+                (lambda ()
+                  (setq xterm-color-preserve-properties t)))
       (add-hook 'eshell-preoutput-filter-functions 'xterm-color-filter)
-      (setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions)))))
+      (setq eshell-output-filter-functions
+            (remove
+             'eshell-handle-ansi-color eshell-output-filter-functions)))))
 
 (use-package multi-term
   :defer t
@@ -128,7 +135,9 @@
       (when (ignore-errors (get-buffer-process (current-buffer)))
         (set-process-sentinel (get-buffer-process (current-buffer))
                               (lambda (proc change)
-                                (when (string-match "\\(finished\\|exited\\)" change)
+                                (when (string-match
+                                       "\\(finished\\|exited\\)"
+                                       change)
                                   (kill-buffer (process-buffer proc))
                                   (delete-window))))))
     (add-hook 'term-mode-hook 'ansi-term-handle-close)
@@ -160,7 +169,8 @@ Executes the appropriate behavior for certain commands."
            ;; Check for man command and execute it.
            ((string-match "^[ \t]*man[ \t]*" command)
             (comint-send-string proc "\n")
-            (setq command (replace-regexp-in-string "^[ \t]*man[ \t]*" "" command))
+            (setq command
+                  (replace-regexp-in-string "^[ \t]*man[ \t]*" "" command))
             (setq command (replace-regexp-in-string "[ \t]+$" "" command))
             (funcall 'man command))
            ;; Send other commands to the default handler.

@@ -56,9 +56,12 @@
     (define-key sp-keymap (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
     (define-key sp-keymap (kbd "C-M-<right>") 'sp-backward-barf-sexp)
 
-    (define-key sp-keymap (kbd "M-s <right>") 'sp-splice-sexp-killing-forward)
-    (define-key sp-keymap (kbd "M-s <left>") 'sp-splice-sexp-killing-backward)
-    (define-key sp-keymap (kbd "M-s <backspace>") 'sp-splice-sexp-killing-around)
+    (define-key sp-keymap (kbd "M-s <right>")
+      'sp-splice-sexp-killing-forward)
+    (define-key sp-keymap (kbd "M-s <left>")
+      'sp-splice-sexp-killing-backward)
+    (define-key sp-keymap (kbd "M-s <backspace>")
+      'sp-splice-sexp-killing-around)
     (define-key sp-keymap (kbd "M-S-<delete>") 'sp-unwrap-sexp)
     (define-key sp-keymap (kbd "M-S-<backspace>") 'sp-backward-unwrap-sexp)
 
@@ -161,8 +164,9 @@
     ;; C++
     (sp-with-modes '(c-mode c++-mode java-mode js2-mode sh-mode)
       (sp-local-pair "{" "}" :post-handlers '(("||\n[i]" "RET"))))
-    (sp-local-pair 'c++-mode "/*" "*/" :post-handlers '((" | " "SPC")
-                                                        ("* ||\n[i]" "RET")))
+    (sp-local-pair 'c++-mode "/*" "*/"
+                   :post-handlers '((" | " "SPC")
+                                    ("* ||\n[i]" "RET")))
 ))
 
 (provide 'init-smartparens)

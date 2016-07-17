@@ -11,7 +11,7 @@
 
 ;;; Commentary:
 
-;; Some configuration for ibuffer
+;; Some configuration for ibuffer.
 
 ;;; Code:
 

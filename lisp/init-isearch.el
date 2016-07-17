@@ -80,3 +80,4 @@ This is useful when followed by an immediate kill."
     (define-key isearch-mode-map (kbd "C-<return>") 'isearch-exit-other-end)))
 
 (provide 'init-isearch)
+;;; init-isearch.el ends here

@@ -61,7 +61,8 @@
 
     (add-hook 'yas-before-expand-snippet-hook
               (lambda ()
-                ;; If enabled, smartparens will mess snippets expanded by `hippie-expand`
+                ;; If enabled, smartparens will mess snippets expanded
+                ;; by `hippie-expand`
                 (setq smartparens-enabled-initially smartparens-mode)
                 (smartparens-mode -1)))
     (add-hook 'yas-after-exit-snippet-hook
