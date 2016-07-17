@@ -35,13 +35,6 @@
 (setq-default tab-width 4)
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
-(defun my:newline-at-end-of-line ()
-  "Move to end of line, enter a newline, and reindent."
-  (interactive)
-  (move-end-of-line 1)
-  (newline-and-indent))
-(global-set-key (kbd "S-<return>") 'my:newline-at-end-of-line)
-
 
 ;; show column number and line number
 (use-package nlinum
@@ -196,6 +189,18 @@
   :init
   (setq mc/list-file (concat fx-cache-directory ".mc-lists.el")))
 
+(use-package crux
+  :init
+  (progn
+    (global-set-key [remap move-beginning-of-line]
+                    #'crux-move-beginning-of-line)
+    (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
+    (global-set-key (kbd "C-c o") #'crux-open-with)
+    (global-set-key (kbd "S-<return>") #'crux-smart-open-line)
+    (global-set-key (kbd "C-S-<return>") #'crux-smart-open-line-above)
+    (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
+    ))
+
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
@@ -220,30 +225,5 @@
                 (lambda ()
                   (interactive)
                   (ignore-errors (backward-char 5))))
-
-;; move to beginning of line, thanks to Prelude
-(defun prelude-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
-If ARG is not nil or 1, move forward ARG - 1 lines first. If
-point reaches the beginning or end of the buffer, stop there."
-  (interactive "^p")
-  (setq arg (or arg 1))
-
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
-
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
-
-(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
-
 
 (provide 'init-editing-utils)

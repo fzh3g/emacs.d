@@ -39,6 +39,7 @@
     company-jedi
     company-quickhelp
     company-statistics
+    crux
     diff-hl
     dired+
     emojify
