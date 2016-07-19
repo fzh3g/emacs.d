@@ -20,9 +20,8 @@
   :config
   (progn
     (window-numbering-mode 1)
-    ;; (custom-set-faces '(window-numbering-face
-    ;;                     ((t (:foreground "#ff1493" :weight bold)))))
-    ))
+    (custom-set-faces '(window-numbering-face
+                        ((t (:foreground "#ff1493" :weight bold)))))))
 
 (use-package buffer-move
   :defer t
