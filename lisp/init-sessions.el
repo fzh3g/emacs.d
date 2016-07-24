@@ -88,5 +88,17 @@
                      (abbreviate-file-name filename))))))
     ))
 
+(use-package savehist
+  :defer t
+  :init
+  (progn
+    (setq savehist-file (concat fx-cache-directory "savehist")
+          history-length 2048
+          savehist-autosave-interval 60
+          savehist-additional-variables '(search-ring
+                                          regexp-search-ring
+                                          extended-command-history))
+    (savehist-mode t)))
+
 (provide 'init-sessions)
 ;;; init-sessions.el ends here
