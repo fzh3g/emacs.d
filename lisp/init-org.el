@@ -56,8 +56,6 @@
     (setq org-time-clocksum-format
           '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
 
-    (setq org-default-notes-file "~/org/capture.org")
-
     (setq org-capture-templates
           '(("t" "Todo" entry (file "")
              "* TODO %?\n%i\n %a" :clock-resume t)
