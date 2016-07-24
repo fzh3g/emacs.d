@@ -46,6 +46,11 @@ also need to update the third-party packages by:
 For fully enjoy the powerfull features of this configuration, there's
 some recommended instructions:
 
+** Packages
+
+I personally use [[https://mirrors.tuna.tsinghua.edu.cn/elpa/][TUNA]] for faster package installing and updating. If you find
+it slow, you may modify the =package-archeves= variable in =lisp/init-elpa.el=.
+
 ** Spelling
 
 - =flyspell= is used for automatic spell checking
@@ -102,7 +107,7 @@ then open your Emacs and  =M-x idl-rescan-asynchronously=.
 ** Helm
 
 [[https://github.com/emacs-helm/helm][Helm]] is an incremental completion and selection narrowing framework,
-one of my favorite extension of Emacs. I use it for =M-x= and buffer-list,
+one of my favorite extensions of Emacs. I use it for =M-x= and buffer-list,
 recent file, code searching, etc.
 
 | Keybinding    | Command                         |
@@ -137,7 +142,8 @@ inside Emacs, you can easily =C-c C-l= to view command history.
 
 ** Company
 
-[[https://github.com/company-mode/company-mode][Company-mode]] is used for auto-completion. =C-h= to abort completion is helpful.
+[[https://github.com/company-mode/company-mode][Company-mode]] is used for auto-completion. =C-h= to abort completion may be
+helpful.
 
 ** Yasnippet
 
