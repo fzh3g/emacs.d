@@ -1,13 +1,10 @@
 .depend
-pyim/
-.wg-file.el
 /auto-save-list
 /.session*
 /custom.el
 *.elc
 CVS
 .svn
-*_flymake.el
 *~
 *.log
 .yas-compiled-snippets.el
@@ -38,12 +35,11 @@ places
 /irony
 /idlwave
 /request
-/.directory
+.directory
 /srecode-map.el
 /lisp/flycheck_init-git.el
 /lisp/flycheck_init-gtags.el
 /.cache/
-/anaconda-mode
 /session*
 /.python-environments
 /emojis
