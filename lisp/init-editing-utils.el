@@ -131,7 +131,8 @@
 (use-package anzu
   :defer t
   :init (global-anzu-mode t)
-  :bind ("M-s r" . anzu-query-replace-regexp)
+  :bind (("M-%" . anzu-query-replace)
+         ("C-M-%" . anzu-query-replace-regexp))
   :config
   (custom-set-variables
    '(anzu-mode-lighter "")
