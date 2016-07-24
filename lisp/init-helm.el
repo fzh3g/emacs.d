@@ -89,10 +89,10 @@
   (progn
     (setq helm-ag-base-command "ag --nocolor --nogroup"))
   :bind
-  (("C-S-s a a" . helm-do-ag)
-   ("C-S-s a f" . helm-do-ag-this-file)
-   ("C-S-s a b" . helm-do-ag-buffers)
-   ("C-S-s a p" . helm-do-ag-project-root)))
+  (("M-s a a" . helm-do-ag)
+   ("M-s a f" . helm-do-ag-this-file)
+   ("M-s a b" . helm-do-ag-buffers)
+   ("M-s a p" . helm-do-ag-project-root)))
 
 (use-package helm-swoop
   :defer t
@@ -108,9 +108,9 @@
     (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
     (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop))
   :bind
-  (("C-S-s s" . helm-swoop)
-   ("C-S-s S" . helm-multi-swoop)
-   ("C-S-s C-s" . helm-multi-swoop-all)))
+  (("M-s s" . helm-swoop)
+   ("M-s S" . helm-multi-swoop)
+   ("M-s C-s" . helm-multi-swoop-all)))
 
 (use-package helm-c-yasnippet
   :defer t
