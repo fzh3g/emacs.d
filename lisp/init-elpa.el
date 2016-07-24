@@ -93,7 +93,6 @@
     monokai-theme
     multiple-cursors
     multi-term
-    neotree
     nlinum
     org-plus-contrib
     org-bullets

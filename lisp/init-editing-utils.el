@@ -104,20 +104,6 @@
 (use-package undo-tree
   :init (global-undo-tree-mode))
 
-(use-package neotree
-  :defer t
-  :bind (("<f8>" . neotree-toggle))
-  :config (setq neo-window-width 28
-                neo-create-file-auto-open t
-                neo-banner-message nil
-                neo-show-updir-line nil
-                neo-mode-line-type 'neotree
-                neo-smart-open t
-                neo-dont-be-alone t
-                neo-persist-show nil
-                neo-show-hidden-files t
-                neo-auto-indent-point t))
-
 (use-package highlight-symbol
   :defer t
   :init
