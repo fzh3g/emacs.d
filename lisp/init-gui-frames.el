@@ -21,17 +21,17 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
 
-(setq initial-major-mode 'org-mode)
+;; (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message
       (concat
        "\n"
-       "#          ::::::::::   :::   :::       :::      ::::::::   ::::::::\n"
-       "#         :+:         :+:+: :+:+:    :+: :+:   :+:    :+: :+:    :+:\n"
-       "#        +:+        +:+ +:+:+ +:+  +:+   +:+  +:+        +:+\n"
-       "#       +#++:++#   +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++\n"
-       "#      +#+        +#+       +#+ +#+     +#+ +#+               +#+\n"
-       "#     #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#\n"
-       "#    ########## ###       ### ###     ###  ########   ########\n\n\n"))
+       ";;         ::::::::::   :::   :::       :::      ::::::::   ::::::::\n"
+       ";;        :+:         :+:+: :+:+:    :+: :+:   :+:    :+: :+:    :+:\n"
+       ";;       +:+        +:+ +:+:+ +:+  +:+   +:+  +:+        +:+\n"
+       ";;      +#++:++#   +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++\n"
+       ";;     +#+        +#+       +#+ +#+     +#+ +#+               +#+\n"
+       ";;    #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#\n"
+       ";;   ########## ###       ### ###     ###  ########   ########\n\n\n"))
 
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
