@@ -174,9 +174,7 @@
 
 (use-package hungry-delete
   :defer t
-  :init
-  (progn
-    (add-hook 'prog-mode-hook 'hungry-delete-mode))
+  :init (global-hungry-delete-mode)
   :config
   (progn
     (setq-default hungry-delete-chars-to-skip " \t\f\v")
