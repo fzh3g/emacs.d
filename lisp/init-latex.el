@@ -64,5 +64,9 @@
                 (TeX-fold-mode t)
                 (visual-line-mode t)))))
 
+(use-package latex-extra
+  :defer t
+  :init (add-hook 'LaTeX-mode-hook #'latex-extra-mode))
+
 (provide 'init-latex)
 ;;; init-latex.el ends here

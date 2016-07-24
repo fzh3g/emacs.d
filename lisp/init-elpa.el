@@ -11,7 +11,7 @@
 
 ;;; Commentary:
 
-;; Some configuration for installing package.
+;; Some configuration for installing packages.
 
 ;;; Code:
 
@@ -86,6 +86,7 @@
     ido-vertical-mode
     irony
     jedi-core
+    latex-extra
     less-css-mode
     lua-mode
     magit
