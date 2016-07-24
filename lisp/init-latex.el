@@ -19,17 +19,24 @@
   :defer t
   :init
   (progn
+    ;; indentation
     (setq LaTeX-indent-level 4)
     (setq TeX-newline-function 'newline-and-indent)
+    ;; use XeLaTeX
     (setq TeX-engine 'xetex)
+    ;; some variables
     (setq TeX-auto-untabify t
           TeX-master nil
-          TeX-show-compilation t
+          TeX-show-compilation nil
           TeX-auto-save t
           TeX-parse-self t
           LaTeX-syntactic-comments t
-          TeX-save-query nil
-          reftex-plug-into-AUCTeX t)
+          ;; reftex
+          reftex-plug-into-AUCTeX '(nil nil t t t)
+          reftex-use-fonts t
+          ;; Don't insert line-break at inline math
+          LaTeX-fill-break-at-separators nil)
+    ;; for Minted
     (setq TeX-command-extra-options "-shell-escape")
 
     ;; default viewer
@@ -51,18 +58,15 @@
     (add-hook 'LaTeX-mode-hook
               (lambda ()
                 (imenu-add-menubar-index)
+                (outline-minor-mode t)
                 (LaTeX-math-mode t)
                 (flycheck-mode -1)
-                (reftex-mode t)))
-
-    (add-hook 'TeX-mode-hook
-              (lambda ()
-                (outline-minor-mode t)
-                (flyspell-mode t)
+                (reftex-mode t)
+                (TeX-fold-mode t)
                 (TeX-interactive-mode t)
                 (TeX-PDF-mode t)
-                (TeX-fold-mode t)
-                (visual-line-mode t)))))
+                (visual-line-mode t)
+                (auto-fill-mode -1)))))
 
 (use-package latex-extra
   :defer t

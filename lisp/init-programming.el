@@ -40,7 +40,7 @@
               (my:local-comment-auto-fill)))
 
 ;; hs-minor-mode
-(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook LaTeX-mode-hook))
+(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'hs-minor-mode))
 (add-hook 'hs-minor-mode-hook
           #'(lambda ()
