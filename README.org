@@ -110,32 +110,32 @@ then open your Emacs and  =M-x idl-rescan-asynchronously=.
 one of my favorite extensions of Emacs. I use it for =M-x= and buffer-list,
 recent file, code searching, etc.
 
-| Keybinding    | Command                         |
-|---------------+---------------------------------|
-| =M-x=         | helm-M-x                        |
-| =M-y=         | helm-show-kill-ring             |
-| =C-x b=       | helm-mini                       |
-| =C-h o=       | helm-occur                      |
-| =C-h i=       | helm-imenu                      |
-| =C-h <SPC>=   | helm-all-mark-rings             |
-| =C-c h x=     | helm-register                   |
-| =C-c h M-:=   | helm-eval-expression-with-eldoc |
-| =C-x C-o=     | helm-find-files                 |
-| =C-c h g=     | helm-do-grep                    |
-| =C-h a=       | helm-apropos                    |
-| =C-h b=       | helm-bookmarks                  |
-| =C-h r=       | helm-mark-ring                  |
-| =C-h u=       | helm-resume                     |
-| =C-c h C-c w= | helm-wikipedia-suggest          |
-| =C-h k=       | helm-descbinds                  |
-| =M-s a a=     | helm-do-ag                      |
-| =M-s a f=     | helm-do-ag-this-file            |
-| =M-s a b=     | helm-do-ag-buffers              |
-| =M-s a p=     | helm-do-ag-project-root         |
-| =M-s s=       | helm-swoop                      |
-| =M-s S=       | helm-multi-swoop                |
-| =M-s C-s=     | helm-multi-swoop-all            |
-| =C-c y=       | helm-yas-complete               |
+| Keybinding    | Command                                            |
+|---------------+----------------------------------------------------|
+| =M-x=         | helm-M-x                                           |
+| =M-y=         | helm-show-kill-ring                                |
+| =C-x b=       | helm-mini (for buffer list and recent file)        |
+| =C-h o=       | helm-occur (searching inside current buffer)       |
+| =C-h i=       | helm-imenu (index of functions, variables, etc)    |
+| =C-h <SPC>=   | helm-all-mark-rings                                |
+| =C-c h x=     | helm-register                                      |
+| =C-c h M-:=   | helm-eval-expression-with-eldoc                    |
+| =C-x C-o=     | helm-find-files                                    |
+| =C-c h g=     | helm-do-grep                                       |
+| =C-h a=       | helm-apropos (describe functions, variables, etc ) |
+| =C-h b=       | helm-bookmarks                                     |
+| =C-h r=       | helm-mark-ring                                     |
+| =C-h u=       | helm-resume                                        |
+| =C-c h C-c w= | helm-wikipedia-suggest                             |
+| =C-h k=       | helm-descbinds (describe keybindings)              |
+| =M-s a a=     | helm-do-ag (code searching)                        |
+| =M-s a f=     | helm-do-ag-this-file                               |
+| =M-s a b=     | helm-do-ag-buffers                                 |
+| =M-s a p=     | helm-do-ag-project-root                            |
+| =M-s s=       | helm-swoop (code searching)                        |
+| =M-s S=       | helm-multi-swoop                                   |
+| =M-s C-s=     | helm-multi-swoop-all                               |
+| =C-c y=       | helm-yas-complete (yasnippet integration)          |
 
 When using =eshell=, =idlwave-shell=, =inferior-python-mode=, or =shell=
 inside Emacs, you can easily =C-c C-l= to view command history.
@@ -194,6 +194,11 @@ by =C-x u=.
 =M-n= to navigate between highlighted symbols, and also can use =M-s r= to
 apply query replace.
 
+** Smartparens
+
+[[https://github.com/Fuco1/smartparens][Smartparens]] is a minor mode for Emacs that deals with parens pairs and
+tries to be smart about it. See =lisp/init-smartparens.el= for keybindings.
+
 ** Anzu
 
 [[https://github.com/syohex/emacs-anzu][Anzu]] provides a minor mode which displays current match and total matches
@@ -244,6 +249,20 @@ Buffer-move is used for swapping buffers.
 [[https://github.com/Malabarba/emacs-google-this][Google-this]] is for launching google searches from within Emacs. =C-c /= is
 the prefix key.
 
+** Crux
+
+[[https://github.com/bbatsov/crux][Crux]] bundles a few useful interactive commands to enhance your overall Emacs
+experience. I use the following frequently:
+
+| Keybinding        | Command                     |
+|-------------------+-----------------------------|
+| =C-a=             | crux-move-beginning-of-line |
+| =C-c o=           | crux-open-with              |
+| =C-o=             | crux-smart-open-line        |
+| =C-S-o=           | crux-smart-open-line-above  |
+| =C-<backspace>=   | crux-kill-line-backwards    |
+| =C-S-<backspace>= | crux-kill-whole-line        |
+
 ** Terminal
 
 If you want to use shell within Emacs,
@@ -256,6 +275,16 @@ If you want to use shell within Emacs,
 | =C-x t t=  | shell-pop-ansi-term |
 | =C-x t T=  | shell-pop-term      |
 
+** Sudo Save
+
+If want to edit a file with root privilege, just =C-x C-q= to disable
+=read-only-mode= and after you modified the file, save your change using
+=C-x M-s=.
+
+** Adjust Opacity
+
+=M-C-8=, =M-C-9= and =M-C-0= is used to adjust the opacity of Emacs
+graphics window program.
 * References
 
 - [[https://github.com/purcell/emacs.d][Purcell's emacs.d]]
