@@ -1,4 +1,4 @@
-;;; init-www.el --- Emacs configuration for World Wode Web
+;;; init-www.el --- Emacs configuration for World Wide Web
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;
