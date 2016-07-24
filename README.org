@@ -43,7 +43,7 @@ also need to update the third-party packages by:
 
 * Before you start
 
-For fully enjoy the powerfull features of this configuration, there's
+For fully enjoying the powerfull features of this configuration, there's
 some recommended instructions:
 
 ** Packages
