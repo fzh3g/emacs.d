@@ -1,35 +1,5 @@
 #+TITLE: My Personal Emacs configuration
 
-* Table of Contents                                                             :toc:
- - [[#introduction][Introduction]]
- - [[#installation][Installation]]
- - [[#update][Update]]
- - [[#before-you-start][Before you start]]
-   - [[#spelling][Spelling]]
-   - [[#python][Python]]
-   - [[#cc][C/C++]]
-   - [[#ag][Ag]]
-   - [[#idl-interactive-data-language][IDL (Interactive Data Language)]]
- - [[#more-features][More features]]
-   - [[#ido][Ido]]
-   - [[#helm][Helm]]
-   - [[#company][Company]]
-   - [[#yasnippet][Yasnippet]]
-   - [[#magit][Magit]]
-   - [[#projectile][Projectile]]
-   - [[#multiple-cursors][Multiple Cursors]]
-   - [[#expand-region][Expand Region]]
-   - [[#undo-tree][Undo Tree]]
-   - [[#highlight-symbol][Highlight Symbol]]
-   - [[#anzu][Anzu]]
-   - [[#visual-regexp][Visual Regexp]]
-   - [[#avy][Avy]]
-   - [[#window-numbering][Window Numbering]]
-   - [[#buffer-move][Buffer Move]]
-   - [[#google-this][Google This]]
-   - [[#terminal][Terminal]]
- - [[#references][References]]
-
 * Introduction
 
 This is my personal Emacs configuration I play with almost everyday.
