@@ -43,4 +43,5 @@ places
 /session*
 /.python-environments
 /emojis
-*desktop*
+*.desktop
+*.desktop.lock
