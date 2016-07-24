@@ -25,7 +25,8 @@
 
 ;; clean mode-line
 (defvar mode-line-cleaner-alist
-  `((company-mode . "")
+  `(;; Minor modes
+    (company-mode . "")
     (yas-minor-mode . "")
     (hs-minor-mode . "")
     (eldoc-mode . "")
@@ -44,6 +45,8 @@
     (visual-line-mode . "")
     (outline-minor-mode . "")
     (reftex-mode . "")
+    (google-this-mode . "")
+    (hungry-delete-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (python-mode . "Py")
