@@ -179,8 +179,8 @@
                     #'crux-move-beginning-of-line)
     (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
     (global-set-key (kbd "C-c o") #'crux-open-with)
-    (global-set-key (kbd "S-<return>") #'crux-smart-open-line)
-    (global-set-key (kbd "C-S-<return>") #'crux-smart-open-line-above)
+    (global-set-key (kbd "C-o") #'crux-smart-open-line)
+    (global-set-key (kbd "C-S-o") #'crux-smart-open-line-above)
     (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
     ))
 
