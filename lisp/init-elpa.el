@@ -149,7 +149,7 @@
     (fx-packages-check-all-installed)
     (if fx-packages-all-installed-p
         (message "%s" "All packages in `fx-packages' are installed !")
-      (message "%s" "Error occured installing packages :-("))))
+      )))
 
 ;; Run package installation
 (fx-install-packages)

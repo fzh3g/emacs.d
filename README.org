@@ -51,6 +51,24 @@ some recommended instructions:
 I personally use [[https://mirrors.tuna.tsinghua.edu.cn/elpa/][TUNA]] for faster package installing and updating. If you find
 it slow, you may modify the =package-archeves= variable in =lisp/init-elpa.el=.
 
+** Org
+
+First time you boot Emacs, it will automatically install all the packages
+defined in =lisp/init-elpa.el=. However, a warning about
+=org-plus-contrib= may occur like:
+
+#+BEGIN_EXAMPLE
+  Error (use-package): org :config: Invalid function: org-babel-header-args-safe-fn
+#+END_EXAMPLE
+
+you have, to
+
+- =M-x package-list-packages= and =C-h o= or =C-s= search for
+  =org-plus-contrib= and press =D= then =x= to delete the package.
+- Relaunch Emacs to automatically install =org-plus-contrib= back, then
+  exit Emacs.
+- Launch Emacs again, no such error anymore.
+
 ** Spelling
 
 - =flyspell= is used for automatic spell checking
