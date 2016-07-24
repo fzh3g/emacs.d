@@ -14,9 +14,9 @@
 
 * Introduction
 
-This is my personal Emacs configuration which I play with almost everyday.
-I rewrote [[https://github.com/purcell/emacs.d][Purcell's Emacs configuration]] with [[https://github.com/jwiegley/use-package][use-package]] which is faster,
-tidier and easier to configure packages. This configuration adds improvements
+This is my personal Emacs configuration I play with almost everyday.
+I rewrote [[https://github.com/purcell/emacs.d][Purcell's Emacs configuration]] with [[https://github.com/jwiegley/use-package][use-package]] which makes it
+faster and tidier. This configuration adds improvements
 for the following languages or modes:
 
 - C/C++
