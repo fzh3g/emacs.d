@@ -81,6 +81,7 @@
 (require 'init-regexp)
 (require 'init-shell)
 (require 'init-git)
+(require 'init-www)
 
 ;; Languages
 (require 'init-org)

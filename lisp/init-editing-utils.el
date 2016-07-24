@@ -71,9 +71,6 @@
 ;; doc view
 (setq doc-view-continuous t)
 
-;; default browser
-(setq browse-url-browser-function 'browse-url-default-browser)
-
 ;; fill column indicator
 (use-package fill-column-indicator
   :init

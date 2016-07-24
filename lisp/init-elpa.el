@@ -68,6 +68,7 @@
     flx-ido
     flycheck
     gnuplot
+    google-this
     helm
     helm-ag
     helm-c-yasnippet
