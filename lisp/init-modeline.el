@@ -47,6 +47,8 @@
     (reftex-mode . "")
     (google-this-mode . "")
     (hungry-delete-mode . "")
+    (latex-extra-mode . "")
+    (flyspell-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (python-mode . "Py")
