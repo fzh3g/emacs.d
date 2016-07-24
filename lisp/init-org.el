@@ -95,7 +95,7 @@
             "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
             "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
     ;; http://wenshanren.org/?p=327
-    (defun org-insert-src-block (src-code-type)
+    (defun fx/org-insert-src-block (src-code-type)
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
       (interactive
        (let ((src-code-types
@@ -115,8 +115,8 @@
 
     (add-hook 'org-mode-hook
               #'(lambda ()
-                  (local-set-key (kbd "C-c s e") 'org-edit-src-code)
-                  (local-set-key (kbd "C-c s i") 'org-insert-src-block)))
+                  (local-set-key (kbd "C-c s i") 'fx/org-insert-src-block)
+                  ))
 
     (org-babel-do-load-languages
      'org-babel-load-languages
