@@ -76,6 +76,7 @@
     helm-swoop
     highlight-symbol
     htmlize
+    hungry-delete
     ibuffer-vc
     ido-completing-read+
     ido-hacks

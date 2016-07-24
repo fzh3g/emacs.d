@@ -172,5 +172,16 @@
     (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
     ))
 
+(use-package hungry-delete
+  :defer t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'hungry-delete-mode))
+  :config
+  (progn
+    (setq-default hungry-delete-chars-to-skip " \t\f\v")
+    (define-key hungry-delete-mode-map (kbd "DEL") 'hungry-delete-backward)
+    (define-key hungry-delete-mode-map (kbd "S-DEL") 'delete-backward-char)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
