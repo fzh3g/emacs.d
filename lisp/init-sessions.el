@@ -44,36 +44,27 @@
     (setq desktop-path (list fx-cache-directory))
     (setq desktop-save 'if-exists)
     (setq desktop-globals-to-save
-          (append '((extended-command-history . 128)
-                    (file-name-history        . 128)
-                    (ido-last-directory-list  . 128)
-                    (kill-ring                . 128)
-                    (ido-work-file-list       . 128)
-                    (grep-history             . 128)
-                    (compile-history          . 128)
+          (append '((ido-last-directory-list  . 128)
+                    (ido-work-directory-list  . 128)
+                    (ido-file-history         . 128)
+                    (filename-history         . 128)
                     (minibuffer-history       . 128)
-                    (query-replace-history    . 128)
-                    (read-expression-history  . 128)
-                    (regexp-history           . 128)
-                    (regexp-search-ring       . 128)
+                    (extended-command-history . 128)
+                    (kill-ring                . 128)
+                    register-alist
                     (search-ring              . 128)
+                    (read-expression-history  . 128)
                     (comint-input-ring        . 128)
                     (shell-command-history    . 128)
+                    (regexp-history           . 64)
+                    (regexp-search-ring       . 64)
+                    (query-replace-history    . 64)
+                    (org-tags-history         . 64)
+                    (org-clock-history        . 64)
+                    (compile-history          . 64)
                     desktop-missing-file-warning
-                    register-alist)))
+                    )))
     (desktop-save-mode 1)))
-
-(use-package savehist
-  :defer t
-  :init
-  (progn
-    (setq savehist-file (concat fx-cache-directory "savehist")
-          history-length 2048
-          savehist-autosave-interval 60
-          savehist-additional-variables '(search-ring
-                                          regexp-search-ring
-                                          extended-command-history))
-    (savehist-mode t)))
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here
