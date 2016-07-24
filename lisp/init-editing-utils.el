@@ -109,7 +109,9 @@
   :init
   (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
     (add-hook hook 'highlight-symbol-mode)
-    (add-hook hook 'highlight-symbol-nav-mode)))
+    (add-hook hook 'highlight-symbol-nav-mode))
+  :bind
+  ("M-s r" . highlight-symbol-query-replace))
 
 (use-package rainbow-delimiters
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
