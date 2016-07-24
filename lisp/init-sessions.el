@@ -65,7 +65,28 @@
                     (regexp-search-ring       . 32)
                     desktop-missing-file-warning
                     )))
-    (desktop-save-mode 1)))
+    (desktop-save-mode 1)
+
+    ;; desktop read time
+    (defadvice desktop-read (around time-restore activate)
+      (let ((start-time (current-time)))
+        (prog1
+            ad-do-it
+          (message "Desktop restored in %.2fms"
+                   (fx/time-subtract-millis (current-time)
+                                                   start-time)))))
+    ;; desktop restore time
+    (defadvice desktop-create-buffer (around time-create activate)
+      (let ((start-time (current-time))
+            (filename (ad-get-arg 1)))
+        (prog1
+            ad-do-it
+          (message "Desktop: %.2fms to restore %s"
+                   (fx/time-subtract-millis (current-time)
+                                                   start-time)
+                   (when filename
+                     (abbreviate-file-name filename))))))
+    ))
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here
