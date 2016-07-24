@@ -16,11 +16,12 @@
 ;;; Code:
 
 ;; Emoji support 🐱 👍
-(use-package emojify
-  :defer t
-  :init
-  (progn
-    (add-hook 'after-init-hook 'global-emojify-mode)))
+(unless *is-a-mac*
+  (use-package emojify
+    :defer t
+    :init
+    (progn
+      (add-hook 'after-init-hook 'global-emojify-mode))))
 
 (use-package company-emoji
   :defer t

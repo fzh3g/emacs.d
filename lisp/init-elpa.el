@@ -60,9 +60,7 @@
     crux
     diff-hl
     dired+
-    emojify
     eshell-prompt-extras
-    exec-path-from-shell
     expand-region
     fill-column-indicator
     flx
@@ -122,6 +120,12 @@
     yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")
+
+(unless *linux*
+  (add-to-list 'fx-packages 'exec-path-from-shell))
+
+(unless *is-a-mac*
+  (add-to-list 'fx-packages 'emojify))
 
 ;; Check if all packages in `fx-packages' are installed
 (defvar fx-packages-all-installed-p t
