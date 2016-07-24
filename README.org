@@ -63,7 +63,7 @@ defined in =lisp/init-elpa.el=. However, a warning about
 
 you have, to
 
-- =M-x package-list-packages= and =C-h o= or =C-s= search for
+- =M-x package-list-packages= and =C-h o= or =C-s= to search for
   =org-plus-contrib= and press =D= then =x= to delete the package.
 - Relaunch Emacs to automatically install =org-plus-contrib= back, then
   exit Emacs.
