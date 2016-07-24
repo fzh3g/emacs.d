@@ -35,9 +35,6 @@
 
 (setq kill-ring-max 128)
 
-(setq session-save-file (concat fx-cache-directory ".session"))
-(setq session-save-print-spec '(t nil 40000))
-
 (use-package desktop
   :init
   (progn
@@ -89,16 +86,27 @@
     ))
 
 (use-package savehist
-  :defer t
   :init
   (progn
     (setq savehist-file (concat fx-cache-directory "savehist")
           history-length 2048
           savehist-autosave-interval 60
-          savehist-additional-variables '(search-ring
+          savehist-additional-variables '(mark-ring
+                                          global-mark-ring
+                                          search-ring
                                           regexp-search-ring
                                           extended-command-history))
     (savehist-mode t)))
+
+(use-package saveplace
+    :init
+    (progn
+      (if (fboundp 'save-place-mode)
+          ;; Emacs 25 has a proper mode for `save-place'
+          (save-place-mode)
+        (setq save-place t))
+      ;; Save point position between sessions
+      (setq save-place-file (concat fx-cache-directory "places"))))
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here
