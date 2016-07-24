@@ -41,7 +41,8 @@
 (use-package desktop
   :init
   (progn
-    (setq desktop-path (list fx-cache-directory))
+    (setq desktop-path (list user-emacs-directory)
+          desktop-auto-save-timeout 600)
     (setq desktop-save 'if-exists)
     (setq desktop-globals-to-save
           (append '((ido-last-directory-list  . 128)
