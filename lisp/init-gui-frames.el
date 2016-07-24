@@ -19,7 +19,10 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 (setq inhibit-startup-screen t)
-(setq inhibit-startup-echo-area-message t)
+;; (setq inhibit-startup-echo-area-message t)
+;; https://www.masteringemacs.org/article/disabling-prompts-emacs
+(eval-after-load "startup"
+  '(fset 'display-startup-echo-area-message (lambda ())))
 
 ;; (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message
