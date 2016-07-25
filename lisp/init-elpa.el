@@ -66,6 +66,7 @@
     flx
     flx-ido
     flycheck
+    flycheck-irony
     gnuplot
     google-this
     helm
@@ -84,6 +85,7 @@
     ido-ubiquitous
     ido-vertical-mode
     irony
+    irony-eldoc
     jedi-core
     latex-extra
     less-css-mode

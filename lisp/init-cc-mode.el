@@ -26,6 +26,7 @@
   :defer t
   :init
   (progn
+    (setq irony-additional-clang-options '("-std=c++11"))
     (dolist (hook '(c-mode-hook
                     c++-mode-hook
                     objc-mode-hook))
@@ -41,6 +42,21 @@
 
     (add-hook 'irony-mode-hook 'my-irony-mode-hook)
     (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
+
+(use-package flycheck-irony
+  :defer t
+  :init
+  (eval-after-load 'flycheck
+    '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup)))
+
+(use-package irony-eldoc
+  :defer t
+  :init
+  (eval-after-load 'flycheck
+    '(add-hook 'flycheck-mode-hook
+               #'(lambda ()
+                   (eldoc-mode t)
+                   (irony-eldoc)))))
 
 (defun fx/company-for-cmake ()
   (make-variable-buffer-local 'company-backends)
