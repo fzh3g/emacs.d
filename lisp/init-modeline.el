@@ -15,7 +15,7 @@
 
 ;;; Code:
 
-;; spaceline
+;; powerline
 (use-package powerline
   :config
   (progn
