@@ -15,9 +15,13 @@
 
 ;;; Code:
 
-(use-package monokai-theme
+;; (use-package monokai-theme
+;;   :config
+;;   (load-theme 'monokai t))
+
+(use-package leuven-theme
   :config
-  (load-theme 'monokai t))
+  (load-theme 'leuven t))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

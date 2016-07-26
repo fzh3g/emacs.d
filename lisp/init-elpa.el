@@ -89,6 +89,7 @@
     jedi-core
     latex-extra
     less-css-mode
+    leuven-theme
     lua-mode
     magit
     markdown-mode
