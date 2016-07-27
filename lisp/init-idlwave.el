@@ -20,6 +20,8 @@
   :init
   (add-hook 'idlwave-mode-hook
             #'(lambda ()
+                (flycheck-mode -1)
+                (auto-fill-mode -1)
                 ;; conflict with helm-ag and helm-swoop
                 (define-key idlwave-mode-map (kbd "M-s") nil))))
 
