@@ -42,10 +42,7 @@
           desktop-auto-save-timeout 600)
     (setq desktop-save 'if-exists)
     (setq desktop-globals-to-save
-          (append '((ido-last-directory-list  . 128)
-                    (ido-work-directory-list  . 128)
-                    (ido-file-history         . 128)
-                    (filename-history         . 128)
+          (append '((filename-history         . 128)
                     (extended-command-history . 128)
                     (kill-ring                . 128)
                     register-alist
