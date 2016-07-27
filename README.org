@@ -51,29 +51,12 @@ some recommended instructions:
 I personally use [[https://mirrors.tuna.tsinghua.edu.cn/elpa/][TUNA]] for faster package installing and updating. If you find
 it slow, you may modify the =package-archeves= variable in =lisp/init-elpa.el=.
 
-** Org
-
-First time you boot Emacs, it will automatically install all the packages
-defined in =lisp/init-elpa.el=. However, a warning about
-=org-plus-contrib= may occur like:
-
-#+BEGIN_EXAMPLE
-  Error (use-package): org :config: Invalid function: org-babel-header-args-safe-fn
-#+END_EXAMPLE
-
-you have, to
-
-- =M-x package-list-packages= and =C-h o= or =C-s= to search for
-  =org-plus-contrib= and press =D= then =x= to delete the package.
-- Relaunch Emacs to automatically install =org-plus-contrib= back, then
-  exit Emacs.
-- Launch Emacs again, no such error anymore.
-
 ** Spelling
 
 - =flyspell= is used for automatic spell checking
 - Install =aspell= & =aspell-en= or =hunspell= & =hunspell-en= through your
   system package manager
+- you can easily =C-c f= to correct a word using =flyspell-correct-ivy=
 
 ** Python
 
@@ -95,7 +78,7 @@ you have, to
 
 ** Ag
 
-[[https://github.com/ggreer/the_silver_searcher][Ag]] (aka the silver searcher) is required by =helm-ag= for nice code
+[[https://github.com/ggreer/the_silver_searcher][Ag]] (aka the silver searcher) is required by =counsel-ag= for nice code
 searching experience.
 
 ** IDL (Interactive Data Language)
@@ -118,45 +101,30 @@ then open your Emacs and  =M-x idl-rescan-asynchronously=.
 
 * More features
 
-** Ido
+** Ivy
 
-=Ido= is used for find-file =C-x C-f= and kill-buffer =C-x C-k=.
+[[https://github.com/abo-abo/swiper][Ivy]] is a completion method that's similar to =Ido=, but with emphasis on
+simplicity and customizability.
 
-** Helm
-
-[[https://github.com/emacs-helm/helm][Helm]] is an incremental completion and selection narrowing framework,
-one of my favorite extensions of Emacs. I use it for =M-x= and buffer-list,
-recent file, code searching, etc.
-
-| Keybinding    | Command                                            |
-|---------------+----------------------------------------------------|
-| =M-x=         | helm-M-x                                           |
-| =M-y=         | helm-show-kill-ring                                |
-| =C-x b=       | helm-mini (for buffer list and recent file)        |
-| =C-h o=       | helm-occur (searching inside current buffer)       |
-| =C-h i=       | helm-imenu (index of functions, variables, etc)    |
-| =C-h <SPC>=   | helm-all-mark-rings                                |
-| =C-c h x=     | helm-register                                      |
-| =C-c h M-:=   | helm-eval-expression-with-eldoc                    |
-| =C-x C-o=     | helm-find-files                                    |
-| =C-c h g=     | helm-do-grep                                       |
-| =C-h a=       | helm-apropos (describe functions, variables, etc ) |
-| =C-h b=       | helm-bookmarks                                     |
-| =C-h r=       | helm-mark-ring                                     |
-| =C-h u=       | helm-resume                                        |
-| =C-c h C-c w= | helm-wikipedia-suggest                             |
-| =C-h k=       | helm-descbinds (describe keybindings)              |
-| =M-s a a=     | helm-do-ag (code searching)                        |
-| =M-s a f=     | helm-do-ag-this-file                               |
-| =M-s a b=     | helm-do-ag-buffers                                 |
-| =M-s a p=     | helm-do-ag-project-root                            |
-| =M-s s=       | helm-swoop (code searching)                        |
-| =M-s S=       | helm-multi-swoop                                   |
-| =M-s C-s=     | helm-multi-swoop-all                               |
-| =C-c y=       | helm-yas-complete (yasnippet integration)          |
-
-When using =eshell=, =idlwave-shell=, =inferior-python-mode=, or =shell=
-inside Emacs, you can easily =C-c C-l= to view command history.
+| Keybinding | Command                    |
+|------------+----------------------------|
+| =C-s=      | counsel-grep-or-swiper     |
+| =C-x C-f=  | counsel-find-file          |
+| =M-x=      | counsel-M-x                |
+| =M-y=      | counsel-yank-pop           |
+| =M-s s=    | counsel-ag                 |
+| =M-s u=    | counsel-unicode-char       |
+| =M-s l=    | counsel-locate             |
+| =M-s g=    | counsel-git                |
+| =M-s k=    | counsel-git-grep           |
+| =C-h v=    | counsel-describe-variable  |
+| =C-h S=    | counsel-info-lookup-symbol |
+| =C-h f=    | counsel-describe-function  |
+| =C-h k=    | counsel-descbinds          |
+| =C-h b=    | counsel-bookmark           |
+| =C-c C-r=  | ivy-resume                 |
+| =C-c r=    | ivy-recentf                |
+| =M-i=      | ivy-imenu-anywhere         |
 
 ** Company
 
