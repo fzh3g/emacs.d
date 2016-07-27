@@ -16,6 +16,7 @@
 ;;; Code:
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :commands (yas-global-mode yas-minor-mode)
   :init
   (progn

@@ -16,6 +16,7 @@
 ;;; Code:
 
 (use-package smartparens
+  :diminish smartparens-mode
   :defer t
   :init
   (progn

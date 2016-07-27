@@ -23,6 +23,7 @@
 (add-hook 'c-mode-common-hook 'fx/c-mode-common-setup)
 
 (use-package irony
+  :diminish irony-mode
   :defer t
   :init
   (progn

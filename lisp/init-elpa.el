@@ -59,6 +59,7 @@
     company-statistics
     crux
     diff-hl
+    diminish
     dired+
     eshell-prompt-extras
     expand-region

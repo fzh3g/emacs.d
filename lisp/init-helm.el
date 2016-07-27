@@ -16,6 +16,7 @@
 ;;; Code:
 
 (use-package helm
+  :diminish helm-mode
   :init
   (progn
     (setq helm-split-window-in-side-p t

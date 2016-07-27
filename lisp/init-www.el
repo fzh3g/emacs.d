@@ -20,6 +20,7 @@
 
 ;; google this
 (use-package google-this
+  :diminish google-this-mode
   :defer t
   :init
   (progn

@@ -93,6 +93,7 @@
 
 ;; page break lines
 (use-package page-break-lines
+  :diminish page-break-lines-mode
   :init
   (global-page-break-lines-mode))
 
@@ -102,9 +103,12 @@
    ("C-M-[" . er/contract-region)))
 
 (use-package undo-tree
+  :diminish undo-tree-mode
   :init (global-undo-tree-mode))
 
 (use-package highlight-symbol
+  :diminish hi-lock-mode
+  :diminish highlight-symbol-mode
   :defer t
   :init
   (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
@@ -117,6 +121,7 @@
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package which-key
+  :diminish which-key-mode
   :init
   (progn
     (setq which-key-use-C-h-for-paging t
@@ -173,6 +178,7 @@
     ))
 
 (use-package hungry-delete
+  :diminish hungry-delete-mode
   :defer t
   :init (global-hungry-delete-mode)
   :config

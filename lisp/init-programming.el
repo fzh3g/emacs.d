@@ -40,19 +40,25 @@
               (my:local-comment-auto-fill)))
 
 ;; hs-minor-mode
-(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
-  (add-hook hook 'hs-minor-mode))
-(add-hook 'hs-minor-mode-hook
-          #'(lambda ()
-              (local-set-key (kbd "M-<left>") 'hs-hide-block)
-              (local-set-key (kbd "M-<right>") 'hs-show-block)
-              (local-set-key (kbd "M-<up>") 'hs-hide-all)
-              (local-set-key (kbd "M-<down>") 'hs-show-all)
-              (local-set-key (kbd "C-c @ l") 'hs-hide-level)
-              (local-set-key (kbd "C-c @ c") 'hs-toggle-hiding)))
+(use-package hideshow
+  :diminish hs-minor-mode
+  :defer t
+  :init
+  (progn
+    (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
+      (add-hook hook 'hs-minor-mode))
+    (add-hook 'hs-minor-mode-hook
+              #'(lambda ()
+                  (local-set-key (kbd "M-<left>") 'hs-hide-block)
+                  (local-set-key (kbd "M-<right>") 'hs-show-block)
+                  (local-set-key (kbd "M-<up>") 'hs-hide-all)
+                  (local-set-key (kbd "M-<down>") 'hs-show-all)
+                  (local-set-key (kbd "C-c @ l") 'hs-hide-level)
+                  (local-set-key (kbd "C-c @ c") 'hs-toggle-hiding)))))
 
 ;; projectile
 (use-package projectile
+  :diminish projectile-mode
   :init
   (progn
     (setq projectile-enable-caching t)

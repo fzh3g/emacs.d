@@ -69,6 +69,7 @@
                 (auto-fill-mode -1)))))
 
 (use-package latex-extra
+  :diminish latex-extra-mode
   :defer t
   :init (add-hook 'LaTeX-mode-hook #'latex-extra-mode))
 
