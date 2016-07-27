@@ -12,6 +12,7 @@
 ;;; Commentary:
 
 ;; Some configuration for helm.
+;; I've switched to Ivy so this file is now not loaded.
 
 ;;; Code:
 

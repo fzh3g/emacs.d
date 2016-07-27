@@ -12,6 +12,7 @@
 ;;; Commentary:
 
 ;; Some configuration for Ido.
+;; I've switched to Ivy so this file is now not loaded.
 
 ;;; Code:
 
@@ -45,9 +46,6 @@
 
 (use-package ido-hacks
   :defer t)
-
-(use-package idomenu
-  :bind ("C-h i" . helm-imenu))
 
 (provide 'init-ido)
 ;;; init-ido.el ends here
