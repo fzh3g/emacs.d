@@ -36,9 +36,14 @@
 (add-hook 'prog-mode-hook
           #'(lambda ()
               (subword-mode)
-              ;; eldoc, show API doc in minibuffer echo area
-              (eldoc-mode)
               (my:local-comment-auto-fill)))
+
+;; eldoc
+(dolist (hook '(emacs-lisp-mode-hook
+                lisp-interaction-mode-hook
+                irony-mode-hook
+                python-mode-hook))
+  (add-hook hook 'turn-on-eldoc-mode))
 
 ;; hs-minor-mode
 (use-package hideshow
