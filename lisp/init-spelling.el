@@ -16,6 +16,7 @@
 ;;; Code:
 
 (use-package flyspell
+  :diminish (flyspell-mode . " ξ")
   :defer t
   :init
   (progn

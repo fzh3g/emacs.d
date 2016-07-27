@@ -28,13 +28,13 @@
   (progn
     (eval-after-load 'org-indent '(diminish 'org-indent-mode))
     (eval-after-load "eldoc" '(diminish 'eldoc-mode))
-    (eval-after-load "abbrev" '(diminish 'abbrev-mode " Abv"))
+    (eval-after-load "abbrev" '(diminish 'abbrev-mode " β"))
     (eval-after-load "subword" '(diminish 'subword-mode))
     (eval-after-load "reftex" '(diminish 'reftex-mode))
     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
     (eval-after-load "outline" '(diminish 'outline-minor-mode))
-    (eval-after-load "simple" '(diminish 'visual-line-mode " Vl"))
-    (eval-after-load "simple" '(diminish 'auto-fill-function " Af"))
+    (eval-after-load "simple" '(diminish 'visual-line-mode " ω"))
+    (eval-after-load "simple" '(diminish 'auto-fill-function " φ"))
     ))
 
 (add-hook 'lisp-interaction-mode-hook
@@ -45,6 +45,9 @@
 
 (add-hook 'python-mode-hook
           #'(lambda () (setq mode-name "Py")))
+
+(add-hook 'markdown-mode-hook
+          #'(lambda () (setq mode-name "M↓")))
 
 (provide 'init-modeline)
 ;;; init-modeline.el ends here

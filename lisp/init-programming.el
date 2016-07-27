@@ -24,7 +24,8 @@
     (add-hook 'c++-mode-hook
               #'(lambda ()
                   (setq flycheck-gcc-language-standard "c++11"
-                        flycheck-clang-language-standard "c++11")))))
+                        flycheck-clang-language-standard "c++11"))))
+  :config (setq flycheck-mode-line-prefix "ε"))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
