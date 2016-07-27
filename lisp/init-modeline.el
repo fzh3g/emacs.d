@@ -31,7 +31,7 @@
     (eval-after-load "abbrev" '(diminish 'abbrev-mode " Abv"))
     (eval-after-load "subword" '(diminish 'subword-mode))
     (eval-after-load "reftex" '(diminish 'reftex-mode))
-    (eval-after-load "autorevert" '(diminish 'auto-revert-mode " AR"))
+    (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
     (eval-after-load "outline" '(diminish 'outline-minor-mode))
     (eval-after-load "simple" '(diminish 'visual-line-mode " Vl"))
     (eval-after-load "simple" '(diminish 'auto-fill-function " Af"))

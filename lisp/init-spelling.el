@@ -41,5 +41,13 @@
                utf-8))))
      (t (setq ispell-program-name nil)))))
 
+(use-package flyspell-correct-ivy
+  :init
+  (progn
+    (with-eval-after-load 'flyspell
+      (define-key flyspell-mode-map (kbd "C-c f")
+        'flyspell-correct-word-generic)
+      (setq flyspell-correct-interface 'flyspell-correct-ivy))))
+
 (provide 'init-spelling)
 ;;; init-spelling.el ends here

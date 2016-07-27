@@ -26,7 +26,6 @@
           org-startup-with-inline-image t
           org-startup-indented t
           org-hide-leading-stars t
-          org-completion-use-ido t
           org-edit-timestamp-down-means-later t
           org-fast-tag-selection-single-key 'expert
           org-tags-column 80

@@ -67,14 +67,16 @@
                                         "projectile.cache"))
     (setq projectile-known-projects-file (concat fx-cache-directory
                                                  "projectile-bookmarks.eld"))
-    (setq projectile-completion-system 'helm)
+    (setq projectile-completion-system 'ivy)
     (setq projectile-indexing-method 'alien)
     (add-hook 'after-init-hook
               #'(lambda ()
                   (projectile-global-mode)))
-    (setq projectile-mode-line
-          '(:eval (when (ignore-errors (projectile-project-root))
-                    (concat " [" (projectile-project-name) "]"))))))
+    ))
+
+(use-package imenu-anywhere
+  :defer t
+  :bind ("M-i" . ivy-imenu-anywhere))
 
 (provide 'init-programming)
 ;;; init-programming.el ends here

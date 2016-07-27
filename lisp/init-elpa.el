@@ -57,6 +57,7 @@
     company-jedi
     company-quickhelp
     company-statistics
+    counsel
     crux
     diff-hl
     diminish
@@ -64,27 +65,16 @@
     eshell-prompt-extras
     expand-region
     fill-column-indicator
-    flx
-    flx-ido
     flycheck
     flycheck-irony
+    flyspell-correct-ivy
     gnuplot
     google-this
-    helm
-    helm-ag
-    helm-c-yasnippet
-    helm-descbinds
-    helm-flx
-    helm-swoop
     highlight-symbol
     htmlize
     hungry-delete
     ibuffer-vc
-    ido-completing-read+
-    ido-hacks
-    idomenu
-    ido-ubiquitous
-    ido-vertical-mode
+    imenu-anywhere
     irony
     irony-eldoc
     jedi-core
@@ -111,6 +101,7 @@
     session
     shell-pop
     smartparens
+    swiper
     toc-org
     undo-tree
     use-package

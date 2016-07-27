@@ -56,7 +56,7 @@
 ;; Configs for some defult modes
 (require 'init-ibuffer)
 (require 'init-dired)
-(require 'init-isearch)
+;; (require 'init-isearch)
 (require 'init-spelling)
 
 ;; History and desktop saving
@@ -67,8 +67,9 @@
 (require 'init-company)
 (require 'init-hippie-expand)
 (require 'init-yasnippet)
-(require 'init-ido)
-(require 'init-helm)
+(require 'init-ivy)
+;; (require 'init-ido)
+;; (require 'init-helm)
 
 ;; Better settings for editing and programming
 (require 'init-linum-and-scroll)

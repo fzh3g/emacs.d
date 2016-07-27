@@ -32,7 +32,7 @@
              magit-commit)
   :init
   (progn
-    (setq magit-completing-read-function 'magit-builtin-completing-read
+    (setq magit-completing-read-function 'ivy-completing-read
           magit-save-some-buffers nil
           magit-process-popup-time -1)
 
