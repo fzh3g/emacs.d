@@ -124,7 +124,6 @@ simplicity and customizability.
 | =C-h b=    | counsel-bookmark           |
 | =C-s i=    | ivy-imenu-anywhere         |
 | =C-c C-r=  | ivy-resume                 |
-| =C-c r=    | ivy-recentf                |
 
 ** Company
 

@@ -32,7 +32,6 @@
      ("C-t" . ivy-toggle-fuzzy))
     (global-unset-key "\C-s"))
   :bind (("C-c C-r" . ivy-resume)
-         ("C-c r" . ivy-recentf)
          ("C-x C-f" . counsel-find-file)
          ("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)
