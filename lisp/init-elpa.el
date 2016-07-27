@@ -86,7 +86,6 @@
     markdown-mode
     matlab-mode
     mmm-mode
-    monokai-theme
     multiple-cursors
     multi-term
     nlinum

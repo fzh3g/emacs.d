@@ -15,10 +15,6 @@
 
 ;;; Code:
 
-;; (use-package monokai-theme
-;;   :config
-;;   (load-theme 'monokai t))
-
 (use-package leuven-theme
   :config
   (load-theme 'leuven t))
