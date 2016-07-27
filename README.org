@@ -248,6 +248,7 @@ experience. I use the following frequently:
 | =C-S-o=           | crux-smart-open-line-above  |
 | =C-<backspace>=   | crux-kill-line-backwards    |
 | =C-S-<backspace>= | crux-kill-whole-line        |
+| =C-c r=           | crux-rename-file-and-buffer |
 
 ** Terminal
 
