@@ -22,6 +22,7 @@
             '(:with company-yasnippet))))
 
 (use-package company
+  :diminish company-mode
   :defer t
   :init
   (progn
