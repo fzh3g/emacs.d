@@ -100,7 +100,6 @@
     multiple-cursors
     multi-term
     nlinum
-    org-plus-contrib
     org-bullets
     page-break-lines
     powerline
