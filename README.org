@@ -249,6 +249,12 @@ experience. I use the following frequently:
 | =C-S-<backspace>= | crux-kill-whole-line        |
 | =C-c r=           | crux-rename-file-and-buffer |
 
+** Desktop save
+
+If you want to automatically reload the last session for every time
+you open Emacs, you only need to =M-x desktop-save= and hit =<return>= key
+for one time.
+
 ** Terminal
 
 If you want to use shell within Emacs,
