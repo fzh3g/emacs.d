@@ -52,12 +52,7 @@
 
 (use-package irony-eldoc
   :defer t
-  :init
-  (eval-after-load 'flycheck
-    '(add-hook 'flycheck-mode-hook
-               #'(lambda ()
-                   (eldoc-mode t)
-                   (irony-eldoc)))))
+  :init (add-hook 'irony-mode-hook #'irony-eldoc))
 
 (defun fx/company-for-cmake ()
   (make-variable-buffer-local 'company-backends)
