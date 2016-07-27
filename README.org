@@ -108,23 +108,23 @@ simplicity and customizability.
 
 | Keybinding | Command                    |
 |------------+----------------------------|
-| =C-s=      | counsel-grep-or-swiper     |
 | =C-x C-f=  | counsel-find-file          |
 | =M-x=      | counsel-M-x                |
 | =M-y=      | counsel-yank-pop           |
-| =M-s s=    | counsel-ag                 |
-| =M-s u=    | counsel-unicode-char       |
-| =M-s l=    | counsel-locate             |
-| =M-s g=    | counsel-git                |
-| =M-s k=    | counsel-git-grep           |
+| =C-s s=    | counsel-grep-or-swiper     |
+| =C-s a=    | counsel-ag                 |
+| =C-s u=    | counsel-unicode-char       |
+| =C-s l=    | counsel-locate             |
+| =C-s g=    | counsel-git                |
+| =C-s k=    | counsel-git-grep           |
 | =C-h v=    | counsel-describe-variable  |
 | =C-h S=    | counsel-info-lookup-symbol |
 | =C-h f=    | counsel-describe-function  |
 | =C-h k=    | counsel-descbinds          |
 | =C-h b=    | counsel-bookmark           |
+| =C-s i=    | ivy-imenu-anywhere         |
 | =C-c C-r=  | ivy-resume                 |
 | =C-c r=    | ivy-recentf                |
-| =M-i=      | ivy-imenu-anywhere         |
 
 ** Company
 
@@ -212,8 +212,8 @@ feedback.
 
 | Keybinding | Command                    |
 |------------+----------------------------|
-| =C-:=      | avy-goto-word-or-subword-1 |
-| =C-S-l=    | avy-goto-line              |
+| =M-s w=    | avy-goto-word-or-subword-1 |
+| =M-s l=    | avy-goto-line              |
 
 ** Window Numbering
 

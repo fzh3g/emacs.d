@@ -76,7 +76,7 @@
 
 (use-package imenu-anywhere
   :defer t
-  :bind ("M-i" . ivy-imenu-anywhere))
+  :bind ("C-s i" . ivy-imenu-anywhere))
 
 (provide 'init-programming)
 ;;; init-programming.el ends here
