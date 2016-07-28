@@ -114,7 +114,7 @@
     (progn
       (window-configuration-to-register ?_)
       (delete-other-windows))))
-(global-set-key (kbd "C-x w m") #'fx/toggle-maximize-buffer)
+(global-set-key (kbd "<f12>") #'fx/toggle-maximize-buffer)
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
