@@ -67,6 +67,18 @@
 
 (global-set-key (kbd "<f11>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "M-<f11>") 'toggle-frame-maximized)
+
+(defun fx/toggle-maximize-buffer ()
+  "Toggle maximize buffer."
+  (interactive)
+  (if (and (= 1 (length (window-list)))
+           (assoc ?_ register-alist))
+      (jump-to-register ?_)
+    (progn
+      (window-configuration-to-register ?_)
+      (delete-other-windows))))
+(global-set-key (kbd "<f12>") #'fx/toggle-maximize-buffer)
+
 (global-set-key (kbd "M-C-8") (lambda ()
                                 (interactive)
                                 (adjust-opacity nil -5)))
