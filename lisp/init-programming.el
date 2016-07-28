@@ -29,17 +29,26 @@
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
-
-(defun my:local-comment-auto-fill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments) t))
-
 (add-hook 'prog-mode-hook
           #'(lambda ()
-              (subword-mode)
-              (my:local-comment-auto-fill)))
+              (set (make-local-variable 'comment-auto-fill-only-comments) t)))
+
+;; subword
+(use-package subword
+  :diminish subword-mode
+  :defer t
+  :init
+  (progn
+    (unless (category-docstring ?U)
+      (define-category ?U "Uppercase")
+      (define-category ?u "Lowercase"))
+    (modify-category-entry (cons ?A ?Z) ?U)
+    (modify-category-entry (cons ?a ?z) ?u)
+    (add-hook 'prog-mode-hook #'subword-mode)))
 
 ;; eldoc
 (use-package eldoc
+  :diminish eldoc-mode
   :defer t
   :config
   (dolist (hook '(emacs-lisp-mode-hook
