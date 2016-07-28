@@ -1,0 +1,9 @@
+-/elpa
+-/idlwave
+-/irony
+-/emojis
+-/.python-environments
+-/.cache
+-.emacs.desktop
+-.emacs.desktop.lock
+-*.elc
