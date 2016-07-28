@@ -243,14 +243,14 @@ experience. I use the following frequently:
 | Keybinding        | Command                     |
 |-------------------+-----------------------------|
 | =C-a=             | crux-move-beginning-of-line |
-| =C-c o=           | crux-open-with              |
 | =C-o=             | crux-smart-open-line        |
 | =C-S-o=           | crux-smart-open-line-above  |
 | =C-<backspace>=   | crux-kill-line-backwards    |
 | =C-S-<backspace>= | crux-kill-whole-line        |
-| =C-x f r=        | crux-rename-file-and-buffer |
-| =C-x f d=        | crux-delete-file-and-buffer |
-| =C-x f s=        | crux-sudo-edit              |
+| =C-x f o=         | crux-open-with              |
+| =C-x f r=         | crux-rename-file-and-buffer |
+| =C-x f d=         | crux-delete-file-and-buffer |
+| =C-x f s=         | crux-sudo-edit              |
 
 ** Desktop save
 
