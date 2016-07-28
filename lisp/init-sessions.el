@@ -89,8 +89,7 @@
           savehist-additional-variables '(mark-ring
                                           global-mark-ring
                                           search-ring
-                                          regexp-search-ring
-                                          extended-command-history))
+                                          regexp-search-ring))
     (savehist-mode t)))
 
 (use-package saveplace
