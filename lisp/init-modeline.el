@@ -28,7 +28,7 @@
   (progn
     (eval-after-load 'org-indent '(diminish 'org-indent-mode))
     (eval-after-load "eldoc" '(diminish 'eldoc-mode))
-    (eval-after-load "abbrev" '(diminish 'abbrev-mode " β"))
+    (eval-after-load "abbrev" '(diminish 'abbrev-mode))
     (eval-after-load "subword" '(diminish 'subword-mode))
     (eval-after-load "reftex" '(diminish 'reftex-mode))
     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
