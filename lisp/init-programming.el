@@ -39,11 +39,14 @@
               (my:local-comment-auto-fill)))
 
 ;; eldoc
-(dolist (hook '(emacs-lisp-mode-hook
-                lisp-interaction-mode-hook
-                irony-mode-hook
-                python-mode-hook))
-  (add-hook hook 'turn-on-eldoc-mode))
+(use-package eldoc
+  :defer t
+  :config
+  (dolist (hook '(emacs-lisp-mode-hook
+                  lisp-interaction-mode-hook
+                  eval-expression-minibuffer-setup-hook
+                  irony-mode-hook))
+    (add-hook hook #'eldoc-mode)))
 
 ;; hs-minor-mode
 (use-package hideshow
