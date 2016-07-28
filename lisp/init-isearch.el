@@ -12,6 +12,7 @@
 ;;; Commentary:
 
 ;; Some configuration for isearch.
+;; This file is now not loaded.
 
 ;;; Code:
 
