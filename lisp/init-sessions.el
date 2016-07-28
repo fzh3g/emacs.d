@@ -18,13 +18,16 @@
 ;; cache files
 (setq bookmark-default-file (concat fx-cache-directory "bookmarks")
       bookmark-save-flag 1
-      url-configuration-directory (concat fx-cache-directory "url")
-      eshell-directory-name (concat fx-cache-directory "eshell" )
+      url-configuration-directory (concat fx-cache-directory "url/")
+      eshell-directory-name (concat fx-cache-directory "eshell/" )
       tramp-persistency-file-name (concat fx-cache-directory "tramp"))
 
 ;; back up
+(let ((backup-dir (concat fx-cache-directory "backups/")))
+  (setq backup-directory-alist `(("." . ,backup-dir)))
+  (unless (file-exists-p backup-dir)
+    (make-directory backup-dir t)))
 (setq make-backup-files t
-      backup-directory-alist `(("." . "~/.cache/emacs/backups"))
       backup-by-copying t
       version-control t
       delete-old-versions t

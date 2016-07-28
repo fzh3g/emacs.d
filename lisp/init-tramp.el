@@ -17,8 +17,24 @@
 
 ;; http://www.quora.com/Whats-the-best-way-to-edit-remote-files-from-Emacs
 (setq tramp-default-method "ssh")
-(setq tramp-auto-save-directory "~/.cache/emacs/tramp")
+;; (setq tramp-auto-save-directory "~/.cache/emacs/tramp")
 (setq tramp-chunksize 8192)
+
+;; Auto-save file
+(setq auto-save-default t)
+(setq auto-save-list-file-prefix (concat fx-auto-save-directory))
+;; always save TRAMP URLs to cache directory
+(let ((autosave-dir (concat fx-auto-save-directory "dist/")))
+  (setq auto-save-file-name-transforms
+        `(("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'" ,autosave-dir  t)))
+  (unless (file-exists-p autosave-dir)
+    (make-directory autosave-dir)))
+;; auto-save location
+(let ((autosave-dir (concat fx-auto-save-directory "site/")))
+  (add-to-list 'auto-save-file-name-transforms
+               `(".*" ,autosave-dir t) 'append)
+  (unless (file-exists-p autosave-dir)
+    (make-directory autosave-dir t)))
 
 ;; https://github.com/syl20bnr/spacemacs/issues/1921
 (setq tramp-ssh-controlmaster-options

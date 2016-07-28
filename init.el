@@ -27,9 +27,15 @@
 ;; Load-path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (defconst fx-cache-directory
-  (expand-file-name ".cache/" user-emacs-directory))
-(if (not (file-exists-p fx-cache-directory))
-    (make-directory fx-cache-directory))
+  (expand-file-name ".cache/" user-emacs-directory)
+  "My Emacs cache directory.")
+(defconst fx-auto-save-directory
+  (expand-file-name (concat fx-cache-directory "auto-save/"))
+  "My Emacs auto-save directory.")
+(unless (file-exists-p fx-cache-directory)
+  (make-directory fx-cache-directory))
+(unless (file-exists-p fx-auto-save-directory)
+  (make-directory fx-auto-save-directory))
 
 ;; Debug on error
 (setq debug-on-error nil)
