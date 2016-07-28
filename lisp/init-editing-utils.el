@@ -28,7 +28,7 @@
 ;; cursor don't blink
 (blink-cursor-mode -1)
 
-; https://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
 ;; disable overwrite mode
@@ -43,19 +43,37 @@
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
+;; http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/
+(defun indent-buffer ()
+  "Indent the currently visited buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+(defun indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer."
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (indent-region (region-beginning) (region-end))
+          (message "Indented selected region."))
+      (progn
+        (indent-buffer)
+        (message "Indented buffer.")))))
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
 ;; http://emacswiki.org/emacs/RevertBuffer
 (global-set-key
-  (kbd "<f5>")
-  (lambda (&optional force-reverting)
-    "Interactive call to revert-buffer. Ignoring the auto-save
+ (kbd "<f5>")
+ (lambda (&optional force-reverting)
+   "Interactive call to revert-buffer. Ignoring the auto-save
  file and not requesting for confirmation. When the current buffer
  is modified, the command refuses to revert it, unless you specify
  the optional argument: force-reverting to true."
-    (interactive "P")
-    ;;(message "force-reverting value is %s" force-reverting)
-    (if (or force-reverting (not (buffer-modified-p)))
-        (revert-buffer :ignore-auto :noconfirm)
-      (error "The buffer has been modified"))))
+   (interactive "P")
+   ;;(message "force-reverting value is %s" force-reverting)
+   (if (or force-reverting (not (buffer-modified-p)))
+       (revert-buffer :ignore-auto :noconfirm)
+     (error "The buffer has been modified"))))
 
 (global-auto-revert-mode t)
 (setq global-auto-revert-non-file-buffers t
