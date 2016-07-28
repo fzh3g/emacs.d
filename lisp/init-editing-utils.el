@@ -215,6 +215,7 @@
     (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
     (global-set-key (kbd "C-c f r") #'crux-rename-file-and-buffer)
     (global-set-key (kbd "C-c f d") #'crux-delete-file-and-buffer)
+    (global-set-key (kbd "C-c f s") #'crux-sudo-edit)
     ))
 
 (use-package hungry-delete

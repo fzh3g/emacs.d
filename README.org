@@ -250,6 +250,7 @@ experience. I use the following frequently:
 | =C-S-<backspace>= | crux-kill-whole-line        |
 | =C-c f r=         | crux-rename-file-and-buffer |
 | =C-c f d=         | crux-delete-file-and-buffer |
+| =C-c f s=         | crux-sudo-edit              |
 
 ** Desktop save
 
@@ -268,12 +269,6 @@ If you want to use shell within Emacs,
 | =C-x t m=  | shell-pop-multiterm |
 | =C-x t t=  | shell-pop-ansi-term |
 | =C-x t T=  | shell-pop-term      |
-
-** Sudo Save
-
-If want to edit a file with root privilege, just =C-x C-q= to disable
-=read-only-mode= and after you modified the file, save your change using
-=C-x M-s=.
 
 ** Adjust Opacity
 
