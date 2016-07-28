@@ -68,17 +68,6 @@
 (global-set-key (kbd "<f11>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "M-<f11>") 'toggle-frame-maximized)
 
-(defun fx/toggle-maximize-buffer ()
-  "Toggle maximize buffer."
-  (interactive)
-  (if (and (= 1 (length (window-list)))
-           (assoc ?_ register-alist))
-      (jump-to-register ?_)
-    (progn
-      (window-configuration-to-register ?_)
-      (delete-other-windows))))
-(global-set-key (kbd "<f12>") #'fx/toggle-maximize-buffer)
-
 (global-set-key (kbd "M-C-8") (lambda ()
                                 (interactive)
                                 (adjust-opacity nil -5)))
@@ -114,6 +103,39 @@
 (setq display-time-default-load-average nil)
 ;; (setq display-time-day-and-date t)
 (display-time)
+
+;; https://gist.github.com/3402786
+(defun fx/toggle-maximize-buffer ()
+  "Toggle maximize buffer."
+  (interactive)
+  (if (and (= 1 (length (window-list)))
+           (assoc ?_ register-alist))
+      (jump-to-register ?_)
+    (progn
+      (window-configuration-to-register ?_)
+      (delete-other-windows))))
+(global-set-key (kbd "C-x w m") #'fx/toggle-maximize-buffer)
+
+;; http://emacs-doctor.com/emacs-strip-tease.html
+(define-minor-mode fx-centered-buffer-mode
+  "Minor mode to use big fringe in the current buffer."
+  :global t
+  :init-value nil
+  :group 'editing-basics
+  (if fx-centered-buffer-mode
+      (progn
+        (window-configuration-to-register ?_)
+        (delete-other-windows)
+        (diff-hl-mode -1)
+        (set-fringe-mode
+         (/ (- (frame-pixel-width)
+               (* 100 (frame-char-width)))
+            2)))
+    (set-fringe-style nil)
+    (when (assoc ?_ register-alist)
+      (diff-hl-mode)
+      (jump-to-register ?_))))
+(global-set-key (kbd "C-x w c") #'fx-centered-buffer-mode)
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
