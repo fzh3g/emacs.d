@@ -25,7 +25,14 @@
               #'(lambda ()
                   (setq flycheck-gcc-language-standard "c++11"
                         flycheck-clang-language-standard "c++11"))))
-  :config (setq flycheck-mode-line-prefix "ε"))
+  :config
+  (progn
+    (setq flycheck-mode-line-prefix "ε")
+    (define-key flycheck-mode-map flycheck-keymap-prefix nil)
+    (setq flycheck-keymap-prefix (kbd "C-c e"))
+    (define-key flycheck-mode-map flycheck-keymap-prefix
+      flycheck-command-map)
+    ))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
