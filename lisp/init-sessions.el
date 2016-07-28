@@ -23,10 +23,8 @@
       tramp-persistency-file-name (concat fx-cache-directory "tramp"))
 
 ;; back up
-(if (not (file-exists-p (expand-file-name "~/.backups")))
-    (make-directory (expand-file-name "~/.backups")))
 (setq make-backup-files t
-      backup-directory-alist `(("." . "~/.backups"))
+      backup-directory-alist `(("." . "~/.cache/emacs/backups"))
       backup-by-copying t
       version-control t
       delete-old-versions t

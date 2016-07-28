@@ -112,9 +112,8 @@
   :config
   (progn
     (setq undo-tree-auto-save-history t)
-    (let ((undo-dir (expand-file-name "undo" fx-cache-directory)))
-      (setq undo-tree-history-directory-alist
-            (list (cons "." undo-dir))))))
+    (setq undo-tree-history-directory-alist
+          `(("." . "~/.cache/emacs/undo")))))
 
 (use-package highlight-symbol
   :diminish hi-lock-mode
@@ -174,7 +173,7 @@
          ("C-c m e" . mc/edit-ends-of-lines)
          ("C-c m a" . mc/edit-beginnings-of-lines))
   :init
-  (setq mc/list-file (concat fx-cache-directory ".mc-lists.el")))
+  (setq mc/list-file (concat fx-cache-directory "mc-lists.el")))
 
 (use-package crux
   :init
