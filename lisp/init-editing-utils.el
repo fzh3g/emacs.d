@@ -91,6 +91,17 @@
           (when (sanityinc/fci-enabled-p)
             (turn-on-fci-mode)))))))
 
+(use-package ediff
+  :defer t
+  :init
+  (progn
+    (setq-default
+     ediff-window-setup-function 'ediff-setup-windows-plain
+     ;; emacs is evil and decrees that vertical shall henceforth be horizontal
+     ediff-split-window-function 'split-window-horizontally
+     ediff-merge-split-window-function 'split-window-horizontally)
+    (add-hook 'ediff-quit-hook #'winner-undo)))
+
 ;; page break lines
 (use-package page-break-lines
   :diminish page-break-lines-mode
