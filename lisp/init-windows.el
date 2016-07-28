@@ -19,6 +19,17 @@
 (use-package winner
   :init
   (progn
+    (setq winner-boring-buffers '("*Completions*"
+                                  "*Compile-Log*"
+                                  "*inferior-lisp*"
+                                  "*Apropos*"
+                                  "*Help*"
+                                  "*cvs*"
+                                  "*Buffer List*"
+                                  "*Ibuffer*"
+                                  "*esh command on file*"
+                                  "*Flycheck error messages*"
+                                  ))
     (winner-mode 1)
     (global-set-key (kbd "C-x 4 u") 'winner-undo)
     (global-set-key (kbd "C-x 4 r") 'winner-redo)))
