@@ -117,6 +117,7 @@
 (global-set-key (kbd "C-x w m") #'fx/toggle-maximize-buffer)
 
 ;; http://emacs-doctor.com/emacs-strip-tease.html
+(defvar fx/center-buffer-diff-hl-mode-on-p nil)
 (define-minor-mode fx-centered-buffer-mode
   "Minor mode to use big fringe in the current buffer."
   :global t
@@ -126,14 +127,18 @@
       (progn
         (window-configuration-to-register ?_)
         (delete-other-windows)
-        (diff-hl-mode -1)
+        (when (boundp 'diff-hl-mode)
+          (setq fx/center-buffer-diff-hl-mode-on-p diff-hl-mode)
+          (when diff-hl-mode (diff-hl-mode -1)))
+        (setq indicate-empty-lines nil)
         (set-fringe-mode
          (/ (- (frame-pixel-width)
                (* 100 (frame-char-width)))
             2)))
     (set-fringe-style nil)
     (when (assoc ?_ register-alist)
-      (diff-hl-mode)
+      (when fx/center-buffer-diff-hl-mode-on-p (diff-hl-mode))
+      (setq indicate-empty-lines t)
       (jump-to-register ?_))))
 (global-set-key (kbd "C-x w c") #'fx-centered-buffer-mode)
 
