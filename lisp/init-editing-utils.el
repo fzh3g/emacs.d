@@ -104,7 +104,17 @@
 
 (use-package undo-tree
   :diminish undo-tree-mode
-  :init (global-undo-tree-mode))
+  :init
+  (progn
+    (defalias 'redo 'undo-tree-redo)
+    (defalias 'undo 'undo-tree-undo)
+    (global-undo-tree-mode))
+  :config
+  (progn
+    (setq undo-tree-auto-save-history t)
+    (let ((undo-dir (expand-file-name "undo" fx-cache-directory)))
+      (setq undo-tree-history-directory-alist
+            (list (cons "." undo-dir))))))
 
 (use-package highlight-symbol
   :diminish hi-lock-mode
