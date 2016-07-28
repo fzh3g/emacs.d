@@ -225,9 +225,9 @@
     (global-set-key (kbd "C-o") #'crux-smart-open-line)
     (global-set-key (kbd "C-S-o") #'crux-smart-open-line-above)
     (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
-    (global-set-key (kbd "C-c f r") #'crux-rename-file-and-buffer)
-    (global-set-key (kbd "C-c f d") #'crux-delete-file-and-buffer)
-    (global-set-key (kbd "C-c f s") #'crux-sudo-edit)
+    (global-set-key (kbd "C-x f r") #'crux-rename-file-and-buffer)
+    (global-set-key (kbd "C-x f d") #'crux-delete-file-and-buffer)
+    (global-set-key (kbd "C-x f s") #'crux-sudo-edit)
     ))
 
 (use-package hungry-delete
