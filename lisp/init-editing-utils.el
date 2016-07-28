@@ -43,11 +43,6 @@
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
-;; http://emacsredux.com/blog/2013/03/27/indent-region-or-buffer/
-(defun indent-buffer ()
-  "Indent the currently visited buffer."
-  (interactive)
-  (indent-region (point-min) (point-max)))
 (defun indent-region-or-buffer ()
   "Indent a region if selected, otherwise the whole buffer."
   (interactive)
@@ -57,8 +52,9 @@
           (indent-region (region-beginning) (region-end))
           (message "Indented selected region."))
       (progn
-        (indent-buffer)
-        (message "Indented buffer.")))))
+        (indent-region (point-min) (point-max))
+        (message "Indented buffer.")))
+    (whitespace-cleanup)))
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
 ;; http://emacswiki.org/emacs/RevertBuffer
