@@ -85,6 +85,18 @@
 ;; doc view
 (setq doc-view-continuous t)
 
+;; http://camdez.com/blog/2013/11/14/emacs-show-buffer-file-name/
+(defun fx/show-and-copy-buffer-filename ()
+  "Show the full path to the current file in the minibuffer."
+  (interactive)
+  ;; list-buffers-directory is the variable set in dired buffers
+  (let ((file-name (or (buffer-file-name) list-buffers-directory)))
+    (if file-name
+        (message (kill-new file-name))
+      (error "Buffer not visiting a file"))))
+(global-set-key (kbd "C-x f") nil)
+(global-set-key (kbd "C-x f c") #'fx/show-and-copy-buffer-filename)
+
 ;; fill column indicator
 (use-package fill-column-indicator
   :init
