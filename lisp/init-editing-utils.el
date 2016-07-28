@@ -150,7 +150,8 @@
 ;; avy
 (use-package avy
   :bind
-  (("M-s w" . avy-goto-word-or-subword-1)
+  (("M-s s" . avy-goto-char)
+   ("M-s w" . avy-goto-word-or-subword-1)
    ("M-s l" . avy-goto-line)))
 
 (use-package multiple-cursors
