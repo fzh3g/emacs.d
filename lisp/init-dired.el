@@ -16,24 +16,28 @@
 ;;; Code:
 
 (use-package dired
-  :defer t)
-
-(use-package dired+
   :defer t
-  :init
-  (progn
-    (setq dired-recursive-deletes 'always)
-    (setq diredp-hide-details-initially-flag t)
-    (setq diredp-hide-details-propagate-flag t)
-    (setq dired-dwim-target t)
-    ;; use single buffer for all dired navigation
-    (toggle-diredp-find-file-reuse-dir 1))
+  :bind (("C-x C-j" . dired-jump)
+         ("C-x d" . dired))
   :config
   (progn
-    (when (fboundp 'global-dired-hide-details-mode)
-      (global-dired-hide-details-mode -1))
-    (define-key dired-mode-map (kbd "SPC") 'avy-goto-subword-1)
-    (define-key dired-mode-map [mouse-2] 'dired-find-file)))
+    (use-package dired+
+      :init
+      (progn
+        (setq dired-recursive-deletes 'always)
+        (setq diredp-hide-details-initially-flag t)
+        (setq diredp-hide-details-propagate-flag t)
+        (setq dired-dwim-target t)
+        ;; disable font themeing from dired+
+        (setq font-lock-maximum-decoration (quote ((dired-mode . 1) (t . t))))
+        ;; use single buffer for all dired navigation
+        (toggle-diredp-find-file-reuse-dir 1))
+      :config
+      (progn
+        (when (fboundp 'global-dired-hide-details-mode)
+          (global-dired-hide-details-mode -1))
+        (define-key dired-mode-map (kbd "SPC") 'avy-goto-subword-1)
+        (define-key dired-mode-map [mouse-2] 'dired-find-file)))))
 
 ;; image-dired
 (setq image-dired-dir (concat fx-cache-directory "image-dired/")
