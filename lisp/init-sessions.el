@@ -67,18 +67,18 @@
       (let ((start-time (current-time)))
         (prog1
             ad-do-it
-          (message "Desktop restored in %.2fms"
-                   (fx/time-subtract-millis (current-time)
-                                                   start-time)))))
+          (message "Desktop restored in %.3fs"
+                   (float-time (time-subtract (current-time)
+                                              start-time))))))
     ;; desktop restore time
     (defadvice desktop-create-buffer (around time-create activate)
       (let ((start-time (current-time))
             (filename (ad-get-arg 1)))
         (prog1
             ad-do-it
-          (message "Desktop: %.2fms to restore %s"
-                   (fx/time-subtract-millis (current-time)
-                                                   start-time)
+          (message "Desktop: %.3fs to restore %s"
+                   (float-time (time-subtract (current-time)
+                                              start-time))
                    (when filename
                      (abbreviate-file-name filename))))))
     ))
@@ -89,21 +89,22 @@
     (setq savehist-file (concat fx-cache-directory "savehist")
           history-length 2048
           savehist-autosave-interval 60
-          savehist-additional-variables '(mark-ring
+          savehist-additional-variables '(kill-ring
+                                          mark-ring
                                           global-mark-ring
                                           search-ring
                                           regexp-search-ring))
     (savehist-mode t)))
 
 (use-package saveplace
-    :init
-    (progn
-      (if (fboundp 'save-place-mode)
-          ;; Emacs 25 has a proper mode for `save-place'
-          (save-place-mode)
-        (setq save-place t))
-      ;; Save point position between sessions
-      (setq save-place-file (concat fx-cache-directory "places"))))
+  :init
+  (progn
+    (if (fboundp 'save-place-mode)
+        ;; Emacs 25 has a proper mode for `save-place'
+        (save-place-mode)
+      (setq save-place t))
+    ;; Save point position between sessions
+    (setq save-place-file (concat fx-cache-directory "places"))))
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here

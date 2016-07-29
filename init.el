@@ -19,6 +19,9 @@
 ;; Added by Package.el.
 ;; (package-initialize)
 
+;; Start time
+(defconst emacs-start-time (current-time))
+
 ;; OS type const
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *linux* (eq system-type 'gnu/linux))
@@ -120,8 +123,20 @@
 ;; Locales
 (require 'init-locales)
 
-;; Init time
-(require 'init-benchmark)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (let ((elapsed (float-time
+                            (time-subtract (current-time)
+                                           emacs-start-time))))
+              (if (file-exists-p (expand-file-name
+                                  desktop-base-file-name
+                                  user-emacs-directory))
+                  (message
+                   "Emacs loaded packages and restored desktop in %.3fs"
+                   elapsed)
+                (message
+                 "Emacs loaded packages in %.3fs"
+                 elapsed)))))
 
 (provide 'init)
 ;;; init.el ends here
