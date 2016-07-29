@@ -264,6 +264,13 @@ indent yanked text (with prefix arg don't indent)."
   :bind
   ("M-s r" . highlight-symbol-query-replace))
 
+(use-package highlight-numbers
+  :defer t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'highlight-numbers-mode)
+    (add-hook 'asm-mode-hook (lambda () (highlight-numbers-mode -1)))))
+
 (use-package rainbow-delimiters
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 

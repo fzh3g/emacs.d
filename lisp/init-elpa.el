@@ -71,6 +71,7 @@
     flyspell-correct-ivy
     gnuplot
     google-this
+    highlight-numbers
     highlight-symbol
     htmlize
     hungry-delete
