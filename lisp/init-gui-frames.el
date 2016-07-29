@@ -31,7 +31,7 @@
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'set-scroll-bar-mode)
-  (set-scroll-bar-mode nil))
+  (scroll-bar-mode -1))
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
 (when (fboundp 'menu-bar-mode)
@@ -59,8 +59,8 @@
 
 
 ;; time display
-(setq display-time-default-load-average nil)
-(display-time)
+;; (setq display-time-default-load-average nil)
+;; (display-time)
 
 ;; draw underline lower
 (setq x-underline-at-descent-line t)
