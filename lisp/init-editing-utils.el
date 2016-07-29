@@ -292,18 +292,8 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (global-set-key (kbd "C-h C-;") 'iedit-mode-toggle-on-function)
     (global-set-key (kbd "C-x r <return>") 'iedit-rectangle-mode)))
 
-(use-package info+
-  :defer t
-  :init
-  (progn
-    (with-eval-after-load 'info
-      (require 'info+))
-    (setq Info-fontify-angle-bracketed-flag nil)))
-
 (use-package lorem-ipsum
-  :commands (lorem-ipsum-insert-list
-             lorem-ipsum-insert-paragraphs
-             lorem-ipsum-insert-sentences)
+  :defer t
   :init
   (progn
     (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
