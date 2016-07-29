@@ -20,6 +20,7 @@
   :config
   (progn
     (setq powerline-default-separator 'wave)
+    (setq powerline-text-scale-factor 1.1)
     (powerline-default-theme)
     ))
 
