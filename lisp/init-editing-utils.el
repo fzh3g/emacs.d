@@ -43,6 +43,34 @@
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
+;; join line
+(global-set-key (kbd "C-c j") 'join-line)
+(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
+
+;; Change "yes or no" to "y or n"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; doc view
+(setq doc-view-continuous t)
+
+;; http://emacswiki.org/emacs/RevertBuffer
+(global-set-key
+ (kbd "<f5>")
+ (lambda (&optional force-reverting)
+   "Interactive call to revert-buffer. Ignoring the auto-save
+ file and not requesting for confirmation. When the current buffer
+ is modified, the command refuses to revert it, unless you specify
+ the optional argument: force-reverting to true."
+   (interactive "P")
+   ;;(message "force-reverting value is %s" force-reverting)
+   (if (or force-reverting (not (buffer-modified-p)))
+       (revert-buffer :ignore-auto :noconfirm)
+     (error "The buffer has been modified"))))
+
+(global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
+
 ;; taken from Prelude
 (defmacro fx|advise-commands (advice-name commands class &rest body)
   "Apply advice named ADVICE-NAME to multiple COMMANDS.
@@ -51,7 +79,9 @@ The body of the advice is in BODY."
      ,@(mapcar (lambda (command)
                  `(defadvice ,command
                       (,class ,(intern (concat
-                                        (symbol-name command) "-" advice-name))
+                                        (symbol-name command)
+                                        "-"
+                                        advice-name))
                               activate)
                     ,@body))
                commands)))
@@ -112,24 +142,6 @@ indent yanked text (with prefix arg don't indent)."
      (let ((transient-mark-mode nil))
        (fx/yank-advised-indent-function (region-beginning) (region-end)))))
 
-;; http://emacswiki.org/emacs/RevertBuffer
-(global-set-key
- (kbd "<f5>")
- (lambda (&optional force-reverting)
-   "Interactive call to revert-buffer. Ignoring the auto-save
- file and not requesting for confirmation. When the current buffer
- is modified, the command refuses to revert it, unless you specify
- the optional argument: force-reverting to true."
-   (interactive "P")
-   ;;(message "force-reverting value is %s" force-reverting)
-   (if (or force-reverting (not (buffer-modified-p)))
-       (revert-buffer :ignore-auto :noconfirm)
-     (error "The buffer has been modified"))))
-
-(global-auto-revert-mode t)
-(setq global-auto-revert-non-file-buffers t
-      auto-revert-verbose nil)
-
 (defun fx/dos2unix ()
   "Convert the current buffer to UNIX file format."
   (interactive)
@@ -141,16 +153,6 @@ indent yanked text (with prefix arg don't indent)."
 (global-set-key (kbd "C-x f") nil)
 (global-set-key (kbd "C-x f c u") #'fx/dos2unix)
 (global-set-key (kbd "C-x f c d") #'fx/unix2dos)
-
-;; join line
-(global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
-
-;; Change "yes or no" to "y or n"
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; doc view
-(setq doc-view-continuous t)
 
 ;; http://camdez.com/blog/2013/11/14/emacs-show-buffer-file-name/
 (defun fx/show-and-copy-buffer-filename ()
