@@ -73,11 +73,11 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (put 'scroll-left 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; indentation
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(global-set-key (kbd "C-x f") nil)
+(global-set-key (kbd "C-x f e") 'erase-buffer)
 
-(define-key global-map(kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
 
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
@@ -117,7 +117,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   "Convert the current buffer to DOS file format."
   (interactive)
   (set-buffer-file-coding-system 'undecided-dos nil))
-(global-set-key (kbd "C-x f") nil)
 (global-set-key (kbd "C-x f c u") #'fx/dos2unix)
 (global-set-key (kbd "C-x f c d") #'fx/unix2dos)
 
