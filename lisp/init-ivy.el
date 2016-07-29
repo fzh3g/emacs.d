@@ -16,7 +16,7 @@
 ;;; Code:
 
 (use-package ivy
-  :diminish (ivy-mode . " 🙒")
+  :diminish ivy-mode
   :config
   (progn
     (require 'counsel)
