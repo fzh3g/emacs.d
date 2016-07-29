@@ -76,7 +76,9 @@
     htmlize
     hungry-delete
     ibuffer-vc
+    iedit
     imenu-anywhere
+    info+
     irony
     irony-eldoc
     jedi-core

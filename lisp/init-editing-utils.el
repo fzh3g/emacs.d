@@ -293,5 +293,13 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   (progn
     (setq iedit-toggle-key-default t)))
 
+(use-package info+
+  :defer t
+  :init
+  (progn
+    (with-eval-after-load 'info
+      (require 'info+))
+    (setq Info-fontify-angle-bracketed-flag nil)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
