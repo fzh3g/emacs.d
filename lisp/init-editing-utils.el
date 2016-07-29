@@ -19,17 +19,45 @@
 (setq mouse-yank-at-point t
       buffers-menu-max-size 30
       case-fold-search t
-      compilation-scroll-output t
+      compilation-scroll-output 'first-error
       set-mark-command-repeat-pop t
-      visible-bell t
       delete-selection-mode t
       kill-whole-line t)
+
+;; no beep or visual blinking!
+(setq ring-bell-function 'ignore
+      visible-bell nil)
+
+;; Hack to fix a bug with tabulated-list.el
+;; see: http://redd.it/2dgy52
+(defun tabulated-list-revert (&rest ignored)
+  "The `revert-buffer-function' for `tabulated-list-mode'.
+It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
+  (interactive)
+  (unless (derived-mode-p 'tabulated-list-mode)
+    (error "The current buffer is not in Tabulated List mode"))
+  (run-hooks 'tabulated-list-revert-hook)
+  ;; hack is here
+  ;; (tabulated-list-print t)
+  (tabulated-list-print))
 
 ;; cursor don't blink
 (blink-cursor-mode -1)
 
+;; Mouse cursor in terminal mode
+(xterm-mouse-mode 1)
+
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
+
+;; persistent abbreviation file
+(setq abbrev-file-name (concat fx-cache-directory "abbrev_defs"))
+
+;; Text
+(setq longlines-show-hard-newlines t)
+
+;; Single space between sentences is more widespread than double
+(setq-default sentence-end-double-space nil)
 
 ;; disable overwrite mode
 (put 'overwrite-mode 'disabled t)
@@ -67,7 +95,9 @@
        (revert-buffer :ignore-auto :noconfirm)
      (error "The buffer has been modified"))))
 
+;; Auto refresh
 (global-auto-revert-mode t)
+;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
