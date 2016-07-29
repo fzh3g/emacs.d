@@ -109,10 +109,10 @@
   "Toggle maximize buffer."
   (interactive)
   (if (and (= 1 (length (window-list)))
-           (assoc ?_ register-alist))
-      (jump-to-register ?_)
+           (assoc :fx-maximize-buffer register-alist))
+      (jump-to-register :fx-maximize-buffer)
     (progn
-      (window-configuration-to-register ?_)
+      (window-configuration-to-register :fx-maximize-buffer)
       (delete-other-windows))))
 (global-set-key (kbd "<f12>") #'fx/toggle-maximize-buffer)
 
