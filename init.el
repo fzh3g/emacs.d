@@ -40,6 +40,9 @@
 ;; Debug on error
 (setq debug-on-error nil)
 
+;; silence ad-handle-definition about advised functions getting redefined
+(setq ad-redefinition-action 'accept)
+
 ;; GC Optimization
 (setq gc-cons-threshold (* 128 1024 1024))
 

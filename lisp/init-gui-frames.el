@@ -62,9 +62,6 @@
 (setq display-time-default-load-average nil)
 (display-time)
 
-;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
-(setq ad-redefinition-action 'accept)
-
 ;; draw underline lower
 (setq x-underline-at-descent-line t)
 

@@ -17,7 +17,6 @@
 
 ;; http://www.quora.com/Whats-the-best-way-to-edit-remote-files-from-Emacs
 (setq tramp-default-method "ssh")
-;; (setq tramp-auto-save-directory "~/.cache/emacs/tramp")
 (setq tramp-chunksize 8192)
 
 ;; Auto-save file
