@@ -125,6 +125,17 @@ simplicity and customizability.
 | =C-s i=    | ivy-imenu-anywhere         |
 | =C-c C-r=  | ivy-resume                 |
 
+** Avy
+
+[[https://github.com/abo-abo/avy][Avy]] is for jumping to visible text using a char-based decision tree.
+
+| Keybinding | Command                    |
+|------------+----------------------------|
+| =M-s s=    | avy-goto-char              |
+| =M-s w=    | avy-goto-word-or-subword-1 |
+| =M-s l=    | avy-goto-line              |
+| =M-s m=    | avy-pop-mark               |
+
 ** Company
 
 [[https://github.com/company-mode/company-mode][Company-mode]] is used for auto-completion. =C-h= to abort completion may be
@@ -204,16 +215,6 @@ feedback.
 | =C-c v r=  | vr/replace      |
 | =C-c v q=  | vr/query-replce |
 | =C-c v m=  | vr/mc-mark      |
-
-** Avy
-
-[[https://github.com/abo-abo/avy][Avy]] is for jumping to visible text using a char-based decision tree.
-
-| Keybinding | Command                    |
-|------------+----------------------------|
-| =M-s s=    | avy-goto-char              |
-| =M-s w=    | avy-goto-word-or-subword-1 |
-| =M-s l=    | avy-goto-line              |
 
 ** Window Numbering
 

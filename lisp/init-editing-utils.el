@@ -299,7 +299,8 @@ indent yanked text (with prefix arg don't indent)."
   :bind
   (("M-s s" . avy-goto-char)
    ("M-s w" . avy-goto-word-or-subword-1)
-   ("M-s l" . avy-goto-line)))
+   ("M-s l" . avy-goto-line)
+   ("M-s m" . avy-pop-mark)))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
