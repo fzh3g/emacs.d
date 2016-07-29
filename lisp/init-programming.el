@@ -92,7 +92,7 @@
   :diminish projectile-mode
   :init
   (progn
-    (setq projectile-enable-caching t)
+    (setq projectile-enable-caching nil)
     (setq projectile-sort-order 'recentf)
     (setq projectile-cache-file (concat fx-cache-directory
                                         "projectile.cache"))
