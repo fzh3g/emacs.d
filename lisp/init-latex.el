@@ -65,8 +65,7 @@
                 (TeX-fold-mode t)
                 (TeX-interactive-mode t)
                 (TeX-PDF-mode t)
-                (visual-line-mode t)
-                (auto-fill-mode -1)))))
+                (auto-fill-mode)))))
 
 (use-package latex-extra
   :diminish latex-extra-mode
