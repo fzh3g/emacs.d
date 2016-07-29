@@ -16,13 +16,34 @@
 ;;; Code:
 
 ;; Supress GUI features
-(setq use-file-dialog nil)
-(setq use-dialog-box nil)
-(setq inhibit-startup-screen t)
-;; (setq inhibit-startup-echo-area-message t)
+(setq ring-bell-function 'ignore)
+(setq use-file-dialog nil
+      visible-bell nil
+      use-dialog-box nil
+      inhibit-startup-screen t)
+
 ;; https://www.masteringemacs.org/article/disabling-prompts-emacs
 (eval-after-load "startup"
   '(fset 'display-startup-echo-area-message (lambda ())))
+
+(when (fboundp 'blink-cursor-mode)
+  (blink-cursor-mode -1))
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'set-scroll-bar-mode)
+  (set-scroll-bar-mode nil))
+(when (fboundp 'horizontal-scroll-bar-mode)
+  (horizontal-scroll-bar-mode -1))
+(when (fboundp 'menu-bar-mode)
+  (menu-bar-mode -1))
+
+;; more useful frame title, that show either a file or a
+;; buffer name (if the buffer isn't visiting a file)
+(setq frame-title-format
+      '("Emacs  "
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 ;; (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message
@@ -36,11 +57,19 @@
        ";;    #+#        #+#       #+# #+#     #+# #+#    #+# #+#    #+#\n"
        ";;   ########## ###       ### ###     ###  ########   ########\n\n\n"))
 
+
+;; time display
+(setq display-time-default-load-average nil)
+(display-time)
+
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
 
 ;; draw underline lower
 (setq x-underline-at-descent-line t)
+
+;; Toggle line highlighting in all buffers
+(global-hl-line-mode t)
 
 ;; pretty symbols
 (when (fboundp 'global-prettify-symbols-mode)
@@ -71,15 +100,6 @@
 (setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
 (set-fringe-bitmap-face 'tilde 'font-lock-type-face)
 
-;; Window size and features
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-(when (fboundp 'set-scroll-bar-mode)
-  (set-scroll-bar-mode nil))
-(when (fboundp 'horizontal-scroll-bar-mode)
-  (horizontal-scroll-bar-mode -1))
-(menu-bar-mode -1)
-
 ;; adjust opacity
 (defun adjust-opacity (frame incr)
   (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))
@@ -87,18 +107,17 @@
     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
 
-(global-set-key (kbd "<f11>") 'toggle-frame-fullscreen)
-(global-set-key (kbd "M-<f11>") 'toggle-frame-maximized)
-
-(global-set-key (kbd "M-C-8") (lambda ()
+(global-set-key (kbd "C-M-8") (lambda ()
                                 (interactive)
                                 (adjust-opacity nil -5)))
-(global-set-key (kbd "M-C-9") (lambda ()
+(global-set-key (kbd "C-M-9") (lambda ()
                                 (interactive)
                                 (adjust-opacity nil 5)))
-(global-set-key (kbd "M-C-0") (lambda ()
+(global-set-key (kbd "C-M-0") (lambda ()
                                 (interactive)
-                                (modify-frame-parameters nil `((alpha . 100)))))
+                                (modify-frame-parameters
+                                 nil
+                                 `((alpha . 100)))))
 
 (add-hook 'after-make-frame-functions
           (lambda (frame)
@@ -106,25 +125,8 @@
               (unless window-system
                 (set-frame-parameter nil 'menu-bar-lines 0)))))
 
-;; Toggle line highlighting in all buffers
-(global-hl-line-mode t)
-
-;; Show paren mode
-;; (show-paren-mode 1)
-
-;; more useful frame title, that show either a file or a
-;; buffer name (if the buffer isn't visiting a file)
-(setq frame-title-format
-      '("Emacs  "
-        (:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
-
-;; time management
-;; (setq display-time-24hr-format t)
-(setq display-time-default-load-average nil)
-;; (setq display-time-day-and-date t)
-(display-time)
+(global-set-key (kbd "<f11>") 'toggle-frame-fullscreen)
+(global-set-key (kbd "M-<f11>") 'toggle-frame-maximized)
 
 ;; https://gist.github.com/3402786
 (defun fx/toggle-maximize-buffer ()

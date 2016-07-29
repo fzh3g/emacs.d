@@ -18,15 +18,10 @@
 ;; some basic preferences
 (setq mouse-yank-at-point t
       buffers-menu-max-size 30
-      case-fold-search t
       compilation-scroll-output 'first-error
       set-mark-command-repeat-pop t
       delete-selection-mode t
       kill-whole-line t)
-
-;; no beep or visual blinking!
-(setq ring-bell-function 'ignore
-      visible-bell nil)
 
 ;; Hack to fix a bug with tabulated-list.el
 ;; see: http://redd.it/2dgy52
@@ -38,11 +33,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (error "The current buffer is not in Tabulated List mode"))
   (run-hooks 'tabulated-list-revert-hook)
   ;; hack is here
-  ;; (tabulated-list-print t)
   (tabulated-list-print))
-
-;; cursor don't blink
-(blink-cursor-mode -1)
 
 ;; Mouse cursor in terminal mode
 (xterm-mouse-mode 1)
@@ -56,14 +47,14 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 ;; Text
 (setq longlines-show-hard-newlines t)
 
+;; warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
 ;; Single space between sentences is more widespread than double
 (setq-default sentence-end-double-space nil)
 
 ;; disable overwrite mode
 (put 'overwrite-mode 'disabled t)
-
-;; warn when opening files bigger than 100MB
-(setq large-file-warning-threshold 100000000)
 
 ;; seems pointless to warn. There's always undo.
 (put 'narrow-to-region 'disabled nil)
@@ -80,8 +71,12 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (global-set-key (kbd "M-l") 'downcase-dwim)
 
 ;; join line
-(global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
+(defun fx/join-line-below ()
+  "Join line below."
+  (interactive)
+  (join-line 1))
+(global-set-key (kbd "C-c j L") #'fx/join-line-below)
+(global-set-key (kbd "C-c j l") 'join-line)
 
 ;; Change "yes or no" to "y or n"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -109,6 +104,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
+;; Switch between unix and dos format
 (defun fx/dos2unix ()
   "Convert the current buffer to UNIX file format."
   (interactive)

@@ -15,6 +15,40 @@
 
 ;;; Code:
 
+;; When splitting window, show (other-buffer) in the new window
+(defun fx/split-window-vertically ()
+  "Split window vertically and show other buffer in the new window."
+  (interactive)
+  (split-window-vertically)
+  (set-window-buffer (next-window) (other-buffer)))
+
+(defun fx/split-window-horizontally ()
+  "Split window horizontally and show other buffer in the new window."
+  (interactive)
+  (split-window-horizontally)
+  (set-window-buffer (next-window) (other-buffer)))
+
+(global-set-key "\C-x2" #'fx/split-window-vertically)
+(global-set-key "\C-x3" #'fx/split-window-horizontally)
+
+;; Rearrange split windows
+(defun fx/split-window-horizontally-instead ()
+  "Rearrange split windows horizontally."
+  (interactive)
+  (save-excursion
+    (delete-other-windows)
+    (fx/split-window-horizontally)))
+
+(defun fx/split-window-vertically-instead ()
+  "Rearrange split windows vertically."
+  (interactive)
+  (save-excursion
+    (delete-other-windows)
+    (fx/split-window-vertically)))
+
+(global-set-key "\C-x|" #'fx/split-window-horizontally-instead)
+(global-set-key "\C-x_" #'fx/split-window-vertically-instead)
+
 ;; winner
 (use-package winner
   :init
@@ -33,36 +67,6 @@
     (winner-mode 1)
     (global-set-key (kbd "C-x 4 u") 'winner-undo)
     (global-set-key (kbd "C-x 4 r") 'winner-redo)))
-
-;; When splitting window, show (other-buffer) in the new window
-(defun fx/split-window-vertically ()
-  (interactive)
-  (split-window-vertically)
-  (set-window-buffer (next-window) (other-buffer)))
-
-(defun fx/split-window-horizontally ()
-  (interactive)
-  (split-window-horizontally)
-  (set-window-buffer (next-window) (other-buffer)))
-
-(global-set-key "\C-x2" #'fx/split-window-vertically)
-(global-set-key "\C-x3" #'fx/split-window-horizontally)
-
-;; Rearrange split windows
-(defun fx/split-window-horizontally-instead ()
-  (interactive)
-  (save-excursion
-    (delete-other-windows)
-    (fx/split-window-horizontally)))
-
-(defun fx/split-window-vertically-instead ()
-  (interactive)
-  (save-excursion
-    (delete-other-windows)
-    (fx/split-window-vertically)))
-
-(global-set-key "\C-x|" #'fx/split-window-horizontally-instead)
-(global-set-key "\C-x_" #'fx/split-window-vertically-instead)
 
 (provide 'init-windows)
 ;;; init-windows.el ends here
