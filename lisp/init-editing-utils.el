@@ -351,5 +351,11 @@ indent yanked text (with prefix arg don't indent)."
   (progn
     (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode)))
 
+(use-package iedit
+  :defer t
+  :init
+  (progn
+    (setq iedit-toggle-key-default t)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
