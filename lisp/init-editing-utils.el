@@ -129,15 +129,16 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 
 ;; fill column indicator
 (use-package fill-column-indicator
+  :disabled t
   :init
   (progn
     (setq fci-rule-width 1)
     (setq fci-rule-column 79)
     ;; (setq fci-rule-color "dimgray")
-    ;; (dolist (hook '(prog-mode-hook
-    ;;                 markdown-mode-hook
-    ;;                 git-commit-mode-hook))
-    ;;   (add-hook hook 'fci-mode))
+    (dolist (hook '(prog-mode-hook
+                    markdown-mode-hook
+                    git-commit-mode-hook))
+      (add-hook hook 'fci-mode))
     ;; Regenerate fci-mode line images after switching themes
     (defun sanityinc/fci-enabled-p ()
       (bound-and-true-p fci-mode))

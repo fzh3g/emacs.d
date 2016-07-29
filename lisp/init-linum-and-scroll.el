@@ -17,6 +17,7 @@
 
 ;; show column number and line number
 (use-package nlinum
+  :disabled t
   :init (setq linum-delay t)
   :config
   (dolist (hook '(prog-mode-hook
@@ -28,7 +29,7 @@
                   css-mode-hook))
     (add-hook hook 'column-number-mode)
     (add-hook hook 'line-number-mode)
-    ;; (add-hook hook 'nlinum-mode)
+    (add-hook hook 'nlinum-mode)
     ))
 
 ;; nice scrolling
