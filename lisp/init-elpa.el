@@ -44,7 +44,8 @@
 
 ;; list of installed packages
 (defvar fx-packages
-  '(anzu
+  '(adaptive-wrap
+    anzu
     auctex
     avy
     buffer-move

@@ -338,5 +338,10 @@ indent yanked text (with prefix arg don't indent)."
     (define-key hungry-delete-mode-map (kbd "DEL") 'hungry-delete-backward)
     (define-key hungry-delete-mode-map (kbd "S-DEL") 'delete-backward-char)))
 
+(use-package adaptive-wrap
+  :config
+  (progn
+    (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
