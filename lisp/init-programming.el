@@ -40,6 +40,12 @@
           #'(lambda ()
               (set (make-local-variable 'comment-auto-fill-only-comments) t)))
 
+;; Highlight and allow to open http link at point in programming buffers
+;; goto-address-prog-mode only highlights links in strings and comments
+(add-hook 'prog-mode-hook 'goto-address-prog-mode)
+;; Highlight and follow bug references in comments and strings
+(add-hook 'prog-mode-hook 'bug-reference-prog-mode)
+
 ;; subword
 (use-package subword
   :diminish subword-mode
