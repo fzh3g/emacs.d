@@ -39,9 +39,31 @@
 ;; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
 
+;; draw underline lower
+(setq x-underline-at-descent-line t)
+
 ;; pretty symbols
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
+
+;; don't let the cursor go into minibuffer prompt
+;; Tip taken from Xah Lee: http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
+(setq minibuffer-prompt-properties
+      '(read-only
+        t
+        point-entered
+        minibuffer-avoid-prompt
+        face
+        minibuffer-prompt))
+
+;; remove annoying ellipsis when printing sexp in message buffer
+(setq eval-expression-print-length nil
+      eval-expression-print-level nil)
+
+;; remove prompt if the file is opened in other clients
+(defun server-remove-kill-buffer-hook ()
+  (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function))
+(add-hook 'server-visit-hook 'server-remove-kill-buffer-hook)
 
 ;; Show a marker in the left fringe for lines not in the buffer
 (setq-default indicate-empty-lines t)
