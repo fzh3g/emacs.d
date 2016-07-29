@@ -65,6 +65,14 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
+;; seems pointless to warn. There's always undo.
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+(put 'scroll-left 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
