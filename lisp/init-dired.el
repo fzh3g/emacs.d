@@ -15,18 +15,23 @@
 
 ;;; Code:
 
+(use-package dired
+  :defer t)
+
 (use-package dired+
+  :defer t
   :init
   (progn
     (setq dired-recursive-deletes 'always)
-    (setq dired-isearch-filenames 'dwim)
     (setq diredp-hide-details-initially-flag t)
-    (setq dired-dwim-target t))
+    (setq diredp-hide-details-propagate-flag t)
+    (setq dired-dwim-target t)
+    ;; use single buffer for all dired navigation
+    (toggle-diredp-find-file-reuse-dir 1))
   :config
   (progn
     (when (fboundp 'global-dired-hide-details-mode)
       (global-dired-hide-details-mode -1))
-    (define-key dired-mode-map "/" 'dired-isearch-filenames)
     (define-key dired-mode-map (kbd "SPC") 'avy-goto-subword-1)
     (define-key dired-mode-map [mouse-2] 'dired-find-file)))
 
