@@ -31,7 +31,7 @@
     (add-hook hook 'nlinum-mode)))
 
 ;; nice scrolling
-(setq scroll-margin 5
+(setq scroll-margin 3
       ;; scroll-step 1
       ;; scroll-conservatively 10000
       ;; scroll-preserve-screen-position 1
