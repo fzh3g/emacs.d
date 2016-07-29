@@ -287,13 +287,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   (progn
     (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode)))
 
-(use-package iedit
-  :commands (iedit-mode
-             iedit-mode-toggle-on-function
-             iedit-rectangle-mode)
-  :bind (("C-;" . iedit-mode)
-         ("C-h C-;" . iedit-mode-toggle-on-function)
-         ("C-x r <return>" . iedit-rectangle-mode)))
+(use-package iedit)
 
 (use-package info+
   :defer t
