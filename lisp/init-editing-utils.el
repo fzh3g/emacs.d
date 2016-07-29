@@ -303,5 +303,15 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
       (require 'info+))
     (setq Info-fontify-angle-bracketed-flag nil)))
 
+(use-package lorem-ipsum
+  :commands (lorem-ipsum-insert-list
+             lorem-ipsum-insert-paragraphs
+             lorem-ipsum-insert-sentences)
+  :init
+  (progn
+    (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
+    (global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
+    (global-set-key (kbd "C-c l l") 'lorem-ipsum-insert-list)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

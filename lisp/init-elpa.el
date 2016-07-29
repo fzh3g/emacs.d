@@ -85,6 +85,7 @@
     latex-extra
     less-css-mode
     leuven-theme
+    lorem-ipsum
     lua-mode
     magit
     markdown-mode

@@ -65,10 +65,9 @@
           (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d@/!)")
                   (sequence "WAIT(w@/!)" "CANCELLED(c@/!)"))))
 
-    (bind-key "C-c c" 'org-capture)
-    (bind-key "C-c b" 'org-iswitchb)
-    (bind-key "C-c a" 'org-agenda)
-    (bind-key "C-c l" 'org-store-link))
+    (bind-key "C-c c c" 'org-capture)
+    (bind-key "C-c c a" 'org-agenda)
+    (bind-key "C-c c l" 'org-store-link))
   :config
   (progn
     ;; markdown export
