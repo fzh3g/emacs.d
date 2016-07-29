@@ -99,7 +99,6 @@
 (require 'init-latex)
 (require 'init-python-mode)
 (require 'init-fortran)
-(require 'init-gnuplot)
 (require 'init-markdown)
 (require 'init-lua-mode)
 (require 'init-matlab)

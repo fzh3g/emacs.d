@@ -15,6 +15,10 @@
 
 ;;; Code:
 
+(use-package gnuplot
+  :defer t
+  :mode "\\.gp$")
+
 (use-package org
   :mode ("\\.\\(org\\|org_archive\\)$" . org-mode)
   :defer t
