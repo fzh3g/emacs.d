@@ -228,11 +228,11 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   :bind (("M-%" . anzu-query-replace)
          ("C-M-%" . anzu-query-replace-regexp))
   :config
-  (custom-set-variables
-   '(anzu-mode-lighter "")
-   '(anzu-deactivate-region t)
-   '(anzu-search-threshold 1000)
-   '(anzu-replace-to-string-separator " => ")))
+  (progn
+    (setq anzu-search-threshold 1000
+          anzu-replace-to-string-separator " => "
+          anzu-deactivate-region t
+          anzu-mode-lighter "")))
 
 ;; avy
 (use-package avy
