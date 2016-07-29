@@ -130,6 +130,18 @@ indent yanked text (with prefix arg don't indent)."
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
+(defun fx/dos2unix ()
+  "Convert the current buffer to UNIX file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-unix nil))
+(defun fx/unix2dos ()
+  "Convert the current buffer to DOS file format."
+  (interactive)
+  (set-buffer-file-coding-system 'undecided-dos nil))
+(global-set-key (kbd "C-x f") nil)
+(global-set-key (kbd "C-x f c u") #'fx/dos2unix)
+(global-set-key (kbd "C-x f c d") #'fx/unix2dos)
+
 ;; join line
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c J") #'(lambda () (interactive) (join-line 1)))
@@ -149,8 +161,7 @@ indent yanked text (with prefix arg don't indent)."
     (if file-name
         (message (kill-new file-name))
       (error "Buffer not visiting a file"))))
-(global-set-key (kbd "C-x f") nil)
-(global-set-key (kbd "C-x f c") #'fx/show-and-copy-buffer-filename)
+(global-set-key (kbd "C-x f y") #'fx/show-and-copy-buffer-filename)
 
 ;; fill column indicator
 (use-package fill-column-indicator
