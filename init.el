@@ -76,6 +76,7 @@
 
 ;; Better settings for editing and programming
 (require 'init-linum-and-scroll)
+(require 'init-indentation)
 (require 'init-editing-utils)
 (require 'init-programming)
 (require 'init-whitespace)
