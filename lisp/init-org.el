@@ -149,16 +149,30 @@
                     (advice-remove 'fci-mode #'fci-mode-override-advice)
                     result)))))
 
+(use-package org-agenda
+  :init (setq org-agenda-restore-windows-after-quit t)
+  :bind (("C-c c o" . org-agenda)
+         ("C-c c a" . org-agenda-list)))
+
+(use-package org-pomodoro
+  :init
+  (progn
+    (setq org-pomodoro-play-sounds 1)
+    (when *is-a-mac*
+      (setq org-pomodoro-audio-player "/usr/bin/afplay"))
+    )
+  :bind ("C-c c p" . org-pomodoro))
+
 (use-package org-bullets
   :defer t
   :init (add-hook 'org-mode-hook 'org-bullets-mode))
 
 (use-package toc-org
-    :defer t
-    :init
-    (progn
-      (setq toc-org-max-depth 10)
-      (add-hook 'org-mode-hook 'toc-org-enable)))
+  :defer t
+  :init
+  (progn
+    (setq toc-org-max-depth 10)
+    (add-hook 'org-mode-hook 'toc-org-enable)))
 
 (use-package htmlize
   :defer t)
