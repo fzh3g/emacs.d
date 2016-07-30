@@ -243,11 +243,24 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 
 ;; avy
 (use-package avy
+  :config
+  (progn
+    (defun fx/avy-goto-url()
+      "Use avy to go to an URL in the buffer."
+      (interactive)
+      (avy--generic-jump "https?://" nil 'pre))
+    (defun fx/avy-open-url ()
+      "Use avy to select an URL in the buffer and open it."
+      (interactive)
+      (save-excursion
+        (fx/avy-goto-url)
+        (browse-url-at-point))))
   :bind
   (("M-s SPC" . avy-goto-word-or-subword-1)
    ("M-s s" . avy-goto-char)
    ("M-s l" . avy-goto-line)
-   ("M-s m" . avy-pop-mark)))
+   ("M-s m" . avy-pop-mark)
+   ("M-s o" . fx/avy-open-url)))
 
 (use-package multiple-cursors
   :bind

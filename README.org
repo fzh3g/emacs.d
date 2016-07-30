@@ -137,6 +137,7 @@ while =isearch-forward= is bound to =C-s s=.
 | =M-s s=    | avy-goto-char              |
 | =M-s l=    | avy-goto-line              |
 | =M-s m=    | avy-pop-mark               |
+| =M-s o=    | fx/avy-open-url            |
 
 ** Company
 
