@@ -155,7 +155,7 @@ helpful.
 ** Projectile
 
 [[https://github.com/bbatsov/projectile][Projectile]] is for efficient project management. Jumping between projects,
-finding file in a project, etc, do what you want. =C-c p= and you will see
+finding file in a project, etc, do what you want. =C-x p= and you will see
 a popup window by [[https://github.com/justbur/emacs-which-key][which-key]] with a series of keybindings about =projectile=.
 
 ** Multiple Cursors

@@ -24,6 +24,7 @@
   :defer t
   :init
   (progn
+    (which-key-declare-prefixes "C-c c" "org")
     (setq org-clock-persist-file
           (concat fx-cache-directory "org-clock-save.el")
           org-idl-locations-file
@@ -110,7 +111,7 @@
 
     (add-hook 'org-mode-hook
               #'(lambda ()
-                  (local-set-key (kbd "C-c s i") 'fx/org-insert-src-block)
+                  (local-set-key (kbd "C-c s") 'fx/org-insert-src-block)
                   ))
 
     (org-babel-do-load-languages

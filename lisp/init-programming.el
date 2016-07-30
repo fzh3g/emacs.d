@@ -33,6 +33,7 @@
     (setq flycheck-keymap-prefix (kbd "C-c e"))
     (define-key flycheck-mode-map flycheck-keymap-prefix
       flycheck-command-map)
+    (which-key-declare-prefixes "C-c e" "flycheck")
     ))
 
 ;; auto-fill-mode
@@ -77,6 +78,7 @@
   :defer t
   :init
   (progn
+    (which-key-declare-prefixes "C-c @" "hideshow")
     (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
       (add-hook hook 'hs-minor-mode))
     (add-hook 'hs-minor-mode-hook
@@ -91,14 +93,15 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :bind (("C-x p d" . projectile-find-dir)
-         ("C-x p D" . projectile-dired)
-         ("C-x p f" . projectile-find-file)
-         ("C-x p r" . projectile-recentf)
-         ("C-x p s" . projectile-switch-project)
-         ("C-x p b" . projectile-switch-to-buffer))
+  :commands (projectile-find-dir
+             projectile-dired
+             projectile-find-file
+             projectile-recentf
+             projectile-switch-project
+             projectile-switch-to-buffer)
   :init
   (progn
+    (setq projectile-keymap-prefix (kbd "C-x p"))
     (setq projectile-enable-caching nil)
     (setq projectile-sort-order 'recentf)
     (setq projectile-cache-file (concat fx-cache-directory
