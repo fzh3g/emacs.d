@@ -36,8 +36,8 @@
     (make-directory autosave-dir t)))
 
 ;; https://github.com/syl20bnr/spacemacs/issues/1921
-(setq tramp-ssh-controlmaster-options
-      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+;; (setq tramp-ssh-controlmaster-options
+;;       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
 (provide 'init-tramp)
 ;;; init-tramp.el ends here
