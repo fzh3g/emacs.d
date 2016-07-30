@@ -244,8 +244,8 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 ;; avy
 (use-package avy
   :bind
-  (("M-s s" . avy-goto-char)
-   ("M-s w" . avy-goto-word-or-subword-1)
+  (("M-s SPC" . avy-goto-word-or-subword-1)
+   ("M-s s" . avy-goto-char)
    ("M-s l" . avy-goto-line)
    ("M-s m" . avy-pop-mark)))
 

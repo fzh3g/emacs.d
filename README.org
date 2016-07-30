@@ -133,8 +133,8 @@ while =isearch-forward= is bound to =C-s s=.
 
 | Keybinding | Command                    |
 |------------+----------------------------|
+| =M-s SPC=  | avy-goto-word-or-subword-1 |
 | =M-s s=    | avy-goto-char              |
-| =M-s w=    | avy-goto-word-or-subword-1 |
 | =M-s l=    | avy-goto-line              |
 | =M-s m=    | avy-pop-mark               |
 
