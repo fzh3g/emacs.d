@@ -15,7 +15,8 @@
 
 ;;; Code:
 
-(global-unset-key "\C-s")
+(global-unset-key (kbd "C-s"))
+(global-set-key (kbd "C-s s") 'isearch-forward)
 
 (use-package ivy
   :diminish ivy-mode
@@ -34,17 +35,16 @@
   :bind (("C-c C-r" . ivy-resume)))
 
 (use-package swiper
-  :bind (("C-s s"  . swiper)))
+  :bind (("C-s SPC"  . counsel-grep-or-swiper)))
 
 (use-package counsel
   :bind (("C-x C-f" . counsel-find-file)
          ("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)
-         ("C-s s"  . counsel-grep-or-swiper)
          ("C-s a" . counsel-ag)
          ("C-s u" . counsel-unicode-char)
          ("C-s l" . counsel-locate)
-         ("C-s g" . counsel-git)
+         ("C-s j" . counsel-git)
          ("C-s k" . counsel-git-grep)
          ("C-h v" . counsel-describe-variable)
          ("C-h S" . counsel-info-lookup-symbol)
