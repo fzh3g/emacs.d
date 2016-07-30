@@ -32,6 +32,7 @@
   :init
   (progn
     (eval-after-load 'org-indent '(diminish 'org-indent-mode))
+    (eval-after-load "isearch" '(diminish 'isearch-mode))
     (eval-after-load "abbrev" '(diminish 'abbrev-mode))
     (eval-after-load "reftex" '(diminish 'reftex-mode))
     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
