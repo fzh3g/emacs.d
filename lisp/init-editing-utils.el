@@ -227,6 +227,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (which-key-mode))
   :config
   (progn
+    (which-key-declare-prefixes "C-x RET" "coding-system")
     (which-key-declare-prefixes "C-x r" "rectangle&register")
     (which-key-declare-prefixes "C-x a" "abbrev")
     (which-key-declare-prefixes "C-x 8" "special character")
