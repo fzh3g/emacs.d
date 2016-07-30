@@ -31,7 +31,8 @@
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'set-scroll-bar-mode)
-  (scroll-bar-mode -1))
+  (unless *is-a-mac*
+    (scroll-bar-mode -1)))
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
 (when (fboundp 'menu-bar-mode)
@@ -161,6 +162,9 @@
      0 nil 'message
      (concat "Hidden Mode Line Mode enabled.  "
              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+
+;; hide mode-line for smoother start
+(hidden-mode-line-mode t)
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
