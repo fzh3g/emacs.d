@@ -50,13 +50,13 @@
 (setq gc-cons-threshold (* 128 1024 1024))
 
 ;; Bootstrap config
-(require 'init-elpa)       ;; Install required packages
-(require 'init-exec-path)  ;; Set up $PATH
-(require 'init-tramp)      ;; Tramp setting
+(require 'init-osx-keys)                ;OSX keys
+(require 'init-gui-frames)              ;GUI frames
+(require 'init-elpa)                    ;Install required packages
+(require 'init-exec-path)               ;Set up $PATH
+(require 'init-tramp)                   ;Tramp setting
 
 ;; Configs for UI and window actions
-(require 'init-osx-keys)
-(require 'init-gui-frames)
 (require 'init-fonts)
 (require 'init-modeline)
 (require 'init-theme)
