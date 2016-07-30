@@ -93,12 +93,12 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :commands (projectile-find-dir
-             projectile-dired
-             projectile-find-file
-             projectile-recentf
-             projectile-switch-project
-             projectile-switch-to-buffer)
+  :bind (("C-x p d" . projectile-find-dir)
+         ("C-x p D" . projectile-dired)
+         ("C-x p f" . projectile-find-file)
+         ("C-x p e" . projectile-recentf)
+         ("C-x p p" . projectile-switch-project)
+         ("C-x p b" . projectile-switch-to-buffer))
   :init
   (progn
     (setq projectile-keymap-prefix (kbd "C-x p"))
