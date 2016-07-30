@@ -20,7 +20,11 @@
   :config
   (progn
     (setq powerline-default-separator 'wave)
-    (setq powerline-text-scale-factor 1.0)
+    (defun fx/customize-powerline-faces ()
+      "Alter powerline face to make them work with more themes."
+      (set-face-attribute 'powerline-inactive2 nil
+                          :inherit 'font-lock-comment-face))
+    (fx/customize-powerline-faces)
     (powerline-default-theme)
     ))
 
