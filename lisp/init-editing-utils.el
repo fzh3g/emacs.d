@@ -172,6 +172,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 
 (use-package undo-tree
   :diminish undo-tree-mode
+  :defer t
   :init
   (progn
     (defalias 'redo 'undo-tree-redo)
@@ -234,6 +235,11 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
           anzu-deactivate-region t
           anzu-mode-lighter "")))
 
+(use-package visual-regexp
+  :bind (("C-c v r" . vr/replace)
+         ("C-c v q" . vr/query-replace)
+         ("C-c v m" . vr/mc-mark)))
+
 ;; avy
 (use-package avy
   :bind
@@ -243,31 +249,29 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
    ("M-s m" . avy-pop-mark)))
 
 (use-package multiple-cursors
-  :bind (("C->" . mc/mark-next-like-this)
-         ("C-<" . mc/mark-previous-like-this)
-         ("C-c C-<" . mc/mark-all-like-this)
-         ("C-S-<mouse-1>" . mc/add-cursor-on-click)
-         ("C-c m r" . set-rectangular-region-anchor)
-         ("C-c m c" . mc/edit-lines)
-         ("C-c m e" . mc/edit-ends-of-lines)
-         ("C-c m a" . mc/edit-beginnings-of-lines))
+  :bind
+  (("C->" . mc/mark-next-like-this)
+   ("C-<" . mc/mark-previous-like-this)
+   ("C-c C-<" . mc/mark-all-like-this)
+   ("C-S-<mouse-1>" . mc/add-cursor-on-click)
+   ("C-c m r" . set-rectangular-region-anchor)
+   ("C-c m c" . mc/edit-lines)
+   ("C-c m e" . mc/edit-ends-of-lines)
+   ("C-c m a" . mc/edit-beginnings-of-lines))
   :init
   (setq mc/list-file (concat fx-cache-directory "mc-lists.el")))
 
 (use-package crux
-  :init
-  (progn
-    (global-set-key [remap move-beginning-of-line]
-                    #'crux-move-beginning-of-line)
-    (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
-    (global-set-key (kbd "C-x f o") #'crux-open-with)
-    (global-set-key (kbd "C-o") #'crux-smart-open-line)
-    (global-set-key (kbd "C-S-o") #'crux-smart-open-line-above)
-    (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
-    (global-set-key (kbd "C-x f r") #'crux-rename-file-and-buffer)
-    (global-set-key (kbd "C-x f d") #'crux-delete-file-and-buffer)
-    (global-set-key (kbd "C-x f s") #'crux-sudo-edit)
-    ))
+  :bind
+  (([remap move-beginning-of-line] . crux-move-beginning-of-line)
+   ([remap kill-whole-line] . crux-kill-whole-line)
+   ("C-x f o" . crux-open-with)
+   ("C-o" . crux-smart-open-line)
+   ("C-S-o" . crux-smart-open-line-above)
+   ("C-<backspace>" . crux-kill-line-backwards)
+   ("C-x f r" . crux-rename-file-and-buffer)
+   ("C-x f d" . crux-delete-file-and-buffer)
+   ("C-x f s" . crux-sudo-edit)))
 
 (use-package hungry-delete
   :diminish hungry-delete-mode
@@ -280,25 +284,22 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (define-key hungry-delete-mode-map (kbd "S-DEL") 'delete-backward-char)))
 
 (use-package adaptive-wrap
-  :config
+  :defer t
+  :init
   (progn
     (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode)))
 
 (use-package iedit
-  :defer t
-  :init
-  (progn
-    (global-set-key (kbd "C-;") 'iedit-mode)
-    (global-set-key (kbd "C-h C-;") 'iedit-mode-toggle-on-function)
-    (global-set-key (kbd "C-x r <return>") 'iedit-rectangle-mode)))
+  :bind
+  (("C-;" . iedit-mode)
+   ("C-h C-;" . iedit-mode-toggle-on-function)
+   ("C-x r <return>" . iedit-rectangle-mode)))
 
 (use-package lorem-ipsum
-  :defer t
-  :init
-  (progn
-    (global-set-key (kbd "C-c l s") 'lorem-ipsum-insert-sentences)
-    (global-set-key (kbd "C-c l p") 'lorem-ipsum-insert-paragraphs)
-    (global-set-key (kbd "C-c l l") 'lorem-ipsum-insert-list)))
+  :bind
+  (("C-c l s" . lorem-ipsum-insert-sentences)
+   ("C-c l p" . lorem-ipsum-insert-paragraphs)
+   ("C-c l l" . lorem-ipsum-insert-list)))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

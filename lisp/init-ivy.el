@@ -15,11 +15,12 @@
 
 ;;; Code:
 
+(global-unset-key "\C-s")
+
 (use-package ivy
   :diminish ivy-mode
   :config
   (progn
-    (require 'counsel)
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t)
     (setq ivy-re-builders-alist
@@ -29,10 +30,14 @@
     (setq ivy-display-style 'fancy)
     (bind-keys
      :map ivy-minibuffer-map
-     ("C-t" . ivy-toggle-fuzzy))
-    (global-unset-key "\C-s"))
-  :bind (("C-c C-r" . ivy-resume)
-         ("C-x C-f" . counsel-find-file)
+     ("C-t" . ivy-toggle-fuzzy)))
+  :bind (("C-c C-r" . ivy-resume)))
+
+(use-package swiper
+  :bind (("C-s s"  . swiper)))
+
+(use-package counsel
+  :bind (("C-x C-f" . counsel-find-file)
          ("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)
          ("C-s s"  . counsel-grep-or-swiper)

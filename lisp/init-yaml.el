@@ -16,11 +16,13 @@
 ;;; Code:
 
 (use-package yaml-mode
-  :mode "\\.yml$"
+  :mode (("\\.\\(yml\\|yaml\\)\\'" . yaml-mode)
+         ("Procfile\\'" . yaml-mode))
   :config
   (progn
-    (define-key yaml-mode-map "\C-m" 'newline-and-indent)
-    ))
+    (add-hook 'yaml-mode-hook
+              '(lambda ()
+                 (define-key yaml-mode-map "\C-m" 'newline-and-indent)))))
 
 (provide 'init-yaml)
 ;;; init-yaml.el ends here

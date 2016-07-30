@@ -26,15 +26,14 @@
   :defer t
   :init
   (progn
-    (setq-default company-idle-delay 0.2
-                  company-minimum-prefix-length 2
-                  company-require-match nil
-                  company-dabbrev-ignore-case nil
-                  company-dabbrev-downcase nil
-                  company-show-numbers t
-                  company-auto-complete nil
-                  company-frontends '(company-pseudo-tooltip-frontend)
-                  company-tooltip-align-annotations t)
+    (setq company-idle-delay 0.2
+          company-minimum-prefix-length 2
+          company-require-match nil
+          company-dabbrev-ignore-case nil
+          company-dabbrev-downcase nil
+          company-show-numbers t
+          company-auto-complete nil
+          company-tooltip-align-annotations t)
 
     (defvar-local company-fci-mode-on-p nil)
     (add-hook 'after-init-hook 'global-company-mode)
@@ -82,8 +81,8 @@
   :defer t
   :init
   (progn
-    (setq-default company-statistics-file (concat fx-cache-directory
-                                                  "company-statistics-cache.el"))
+    (setq company-statistics-file (concat fx-cache-directory
+                                          "company-statistics-cache.el"))
     (add-hook 'company-mode-hook 'company-statistics-mode)))
 
 (defun fx/company-for-tex ()
@@ -99,11 +98,11 @@
 (defun fx/company-for-python ()
   (make-variable-buffer-local 'company-backends)
   (use-package company-jedi
-   :defer t
-   :init
-   (progn
-     (add-to-list 'company-backends
-                  '(company-jedi :with company-yasnippet)))))
+    :defer t
+    :init
+    (progn
+      (add-to-list 'company-backends
+                   '(company-jedi :with company-yasnippet)))))
 
 (defun fx/company-for-c-c++ ()
   (make-variable-buffer-local 'company-backends)

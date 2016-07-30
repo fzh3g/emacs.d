@@ -18,7 +18,7 @@
 (use-package markdown-mode
   :mode "\\.\\(m[k]d\\|markdown\\)\\'"
   :defer t
-  :init
+  :config
   (progn
     (defun markdown-imenu-create-index ()
       (let* ((root '(nil . nil))
@@ -68,9 +68,8 @@
 
     (add-hook 'markdown-mode-hook
               #'(lambda ()
-                  (setq imenu-create-index-function 'markdown-imenu-create-index))))
-  :config
-  (progn
+                  (setq imenu-create-index-function 'markdown-imenu-create-index)))
+
     (when (fboundp 'sp-local-pair)
       (sp-local-pair 'markdown-mode "`" nil :actions '(:rem autoskip))
       (sp-local-pair 'markdown-mode "'" nil :actions nil))

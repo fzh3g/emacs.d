@@ -26,38 +26,33 @@
   (progn
     (setq org-clock-persist-file
           (concat fx-cache-directory "org-clock-save.el")
+          org-idl-locations-file
+          (concat fx-cache-directory "org-id-locations")
           org-log-done t
           org-startup-with-inline-image t
           org-startup-indented t
           org-hide-leading-stars t
           org-edit-timestamp-down-means-later t
           org-fast-tag-selection-single-key 'expert
-          org-tags-column 80
           org-src-fontify-natively t
+          org-cycle-separator-lines 0
+          org-completion-use-ido t
           org-ellipsis "⤵")
 
-    (setq org-agenda-include-diary nil
-          org-agenda-compact-blocks t
-          org-agenda-sticky t
-          org-agenda-start-day nil
-          org-agenda-window-setup 'curent-window
-          org-agenda-inhibit-startup t
-          org-agenda-use-tag-inheritance nil)
-
-    (setq org-refile-targets '((nil :maxlevel . 5)
-                               (org-agenda-files :maxlevel . 5))
-          org-refile-use-cache nil
-          org-refile-use-outline-path t
-          org-outline-path-complete-in-steps nil)
-
-    (setq org-clock-persistence-insinuate t
-          org-clock-persist t
+    (setq org-clock-persist t
           org-clock-in-resume t
           org-clock-in-switch-to-state "STARTED"
           org-clock-into-drawer t
           org-clock-out-remove-zero-time-clocks t)
-    (setq org-time-clocksum-format
-          '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
+    )
+  :bind (("C-c c c" . org-capture)
+         ("C-c c l" . org-store-link)
+         ("C-c c o" . org-clock-out)
+         ("C-c c t" . org-todo-list)
+         )
+  :config
+  (progn
+    (setq org-default-notes-file "notes.org")
 
     (setq org-capture-templates
           '(("t" "Todo" entry (file "")
@@ -69,11 +64,11 @@
           (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d@/!)")
                   (sequence "WAIT(w@/!)" "CANCELLED(c@/!)"))))
 
-    (bind-key "C-c c c" 'org-capture)
-    (bind-key "C-c c a" 'org-agenda)
-    (bind-key "C-c c l" 'org-store-link))
-  :config
-  (progn
+    (setq org-time-clocksum-format
+          '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
+
+    (require 'org-indent)
+
     ;; markdown export
     (require 'ox-md)
     ;; org-latex

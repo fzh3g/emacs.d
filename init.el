@@ -89,7 +89,6 @@
 (require 'init-emoji)
 
 ;; Additional tools for efficiency
-(require 'init-regexp)
 (require 'init-shell)
 (require 'init-git)
 (require 'init-www)

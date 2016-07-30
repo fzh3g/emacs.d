@@ -29,8 +29,6 @@
     ;; typically this means helm
     (setq yas-prompt-functions '(yas-completing-prompt))
 
-    (define-key yas-minor-mode-map (kbd "M-s-/") 'yas-next-field)
-
     (defun fx/load-yasnippet ()
       (unless yas-global-mode
         (progn

@@ -90,6 +90,12 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
+  :bind (("C-x p d" . projectile-find-dir)
+         ("C-x p D" . projectile-dired)
+         ("C-x p f" . projectile-find-file)
+         ("C-x p r" . projectile-recentf)
+         ("C-x p s" . projectile-switch-project)
+         ("C-x p b" . projectile-switch-to-buffer))
   :init
   (progn
     (setq projectile-enable-caching nil)
@@ -99,14 +105,10 @@
     (setq projectile-known-projects-file (concat fx-cache-directory
                                                  "projectile-bookmarks.eld"))
     (setq projectile-completion-system 'ivy)
-    (setq projectile-indexing-method 'alien)
-    (add-hook 'after-init-hook
-              #'(lambda ()
-                  (projectile-global-mode)))
-    ))
+    (setq projectile-indexing-method 'alien))
+  :config (projectile-global-mode))
 
 (use-package imenu-anywhere
-  :defer t
   :bind ("C-s i" . ivy-imenu-anywhere))
 
 (provide 'init-programming)

@@ -23,20 +23,20 @@
     )
   :config
   (progn
-    (setq web-mode-enable-auto-pairing nil)
+    (with-eval-after-load 'smartparens
+      (setq web-mode-enable-auto-pairing nil)
 
-    (sp-local-pair 'web-mode "<% " " %>")
-    (sp-local-pair 'web-mode "{ " " }")
-    (sp-local-pair 'web-mode "<%= "  "  %>")
-    (sp-local-pair 'web-mode "<%# "  " %>")
-    (sp-local-pair 'web-mode "<%$ "  " %>")
-    (sp-local-pair 'web-mode "<%@ "  " %>")
-    (sp-local-pair 'web-mode "<%: "  " %>")
-    (sp-local-pair 'web-mode "{{ "  " }}")
-    (sp-local-pair 'web-mode "{% "  " %}")
-    (sp-local-pair 'web-mode "{%- "  " %}")
-    (sp-local-pair 'web-mode "{# "  " #}")
-    )
+      (sp-local-pair 'web-mode "<% " " %>")
+      (sp-local-pair 'web-mode "{ " " }")
+      (sp-local-pair 'web-mode "<%= "  "  %>")
+      (sp-local-pair 'web-mode "<%# "  " %>")
+      (sp-local-pair 'web-mode "<%$ "  " %>")
+      (sp-local-pair 'web-mode "<%@ "  " %>")
+      (sp-local-pair 'web-mode "<%: "  " %>")
+      (sp-local-pair 'web-mode "{{ "  " }}")
+      (sp-local-pair 'web-mode "{% "  " %}")
+      (sp-local-pair 'web-mode "{%- "  " %}")
+      (sp-local-pair 'web-mode "{# "  " #}")))
   :mode
   (("\\.phtml\\'"      . web-mode)
    ("\\.tpl\\.php\\'"  . web-mode)
