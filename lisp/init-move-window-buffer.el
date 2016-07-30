@@ -19,6 +19,8 @@
 (use-package window-numbering
   :config
   (progn
+    ;; (defun window-numbering-install-mode-line (&optional position)
+    ;;   "Do nothing.")
     (window-numbering-mode 1)
     ;; (custom-set-faces '(window-numbering-face
     ;;                     ((t (:foreground "#ff1493" :weight bold)))))
