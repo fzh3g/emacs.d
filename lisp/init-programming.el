@@ -17,6 +17,7 @@
 
 ;; flycheck
 (use-package flycheck
+  :diminish flycheck-mode
   :defer t
   :init
   (progn
