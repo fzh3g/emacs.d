@@ -23,7 +23,9 @@
 
 (use-package leuven-theme
   :config
-  (load-theme 'leuven t))
+  (load-theme 'leuven t)
+  (when (fboundp 'powerline-reset)
+    (powerline-reset)))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

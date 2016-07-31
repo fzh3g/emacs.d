@@ -83,7 +83,6 @@
     jedi-core
     latex-extra
     less-css-mode
-    leuven-theme
     lorem-ipsum
     lua-mode
     magit
@@ -118,6 +117,17 @@
     yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")
+
+(defvar fx-theme-packages
+  '(dracula-theme
+    leuven-theme
+    monokai-theme
+    color-theme-sanityinc-tomorrow
+    solarized-theme
+    zenburn-theme)
+  "A list of theme packages.")
+
+(setq fx-packages (append fx-packages fx-theme-packages))
 
 (unless *linux*
   (add-to-list 'fx-packages 'exec-path-from-shell))
