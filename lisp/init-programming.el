@@ -102,6 +102,7 @@
   :init
   (progn
     (setq projectile-keymap-prefix (kbd "C-x p"))
+    (which-key-declare-prefixes "C-x p" "projectile")
     (setq projectile-enable-caching nil)
     (setq projectile-sort-order 'recentf)
     (setq projectile-cache-file (concat fx-cache-directory
