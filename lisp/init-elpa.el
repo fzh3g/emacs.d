@@ -80,6 +80,7 @@
     imenu-anywhere
     irony
     irony-eldoc
+    ivy
     jedi-core
     latex-extra
     less-css-mode
