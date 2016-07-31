@@ -44,12 +44,6 @@
 
     (defun company-maybe-turn-on-fci (&rest ignore)
       (when company-fci-mode-on-p (fci-mode 1)))
-    ;; Nicer looking faces
-    (custom-set-faces
-     '(company-tooltip-common
-       ((t (:inherit company-tooltip :weight bold :underline nil))))
-     '(company-tooltip-common-selection
-       ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
 
     (add-hook 'company-completion-started-hook 'company-turn-off-fci)
     (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
