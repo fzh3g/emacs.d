@@ -42,6 +42,7 @@
     (setq desktop-path (list user-emacs-directory)
           desktop-auto-save-timeout 600)
     (setq desktop-save 'if-exists)
+    (setq desktop-restore-frames nil)
     (setq desktop-globals-to-save
           (append '((filename-history         . 128)
                     (extended-command-history . 128)
