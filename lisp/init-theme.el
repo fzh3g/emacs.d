@@ -15,11 +15,11 @@
 
 ;;; Code:
 
-;; @see https://plus.google.com/106672400078851000780/posts/KhTgscKE8PM
-(defadvice load-theme (before disable-themes-first activate)
-  "Diable all themes before load a new one."
-  (dolist (i custom-enabled-themes)
-    (disable-theme i)))
+;; ;; @see https://plus.google.com/106672400078851000780/posts/KhTgscKE8PM
+;; (defadvice load-theme (before disable-themes-first activate)
+;;   "Diable all themes before load a new one."
+;;   (dolist (i custom-enabled-themes)
+;;     (disable-theme i)))
 
 (use-package leuven-theme
   :config
