@@ -46,6 +46,7 @@
          ("C-s l" . counsel-locate)
          ("C-s j" . counsel-git)
          ("C-s k" . counsel-git-grep)
+         ("C-s t" . counsel-load-theme)
          ("C-h v" . counsel-describe-variable)
          ("C-h S" . counsel-info-lookup-symbol)
          ("C-h f" . counsel-describe-function)
