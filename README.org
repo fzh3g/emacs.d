@@ -68,7 +68,7 @@ it slow, you may modify the =package-archeves= variable on =lisp/init-elpa.el=.
 
 - [[https://github.com/tkf/emacs-jedi][emacs-jedi]] is used for auto completion. Install =jedi=, =service_factory=
   by =pip= or system package manager.
-- Install =flake8=, =autopep8=, =pylint= by =pip= or system package manager
+- Install =flake8=, =pylint= by =pip= or system package manager
   for syntax checking with [[https://github.com/flycheck/flycheck][flycheck]].
 - Don't forget ~M-x jedi:install-server~ before using python-mode
 - If you're coding with multiple versions of Python, install
