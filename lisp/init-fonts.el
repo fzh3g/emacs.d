@@ -16,7 +16,7 @@
 ;;; Code:
 
 ;; change font for better looking text
-(set-face-attribute 'default nil :font "Monofur for Powerline:weight=bold:pixelsize=16")
+(set-face-attribute 'default nil :font "Monofur for Powerline:pixelsize=16")
 ;; (dolist (charset '(kana han cjk-misc bopomofo))
 ;;   (set-fontset-font (frame-parameter nil 'font)
 ;;                     charset
