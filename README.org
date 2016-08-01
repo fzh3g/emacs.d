@@ -46,10 +46,16 @@ also need to update the third-party packages by:
 For fully enjoying the powerfull features of this configuration, there's
 some recommended instructions:
 
+** Fonts
+
+=Monofur for Powerline= is used by default, you may need to refer to
+[[https://github.com/powerline/fonts][here]] to install it. Or you can change it to whatever you like on
+=lisp/init-fonts.el=.
+
 ** Packages
 
 I personally use [[https://mirrors.tuna.tsinghua.edu.cn/elpa/][TUNA]] for faster package installing and updating. If you find
-it slow, you may modify the =package-archeves= variable in =lisp/init-elpa.el=.
+it slow, you may modify the =package-archeves= variable on =lisp/init-elpa.el=.
 
 ** Spelling
 
