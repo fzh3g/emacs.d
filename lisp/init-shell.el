@@ -15,6 +15,12 @@
 
 ;;; Code:
 
+(use-package company-shell
+  :after company
+  :config
+  (add-to-list 'company-backends '(company-shell
+                                   :with company-yasnippet)))
+
 ;; move point to the end of buffer on new output
 (setq comint-move-point-for-output t)
 

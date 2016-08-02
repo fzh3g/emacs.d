@@ -57,6 +57,7 @@
     company-irony
     company-jedi
     company-quickhelp
+    company-shell
     company-statistics
     counsel
     crux
