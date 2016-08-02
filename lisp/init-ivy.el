@@ -51,7 +51,19 @@
          ("C-h S" . counsel-info-lookup-symbol)
          ("C-h f" . counsel-describe-function)
          ("C-h k" . counsel-descbinds)
-         ("C-h b" . counsel-bookmark)))
+         ("C-h b" . counsel-bookmark))
+  :config
+  (progn
+    ;; shell history.
+    (dolist (hook '(shell-mode-hook
+                    inferior-python-mode-hook
+                    idlwave-shell-mode-hook))
+      (add-hook hook
+                #'(lambda ()
+                    (local-set-key (kbd "C-c C-l") 'counsel-shell-history))))
+    (add-hook 'eshell-mode-hook
+              #'(lambda ()
+                  (local-set-key (kbd "C-c C-l") 'counsel-esh-history)))))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
