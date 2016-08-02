@@ -19,6 +19,14 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
+(setq-default js-indent-level 2
+              css-indent-offset 2
+              yaml-indent-offset 2
+              web-mode-markup-indent-offset 2
+              web-mode-css-indent-offset 2
+              web-mode-code-indent-offset 2
+              web-mode-attr-indent-offset 2)
+
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
 ;; taken from Prelude

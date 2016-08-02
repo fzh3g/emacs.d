@@ -23,6 +23,9 @@
     )
   :config
   (progn
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
     (with-eval-after-load 'smartparens
       (setq web-mode-enable-auto-pairing nil)
 
