@@ -93,12 +93,7 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :bind (("C-x p d" . projectile-find-dir)
-         ("C-x p D" . projectile-dired)
-         ("C-x p f" . projectile-find-file)
-         ("C-x p e" . projectile-recentf)
-         ("C-x p p" . projectile-switch-project)
-         ("C-x p b" . projectile-switch-to-buffer))
+  :bind ("C-x p" . projectile-command-map)
   :init
   (progn
     (setq projectile-keymap-prefix (kbd "C-x p"))
@@ -111,7 +106,14 @@
                                                  "projectile-bookmarks.eld"))
     (setq projectile-completion-system 'ivy)
     (setq projectile-indexing-method 'alien))
-  :config (projectile-global-mode))
+  :config
+  (progn
+    (projectile-global-mode)
+    (projectile-cleanup-known-projects)))
+
+(use-package imenu
+  :config
+  (setq imenu-auto-rescan t))
 
 (use-package imenu-anywhere
   :bind ("C-s i" . ivy-imenu-anywhere))
