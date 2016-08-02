@@ -36,7 +36,8 @@
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
 (when (fboundp 'menu-bar-mode)
-  (menu-bar-mode -1))
+  (unless *is-a-mac*
+    (menu-bar-mode -1)))
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
