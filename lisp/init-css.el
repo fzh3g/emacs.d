@@ -16,6 +16,14 @@
 
 ;;; Code:
 
+(use-package css-mode
+  :config
+  (progn
+    (add-hook 'css-mode-hook
+              #'(lambda ()
+                  (setq imenu-generic-expression
+                        '((nil "^\\([^\s-].*+\\(?:,\n.*\\)*\\)\\s-{$" 1)))))))
+
 (use-package scss-mode
   :defer t
   :init
