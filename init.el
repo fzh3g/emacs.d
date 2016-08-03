@@ -85,6 +85,7 @@
 (require 'init-indentation)
 (require 'init-editing-utils)
 (require 'init-programming)
+(require 'init-tags)
 (require 'init-whitespace)
 (require 'init-emoji)
 
