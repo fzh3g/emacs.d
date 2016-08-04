@@ -69,7 +69,6 @@
     eshell-prompt-extras
     etags-select
     expand-region
-    fill-column-indicator
     flycheck
     flycheck-irony
     flyspell-correct-ivy

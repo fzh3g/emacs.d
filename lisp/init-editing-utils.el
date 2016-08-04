@@ -131,27 +131,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
       (error "Buffer not visiting a file"))))
 (global-set-key (kbd "C-x f y") #'fx/show-and-copy-buffer-filename)
 
-;; fill column indicator
-(use-package fill-column-indicator
-  :disabled t
-  :init
-  (progn
-    (setq fci-rule-width 1)
-    (setq fci-rule-column 79)
-    ;; (setq fci-rule-color "dimgray")
-    (dolist (hook '(prog-mode-hook
-                    markdown-mode-hook
-                    git-commit-mode-hook))
-      (add-hook hook 'fci-mode))
-    ;; Regenerate fci-mode line images after switching themes
-    (defun sanityinc/fci-enabled-p ()
-      (bound-and-true-p fci-mode))
-    (defadvice enable-theme (after recompute-fci-face activate)
-      (dolist (buffer (buffer-list))
-        (with-current-buffer buffer
-          (when (sanityinc/fci-enabled-p)
-            (turn-on-fci-mode)))))))
-
 (use-package ediff
   :defer t
   :init
