@@ -27,9 +27,9 @@
   (use-package etags-select
     :init
     (progn
-      (bind-key "M-s f" 'etags-select-find-tag)
-      (bind-key "M-\." 'etags-select-find-tag-at-point)
-      (bind-key "M-\," 'pop-tag-mark)))
+      (local-set-key (kbd "M-s f") 'etags-select-find-tag)
+      (local-set-key (kbd "M-\.") 'etags-select-find-tag-at-point)
+      (local-set-key (kbd "M-\,") 'pop-tag-mark)))
 
   (use-package ctags-update
     :diminish (ctags-auto-update-mode . " τ")
