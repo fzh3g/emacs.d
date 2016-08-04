@@ -38,7 +38,8 @@
                                       (face-attribute 'font-lock-comment-face
                                                       :foreground))
                   (setq show-trailing-whitespace t)
-                  (add-hook 'before-save-hook 'whitespace-cleanup))))
+                  (add-hook 'before-save-hook 'whitespace-cleanup)))
+    (global-set-key (kbd "C-x f w") 'whitespace-cleanup))
   :config
   (progn
     (set-face-attribute 'whitespace-space nil
