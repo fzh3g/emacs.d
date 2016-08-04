@@ -33,7 +33,8 @@
           company-dabbrev-downcase nil
           company-show-numbers t
           company-auto-complete nil
-          company-tooltip-align-annotations t))
+          company-tooltip-align-annotations t)
+    (add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
     (setq company-backends '(company-capf
