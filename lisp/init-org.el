@@ -134,16 +134,7 @@
 
     ;; edit src blocks with specific modes
     (add-to-list 'org-src-lang-modes '("idl" . idlwave))
-    (add-to-list 'org-src-lang-modes '("fortran" . f90))
-
-    ;; https://github.com/alpaker/Fill-Column-Indicator/issues/45#issuecomment-108911964
-    (defun fci-mode-override-advice (&rest args))
-    (advice-add 'org-html-fontify-code :around
-                (lambda (fun &rest args)
-                  (advice-add 'fci-mode :override #'fci-mode-override-advice)
-                  (let ((result  (apply fun args)))
-                    (advice-remove 'fci-mode #'fci-mode-override-advice)
-                    result)))))
+    (add-to-list 'org-src-lang-modes '("fortran" . f90))))
 
 (use-package org-agenda
   :init (setq org-agenda-restore-windows-after-quit t)

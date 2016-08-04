@@ -33,26 +33,14 @@
           company-dabbrev-downcase nil
           company-show-numbers t
           company-auto-complete nil
-          company-tooltip-align-annotations t)
-
-    (defvar-local company-fci-mode-on-p nil)
-    (add-hook 'after-init-hook 'global-company-mode)
-    (defun company-turn-off-fci (&rest ignore)
-      (when (boundp 'fci-mode)
-        (setq company-fci-mode-on-p fci-mode)
-        (when fci-mode (fci-mode -1))))
-
-    (defun company-maybe-turn-on-fci (&rest ignore)
-      (when company-fci-mode-on-p (fci-mode 1)))
-
-    (add-hook 'company-completion-started-hook 'company-turn-off-fci)
-    (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-    (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
+          company-tooltip-align-annotations t))
   :config
   (progn
     (setq company-backends '(company-capf
                              company-files
-                             (company-dabbrev-code company-etags company-keywords)
+                             (company-dabbrev-code
+                              company-etags
+                              company-keywords)
                              company-dabbrev))
     (define-key company-active-map (kbd "C-h") 'company-abort)
     (setq company-backends (mapcar 'fx//show-snippets-in-company
