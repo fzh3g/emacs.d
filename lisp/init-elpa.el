@@ -62,6 +62,7 @@
     company-web
     counsel
     crux
+    ctags-update
     diff-hl
     diminish
     dired+
