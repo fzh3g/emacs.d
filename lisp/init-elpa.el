@@ -59,12 +59,14 @@
     company-quickhelp
     company-shell
     company-statistics
+    company-web
     counsel
     crux
     diff-hl
     diminish
     dired+
     eshell-prompt-extras
+    etags-select
     expand-region
     fill-column-indicator
     flycheck

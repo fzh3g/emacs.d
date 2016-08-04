@@ -24,7 +24,8 @@
     (setq tags-case-fold-search nil)))
 
 (use-package etags-select
-  :bind (("M-s d" . etags-select-find-tag-at-point)))
+  :bind (("M-s d" . etags-select-find-tag-at-point)
+         ("M-s f" . etags-select-find-tag)))
 
 (provide 'init-tags)
 ;;; init-tags.el ends here
