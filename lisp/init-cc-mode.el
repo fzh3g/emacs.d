@@ -54,15 +54,17 @@
   :defer t
   :init (add-hook 'irony-mode-hook #'irony-eldoc))
 
-(defun fx/company-for-cmake ()
-  (make-variable-buffer-local 'company-backends)
-  (use-package cmake-mode
-   :defer t
-   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
-          ("\\.cmake\\'" . cmake-mode))
-   :init (add-to-list 'company-backends
-                      '(company-cmake :with company-yasnippet))))
-(add-hook 'cmake-mode-hook 'fx/company-for-cmake)
+(use-package cmake-mode
+  :after company
+  :mode (("CMakeLists\\.txt\\'" . cmake-mode)
+         ("\\.cmake\\'" . cmake-mode))
+  :config
+  (progn
+    (add-hook 'cmake-mode-hook
+              (lambda ()
+                (make-variable-buffer-local 'company-backends)
+                (add-to-list 'company-backends
+                             '(company-cmake :with company-yasnippet))))))
 
 (use-package gdb-mi
   :defer t

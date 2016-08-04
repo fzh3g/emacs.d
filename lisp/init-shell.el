@@ -18,8 +18,13 @@
 (use-package company-shell
   :after company
   :config
-  (add-to-list 'company-backends '(company-shell
-                                   :with company-yasnippet)))
+  (progn
+    (dolist (hook '(sh-mode-hook shell-mode-hook eshell-mode-hook))
+      (add-hook hook
+                (lambda ()
+                  (make-variable-buffer-local 'company-backends)
+                  (add-to-list 'company-backends '(company-shell
+                                                   :with company-yasnippet)))))))
 
 ;; move point to the end of buffer on new output
 (setq comint-move-point-for-output t)

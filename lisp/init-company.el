@@ -50,6 +50,10 @@
     (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
   :config
   (progn
+    (setq company-backends '(company-capf
+                             company-files
+                             (company-dabbrev-code company-etags company-keywords)
+                             company-dabbrev))
     (define-key company-active-map (kbd "C-h") 'company-abort)
     (setq company-backends (mapcar 'fx//show-snippets-in-company
                                    company-backends))
@@ -100,9 +104,6 @@
 
 (defun fx/company-for-c-c++ ()
   (make-variable-buffer-local 'company-backends)
-  (setq company-backends (delete
-                          '(company-semantic :with company-yasnippet)
-                          company-backends))
   (use-package company-irony
     :defer t
     :init
@@ -115,6 +116,26 @@
     (progn
       (add-to-list 'company-backends
                    '(company-c-headers :with company-yasnippet)))))
+
+(defun fx/company-for-css ()
+  (make-variable-buffer-local 'company-backends)
+  (add-to-list 'company-backends
+               '(company-css :with company-yasnippet)))
+
+(defun fx/company-for-web ()
+  (make-variable-buffer-local 'company-backends)
+  (use-package company-web
+    :defer t
+    :init
+    (progn
+      (add-to-list 'company-backends
+                   '(company-css :with company-yasnippet))
+      (add-to-list 'company-backends
+                   '(company-web-html :with company-yasnippet)))))
+
+(add-hook 'css-mode-hook #'fx/company-for-css)
+
+(add-hook 'web-mode-hook #'fx/company-for-web)
 
 (dolist (hook '(LaTeX-mode-hook TeX-mode-hook))
   (add-hook hook 'fx/company-for-tex))
