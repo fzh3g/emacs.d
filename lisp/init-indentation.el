@@ -19,13 +19,20 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
-(setq-default js-indent-level 2
-              css-indent-offset 2
-              yaml-indent-offset 2
-              web-mode-markup-indent-offset 2
-              web-mode-css-indent-offset 2
-              web-mode-code-indent-offset 2
-              web-mode-attr-indent-offset 2)
+(eval-after-load "js"
+  '(setq-default js-indent-level 2))
+
+(eval-after-load 'css-mode
+  '(setq-default css-indent-offset 2))
+
+(eval-after-load 'yaml-mode
+  '(setq-default yaml-indent-offset 2))
+
+(eval-after-load 'web-mode
+  '(setq-default web-mode-markup-indent-offset 2
+                 web-mode-css-indent-offset 2
+                 web-mode-code-indent-offset 2
+                 web-mode-attr-indent-offset 2))
 
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
