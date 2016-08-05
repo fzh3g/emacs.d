@@ -122,6 +122,15 @@
       (add-to-list 'company-backends
                    '(company-web-html :with company-yasnippet)))))
 
+(defun fx/company-ispell-setup ()
+  (make-local-variable 'company-backends)
+  (add-to-list 'company-backends '(company-ispell :with company-yasnippet))
+  (setq ispell-complete-word-dict
+        (file-truename "~/.emacs.d/misc/english-words.txt")))
+
+(dolist (hook '(text-mode-hook org-mode-hook markdown-mode-hook))
+  (add-hook hook #'fx/company-ispell-setup))
+
 (add-hook 'css-mode-hook #'fx/company-for-css)
 
 (add-hook 'web-mode-hook #'fx/company-for-web)
