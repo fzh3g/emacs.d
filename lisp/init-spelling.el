@@ -39,7 +39,13 @@
       (setq ispell-local-dictionary-alist
             '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil nil nil
                utf-8))))
-     (t (setq ispell-program-name nil)))))
+     (t (setq ispell-program-name nil))))
+  :config
+  (progn
+    (define-key flyspell-mode-map (kbd "C-\,") nil)
+    (define-key flyspell-mode-map (kbd "C-;") nil)
+    (define-key flyspell-mode-map (kbd "C-M-i") nil)
+    (define-key flyspell-mode-map (kbd "C-c \$") nil)))
 
 (use-package flyspell-correct-ivy
   :init
