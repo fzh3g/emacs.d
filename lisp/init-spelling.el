@@ -45,7 +45,7 @@
   :init
   (progn
     (with-eval-after-load 'flyspell
-      (define-key flyspell-mode-map (kbd "C-c f")
+      (define-key flyspell-mode-map (kbd "C-\.")
         'flyspell-correct-word-generic)
       (setq flyspell-correct-interface 'flyspell-correct-ivy))))
 

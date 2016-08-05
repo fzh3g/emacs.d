@@ -62,7 +62,7 @@ it slow, you may modify the =package-archeves= variable on =lisp/init-elpa.el=.
 - =flyspell= is used for automatic spell checking
 - Install =aspell= & =aspell-en= or =hunspell= & =hunspell-en= through your
   system package manager
-- you can easily =C-c f= to correct a word using =flyspell-correct-ivy=
+- you can easily =C-.= to correct a word using =flyspell-correct-ivy=
 
 ** Python
 
