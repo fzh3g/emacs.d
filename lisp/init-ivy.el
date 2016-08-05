@@ -16,7 +16,10 @@
 ;;; Code:
 
 (global-unset-key (kbd "C-s"))
-(global-set-key (kbd "C-s s") 'isearch-forward)
+
+(use-package isearch
+  :bind (("C-s s" . isearch-forward)
+         ("C-r" . isearch-backward)))
 
 (use-package ivy
   :diminish ivy-mode

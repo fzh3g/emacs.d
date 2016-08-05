@@ -112,6 +112,7 @@
     (projectile-cleanup-known-projects)))
 
 (use-package imenu
+  :defer t
   :config
   (setq imenu-auto-rescan t))
 

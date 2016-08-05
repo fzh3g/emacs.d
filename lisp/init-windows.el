@@ -51,6 +51,7 @@
 
 ;; winner
 (use-package winner
+  :defer t
   :init
   (progn
     (setq winner-boring-buffers '("*Completions*"

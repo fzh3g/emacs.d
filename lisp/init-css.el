@@ -17,6 +17,7 @@
 ;;; Code:
 
 (use-package css-mode
+  :defer t
   :config
   (progn
     (add-hook 'css-mode-hook

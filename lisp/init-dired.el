@@ -40,11 +40,17 @@
         (define-key dired-mode-map [mouse-2] 'dired-find-file)))))
 
 ;; image-dired
-(setq image-dired-dir (concat fx-cache-directory "image-dired/")
-      image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
-      image-dired-db-file (concat image-dired-dir ".image-dired_db")
-      image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
-      image-dired-temp-rotate-image-file (concat image-dired-dir ".image-dired_rotate_temp"))
+(use-package image-dired
+  :defer t
+  :config
+  (progn
+    (setq image-dired-dir (concat fx-cache-directory "image-dired/")
+          image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
+          image-dired-db-file (concat image-dired-dir ".image-dired_db")
+          image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
+          image-dired-temp-rotate-image-file (concat
+                                              image-dired-dir
+                                              ".image-dired_rotate_temp"))))
 
 (provide 'init-dired)
 ;;; init-dired.el ends here
