@@ -38,6 +38,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 ;; Mouse cursor in terminal mode
 (xterm-mouse-mode 1)
 
+;; disable C-<down-mouse-1>
+(global-set-key (kbd "C-<down-mouse-1>") nil)
+
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/General-VC-Options.html
 (setq vc-follow-symlinks t)
 
