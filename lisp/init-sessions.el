@@ -103,7 +103,7 @@
     (if (fboundp 'save-place-mode)
         ;; Emacs 25 has a proper mode for `save-place'
         (save-place-mode)
-      (setq save-place t))
+      (setq save-place-mode t))
     ;; Save point position between sessions
     (setq save-place-file (concat fx-cache-directory "places"))))
 

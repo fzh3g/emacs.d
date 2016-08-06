@@ -32,62 +32,62 @@
     (require 'smartparens-config)
 
     ;; keybinding management
-    (define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)
-    (define-key sp-keymap (kbd "C-M-b") 'sp-backward-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
-    (define-key sp-keymap (kbd "C-S-a") 'sp-beginning-of-sexp)
-    (define-key sp-keymap (kbd "C-S-d") 'sp-end-of-sexp)
+    (define-key smartparens-mode-map (kbd "C-S-a") 'sp-beginning-of-sexp)
+    (define-key smartparens-mode-map (kbd "C-S-d") 'sp-end-of-sexp)
 
-    (define-key sp-keymap (kbd "C-M-d") 'sp-down-sexp)
-    (define-key sp-keymap (kbd "C-M-a") 'sp-backward-down-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-d") 'sp-down-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
 
-    (define-key sp-keymap (kbd "C-M-u") 'sp-up-sexp)
-    (define-key sp-keymap (kbd "C-M-e") 'sp-backward-up-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-u") 'sp-up-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-e") 'sp-backward-up-sexp)
 
-    (define-key sp-keymap (kbd "C-M-n") 'sp-next-sexp)
-    (define-key sp-keymap (kbd "C-M-p") 'sp-previous-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-n") 'sp-next-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-p") 'sp-previous-sexp)
 
-    (define-key sp-keymap (kbd "C-M-t") 'sp-transpose-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
 
-    (define-key sp-keymap (kbd "C-M-k") 'sp-kill-sexp)
-    (define-key sp-keymap (kbd "C-M-w") 'sp-copy-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-w") 'sp-copy-sexp)
 
-    (define-key sp-keymap (kbd "C-<right>") 'sp-forward-slurp-sexp)
-    (define-key sp-keymap (kbd "C-<left>") 'sp-forward-barf-sexp)
-    (define-key sp-keymap (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
-    (define-key sp-keymap (kbd "C-M-<right>") 'sp-backward-barf-sexp)
+    (define-key smartparens-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
+    (define-key smartparens-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-<left>") 'sp-backward-slurp-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-<right>") 'sp-backward-barf-sexp)
 
-    (define-key sp-keymap (kbd "M-s <right>")
+    (define-key smartparens-mode-map (kbd "M-s <right>")
       'sp-splice-sexp-killing-forward)
-    (define-key sp-keymap (kbd "M-s <left>")
+    (define-key smartparens-mode-map (kbd "M-s <left>")
       'sp-splice-sexp-killing-backward)
-    (define-key sp-keymap (kbd "M-s <backspace>")
+    (define-key smartparens-mode-map (kbd "M-s <backspace>")
       'sp-splice-sexp-killing-around)
-    (define-key sp-keymap (kbd "M-S-<delete>") 'sp-unwrap-sexp)
-    (define-key sp-keymap (kbd "M-S-<backspace>") 'sp-backward-unwrap-sexp)
+    (define-key smartparens-mode-map (kbd "M-S-<delete>") 'sp-unwrap-sexp)
+    (define-key smartparens-mode-map (kbd "M-S-<backspace>") 'sp-backward-unwrap-sexp)
 
-    (define-key sp-keymap (kbd "M-s M-r") 'sp-rewrap-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-r") 'sp-rewrap-sexp)
 
-    (define-key sp-keymap (kbd "M-s j") 'sp-newline)
+    (define-key smartparens-mode-map (kbd "M-s j") 'sp-newline)
 
-    (define-key sp-keymap (kbd "M-s M-i") 'sp-splice-sexp)
-    (define-key sp-keymap (kbd "M-s M-j") 'sp-join-sexp)
-    (define-key sp-keymap (kbd "M-s M-s") 'sp-split-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-i") 'sp-splice-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-j") 'sp-join-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-s") 'sp-split-sexp)
 
-    (define-key sp-keymap (kbd "M-s M-p") 'sp-add-to-previous-sexp)
-    (define-key sp-keymap (kbd "M-s M-n") 'sp-add-to-next-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-p") 'sp-add-to-previous-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-n") 'sp-add-to-next-sexp)
 
-    (define-key sp-keymap (kbd "M-s M-t") 'sp-prefix-tag-object)
-    (define-key sp-keymap (kbd "M-s M-p") 'sp-prefix-pair-object)
-    (define-key sp-keymap (kbd "M-s M-c") 'sp-convolute-sexp)
-    (define-key sp-keymap (kbd "M-s M-a") 'sp-absorb-sexp)
-    (define-key sp-keymap (kbd "M-s M-e") 'sp-emit-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-t") 'sp-prefix-tag-object)
+    (define-key smartparens-mode-map (kbd "M-s M-p") 'sp-prefix-pair-object)
+    (define-key smartparens-mode-map (kbd "M-s M-c") 'sp-convolute-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-a") 'sp-absorb-sexp)
+    (define-key smartparens-mode-map (kbd "M-s M-e") 'sp-emit-sexp)
 
-    (define-key sp-keymap (kbd "M-s [") 'sp-select-previous-thing)
-    (define-key sp-keymap (kbd "M-s ]") 'sp-select-next-thing)
+    (define-key smartparens-mode-map (kbd "M-s [") 'sp-select-previous-thing)
+    (define-key smartparens-mode-map (kbd "M-s ]") 'sp-select-next-thing)
 
-    (define-key sp-keymap (kbd "M-F") 'sp-forward-symbol)
-    (define-key sp-keymap (kbd "M-B") 'sp-backward-symbol)
+    (define-key smartparens-mode-map (kbd "M-F") 'sp-forward-symbol)
+    (define-key smartparens-mode-map (kbd "M-B") 'sp-backward-symbol)
 
     (bind-key ";" 'sp-comment emacs-lisp-mode-map)
 
@@ -156,7 +156,7 @@
                     (and (looking-back (sp--get-closing-regexp))
                          (not (eq (char-syntax (preceding-char)) ?'))))
             (insert " ")))))
-    (sp-with-modes sp--lisp-modes
+    (sp-with-modes sp-lisp-modes
       (sp-local-pair "(" nil
                      :wrap "C-("
                      :pre-handlers '(my-add-space-before-sexp-insertion)

@@ -43,7 +43,7 @@
 
     (defun fx/yasnippet-off ()
       (yas-minor-mode -1)
-      (setq yas-dont-activate t))
+      (setq yas-dont-activate-functions t))
 
     (dolist (hook '(term-mode-hook
                     shell-mode-hook

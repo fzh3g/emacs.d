@@ -201,8 +201,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   :diminish which-key-mode
   :init
   (progn
-    (setq which-key-use-C-h-for-paging t
-          which-key-prevent-C-h-from-cycling t
+    (setq which-key-use-C-h-commands t
           which-key-sort-order 'which-key-key-order-alpha
           which-key-popup-type 'side-window
           which-key-side-window-location 'bottom
