@@ -49,6 +49,9 @@
 ;; GC Optimization
 (setq gc-cons-threshold (* 128 1024 1024))
 
+;; Always load newest byte code
+(setq load-prefer-newer t)
+
 ;; Bootstrap config
 (require 'init-osx-keys)                ;OSX keys
 (require 'init-gui-frames)              ;GUI frames
@@ -108,6 +111,7 @@
 (require 'init-css)
 (require 'init-vimrc)
 (require 'init-idlwave)
+(require 'init-lisp)
 
 ;; Variables configured via the interactive 'customize' interface
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

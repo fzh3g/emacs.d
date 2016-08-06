@@ -47,6 +47,7 @@
   '(adaptive-wrap
     anzu
     auctex
+    auto-compile
     avy
     buffer-move
     cmake-mode
