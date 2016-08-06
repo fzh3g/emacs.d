@@ -118,7 +118,7 @@
                                  nil
                                  `((alpha . 100)))))
 
-(modify-frame-parameters nil `((alpha . 90)))
+(modify-frame-parameters nil `((alpha . 95)))
 
 (add-hook 'after-make-frame-functions
           (lambda (frame)
