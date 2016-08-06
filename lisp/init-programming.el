@@ -33,8 +33,7 @@
     (setq flycheck-keymap-prefix (kbd "C-c e"))
     (define-key flycheck-mode-map flycheck-keymap-prefix
       flycheck-command-map)
-    (which-key-declare-prefixes "C-c e" "flycheck")
-    ))
+    (which-key-declare-prefixes "C-c e" "flycheck")))
 
 ;; auto-fill-mode
 (add-hook 'change-log-mode-hook 'turn-on-auto-fill)
@@ -93,7 +92,11 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :bind ("C-x p" . projectile-command-map)
+  :bind (("C-x p p" . projectile-switch-project)
+         ("C-x p f" . projectile-find-file)
+         ("C-x p D" . projectile-dired)
+         ("C-x p e" . projectile-recentf)
+         ("C-x p b" . projectile-switch-to-buffer))
   :init
   (progn
     (setq projectile-keymap-prefix (kbd "C-x p"))
