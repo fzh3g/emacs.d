@@ -21,9 +21,9 @@
 ;;   (dolist (i custom-enabled-themes)
 ;;     (disable-theme i)))
 
-(use-package leuven-theme
+(use-package monokai-theme
   :config
-  (load-theme 'leuven t)
+  (load-theme 'monokai t)
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
 
