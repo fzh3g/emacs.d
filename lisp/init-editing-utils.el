@@ -194,6 +194,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (use-package rainbow-delimiters
   :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
+(use-package rainbow-mode
+  :defer t)
+
 (use-package which-key
   :diminish which-key-mode
   :init

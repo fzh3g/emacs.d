@@ -103,6 +103,7 @@
     projectile
     pyvenv
     rainbow-delimiters
+    rainbow-mode
     sass-mode
     scss-mode
     session
