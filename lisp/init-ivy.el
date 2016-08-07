@@ -58,15 +58,22 @@
   :config
   (progn
     ;; shell history.
-    (dolist (hook '(shell-mode-hook
-                    inferior-python-mode-hook
-                    idlwave-shell-mode-hook))
-      (add-hook hook
-                #'(lambda ()
-                    (local-set-key (kbd "C-c C-l") 'counsel-shell-history))))
+    (add-hook 'shell-mode-hook
+              (lambda ()
+                (define-key shell-mode-map (kbd "C-c C-l")
+                  'counsel-shell-history)))
+    (add-hook 'inferior-python-mode-hook
+              (lambda ()
+                (define-key inferior-python-mode-map (kbd "C-c C-l")
+                  'counsel-shell-history)))
+    (add-hook 'idlwave-shell-mode-hook
+              (lambda ()
+                (define-key idlwave-shell-mode-map (kbd "C-c C-l")
+                  'counsel-shell-history)))
     (add-hook 'eshell-mode-hook
-              #'(lambda ()
-                  (local-set-key (kbd "C-c C-l") 'counsel-esh-history)))))
+              (lambda ()
+                (define-key eshell-mode-map (kbd "C-c C-l")
+                  'counsel-esh-history)))))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
