@@ -1,4 +1,5 @@
 ;;; init-linum-and-scroll.el --- Emacs configuration for linum and scrolling
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

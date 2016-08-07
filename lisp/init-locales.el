@@ -1,4 +1,5 @@
 ;;; init-locales.el --- Emacs configuration for locales
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

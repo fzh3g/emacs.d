@@ -1,4 +1,5 @@
 ;;; init-windows.el --- Emacs configuration for windows management
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

@@ -1,4 +1,5 @@
 ;;; init-matlab.el --- Emacs configuration for Matlab
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

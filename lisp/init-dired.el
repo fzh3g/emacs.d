@@ -1,4 +1,5 @@
 ;;; init-dired.el --- Emacs configuration for dired
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

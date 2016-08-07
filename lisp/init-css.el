@@ -1,4 +1,5 @@
 ;;; init-css-mode.el --- Emacs configuration for css
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

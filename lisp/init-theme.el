@@ -1,4 +1,5 @@
 ;;; init-theme.el --- Emacs configuration for color theme
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

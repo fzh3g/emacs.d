@@ -1,4 +1,5 @@
 ;;; init-indentation.el --- Emacs configuration for indentation
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

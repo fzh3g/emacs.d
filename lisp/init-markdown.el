@@ -1,4 +1,5 @@
 ;;; init-markdown.el --- Emacs configuration for Markdown
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;
@@ -44,20 +45,20 @@
                     level 2)))
             (let ((alist (list (cons heading pos))))
               (cond
-               ((= cur-level level)		; new sibling
+               ((= cur-level level)         ; new sibling
                 (setcdr cur-alist alist)
                 (setq cur-alist alist))
-               ((< cur-level level)		; first child
+               ((< cur-level level)         ; first child
                 (dotimes (i (- level cur-level 1))
                   (setq alist (list (cons empty-heading alist))))
                 (if cur-alist
                     (let* ((parent (car cur-alist))
                            (self-pos (cdr parent)))
                       (setcdr parent (cons (cons self-heading self-pos) alist)))
-                  (setcdr root alist))		; primogenitor
+                  (setcdr root alist))      ; primogenitor
                 (setq cur-alist alist)
                 (setq cur-level level))
-               (t				; new sibling of an ancestor
+               (t               ; new sibling of an ancestor
                 (let ((sibling-alist (last (cdr root))))
                   (dotimes (i (1- level))
                     (setq sibling-alist (last (cdar sibling-alist))))

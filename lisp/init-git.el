@@ -1,4 +1,5 @@
 ;;; init-git.el --- Emacs configuration for Git
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

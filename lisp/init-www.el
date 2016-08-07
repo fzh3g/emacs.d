@@ -1,4 +1,5 @@
 ;;; init-www.el --- Emacs configuration for World Wide Web
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

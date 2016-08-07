@@ -1,4 +1,5 @@
 ;;; init-web.el --- Emacs configuration for web
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

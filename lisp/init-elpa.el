@@ -1,4 +1,5 @@
 ;;; init-elpa.el --- Emacs configuration for package.el
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;

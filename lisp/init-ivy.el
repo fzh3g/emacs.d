@@ -1,4 +1,5 @@
 ;;; init-ivy.el --- Emacs configuration for Ivy, Swiper, Counsel
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;
@@ -15,11 +16,11 @@
 
 ;;; Code:
 
-(global-unset-key (kbd "C-s"))
 
 (use-package isearch
   :bind (("C-s s" . isearch-forward)
-         ("C-r" . isearch-backward)))
+         ("C-r" . isearch-backward))
+  :init (global-unset-key (kbd "C-s")))
 
 (use-package ivy
   :diminish ivy-mode

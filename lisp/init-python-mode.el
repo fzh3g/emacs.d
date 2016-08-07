@@ -33,21 +33,25 @@
   :defer t
   :init
   (progn
-    (defun python-default ()
-      (setq python-indent 4
-            python-indent-offset 4
-            python-indent-guess-indent-offset nil)
+    (defun fx/python-default ()
+      (setq python-indent-offset 4
+            fill-column 79)
       (local-set-key (kbd "C-j") 'newline-and-indent))
 
-    (defun python-setup-shell ()
+    (defun fx/python-setup-shell ()
       (if (executable-find "ipython")
           (setq python-shell-interpreter "ipython")
         (setq python-shell-interpreter "python")))
 
+    (defun fx/inferior-python-shell-setup ()
+      (setq indent-tabs-mode t))
+
     (add-hook 'python-mode-hook
               #'(lambda ()
-                  (python-default)
-                  (python-setup-shell)))))
+                  (fx/python-default)
+                  (fx/python-setup-shell)))
+
+    (add-hook 'inferior-python-mode-hook #'fx/inferior-python-shell-setup)))
 
 (provide 'init-python-mode)
 ;;; init-python-mode.el ends here

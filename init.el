@@ -1,4 +1,5 @@
 ;;; init.el --- Emacs main configuration file.
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;
