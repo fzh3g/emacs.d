@@ -32,14 +32,15 @@
                              newline-mark
                              indentation::space))
     (global-set-key (kbd "C-c w") 'whitespace-mode)
-    ;; (add-hook 'prog-mode-hook
-    ;;           #'(lambda ()
-    ;;               (set-face-attribute 'trailing-whitespace nil
-    ;;                                   :background
-    ;;                                   (face-attribute 'font-lock-comment-face
-    ;;                                                   :foreground))
-    ;;               (setq show-trailing-whitespace t)
-    ;;               (add-hook 'before-save-hook 'whitespace-cleanup)))
+    (add-hook 'prog-mode-hook
+              #'(lambda ()
+                  (set-face-attribute 'trailing-whitespace nil
+                                      :background
+                                      (face-attribute 'font-lock-comment-face
+                                                      :foreground))
+                  (setq show-trailing-whitespace t)
+                  ;; (add-hook 'before-save-hook 'whitespace-cleanup)
+                  ))
     (global-set-key (kbd "C-x f w") 'whitespace-cleanup))
   :config
   (progn
