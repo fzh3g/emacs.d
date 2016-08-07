@@ -39,7 +39,7 @@
 ;; see https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Frames.html
 (add-hook 'after-make-frame-functions '--set-emoji-font)
 
-(global-set-key (kbd "C-\=") 'text-scale-increase)
+(global-set-key (kbd "C-\+") 'text-scale-increase)
 (global-set-key (kbd "C-\-") 'text-scale-decrease)
 (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
 (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
