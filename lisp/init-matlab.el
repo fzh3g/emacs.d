@@ -23,7 +23,8 @@
     (defun fx/init-matlab ()
       (make-variable-buffer-local 'company-backends)
       (add-to-list 'company-backends
-                   '(company-matlab-shell :with company-yasnippet)))
+                   '(company-matlab-shell :with company-yasnippet))
+      (define-key matlab-mode-map (kbd "M-s") nil))
     (dolist (hook '(matlab-mode-hook matlab-shell-mode-hook))
       (add-hook hook 'fx/init-matlab))))
 
