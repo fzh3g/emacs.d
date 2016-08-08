@@ -25,8 +25,9 @@
   :defer t
   :init
   (progn
-    (google-this-mode 1)
-    (which-key-declare-prefixes "\C-c \/" "google this")))
+    (setq google-this-keybind (kbd "C-x /"))
+    (which-key-declare-prefixes "C-x /" "google this")
+    (google-this-mode 1)))
 
 (provide 'init-www)
 ;;; init-www.el ends here
