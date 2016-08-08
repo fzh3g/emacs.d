@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: env
+# key: env
+# --
+#!/usr/bin/env ${1:python}
+# -*- coding: utf-8 -*-
+$0
