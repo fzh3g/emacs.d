@@ -180,6 +180,39 @@ a popup window by [[https://github.com/justbur/emacs-which-key][which-key]] with
 | =C-<=           | mc/mark-previous-like-this    |
 | =C-c C-<=       | mc/mark-all-like-this         |
 
+** Anzu
+
+[[https://github.com/syohex/emacs-anzu][Anzu]] provides a minor mode which displays current match and total matches
+information in the mode-line in various search modes.
+
+| Keybinding | Command                   |
+|------------+---------------------------|
+| =M-%=      | anzu-query-replace        |
+| =C-M-%=    | anzu-query-replace-regexp |
+
+** Iedit
+
+[[https://github.com/victorhge/iedit][Iedit]] allows you to edit one occurrence of some text in a buffer (possibly
+narrowed) or region, and simultaneously have other occurrences edited in
+the same way, with visual feedback as you type.
+
+| Keyboarding      | Command                       |
+|------------------+-------------------------------|
+| =C-;=            | iedit-mode                    |
+| =C-h C-;=        | iedit-mode-toggle-on-function |
+| =C-x r <return>= | iedit-rectangle-mode          |
+
+** Visual Regexp
+
+[[https://github.com/benma/visual-regexp.el][Visual-regexp]] is a regexp/replace command for Emacs with interactive visual
+feedback.
+
+| Keybinding | Command         |
+|------------+-----------------|
+| =C-c v r=  | vr/replace      |
+| =C-c v q=  | vr/query-replce |
+| =C-c v m=  | vr/mc-mark      |
+
 ** Expand Region
 
 [[https://github.com/magnars/expand-region.el][Expand-region]] increases the selected region by semantic units.
@@ -205,27 +238,6 @@ apply query replace.
 [[https://github.com/Fuco1/smartparens][Smartparens]] is a minor mode for Emacs that deals with parens pairs and
 tries to be smart about it. See =lisp/init-smartparens.el= for keybindings.
 
-** Anzu
-
-[[https://github.com/syohex/emacs-anzu][Anzu]] provides a minor mode which displays current match and total matches
-information in the mode-line in various search modes.
-
-| Keybinding | Command                   |
-|------------+---------------------------|
-| =M-%=      | anzu-query-replace        |
-| =C-M-%=    | anzu-query-replace-regexp |
-
-** Visual Regexp
-
-[[https://github.com/benma/visual-regexp.el][Visual-regexp]] is a regexp/replace command for Emacs with interactive visual
-feedback.
-
-| Keybinding | Command         |
-|------------+-----------------|
-| =C-c v r=  | vr/replace      |
-| =C-c v q=  | vr/query-replce |
-| =C-c v m=  | vr/mc-mark      |
-
 ** Window Numbering
 
 [[https://github.com/nschum/window-numbering.el][Window-numbering]] uses =M-1= through =M-0= to navigate window.
@@ -243,9 +255,18 @@ Buffer-move is used for swapping buffers.
 
 ** Google This
 
-[[https://github.com/Malabarba/emacs-google-this][Google-this]] is for launching google searches from within Emacs. =C-c /= is
+[[https://github.com/Malabarba/emacs-google-this][Google-this]] is for launching google searches from within Emacs. =C-x /= is
 the prefix key.
 
+** Lorem Ipsum
+
+[[https://github.com/jschaf/emacs-lorem-ipsum][Lorem Ipsum]] automatically generate dummy text.
+
+| Keybinding | Command                       |
+|------------+-------------------------------|
+| =C-c l p=  | lorem-ipsum-insert-paragraphs |
+| =C-c l s=  | lorem-ipsum-insert-sentences  |
+| =C-c l l=  | lorem-ipsum-insert-list       |
 ** Crux
 
 [[https://github.com/bbatsov/crux][Crux]] bundles a few useful interactive commands to enhance your overall Emacs
