@@ -65,7 +65,7 @@
                 (reftex-mode t)
                 (TeX-fold-mode t)
                 (TeX-interactive-mode t)
-                (TeX-PDF-mode -1)
+                (TeX-PDF-mode t)
                 (auto-fill-mode)))))
 
 (use-package latex-extra
@@ -77,7 +77,7 @@
   :defer t
   :init
   (progn
-    (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+    (setq auctex-latexmk-inherit-TeX-PDF-mode nil)
     (add-hook 'LaTeX-mode-hook #'auctex-latexmk-setup)))
 
 (provide 'init-latex)
