@@ -48,6 +48,7 @@
   '(adaptive-wrap
     anzu
     auctex
+    auctex-latexmk
     auto-compile
     avy
     buffer-move

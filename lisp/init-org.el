@@ -77,6 +77,8 @@
     (require 'ox-latex)
     (setq org-latex-default-packages-alist
           (delete '("" "fixltx2e" nil) org-latex-default-packages-alist))
+    (setq org-latex-default-packages-alist
+          (delete '("AUTO" "inputenc" t) org-latex-default-packages-alist))
     (add-to-list 'org-latex-packages-alist '("" "minted"))
     (setq org-latex-listings 'minted)
     (setq org-latex-minted-options
@@ -88,9 +90,7 @@
             ("linenos" "")
             ))
     (setq org-latex-pdf-process
-          '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+          '("latexmk -xelatex -shell-escape -file-line-error"))
     ;; http://wenshanren.org/?p=327
     (defun fx/org-insert-src-block (src-code-type)
       "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
@@ -112,8 +112,7 @@
 
     (add-hook 'org-mode-hook
               #'(lambda ()
-                  (local-set-key (kbd "C-c s") 'fx/org-insert-src-block)
-                  ))
+                  (local-set-key (kbd "C-c s") 'fx/org-insert-src-block)))
 
     (org-babel-do-load-languages
      'org-babel-load-languages

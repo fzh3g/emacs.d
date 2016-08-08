@@ -99,8 +99,8 @@
 (require 'init-www)
 
 ;; Languages
-(require 'init-org)
 (require 'init-latex)
+(require 'init-org)
 (require 'init-python-mode)
 (require 'init-fortran)
 (require 'init-markdown)
