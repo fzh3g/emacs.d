@@ -22,7 +22,7 @@
 ;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-;; Uncomment L21-22 and comment L25-28 if you find it slow
+;; Uncomment L22-23 and comment L26-29 if you find it slow
 (setq package-archives
       '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
