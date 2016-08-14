@@ -130,7 +130,7 @@ simplicity and customizability.
 | =C-h k=    | counsel-descbinds          |
 | =C-h b=    | counsel-bookmark           |
 | =C-s i=    | ivy-imenu-anywhere         |
-| =C-c C-r=  | ivy-resume                 |
+| =C-s r=    | ivy-resume                 |
 
 while =isearch-forward= is bound to =C-s s=.
 

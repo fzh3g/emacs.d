@@ -36,7 +36,7 @@
     (bind-keys
      :map ivy-minibuffer-map
      ("C-t" . ivy-toggle-fuzzy)))
-  :bind (("C-c C-r" . ivy-resume)))
+  :bind (("C-s r" . ivy-resume)))
 
 (use-package swiper
   :bind (("C-s SPC"  . counsel-grep-or-swiper)))
