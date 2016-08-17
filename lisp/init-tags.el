@@ -21,9 +21,7 @@
     :init
     (progn
       ;; Don't ask before rereading the TAGS files if they have changed
-      (setq tags-revert-without-query t)
-      ;; Do case-sensitive tag searches
-      (setq tags-case-fold-search nil)))
+      (setq tags-revert-without-query t)))
 
   (use-package etags-select
     :init
