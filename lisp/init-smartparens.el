@@ -105,10 +105,16 @@
       (save-excursion
         (goto-char mb)
         (save-match-data (looking-at "^\\* "))))
+    (defun sp--gfm-point-after-word-p (id action context)
+      "Return t if point is after a word, nil otherwise.
+ This predicate is only tested on \"insert\" action."
+      (when (eq action 'insert)
+        (sp--looking-back-p (concat "\\(\\sw\\)" (regexp-quote id)))))
     (sp-with-modes '(markdown-mode gfm-mode rst-mode)
       (sp-local-pair "*" "*"
                      :wrap "C-*"
                      :unless '(sp-point-after-word-p sp-point-at-bol-p)
+                     :unless '(sp--gfm-point-after-word-p sp-point-at-bol-p)
                      :post-handlers '(("[d1]" "SPC"))
                      :skip-match 'sp--gfm-skip-asterisk)
       (sp-local-pair "**" "**")
@@ -168,7 +174,7 @@
     (sp-local-pair 'c++-mode "/*" "*/"
                    :post-handlers '((" | " "SPC")
                                     ("* ||\n[i]" "RET")))
-))
+    ))
 
 (provide 'init-smartparens)
 ;;; init-smartparens.el ends here
