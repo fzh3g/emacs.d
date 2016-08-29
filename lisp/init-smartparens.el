@@ -35,14 +35,14 @@
     (define-key smartparens-mode-map (kbd "C-M-f") 'sp-forward-sexp)
     (define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)
 
-    (define-key smartparens-mode-map (kbd "C-S-a") 'sp-beginning-of-sexp)
-    (define-key smartparens-mode-map (kbd "C-S-d") 'sp-end-of-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-a") 'sp-beginning-of-sexp)
+    (define-key smartparens-mode-map (kbd "C-M-e") 'sp-end-of-sexp)
 
     (define-key smartparens-mode-map (kbd "C-M-d") 'sp-down-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
+    ;; (define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
 
     (define-key smartparens-mode-map (kbd "C-M-u") 'sp-up-sexp)
-    (define-key smartparens-mode-map (kbd "C-M-e") 'sp-backward-up-sexp)
+    ;; (define-key smartparens-mode-map (kbd "C-M-e") 'sp-backward-up-sexp)
 
     (define-key smartparens-mode-map (kbd "C-M-n") 'sp-next-sexp)
     (define-key smartparens-mode-map (kbd "C-M-p") 'sp-previous-sexp)
@@ -173,8 +173,7 @@
       (sp-local-pair "{" "}" :post-handlers '(("||\n[i]" "RET"))))
     (sp-local-pair 'c++-mode "/*" "*/"
                    :post-handlers '((" | " "SPC")
-                                    ("* ||\n[i]" "RET")))
-    ))
+                                    ("* ||\n[i]" "RET")))))
 
 (provide 'init-smartparens)
 ;;; init-smartparens.el ends here

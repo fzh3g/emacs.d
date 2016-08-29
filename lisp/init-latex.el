@@ -66,12 +66,24 @@
                 (TeX-fold-mode t)
                 (TeX-interactive-mode t)
                 (TeX-PDF-mode t)
-                (auto-fill-mode)))))
+                (auto-fill-mode))))
+  :config
+  (progn
+    ;; smartparens
+    (require 'smartparens-latex)))
 
 (use-package latex-extra
   :diminish latex-extra-mode
   :defer t
-  :init (add-hook 'LaTeX-mode-hook #'latex-extra-mode))
+  :init
+  (progn
+    (add-hook 'LaTeX-mode-hook #'latex-extra-mode))
+  :config
+  (progn
+    (define-key latex-extra-mode-map (kbd "C-M-a") nil)
+    (define-key latex-extra-mode-map (kbd "C-M-e") nil)
+    (define-key latex-extra-mode-map (kbd "C-M-f") nil)
+    (define-key latex-extra-mode-map (kbd "C-M-b") nil)))
 
 (use-package auctex-latexmk
   :defer t
