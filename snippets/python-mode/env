@@ -2,6 +2,6 @@
 # name: env
 # key: env
 # --
-#!/usr/bin/env ${1:python}
+#!/usr/bin/env python$1
 # -*- coding: utf-8 -*-
 $0
