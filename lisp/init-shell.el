@@ -1,4 +1,5 @@
 ;;; init-shell.el --- Emacs configuration for Shell
+;; -*- coding: utf-8 -*-
 ;;
 ;; Copyright (c) 2015-2016 Faxiang Zheng
 ;;
