@@ -28,7 +28,7 @@
   :defer t
   :init
   (progn
-    (setq irony-additional-clang-options '("-std=c++14"))
+    (setq irony-additional-clang-options '("-std=c++11"))
     (dolist (hook '(c-mode-hook
                     c++-mode-hook
                     objc-mode-hook))

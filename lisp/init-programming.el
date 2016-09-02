@@ -24,8 +24,8 @@
     (add-hook 'prog-mode-hook 'flycheck-mode)
     (add-hook 'c++-mode-hook
               #'(lambda ()
-                  (setq flycheck-gcc-language-standard "c++14"
-                        flycheck-clang-language-standard "c++14"))))
+                  (setq flycheck-gcc-language-standard "c++11"
+                        flycheck-clang-language-standard "c++11"))))
   :config
   (progn
     (setq flycheck-mode-line-prefix "ε")
