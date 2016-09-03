@@ -29,8 +29,6 @@
         (setq diredp-hide-details-initially-flag t)
         (setq diredp-hide-details-propagate-flag t)
         (setq dired-dwim-target t)
-        ;; disable font themeing from dired+
-        (setq font-lock-maximum-decoration (quote ((dired-mode . 1) (t . t))))
         ;; use single buffer for all dired navigation
         (toggle-diredp-find-file-reuse-dir 1))
       :config
@@ -46,9 +44,11 @@
   :config
   (progn
     (setq image-dired-dir (concat fx-cache-directory "image-dired/")
-          image-dired-gallery-dir (concat image-dired-dir ".image-dired_gallery")
+          image-dired-gallery-dir (concat image-dired-dir
+                                          ".image-dired_gallery")
           image-dired-db-file (concat image-dired-dir ".image-dired_db")
-          image-dired-temp-image-file (concat image-dired-dir ".image-dired_temp")
+          image-dired-temp-image-file (concat image-dired-dir
+                                              ".image-dired_temp")
           image-dired-temp-rotate-image-file (concat
                                               image-dired-dir
                                               ".image-dired_rotate_temp"))))
