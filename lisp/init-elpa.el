@@ -55,9 +55,9 @@
     cmake-mode
     company
     company-auctex
-    company-c-headers
     company-emoji
     company-irony
+    company-irony-c-headers
     company-jedi
     company-quickhelp
     company-shell

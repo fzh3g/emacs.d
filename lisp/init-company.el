@@ -98,14 +98,11 @@
     :defer t
     :init
     (progn
+      (require 'company-irony-c-headers)
       (add-to-list 'company-backends
-                   '(company-irony :with company-yasnippet))))
-  (use-package company-c-headers
-    :defer t
-    :init
-    (progn
-      (add-to-list 'company-backends
-                   '(company-c-headers :with company-yasnippet)))))
+                   '(company-irony-c-headers
+                     company-irony
+                     :with company-yasnippet)))))
 
 (defun fx/company-for-css ()
   (make-variable-buffer-local 'company-backends)
