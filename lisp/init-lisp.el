@@ -27,5 +27,10 @@
               #'(lambda ()
                   (auto-compile-on-save-mode)))))
 
+(defun fx-recompile-init ()
+  "Byte-compile all your dotfiles again."
+  (interactive)
+  (byte-recompile-directory user-emacs-directory 0))
+
 (provide 'init-lisp)
 ;;; init-lisp.el ends here
