@@ -27,7 +27,7 @@
           git-gutter:ask-p nil
           git-gutter:verbosity 0
           git-gutter:handled-backends '(git hg bzr svn))
-    (add-hook 'git-gutter:update-hooks 'magit-revert-buffer-hook))
+    (add-to-list 'git-gutter:update-hooks 'magit-revert-buffer-hook))
   :config
   (progn
     (require 'git-gutter-fringe)
