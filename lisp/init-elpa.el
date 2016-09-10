@@ -146,7 +146,6 @@
 (unless *is-a-mac*
   (add-to-list 'fx-packages 'emojify))
 
-;; Check if all packages in `fx-packages' are installed
 (defvar fx-packages-all-installed-p t
   "Non-nil means all packages in `fx-packages' are installed.")
 
@@ -154,9 +153,8 @@
   "Check if all packages needed installed."
   (dolist (pkg fx-packages)
     (unless (package-installed-p pkg)
-     (setq fx-packages-all-installed-p nil))))
+      (setq fx-packages-all-installed-p nil))))
 
-;; Install packages
 (defun fx-install-packages ()
   "Install packages in `fx-packages'."
   (fx-packages-check-all-installed)
