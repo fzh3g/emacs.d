@@ -61,6 +61,7 @@
 (require 'init-tramp)                   ;Tramp setting
 
 ;; Configs for UI and window actions
+(require 'init-fullframe)
 (require 'init-fonts)
 (require 'init-modeline)
 (require 'init-theme)
