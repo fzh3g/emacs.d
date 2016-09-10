@@ -85,7 +85,7 @@
     highlight-symbol
     htmlize
     hungry-delete
-    ibuffer-vc
+    ibuffer-projectile
     iedit
     imenu-anywhere
     irony
