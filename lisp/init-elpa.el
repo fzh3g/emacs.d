@@ -76,6 +76,7 @@
     flycheck
     flycheck-irony
     flyspell-correct-ivy
+    fullframe
     git-gutter+
     git-gutter-fringe+
     gnuplot
