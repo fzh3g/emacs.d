@@ -30,7 +30,8 @@
         (setq diredp-hide-details-propagate-flag t)
         (setq dired-dwim-target t)
         ;; use single buffer for all dired navigation
-        (toggle-diredp-find-file-reuse-dir 1))
+        (add-hook 'dired-mode-hook
+                  (lambda () (toggle-diredp-find-file-reuse-dir 1))))
       :config
       (progn
         (when (fboundp 'global-dired-hide-details-mode)
