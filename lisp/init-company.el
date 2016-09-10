@@ -55,6 +55,12 @@
     (add-hook 'eshell-directory-change-hook
               'fx/toggle-shell-auto-completion-based-on-path)))
 
+(use-package company-flx
+  :defer t
+  :init
+  (with-eval-after-load 'company
+    (company-flx-mode +1)))
+
 (use-package company-quickhelp
   :if (display-graphic-p)
   :defer t
