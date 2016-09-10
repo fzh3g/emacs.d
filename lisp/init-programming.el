@@ -83,12 +83,14 @@
       (add-hook hook 'hs-minor-mode))
     (add-hook 'hs-minor-mode-hook
               #'(lambda ()
-                  (local-set-key (kbd "M-<left>") 'hs-hide-block)
-                  (local-set-key (kbd "M-<right>") 'hs-show-block)
-                  (local-set-key (kbd "M-<up>") 'hs-hide-all)
-                  (local-set-key (kbd "M-<down>") 'hs-show-all)
-                  (local-set-key (kbd "C-c @ l") 'hs-hide-level)
-                  (local-set-key (kbd "C-c @ c") 'hs-toggle-hiding)))))
+                  (define-key hs-minor-mode-map (kbd "M-<left>") 'hs-hide-block)
+                  (define-key hs-minor-mode-map (kbd "M-<right>")
+                    'hs-show-block)
+                  (define-key hs-minor-mode-map (kbd "M-<up>") 'hs-hide-all)
+                  (define-key hs-minor-mode-map (kbd "M-<down>") 'hs-show-all)
+                  (define-key hs-minor-mode-map (kbd "C-c @ l") 'hs-hide-level)
+                  (define-key hs-minor-mode-map (kbd "C-c @ c")
+                    'hs-toggle-hiding)))))
 
 ;; projectile
 (use-package projectile
