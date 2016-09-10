@@ -34,14 +34,16 @@
 
     ;; fuzzy matching
     (require 'flx)
-    (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+    (setq ivy-re-builders-alist
+          '((swiper . ivy--regex-plus)
+            (t . ivy--regex-fuzzy)))
     (bind-keys
      :map ivy-minibuffer-map
      ("C-t" . ivy-toggle-fuzzy)))
   :bind (("C-s r" . ivy-resume)))
 
 (use-package swiper
-  :bind (("C-s SPC"  . counsel-grep-or-swiper)))
+  :bind (("C-s SPC"  . swiper)))
 
 (use-package counsel
   :bind (("C-x C-f" . counsel-find-file)
