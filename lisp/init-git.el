@@ -29,7 +29,8 @@
           git-gutter:hide-gutter t
           git-gutter:ask-p nil
           git-gutter:verbosity 0
-          git-gutter:handled-backends '(git hg bzr svn)))
+          git-gutter:handled-backends '(git hg bzr svn))
+    (add-to-list 'git-gutter:update-hooks 'magit-revert-buffer-hook))
   :config
   (progn
     (require 'git-gutter-fringe)
@@ -43,36 +44,7 @@
       nil nil 'center)
     (define-fringe-bitmap 'git-gutter-fr:deleted
       [0 0 0 0 0 0 0 0 0 0 0 0 0 128 192 224 240 248]
-      nil nil 'center)
-
-    ;; http://stackoverflow.com/questions/23344540/emacs-update-git-gutter-annotations-when-staging-or-unstaging-changes-in-magit
-    (defvar my-magit-after-stage-hooks nil
-      "Hooks to be run after staging one item in magit.")
-    (defvar my-magit-after-unstage-hooks nil
-      "Hooks to be run after unstaging one item in magit.")
-
-    (defadvice magit-stage-item (after run-my-after-stage-hooks activate)
-      "Run `my-magit-after-stage-hooks` after staging an item in magit."
-      (when (called-interactively-p 'interactive)
-        (run-hooks 'my-magit-after-stage-hooks)))
-
-    (defadvice magit-unstage-item (after run-my-after-unstage-hooks activate)
-      "Run `my-magit-after-unstage-hooks` after unstaging an item in magit."
-      (when (called-interactively-p 'interactive)
-        (run-hooks 'my-magit-after-unstage-hooks)))
-
-    (defun my-refresh-visible-git-gutter-buffers ()
-      "Refresh git-gutter-mode on all visible git-gutter-mode buffers."
-      (dolist (buff (buffer-list))
-        (with-current-buffer buff
-          (when (and git-gutter-mode (get-buffer-window buff))
-            (git-gutter-mode t)))))
-
-    (add-hook 'my-magit-after-unstage-hooks
-              'my-refresh-visible-git-gutter-buffers)
-    (add-hook 'my-magit-after-stage-hooks
-              'my-refresh-visible-git-gutter-buffers)
-    ))
+      nil nil 'center)))
 
 (use-package magit
   :commands (magit-status
