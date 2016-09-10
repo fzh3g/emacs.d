@@ -12,9 +12,12 @@
 
 ;;; Commentary:
 
-;; Some configuration for git-gutter and magit.
+;; Some configuration for diff-hl and magit.
 
 ;;; Code:
+
+;; Disable VC
+(setq vc-handled-backends nil)
 
 (use-package git-gutter
   :diminish git-gutter-mode
