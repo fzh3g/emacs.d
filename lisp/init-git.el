@@ -19,30 +19,29 @@
 ;; Disable VC
 (setq vc-handled-backends nil)
 
-(use-package git-gutter
-  :diminish git-gutter-mode
-  :commands global-git-gutter-mode
+(use-package git-gutter+
+  :diminish git-gutter+-mode
+  :commands global-git-gutter+-mode
   :init
   (progn
-    (global-git-gutter-mode t)
-    (setq git-gutter:update-interval 2
-          git-gutter:hide-gutter t
-          git-gutter:ask-p nil
-          git-gutter:verbosity 0
-          git-gutter:handled-backends '(git hg bzr svn))
-    (add-to-list 'git-gutter:update-hooks 'magit-revert-buffer-hook))
+    (global-git-gutter+-mode t)
+    (setq git-gutter+-hide-gutter t
+          git-gutter+-modified-sign " "
+          git-gutter+-diff-option "-w"
+          git-gutter+-verbosity 0)
+    (add-hook 'magit-pre-refresh-hook 'git-gutter+-refresh))
   :config
   (progn
-    (require 'git-gutter-fringe)
-    (define-fringe-bitmap 'git-gutter-fr:added
+    (require 'git-gutter-fringe+)
+    (define-fringe-bitmap 'git-gutter-fr+-added
       [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224
            224 224 224 224 224 224 224 224]
       nil nil 'center)
-    (define-fringe-bitmap 'git-gutter-fr:modified
+    (define-fringe-bitmap 'git-gutter-fr+-modified
       [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224
            224 224 224 224 224 224 224 224]
       nil nil 'center)
-    (define-fringe-bitmap 'git-gutter-fr:deleted
+    (define-fringe-bitmap 'git-gutter-fr+-deleted
       [0 0 0 0 0 0 0 0 0 0 0 0 0 128 192 224 240 248]
       nil nil 'center)))
 
