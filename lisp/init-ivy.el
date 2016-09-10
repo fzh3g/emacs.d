@@ -27,12 +27,14 @@
   :config
   (progn
     (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (setq ivy-re-builders-alist
-          '((read-file-name-internal . ivy--regex-fuzzy)
-            (t . ivy--regex-plus)))
-    (setq ivy-count-format "(%d/%d) ")
-    (setq ivy-display-style 'fancy)
+    (setq ivy-use-virtual-buffers t
+          ivy-count-format "(%d/%d) "
+          ivy-initial-inputs-alist nil
+          ivy-display-style 'fancy)
+
+    ;; fuzzy matching
+    (require 'flx)
+    (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
     (bind-keys
      :map ivy-minibuffer-map
      ("C-t" . ivy-toggle-fuzzy)))

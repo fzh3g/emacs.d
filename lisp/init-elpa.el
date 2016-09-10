@@ -72,6 +72,7 @@
     eshell-prompt-extras
     etags-select
     expand-region
+    flx
     flycheck
     flycheck-irony
     flyspell-correct-ivy
