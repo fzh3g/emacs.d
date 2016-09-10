@@ -100,6 +100,9 @@
 (setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
 (set-fringe-bitmap-face 'tilde 'font-lock-type-face)
 
+;; Fringes outside of margins
+(setq-default fringes-outside-margins t)
+
 ;; adjust opacity
 (defun adjust-opacity (frame incr)
   (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))

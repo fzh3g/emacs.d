@@ -66,7 +66,6 @@
     counsel
     crux
     ctags-update
-    diff-hl
     diminish
     dired+
     eshell-prompt-extras
@@ -76,6 +75,8 @@
     flycheck
     flycheck-irony
     flyspell-correct-ivy
+    git-gutter
+    git-gutter-fringe
     gnuplot
     google-this
     highlight-numbers

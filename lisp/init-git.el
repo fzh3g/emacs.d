@@ -16,15 +16,35 @@
 
 ;;; Code:
 
-(use-package diff-hl
+(use-package git-gutter
+  :diminish git-gutter-mode
+  :commands global-git-gutter-mode
   :init
   (progn
-    (setq diff-hl-side 'right)
-    (global-diff-hl-mode)
-    (unless (display-graphic-p)
-      (setq diff-hl-side 'left)
-      (diff-hl-margin-mode))
-    (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)))
+    (global-git-gutter-mode t)
+    (setq git-gutter:update-interval 2
+          git-gutter:modified-sign " "
+          git-gutter:added-sign "+"
+          git-gutter:deleted-sign "-"
+          git-gutter:diff-option "-w"
+          git-gutter:hide-gutter t
+          git-gutter:ask-p nil
+          git-gutter:verbosity 0
+          git-gutter:handled-backends '(git hg bzr svn)))
+  :config
+  (progn
+    (require 'git-gutter-fringe)
+    (define-fringe-bitmap 'git-gutter-fr:added
+      [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224
+           224 224 224 224 224 224 224 224]
+      nil nil 'center)
+    (define-fringe-bitmap 'git-gutter-fr:modified
+      [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224
+           224 224 224 224 224 224 224 224]
+      nil nil 'center)
+    (define-fringe-bitmap 'git-gutter-fr:deleted
+      [0 0 0 0 0 0 0 0 0 0 0 0 0 128 192 224 240 248]
+      nil nil 'center)))
 
 (use-package magit
   :commands (magit-status
