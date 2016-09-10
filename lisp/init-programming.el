@@ -22,6 +22,8 @@
   :defer t
   :init
   (progn
+    (setq flycheck-indication-mode 'right-fringe
+          flycheck-check-syntax-automatically '(save mode-enabled))
     (add-hook 'prog-mode-hook 'flycheck-mode)
     (add-hook 'c++-mode-hook
               #'(lambda ()
@@ -29,6 +31,8 @@
                         flycheck-clang-language-standard "c++11"))))
   :config
   (progn
+    (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+      [0 0 0 0 0 4 12 28 60 124 252 124 60 28 12 4 0 0 0 0])
     (setq flycheck-mode-line-prefix "ε")
     (define-key flycheck-mode-map flycheck-keymap-prefix nil)
     (setq flycheck-keymap-prefix (kbd "C-c e"))
