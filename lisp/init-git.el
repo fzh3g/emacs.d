@@ -23,10 +23,6 @@
   (progn
     (global-git-gutter-mode t)
     (setq git-gutter:update-interval 2
-          git-gutter:modified-sign " "
-          git-gutter:added-sign "+"
-          git-gutter:deleted-sign "-"
-          git-gutter:diff-option "-w"
           git-gutter:hide-gutter t
           git-gutter:ask-p nil
           git-gutter:verbosity 0
