@@ -16,9 +16,6 @@
 
 ;;; Code:
 
-;; Disable VC
-(setq vc-handled-backends nil)
-
 (use-package git-gutter+
   :diminish git-gutter+-mode
   :commands global-git-gutter+-mode
