@@ -18,20 +18,7 @@
 
 ;; show column number and line number
 (use-package nlinum
-  :disabled t
-  :init (setq linum-delay t)
-  :config
-  (dolist (hook '(prog-mode-hook
-                  conf-mode-hook
-                  yaml-mode-hook
-                  web-mode-hook
-                  markdown-mode-hook
-                  matlab-mode-hook
-                  css-mode-hook))
-    (add-hook hook 'column-number-mode)
-    (add-hook hook 'line-number-mode)
-    (add-hook hook 'nlinum-mode)
-    ))
+  :defer t)
 
 ;; nice scrolling
 (setq scroll-margin 3
