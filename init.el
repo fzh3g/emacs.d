@@ -68,7 +68,6 @@
 (require 'init-windows)
 (require 'init-move-window-buffer)
 (require 'init-uniquify)
-(require 'init-smartparens)
 
 ;; Configs for some defult modes
 (require 'init-ibuffer)
@@ -86,6 +85,7 @@
 (require 'init-ivy)
 
 ;; Better settings for editing and programming
+(require 'init-smartparens)
 (require 'init-linum-and-scroll)
 (require 'init-indentation)
 (require 'init-editing-utils)
