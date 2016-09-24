@@ -16,11 +16,11 @@
 
 ;;; Code:
 
+(global-unset-key (kbd "C-s"))
 
 (use-package isearch
   :bind (("C-s s" . isearch-forward)
-         ("C-r" . isearch-backward))
-  :init (global-unset-key (kbd "C-s")))
+         ("C-r" . isearch-backward)))
 
 (use-package ivy
   :diminish ivy-mode
