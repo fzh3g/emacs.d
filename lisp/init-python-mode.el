@@ -56,7 +56,8 @@
                  (setq python-shell-interpreter-args "--simple-prompt -i"))
         (progn
           (setq python-shell-interpreter-args "-i")
-          (setq python-shell-interpreter "python"))))
+          (setq python-shell-interpreter "python")))
+      (setq python-shell-completion-native-enable nil))
 
     (defun fx/inferior-python-shell-setup ()
       (setq indent-tabs-mode t))
