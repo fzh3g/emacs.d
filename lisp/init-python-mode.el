@@ -35,24 +35,43 @@
   :init
   (progn
     (defun fx/python-default ()
-      (setq python-indent-offset 4
+      (setq tab-width 4
             fill-column 79)
+      (setq-local comment-inline-offset 2)
       (local-set-key (kbd "C-j") 'newline-and-indent))
 
-    (defun fx/python-setup-shell ()
-      (if (executable-find "ipython")
-          (setq python-shell-interpreter "ipython")
-        (setq python-shell-interpreter "python")))
+    (defun fx/pyenv-executable-find (command)
+      "Find executable taking pyenv shims into account."
+      (if (executable-find "pyenv")
+          (progn
+            (let ((pyenv-string (shell-command-to-string
+                                 (concat "pyenv which " command))))
+              (unless (string-match "not found" pyenv-string)
+                pyenv-string)))
+        (executable-find command)))
+
+    (defun fx/python-setup-shell (&rest args)
+      (if (fx/pyenv-executable-find "ipython")
+          (progn (setq python-shell-interpreter "ipython")
+                 (setq python-shell-interpreter-args "--simple-prompt -i"))
+        (progn
+          (setq python-shell-interpreter-args "-i")
+          (setq python-shell-interpreter "python"))))
 
     (defun fx/inferior-python-shell-setup ()
       (setq indent-tabs-mode t))
 
-    (add-hook 'python-mode-hook
-              #'(lambda ()
-                  (fx/python-default)
-                  (fx/python-setup-shell)))
+    (add-hook 'python-mode-hook #'fx/python-default)
+    (add-hook 'inferior-python-mode-hook #'fx/inferior-python-shell-setup)
 
-    (add-hook 'inferior-python-mode-hook #'fx/inferior-python-shell-setup)))
+    (fx/python-setup-shell))
+  :config
+  (progn
+    (eval-after-load 'company
+      '(add-hook 'inferior-python-mode-hook
+                (lambda ()
+                  (setq-local company-minimum-prefix-length 0)
+                  (setq-local company-idle-delay 0.5))))))
 
 (provide 'init-python-mode)
 ;;; init-python-mode.el ends here
