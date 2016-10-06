@@ -22,10 +22,12 @@
   :init
   (progn
     (setq sp-show-pair-delay 0.2
-          sp-skip-closing-pair 'always
           sp-navigate-close-if-unbalanced t
           sp-show-pair-from-inside t
-          sp-cancel-autoskip-on-backward-movement nil)
+          sp-cancel-autoskip-on-backward-movement nil
+          sp-highlight-pair-overlay nil
+          sp-highlight-wrap-overlay nil
+          sp-highlight-wrap-tag-overlay nil)
     (show-smartparens-global-mode t)
     (smartparens-global-mode t))
   :config
