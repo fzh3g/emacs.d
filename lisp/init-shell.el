@@ -105,12 +105,6 @@
               #'(lambda ()
                   (define-key term-raw-map (kbd "C-c C-t") 'multi-term)))
 
-    (defun term-send-tab ()
-      "Send tab in term mode."
-      (interactive)
-      (term-send-raw-string "\t"))
-    (add-to-list 'term-bind-key-alist '("<tab>" . term-send-tab))
-
     (defun projectile-multi-term-in-root ()
       "Invoke `multi-term' in the project's root."
       (interactive)
@@ -168,6 +162,14 @@
     (global-set-key (kbd "C-x t t") #'shell-pop-ansi-term)
     (global-set-key (kbd "C-x t T") #'shell-pop-term)
     (which-key-declare-prefixes "C-x t" "shell")))
+
+(defun fx/init-term ()
+  (defun term-send-tab ()
+    "Send tab in term mode."
+    (interactive)
+    (term-send-raw-string "\t"))
+  (add-to-list 'term-bind-key-alist '("<tab>" . term-send-tab)))
+(add-hook 'term-mode-hook #'fx/setup-term)
 
 (defun shell-comint-input-sender-hook ()
   "Check certain shell commands.
