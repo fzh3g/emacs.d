@@ -79,6 +79,15 @@
                                           "company-statistics-cache.el"))
     (add-hook 'company-mode-hook 'company-statistics-mode)))
 
+(use-package company-emoji
+  :defer t
+  :init
+  (progn
+    (with-eval-after-load 'company
+      (add-to-list 'company-backends '(company-emoji
+                                       :with company-yasnippet)))
+    (setq company-emoji-insert-unicode t)))
+
 (defun fx/company-for-tex ()
   (make-variable-buffer-local 'company-backends)
   (use-package company-auctex

@@ -35,5 +35,4 @@ tutorial/
 flycheck_init-*.el
 /.cache/
 /.python-environments
-/emojis
 *.desktop

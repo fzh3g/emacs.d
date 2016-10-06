@@ -61,12 +61,10 @@
 (require 'init-tramp)                   ;Tramp setting
 
 ;; Configs for UI and window actions
-(require 'init-fullframe)
 (require 'init-fonts)
 (require 'init-modeline)
 (require 'init-theme)
 (require 'init-windows)
-(require 'init-move-window-buffer)
 (require 'init-uniquify)
 
 ;; Configs for some defult modes
@@ -86,13 +84,11 @@
 
 ;; Better settings for editing and programming
 (require 'init-smartparens)
-(require 'init-linum-and-scroll)
 (require 'init-indentation)
 (require 'init-editing-utils)
 (require 'init-programming)
 (require 'init-tags)
 (require 'init-whitespace)
-(require 'init-emoji)
 
 ;; Additional tools for efficiency
 (require 'init-shell)

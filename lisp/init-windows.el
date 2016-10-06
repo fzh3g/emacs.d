@@ -16,7 +16,6 @@
 
 ;;; Code:
 
-;; When splitting window, show (other-buffer) in the new window
 (defun fx/split-window-vertically ()
   "Split window vertically and show other buffer in the new window."
   (interactive)
@@ -32,7 +31,6 @@
 (global-set-key "\C-x2" #'fx/split-window-vertically)
 (global-set-key "\C-x3" #'fx/split-window-horizontally)
 
-;; Rearrange split windows
 (defun fx/split-window-horizontally-instead ()
   "Rearrange split windows horizontally."
   (interactive)
@@ -50,7 +48,35 @@
 (global-set-key "\C-x|" #'fx/split-window-horizontally-instead)
 (global-set-key "\C-x_" #'fx/split-window-vertically-instead)
 
-;; winner
+(use-package fullframe
+  :defer t
+  :init
+  (progn
+    (eval-after-load 'ibuffer (fullframe ibuffer ibuffer-quit))
+    (eval-after-load 'magit (fullframe magit-status magit-mode-quit-window))
+    (eval-after-load 'magit (fullframe projectile-vc magit-mode-quit-window))
+    (eval-after-load 'package (fullframe list-packages quit-window))
+    ))
+
+(use-package window-numbering
+  :config
+  (progn
+    ;; (defun window-numbering-install-mode-line (&optional position)
+    ;;   "Do nothing.")
+    (window-numbering-mode 1)
+    ;; (custom-set-faces '(window-numbering-face
+    ;;                     ((t (:foreground "#ff1493" :weight bold)))))
+    ))
+
+(use-package buffer-move
+  :defer t
+  :init (setq-default buffer-move-behavior 'move)
+  :bind
+  (("C-x w <up>" . buf-move-up)
+   ("C-x w <down>" . buf-move-down)
+   ("C-x w <left>" . buf-move-left)
+   ("C-x w <right>". buf-move-right)))
+
 (use-package winner
   :defer t
   :init

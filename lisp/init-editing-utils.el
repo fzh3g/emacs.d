@@ -24,6 +24,17 @@
       delete-selection-mode t
       kill-whole-line t)
 
+;; nice scrolling
+(setq scroll-margin 3
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1
+      auto-window-vscroll nil)
+
+;; mouse scrolling
+(global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
+(global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
+
 ;; Hack to fix a bug with tabulated-list.el
 ;; see: http://redd.it/2dgy52
 (defun tabulated-list-revert (&rest ignored)
@@ -144,6 +155,10 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
      ediff-split-window-function 'split-window-horizontally
      ediff-merge-split-window-function 'split-window-horizontally)
     (add-hook 'ediff-quit-hook #'winner-undo)))
+
+;; show column number and line number
+(use-package nlinum
+  :defer t)
 
 ;; page break lines
 (use-package page-break-lines

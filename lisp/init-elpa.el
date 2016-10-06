@@ -144,9 +144,6 @@
 (unless *linux*
   (add-to-list 'fx-packages 'exec-path-from-shell))
 
-(unless *is-a-mac*
-  (add-to-list 'fx-packages 'emojify))
-
 (defvar fx-packages-all-installed-p t
   "Non-nil means all packages in `fx-packages' are installed.")
 
