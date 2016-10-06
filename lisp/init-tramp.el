@@ -40,5 +40,11 @@
 ;; (setq tramp-ssh-controlmaster-options
 ;;       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
+(defun sudo-save ()
+  "Save file as root."
+  (interactive)
+  (write-file (concat "/sudo:root@localhost:" buffer-file-name)))
+(global-set-key (kbd "C-x M-s") #'sudo-save)
+
 (provide 'init-tramp)
 ;;; init-tramp.el ends here
