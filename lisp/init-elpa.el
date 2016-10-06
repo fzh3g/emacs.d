@@ -28,17 +28,6 @@
         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
         ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
-;; If gpg cannot be found, signature checking will fail, so we
-;; conditionally enable it according to whether gpg is available. We
-;; re-run this check once $PATH has been configured
-(defun sanityinc/package-maybe-enable-signatures ()
-  (setq package-check-signature (when (executable-find "gpg") nil)))
-
-(sanityinc/package-maybe-enable-signatures)
-(eval-after-load 'init-exec-path
-  '(progn
-     (sanityinc/package-maybe-enable-signatures)))
-
 ;; Fire up package.el
 (package-initialize)
 (setq package-enable-at-startup nil)
