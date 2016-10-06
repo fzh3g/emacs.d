@@ -149,11 +149,7 @@
     (package-refresh-contents)
     (dolist (pkg fx-packages)
       (unless (package-installed-p pkg)
-        (package-install pkg)))
-    (fx-packages-check-all-installed)
-    (if fx-packages-all-installed-p
-        (message "%s" "All packages in `fx-packages' are installed !")
-      )))
+        (package-install pkg)))))
 
 ;; Run package installation
 (fx-install-packages)
