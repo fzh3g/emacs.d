@@ -43,7 +43,9 @@
 (defun sudo-save ()
   "Save file as root."
   (interactive)
-  (write-file (concat "/sudo:root@localhost:" buffer-file-name)))
+  (if (not buffer-file-name)
+      (write-file (concat "/sudo:root@localhost:" (read-file-name "File:")))
+    (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
 (global-set-key (kbd "C-x M-s") #'sudo-save)
 
 (provide 'init-tramp)
