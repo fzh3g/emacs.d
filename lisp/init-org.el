@@ -25,7 +25,6 @@
   :defer t
   :init
   (progn
-    (which-key-declare-prefixes "C-c c" "org")
     (setq org-clock-persist-file
           (concat fx-cache-directory "org-clock-save.el")
           org-idl-locations-file

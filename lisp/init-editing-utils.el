@@ -67,7 +67,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (put 'erase-buffer 'disabled nil)
 (put 'scroll-left 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
-(which-key-declare-prefixes "C-x n" "narrow")
 
 (global-set-key (kbd "C-x f") nil)
 (global-set-key (kbd "C-x f e") 'erase-buffer)
@@ -82,7 +81,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   (join-line 1))
 (global-set-key (kbd "C-c j L") #'fx/join-line-below)
 (global-set-key (kbd "C-c j l") 'join-line)
-(which-key-declare-prefixes "\C-c j" "join line")
 
 ;; Change "yes or no" to "y or n"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -121,8 +119,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   (set-buffer-file-coding-system 'undecided-dos nil))
 (global-set-key (kbd "C-x f c u") #'fx/dos2unix)
 (global-set-key (kbd "C-x f c d") #'fx/unix2dos)
-(which-key-declare-prefixes "C-x f c" "unix dos")
-
 
 ;; http://camdez.com/blog/2013/11/14/emacs-show-buffer-file-name/
 (defun fx/show-and-copy-buffer-filename ()
@@ -219,7 +215,21 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (which-key-declare-prefixes "C-x r" "rectangle&register")
     (which-key-declare-prefixes "C-x a" "abbrev")
     (which-key-declare-prefixes "C-x 8" "special character")
-    (which-key-declare-prefixes "C-x @" "event modifier")))
+    (which-key-declare-prefixes "C-x @" "event modifier")
+    (which-key-declare-prefixes "C-x n" "narrow")
+    (which-key-declare-prefixes "C-c j" "join line")
+    (which-key-declare-prefixes "C-x f c" "unix dos")
+    (which-key-declare-prefixes "C-c v" "visual regexp")
+    (which-key-declare-prefixes "C-x f" "crux&files")
+    (which-key-declare-prefixes "C-c l" "lorem ipsum")
+    (which-key-declare-prefixes "C-c m" "multiple cursors")
+    (which-key-declare-prefixes "C-x w" "buffer-move")
+    (which-key-declare-prefixes "C-c c" "org")
+    (which-key-declare-prefixes "C-c e" "flycheck")
+    (which-key-declare-prefixes "C-c @" "hideshow")
+    (which-key-declare-prefixes "C-x p" "projectile")
+    (which-key-declare-prefixes "C-x t" "shell")
+    (which-key-declare-prefixes "C-x /" "google this")))
 
 ;; anzu
 (use-package anzu
@@ -236,7 +246,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
           anzu-mode-lighter "")))
 
 (use-package visual-regexp
-  :init (which-key-declare-prefixes "C-c v" "visual regexp")
   :bind (("C-c v r" . vr/replace)
          ("C-c v q" . vr/query-replace)
          ("C-c v m" . vr/mc-mark)))
@@ -274,11 +283,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
    ("C-c m a" . mc/edit-beginnings-of-lines))
   :init
   (progn
-    (which-key-declare-prefixes "C-c m" "multiple cursors")
     (setq mc/list-file (concat fx-cache-directory "mc-lists.el"))))
 
 (use-package crux
-  :init (which-key-declare-prefixes "C-x f" "crux&files")
   :bind
   (([remap move-beginning-of-line] . crux-move-beginning-of-line)
    ([remap kill-whole-line] . crux-kill-whole-line)
@@ -316,9 +323,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   :bind
   (("C-c l s" . lorem-ipsum-insert-sentences)
    ("C-c l p" . lorem-ipsum-insert-paragraphs)
-   ("C-c l l" . lorem-ipsum-insert-list))
-  :init
-  (which-key-declare-prefixes "\C-c l" "lorem ipsum"))
+   ("C-c l l" . lorem-ipsum-insert-list)))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

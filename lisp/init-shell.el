@@ -160,8 +160,7 @@
     (global-set-key (kbd "C-x t s") #'shell-pop-shell)
     (global-set-key (kbd "C-x t m") #'shell-pop-multiterm)
     (global-set-key (kbd "C-x t t") #'shell-pop-ansi-term)
-    (global-set-key (kbd "C-x t T") #'shell-pop-term)
-    (which-key-declare-prefixes "C-x t" "shell")))
+    (global-set-key (kbd "C-x t T") #'shell-pop-term)))
 
 (defun fx/init-term ()
   (defun term-send-tab ()

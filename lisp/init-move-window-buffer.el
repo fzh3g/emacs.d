@@ -29,10 +29,7 @@
 
 (use-package buffer-move
   :defer t
-  :init
-  (progn
-    (which-key-declare-prefixes "C-x w" "buffer-move")
-    (setq-default buffer-move-behavior 'move))
+  :init (setq-default buffer-move-behavior 'move)
   :bind
   (("C-x w <up>" . buf-move-up)
    ("C-x w <down>" . buf-move-down)

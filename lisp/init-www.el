@@ -26,7 +26,6 @@
   :init
   (progn
     (setq google-this-keybind (kbd "C-x /"))
-    (which-key-declare-prefixes "C-x /" "google this")
     (google-this-mode 1)))
 
 (provide 'init-www)
