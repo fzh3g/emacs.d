@@ -115,7 +115,7 @@
     (setq projectile-indexing-method 'alien))
   :config
   (progn
-    (projectile-global-mode)
+    (projectile-mode)
     (projectile-cleanup-known-projects)))
 
 (use-package imenu
