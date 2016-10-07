@@ -89,6 +89,7 @@
 (require 'init-whitespace)
 (require 'init-programming)
 (require 'init-tags)
+(require 'init-clipboard)
 
 ;; Additional tools for efficiency
 (require 'init-shell)
