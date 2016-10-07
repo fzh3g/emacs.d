@@ -87,7 +87,7 @@
   :bind ([remap execute-extended-command] . smex)
   :config
   (setq-default smex-save-file
-                (expand-file-name ".smex-items" fx-cache-directory)))
+                (expand-file-name "smex-items" fx-cache-directory)))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
