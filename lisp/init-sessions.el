@@ -51,6 +51,7 @@
                     register-alist
                     (comint-input-ring        . 128)
                     (shell-command-history    . 128)
+                    (ivy-history              . 128)
                     (read-expression-history  . 64)
                     (minibuffer-history       . 64)
                     (regexp-history           . 64)

@@ -39,7 +39,9 @@
             (t . ivy--regex-fuzzy)))
     (bind-keys
      :map ivy-minibuffer-map
-     ("C-t" . ivy-toggle-fuzzy)))
+     ("C-t" . ivy-toggle-fuzzy)
+     ("C-j" . ivy-immediate-done)
+     ("<return>" . ivy-alt-done)))
   :bind (("C-s r" . ivy-resume)))
 
 (use-package swiper
