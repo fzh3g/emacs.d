@@ -32,8 +32,7 @@
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'set-scroll-bar-mode)
-  (unless *is-a-mac*
-    (scroll-bar-mode -1)))
+  (scroll-bar-mode -1))
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
 (when (fboundp 'menu-bar-mode)
