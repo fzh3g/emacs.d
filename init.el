@@ -86,9 +86,9 @@
 (require 'init-smartparens)
 (require 'init-indentation)
 (require 'init-editing-utils)
+(require 'init-whitespace)
 (require 'init-programming)
 (require 'init-tags)
-(require 'init-whitespace)
 
 ;; Additional tools for efficiency
 (require 'init-shell)
@@ -98,18 +98,18 @@
 ;; Languages
 (require 'init-latex)
 (require 'init-org)
-(require 'init-python-mode)
-(require 'init-fortran)
 (require 'init-markdown)
-(require 'init-lua-mode)
-(require 'init-matlab)
+(require 'init-python-mode)
 (require 'init-cc-mode)
+(require 'init-lisp)
+(require 'init-lua-mode)
 (require 'init-yaml)
 (require 'init-web)
 (require 'init-css)
-(require 'init-vimrc)
+(require 'init-fortran)
+(require 'init-matlab)
 (require 'init-idlwave)
-(require 'init-lisp)
+(require 'init-vimrc)
 
 ;; Variables configured via the interactive 'customize' interface
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
