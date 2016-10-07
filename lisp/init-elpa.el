@@ -105,6 +105,7 @@
     session
     shell-pop
     smartparens
+    smex
     swiper
     toc-org
     undo-tree

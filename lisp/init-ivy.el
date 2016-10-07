@@ -48,8 +48,8 @@
   :bind (("C-s SPC"  . swiper)))
 
 (use-package counsel
+  :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
-         ("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)
          ("C-s a" . counsel-ag)
          ("C-s u" . counsel-unicode-char)
@@ -62,6 +62,7 @@
          ("C-h f" . counsel-describe-function)
          ("C-h k" . counsel-descbinds)
          ("C-h b" . counsel-bookmark))
+  :init (add-hook 'after-init-hook 'counsel-mode)
   :config
   (progn
     ;; shell history.
@@ -81,6 +82,12 @@
               (lambda ()
                 (define-key eshell-mode-map (kbd "C-c C-l")
                   'counsel-esh-history)))))
+
+(use-package smex
+  :bind ([remap execute-extended-command] . smex)
+  :config
+  (setq-default smex-save-file
+                (expand-file-name ".smex-items" fx-cache-directory)))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

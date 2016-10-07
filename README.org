@@ -115,7 +115,6 @@ simplicity and customizability.
 | Keybinding | Command                    |
 |------------+----------------------------|
 | =C-x C-f=  | counsel-find-file          |
-| =M-x=      | counsel-M-x                |
 | =M-y=      | counsel-yank-pop           |
 | =C-s SPC=  | swiper                     |
 | =C-s a=    | counsel-ag                 |
