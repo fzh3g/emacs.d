@@ -102,7 +102,6 @@
     rainbow-mode
     sass-mode
     scss-mode
-    session
     shell-pop
     smartparens
     smex
