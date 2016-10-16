@@ -80,8 +80,6 @@
     (setq comint-output-filter-functions (remove
                                           'ansi-color-process-output
                                           comint-output-filter-functions))
-    (setq font-lock-unfontify-region-function
-          'xterm-color-unfontify-region)
     (with-eval-after-load 'esh-mode
       (add-hook 'eshell-mode-hook
                 (lambda ()
