@@ -130,7 +130,7 @@
 
 (setq fx-packages (append fx-packages fx-theme-packages))
 
-(unless *linux*
+(if *is-a-mac*
   (add-to-list 'fx-packages 'exec-path-from-shell))
 
 (defvar fx-packages-all-installed-p t
