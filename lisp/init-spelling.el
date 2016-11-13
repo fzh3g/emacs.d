@@ -21,8 +21,7 @@
   :defer t
   :init
   (progn
-    (dolist (hook '(text-mode-hook TeX-mode-hook org-mode-hook
-                                   markdown-mode-hook))
+    (dolist (hook '(org-mode-hook markdown-mode-hook))
       (add-hook hook 'flyspell-mode))
     ;; better performance
     (setq flyspell-issue-message-flag nil)
