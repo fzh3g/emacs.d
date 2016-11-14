@@ -44,7 +44,6 @@
     cmake-mode
     company
     company-auctex
-    ;; company-emoji
     company-flx
     company-irony
     company-irony-c-headers
