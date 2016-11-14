@@ -124,7 +124,7 @@
   (setq imenu-auto-rescan t))
 
 (use-package imenu-anywhere
-  :bind ("C-s i" . ivy-imenu-anywhere))
+  :bind ("C-c s i" . ivy-imenu-anywhere))
 
 (provide 'init-programming)
 ;;; init-programming.el ends here

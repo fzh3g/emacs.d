@@ -16,12 +16,6 @@
 
 ;;; Code:
 
-(global-unset-key (kbd "C-s"))
-
-(use-package isearch
-  :bind (("C-s s" . isearch-forward)
-         ("C-r" . isearch-backward)))
-
 (use-package ivy
   :diminish ivy-mode
   :config
@@ -42,21 +36,22 @@
      ("C-t" . ivy-toggle-fuzzy)
      ("C-j" . ivy-immediate-done)
      ("<return>" . ivy-alt-done)))
-  :bind (("C-s r" . ivy-resume)))
+  :bind (("C-c s r" . ivy-resume)))
 
 (use-package swiper
-  :bind (("C-s SPC"  . swiper)))
+  :bind (("C-s"  . swiper)))
 
 (use-package counsel
   :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
          ("M-y" . counsel-yank-pop)
-         ("C-s a" . counsel-ag)
-         ("C-s u" . counsel-unicode-char)
-         ("C-s l" . counsel-locate)
-         ("C-s j" . counsel-git)
-         ("C-s k" . counsel-git-grep)
-         ("C-s t" . counsel-load-theme)
+         ("C-c s a" . counsel-ag)
+         ("C-c s u" . counsel-unicode-char)
+         ("C-c s l" . counsel-locate)
+         ("C-c s j" . counsel-git)
+         ("C-c s k" . counsel-git-grep)
+         ("C-c s t" . counsel-load-theme)
+         ("C-c s f" . counsel-recentf)
          ("C-h v" . counsel-describe-variable)
          ("C-h S" . counsel-info-lookup-symbol)
          ("C-h f" . counsel-describe-function)
