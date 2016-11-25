@@ -28,7 +28,7 @@
   :defer t
   :init
   (progn
-    (setq irony-additional-clang-options '("-std=c++11"))
+    (setq irony-additional-clang-options '("-std=c++14"))
     (setq w32-pipe-read-delay 0)
     (dolist (hook '(c-mode-hook
                     c++-mode-hook

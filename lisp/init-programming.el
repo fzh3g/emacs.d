@@ -27,8 +27,8 @@
     (add-hook 'prog-mode-hook 'flycheck-mode)
     (add-hook 'c++-mode-hook
               #'(lambda ()
-                  (setq flycheck-gcc-language-standard "c++11"
-                        flycheck-clang-language-standard "c++11"))))
+                  (setq flycheck-gcc-language-standard "c++14"
+                        flycheck-clang-language-standard "c++14"))))
   :config
   (progn
     (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
