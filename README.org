@@ -117,20 +117,20 @@ simplicity and customizability.
 | =C-x C-f=  | counsel-find-file          |
 | =M-y=      | counsel-yank-pop           |
 | =C-s=      | swiper                     |
-| =C-c s a=  | counsel-ag                 |
-| =C-c s u=  | counsel-unicode-char       |
-| =C-c s l=  | counsel-locate             |
-| =C-c s j=  | counsel-git                |
-| =C-c s k=  | counsel-git-grep           |
-| =C-c s t=  | counsel-load-theme         |
-| =C-c s f=  | counsel-recentf            |
+| =C-c i a=  | counsel-ag                 |
+| =C-c i u=  | counsel-unicode-char       |
+| =C-c i l=  | counsel-locate             |
+| =C-c i j=  | counsel-git                |
+| =C-c i k=  | counsel-git-grep           |
+| =C-c i t=  | counsel-load-theme         |
+| =C-c i f=  | counsel-recentf            |
 | =C-h v=    | counsel-describe-variable  |
 | =C-h S=    | counsel-info-lookup-symbol |
 | =C-h f=    | counsel-describe-function  |
 | =C-h k=    | counsel-descbinds          |
 | =C-h b=    | counsel-bookmark           |
-| =C-c s i=  | ivy-imenu-anywhere         |
-| =C-c s r=  | ivy-resume                 |
+| =C-c i i=  | ivy-imenu-anywhere         |
+| =C-c i r=  | ivy-resume                 |
 
 ** Smex
 [[https://github.com/nonsequitur/smex][Smex]] is a M-x enhancement for Emacs which provides a convenient interface to

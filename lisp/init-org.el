@@ -111,7 +111,7 @@
 
     (add-hook 'org-mode-hook
               #'(lambda ()
-                  (local-set-key (kbd "C-c i") 'fx/org-insert-src-block)))
+                  (local-set-key (kbd "C-c s") 'fx/org-insert-src-block)))
 
     (org-babel-do-load-languages
      'org-babel-load-languages
