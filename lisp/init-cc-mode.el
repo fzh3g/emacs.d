@@ -16,12 +16,12 @@
 
 ;;; Code:
 
-(defun fx/c-mode-common-setup ()
-  (setq c-default-style "linux")
-  (setq c-basic-offset 4)
-  (c-set-offset 'substatement-open 0))
-
-(add-hook 'c-mode-common-hook 'fx/c-mode-common-setup)
+(use-package cc-mode
+  :defer t
+  :config
+  (progn
+    (setq-default c-default-style "linux"
+                  c-basic-offset 4)))
 
 (use-package irony
   :diminish irony-mode
