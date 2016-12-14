@@ -1,26 +1,10 @@
-#+TITLE: Naive Emacs configuration
+#+TITLE: Emacs configuration
 
 * Introduction
 
-This is my personal Emacs configuration I play with almost everyday.
-I rewrote [[https://github.com/purcell/emacs.d][Purcell's Emacs configuration]] with [[https://github.com/jwiegley/use-package][use-package]] which makes it
-faster and tidier. This configuration adds improvements
-for the following languages or modes:
-
-- C/C++
-- Python
-- LaTeX
-- Org-mode
-- Markdown
-
-and some basic support for others like:
-
-- Matlab
-- Fortran
-- Yaml
-- Lua
-- HTML/CSS
-- VimScript (sometimes I use Emacs to edit =~/.vimrc= 😄)
+This is my personal Emacs configuration. At first it was based on  [[https://github.com/purcell/emacs.d][Purcell's]]
+and [[https://github.com/redguardtoo/emacs.d][Chen Bin's]] Emacs configuration. Then I kept stealing codes and ideas from
+others to make it state of the art.
 
 * Installation
 
