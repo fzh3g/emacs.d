@@ -165,7 +165,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 
 ;; show column number and line number
 (use-package nlinum
-  :defer t)
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'nlinum-mode)))
 
 ;; page break lines
 (use-package page-break-lines
