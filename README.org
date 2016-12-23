@@ -143,7 +143,14 @@ helpful.
 
 ** Magit
 
-[[https://github.com/magit/magit][Magit]] is used for magical Git integration. You can run it by =C-x g=.
+[[https://github.com/magit/magit][Magit]] is used for magical Git integration.
+
+| Keybinding | Command               |
+|------------+-----------------------|
+| =C-x g s=  | magit-status          |
+| =C-x g l=  | magit-log-buffer-file |
+| =C-x g S=  | magit-stage-file      |
+| =C-x g U=  | magit-unstage-file    |
 
 ** Projectile
 
