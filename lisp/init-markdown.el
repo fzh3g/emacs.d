@@ -81,8 +81,8 @@
   :commands mmm-mode
   :init
   (add-hook 'markdown-mode-hook
-            (lambda ()
-              (mmm-mode 1)))
+            #'(lambda ()
+                (mmm-mode 1)))
   :config
   (progn
     (mmm-add-classes '((markdown-ini
