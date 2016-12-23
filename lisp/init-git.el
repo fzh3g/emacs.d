@@ -47,26 +47,28 @@
       nil nil 'center)))
 
 (use-package magit
-  :commands (magit-status
-             magit-blame-mode
-             magit-log
-             magit-commit)
+  :bind (("C-x g s" . magit-status)
+         ("C-x g l" . magit-log-buffer-file)
+         ("C-x g S" . magit-stage-file)
+         ("C-x g U" . magit-unstage-file))
   :init
   (progn
-    (setq magit-completing-read-function 'ivy-completing-read
-          magit-save-some-buffers nil
-          magit-process-popup-time -1)
-
+    (setq magit-completing-read-function 'ivy-completing-read)
     (when *win32*
       (setenv "GIT_ASKPASS" "git-gui--askpass"))
-
-    (global-set-key (kbd "M-<f12>") 'magit-status)
-    (global-set-key (kbd "C-x g") 'magit-status))
+    )
   :config
   (progn
-    (when *is-a-mac*
-      (eval-after-load 'magit
-        (add-hook 'magit-mode-hook (lambda () (local-unset-key (kbd "M-h"))))))))
+    (require 'git-rebase)
+    (setq magit-display-buffer-function
+          'magit-display-buffer-fullframe-status-v1)
+    ))
+
+(use-package magit-gitflow
+  :init
+  (progn
+    (setq magit-gitflow-popup-key "%")
+    (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)))
 
 (provide 'init-git)
 ;;; init-git.el ends here

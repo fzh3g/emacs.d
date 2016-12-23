@@ -53,8 +53,6 @@
   :init
   (progn
     (eval-after-load 'ibuffer (fullframe ibuffer ibuffer-quit))
-    (eval-after-load 'magit (fullframe magit-status magit-mode-quit-window))
-    (eval-after-load 'magit (fullframe projectile-vc magit-mode-quit-window))
     (eval-after-load 'package (fullframe list-packages quit-window))
     ))
 
