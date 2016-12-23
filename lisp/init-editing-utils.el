@@ -150,7 +150,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 (global-set-key (kbd "C-x f y") #'fx/show-and-copy-buffer-filename)
 
 ;; Kill this buffer
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
+;; (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 (use-package ediff
   :defer t
