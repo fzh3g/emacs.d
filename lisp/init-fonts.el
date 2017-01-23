@@ -17,7 +17,7 @@
 ;;; Code:
 
 ;; change font for better looking text
-(set-face-attribute 'default nil :font "Monofur for Powerline:pixelsize=16")
+(set-face-attribute 'default nil :font "Fantasque Sans Mono:pixelsize=16")
 ;; (dolist (charset '(kana han cjk-misc bopomofo))
 ;;   (set-fontset-font (frame-parameter nil 'font)
 ;;                     charset
@@ -30,8 +30,9 @@
       (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji")
                         frame 'prepend)
     ;; For Linux
-    (set-fontset-font t 'symbol (font-spec :family "Noto Emoji")
-                      frame 'prepend)))
+    ;; (set-fontset-font t 'symbol (font-spec :family "Noto Emoji")
+    ;;                   frame 'prepend)
+    ))
 
 ;; For when Emacs is started in GUI mode:
 (--set-emoji-font nil)

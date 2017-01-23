@@ -32,8 +32,7 @@ some recommended instructions:
 
 ** Fonts
 
-=Monofur for Powerline= is used by default, you may need to refer to
-[[https://github.com/powerline/fonts][here]] to install it. Or you can change it to whatever you like on
+=Fantasque Sans Mono= is used by default. You can change it to whatever you like on
 =lisp/init-fonts.el=.
 
 ** Packages
