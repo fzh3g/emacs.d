@@ -56,15 +56,32 @@
     (eval-after-load 'package (fullframe list-packages quit-window))
     ))
 
-(use-package window-numbering
+;; (use-package window-numbering
+;;   :config
+;;   (progn
+;;     ;; (defun window-numbering-install-mode-line (&optional position)
+;;     ;;   "Do nothing.")
+;;     (window-numbering-mode 1)
+;;     ;; (custom-set-faces '(window-numbering-face
+;;     ;;                     ((t (:foreground "#ff1493" :weight bold)))))
+;;     ))
+
+(use-package winum
   :config
   (progn
-    ;; (defun window-numbering-install-mode-line (&optional position)
-    ;;   "Do nothing.")
-    (window-numbering-mode 1)
-    ;; (custom-set-faces '(window-numbering-face
-    ;;                     ((t (:foreground "#ff1493" :weight bold)))))
-    ))
+    (setq winum-ignored-buffers '(" *which-key*"))
+    (set-face-attribute 'winum-face nil :weight 'bold)
+    (define-key winum-keymap (kbd "M-0") 'winum-select-window-0-or-10)
+    (define-key winum-keymap (kbd "M-1") 'winum-select-window-1)
+    (define-key winum-keymap (kbd "M-2") 'winum-select-window-2)
+    (define-key winum-keymap (kbd "M-3") 'winum-select-window-3)
+    (define-key winum-keymap (kbd "M-4") 'winum-select-window-4)
+    (define-key winum-keymap (kbd "M-5") 'winum-select-window-5)
+    (define-key winum-keymap (kbd "M-6") 'winum-select-window-6)
+    (define-key winum-keymap (kbd "M-7") 'winum-select-window-7)
+    (define-key winum-keymap (kbd "M-8") 'winum-select-window-8)
+    (define-key winum-keymap (kbd "M-9") 'winum-select-window-9)
+    (winum-mode)))
 
 (use-package buffer-move
   :defer t

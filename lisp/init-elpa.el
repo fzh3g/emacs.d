@@ -112,7 +112,7 @@
     vimrc-mode
     visual-regexp
     web-mode
-    window-numbering
+    winum
     which-key
     xterm-color
     yaml-mode
