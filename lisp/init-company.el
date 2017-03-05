@@ -126,6 +126,10 @@
       (add-to-list 'company-backends
                    '(company-web-html :with company-yasnippet)))))
 
+(defun fx/company-for-nxml ()
+  (make-variable-buffer-local 'company-backends)
+  (add-to-list 'company-backends '(company-nxml :with company-yasnippet)))
+
 (defun fx/company-ispell-setup ()
   (make-local-variable 'company-backends)
   (add-to-list 'company-backends '(company-ispell :with company-yasnippet))
@@ -138,6 +142,8 @@
 (add-hook 'css-mode-hook #'fx/company-for-css)
 
 (add-hook 'web-mode-hook #'fx/company-for-web)
+
+(add-hook 'nxml-mode-hook #'fx/company-for-nxml)
 
 (dolist (hook '(LaTeX-mode-hook TeX-mode-hook))
   (add-hook hook 'fx/company-for-tex))
