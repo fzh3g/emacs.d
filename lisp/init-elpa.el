@@ -57,6 +57,8 @@
     ctags-update
     diminish
     dired+
+    dired-narrow
+    dired-subtree
     eshell-prompt-extras
     etags-select
     expand-region

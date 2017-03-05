@@ -22,22 +22,24 @@
          ("C-x d" . dired))
   :config
   (progn
+    (setq dired-dwim-target t
+          dired-recursive-copies 'top
+          dired-recursive-deletes 'top)
     (use-package dired+
-      :init
-      (progn
-        (setq dired-recursive-deletes 'always)
-        (setq diredp-hide-details-initially-flag t)
-        (setq diredp-hide-details-propagate-flag t)
-        (setq dired-dwim-target t)
-        ;; use single buffer for all dired navigation
-        (add-hook 'dired-mode-hook
-                  (lambda () (toggle-diredp-find-file-reuse-dir 1))))
       :config
-      (progn
-        (when (fboundp 'global-dired-hide-details-mode)
-          (global-dired-hide-details-mode -1))
-        (define-key dired-mode-map (kbd "SPC") 'avy-goto-subword-1)
-        (define-key dired-mode-map [mouse-2] 'dired-find-file)))))
+      (add-hook 'dired-mode-hook
+                (lambda () (toggle-diredp-find-file-reuse-dir 1))))
+    (use-package dired-narrow
+      :bind (:map dired-mode-map
+                  ("/" . dired-narrow)))
+    (use-package dired-subtree
+      :bind (:map dired-mode-map
+                  ("<tab>" . dired-subtree-toggle)
+                  ("C-c C-u" . dired-subtree-up)
+                  ("C-c C-d" . dired-subtree-down)
+                  ("C-c C-p" . dired-subtree-previous-sibling)
+                  ("C-c C-n" . dired-subtree-next-sibling)))
+    (add-hook 'dired-mode-hook 'dired-hide-details-mode)))
 
 ;; image-dired
 (use-package image-dired
