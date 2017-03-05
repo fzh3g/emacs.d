@@ -27,8 +27,9 @@
           dired-recursive-deletes 'top)
     (use-package dired+
       :config
-      (add-hook 'dired-mode-hook
-                (lambda () (toggle-diredp-find-file-reuse-dir 1))))
+      (diredp-toggle-find-file-reuse-dir 1)
+      (define-key dired-mode-map (kbd "C-c p")
+        'diredp-up-directory-reuse-dir-buffer))
     (use-package dired-narrow
       :bind (:map dired-mode-map
                   ("/" . dired-narrow)))
