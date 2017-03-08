@@ -221,7 +221,7 @@ by =C-x u=.
 
 ** Highlight Symbol
 
-[[https://github.com/nschum/highlight-symbol.el][Highlight-symbol]] automatically highlight symbol at point. You can use =M-p= and
+[[https://github.com/nschum/highlight-symbol.el][Highlight-symbol]] automatically highlights symbol at point. You can use =M-p= and
 =M-n= to navigate between highlighted symbols, and also can use =M-s r= to
 apply query replace.
 
@@ -232,7 +232,7 @@ tries to be smart about it. See =lisp/init-smartparens.el= for keybindings.
 
 ** Window Numbering
 
-[[https://github.com/nschum/window-numbering.el][Window-numbering]] uses =M-1= through =M-0= to navigate window.
+[[https://github.com/deb0ch/emacs-winum][Winum]] uses =M-1= through =M-0= to navigate window.
 
 ** Buffer Move
 
@@ -296,7 +296,7 @@ If you want to use shell within Emacs,
 
 ** Adjust Opacity
 
-=M-C-8=, =M-C-9= and =M-C-0= is used to adjust the opacity of Emacs
+=M-C-8=, =M-C-9= and =M-C-0= are used to adjust the opacity of Emacs
 graphics window program.
 * References & Resources
 
