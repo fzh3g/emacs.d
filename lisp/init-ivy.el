@@ -52,6 +52,7 @@
          ("C-c i k" . counsel-git-grep)
          ("C-c i t" . counsel-load-theme)
          ("C-c i f" . counsel-recentf)
+         ("C-c i m" . counsel-mark-ring)
          ("C-h v" . counsel-describe-variable)
          ("C-h S" . counsel-info-lookup-symbol)
          ("C-h f" . counsel-describe-function)
