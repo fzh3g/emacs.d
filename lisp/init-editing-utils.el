@@ -351,5 +351,10 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
    ("C-c l p" . lorem-ipsum-insert-paragraphs)
    ("C-c l l" . lorem-ipsum-insert-list)))
 
+(use-package beacon
+  :diminish beacon-mode
+  :config
+  (beacon-mode 1))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

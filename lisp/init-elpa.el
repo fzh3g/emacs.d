@@ -40,6 +40,7 @@
     auctex-latexmk
     auto-compile
     avy
+    beacon
     buffer-move
     cmake-mode
     company
