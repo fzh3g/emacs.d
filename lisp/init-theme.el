@@ -1,7 +1,7 @@
 ;;; init-theme.el --- Emacs configuration for color theme
 ;; -*- coding: utf-8 -*-
 ;;
-;; Copyright (c) 2015-2016 Faxiang Zheng
+;; Copyright (c) 2015-2017 Faxiang Zheng
 ;;
 ;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
 ;; URL: https://github.com/zhengfaxiang/emacs.d
@@ -22,9 +22,9 @@
 ;;   (dolist (i custom-enabled-themes)
 ;;     (disable-theme i)))
 
-(use-package leuven-theme
+(use-package dracula-theme
   :config
-  (load-theme 'leuven t)
+  (load-theme 'dracula t)
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
 
