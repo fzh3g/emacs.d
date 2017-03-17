@@ -27,7 +27,10 @@
           dired-recursive-deletes 'top)
     (use-package dired+
       :config
-      (diredp-toggle-find-file-reuse-dir 1)
+      (setq diredp-hide-details-initially-flag t)
+      ;; use single buffer for all dired navigation
+      (add-hook 'dired-mode-hook
+                (lambda () (toggle-diredp-find-file-reuse-dir 1)))
       (define-key dired-mode-map (kbd "C-c p")
         'diredp-up-directory-reuse-dir-buffer))
     (use-package dired-narrow
@@ -39,8 +42,7 @@
                   ("C-c C-u" . dired-subtree-up)
                   ("C-c C-d" . dired-subtree-down)
                   ("C-c C-p" . dired-subtree-previous-sibling)
-                  ("C-c C-n" . dired-subtree-next-sibling)))
-    (add-hook 'dired-mode-hook 'dired-hide-details-mode)))
+                  ("C-c C-n" . dired-subtree-next-sibling)))))
 
 ;; image-dired
 (use-package image-dired
