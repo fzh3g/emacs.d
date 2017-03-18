@@ -70,6 +70,7 @@
     fullframe
     git-gutter+
     git-gutter-fringe+
+    goto-chg
     gnuplot
     google-this
     highlight-numbers

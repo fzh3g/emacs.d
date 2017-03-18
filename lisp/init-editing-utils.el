@@ -356,5 +356,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   :config
   (beacon-mode 1))
 
+(use-package goto-chg
+  :bind (("M-g l" . goto-last-change)
+         ("M-g L" . goto-last-change-reverse)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

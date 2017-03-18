@@ -283,6 +283,15 @@ If you want to automatically reload the last session for every time
 you open Emacs, you only need to =M-x desktop-save= and hit =<return>= key
 for one time.
 
+** Got Last Change
+
+[[https://www.emacswiki.org/emacs/GotoChg][Goto-chg]] goes to the last place you made a change in the file.
+
+| Keybinding | Command                  |
+|------------+--------------------------|
+| =M-g l=    | goto-last-change         |
+| =M-g L=    | goto-last-change-reverse |
+
 ** Terminal
 
 If you want to use shell within Emacs,
