@@ -75,24 +75,24 @@
                   irony-mode-hook))
     (add-hook hook #'eldoc-mode)))
 
-;; hs-minor-mode
+;; folding
 (use-package hideshow
   :diminish hs-minor-mode
   :defer t
   :init
   (progn
     (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
-      (add-hook hook 'hs-minor-mode))
-    (add-hook 'hs-minor-mode-hook
-              #'(lambda ()
-                  (define-key hs-minor-mode-map (kbd "M-<left>") 'hs-hide-block)
-                  (define-key hs-minor-mode-map (kbd "M-<right>")
-                    'hs-show-block)
-                  (define-key hs-minor-mode-map (kbd "M-<up>") 'hs-hide-all)
-                  (define-key hs-minor-mode-map (kbd "M-<down>") 'hs-show-all)
-                  (define-key hs-minor-mode-map (kbd "C-c @ l") 'hs-hide-level)
-                  (define-key hs-minor-mode-map (kbd "C-c @ c")
-                    'hs-toggle-hiding)))))
+      (add-hook hook 'hs-minor-mode)))
+  :config
+  (progn
+    (bind-keys :map hs-minor-mode-map
+               ("C-c z c" . hs-hide-block)
+               ("C-c z o" . hs-show-block)
+               ("C-c z C" . hs-hide-all)
+               ("C-c z O" . hs-show-all)
+               ("C-c z l" . hs-hide-level)
+               ("C-c z z" . hs-toggle-hiding)
+               ("C-c z <tab>" . hs-toggle-hiding))))
 
 ;; projectile
 (use-package projectile

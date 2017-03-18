@@ -252,7 +252,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (which-key-add-key-based-replacements "C-c c" "org")
     (which-key-add-key-based-replacements "C-c s" "ivy")
     (which-key-add-key-based-replacements "C-c e" "flycheck")
-    (which-key-add-key-based-replacements "C-c @" "hideshow")
+    (which-key-add-key-based-replacements "C-c z" "folding")
     (which-key-add-key-based-replacements "C-x p" "projectile")
     (which-key-add-key-based-replacements "C-x t" "shell")
     (which-key-add-key-based-replacements "C-x /" "google this")))
