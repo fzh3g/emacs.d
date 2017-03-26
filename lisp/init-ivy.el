@@ -45,7 +45,7 @@
   :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
          ("M-y" . counsel-yank-pop)
-         ("C-c i a" . counsel-ag)
+         ("C-c i a" . counsel-rg)
          ("C-c i u" . counsel-unicode-char)
          ("C-c i l" . counsel-locate)
          ("C-c i j" . counsel-git)
