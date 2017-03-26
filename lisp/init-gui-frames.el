@@ -39,6 +39,8 @@
   (unless *is-a-mac*
     (menu-bar-mode -1)))
 
+(mouse-avoidance-mode 'banish)
+
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
