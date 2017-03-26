@@ -25,12 +25,17 @@
           ivy-count-format "(%d/%d) "
           ivy-initial-inputs-alist nil
           ivy-display-style 'fancy)
-
     ;; fuzzy matching
     (require 'flx)
     (setq ivy-re-builders-alist
           '((swiper . ivy--regex-plus)
             (t . ivy--regex-fuzzy)))
+    ;; wgrep
+    (add-hook 'ivy-occur-grep-mode-hook
+              (lambda ()
+                (require 'wgrep)
+                (bind-keys :map ivy-occur-grep-mode-map
+                           ("C-x C-q" . ivy-wgrep-change-to-wgrep-mode))))
     (bind-keys
      :map ivy-minibuffer-map
      ("C-t" . ivy-toggle-fuzzy)

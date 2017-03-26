@@ -116,6 +116,7 @@
     vimrc-mode
     visual-regexp
     web-mode
+    wgrep
     winum
     which-key
     xterm-color
