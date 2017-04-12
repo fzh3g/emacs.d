@@ -66,6 +66,7 @@
   :init (add-hook 'after-init-hook 'counsel-mode)
   :config
   (progn
+    (setq counsel-bookmark-avoid-dired t)
     ;; shell history.
     (add-hook 'shell-mode-hook
               (lambda ()
