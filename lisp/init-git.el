@@ -53,6 +53,7 @@
          ("C-x g U" . magit-unstage-file))
   :init
   (progn
+    (setq-default magit-auto-revert-mode nil)
     (setq magit-completing-read-function 'ivy-completing-read)
     (when *win32*
       (setenv "GIT_ASKPASS" "git-gui--askpass"))
