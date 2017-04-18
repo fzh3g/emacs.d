@@ -85,6 +85,7 @@
 ;; Better settings for editing and programming
 (require 'init-smartparens)
 (require 'init-indentation)
+(require 'init-clipboard)
 (require 'init-editing-utils)
 (require 'init-whitespace)
 (require 'init-programming)

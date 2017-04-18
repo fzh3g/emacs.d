@@ -38,10 +38,6 @@
 (global-set-key (kbd "C-S-p") 'scroll-down-line)
 (global-set-key (kbd "C-S-n") 'scroll-up-line)
 
-;; Use the system clipboard
-(setq select-enable-clipboard t
-      select-enable-primary t)
-
 ;; Save clipboard contents into kill-ring before replace them
 (setq save-interprogram-paste-before-kill t)
 

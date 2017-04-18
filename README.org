@@ -89,6 +89,12 @@ then open your Emacs and  =M-x idl-rescan-asynchronously=.
 
 * More features
 
+** Copy/Paste
+
+If using Emacs inside the Terminal, =C-c a= and =C-c y= can help you
+interact with the system clipboard. Note that [[http://www.vergenet.net/~conrad/software/xsel/][xsel]] is required on
+gnu/linux.
+
 ** Ivy
 
 [[https://github.com/abo-abo/swiper][Ivy]] is a completion method that's similar to =Ido=, but with emphasis on
