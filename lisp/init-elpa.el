@@ -115,6 +115,7 @@
     use-package
     vimrc-mode
     visual-regexp
+    web-beautify
     web-mode
     wgrep
     winum
