@@ -32,7 +32,8 @@
 
   (use-package ctags-update
     :diminish (ctags-auto-update-mode . " τ")
-    :init (turn-on-ctags-auto-update-mode)))
+    ;; :init (turn-on-ctags-auto-update-mode)
+    ))
 
 (dolist (hook '(c-mode-hook
                 c++-mode-hook
