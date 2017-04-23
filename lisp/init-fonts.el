@@ -17,7 +17,7 @@
 ;;; Code:
 
 ;; change font for better looking text
-(set-face-attribute 'default nil :font "Fantasque Sans Mono:pixelsize=16")
+(set-face-attribute 'default nil :font "Fantasque Sans Mono:pixelsize=15")
 ;; (dolist (charset '(kana han cjk-misc bopomofo))
 ;;   (set-fontset-font (frame-parameter nil 'font)
 ;;                     charset
