@@ -354,5 +354,10 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   :bind (("M-g l" . goto-last-change)
          ("M-g L" . goto-last-change-reverse)))
 
+(use-package writeroom-mode
+  :bind ("<f9>" . writeroom-mode)
+  :config
+  (setq writeroom-restore-window-config t))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

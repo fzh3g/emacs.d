@@ -120,6 +120,7 @@
     wgrep
     winum
     which-key
+    writeroom-mode
     xterm-color
     yaml-mode
     yasnippet)
