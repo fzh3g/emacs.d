@@ -67,5 +67,8 @@
     (setq magit-gitflow-popup-key "%")
     (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)))
 
+(use-package smerge-mode
+  :defer t)
+
 (provide 'init-git)
 ;;; init-git.el ends here
