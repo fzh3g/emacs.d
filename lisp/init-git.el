@@ -12,13 +12,9 @@
 
 ;;; Commentary:
 
-;; Some configuration for diff-hl and magit.
+;; Some configuration for Git.
 
 ;;; Code:
-
-;; Disable VC backends for Git but keep using it when using another version
-;; control system
-(setq vc-handled-backends (delq 'Git vc-handled-backends))
 
 (use-package git-gutter+
   :diminish git-gutter+-mode
