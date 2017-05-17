@@ -42,7 +42,8 @@
                   ("C-c C-u" . dired-subtree-up)
                   ("C-c C-d" . dired-subtree-down)
                   ("C-c C-p" . dired-subtree-previous-sibling)
-                  ("C-c C-n" . dired-subtree-next-sibling)))))
+                  ("C-c C-n" . dired-subtree-next-sibling))
+      :config (setq dired-subtree-use-backgrounds nil))))
 
 ;; image-dired
 (use-package image-dired
