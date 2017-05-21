@@ -85,9 +85,16 @@
     :defer t
     :init
     (progn
-      (company-auctex-init)
-      (setq company-backends (mapcar 'fx//show-snippets-in-company
-                                     company-backends)))))
+      (add-to-list 'company-backends
+                   '(company-auctex-labels :with company-yasnippet))
+      (add-to-list 'company-backends
+                   '(company-auctex-bibs :with company-yasnippet))
+      (add-to-list 'company-backends
+                   '(company-auctex-macros
+                     company-auctex-symbols
+                     company-auctex-environments
+                     :with company-yasnippet))
+      )))
 
 (defun fx/company-for-python ()
   (make-variable-buffer-local 'company-backends)
