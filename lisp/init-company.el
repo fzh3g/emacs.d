@@ -143,8 +143,7 @@
   (setq ispell-complete-word-dict
         (file-truename "~/.emacs.d/misc/english-words.txt")))
 
-(dolist (hook '(text-mode-hook org-mode-hook markdown-mode-hook))
-  (add-hook hook #'fx/company-ispell-setup))
+(add-hook 'text-mode-hook #'fx/company-ispell-setup)
 
 (add-hook 'css-mode-hook #'fx/company-for-css)
 
