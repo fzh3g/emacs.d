@@ -29,21 +29,15 @@
   :init
   (progn
     (setq irony-additional-clang-options '("-std=c++14"))
-    (setq w32-pipe-read-delay 0)
+    (when (boundp 'w32-pipe-read-delay)
+      (setq w32-pipe-read-delay 0))
+    (when (boundp 'w32-pipe-buffer-size)
+      (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
     (dolist (hook '(c-mode-hook
                     c++-mode-hook
                     objc-mode-hook))
       (add-hook hook 'irony-mode))
 
-    ;; replace the `completion-at-point' and `complete-symbol' bindings in
-    ;; irony-mode's buffers by irony-mode's function
-    (defun my-irony-mode-hook ()
-      (define-key irony-mode-map [remap completion-at-point]
-        'irony-completion-at-point-async)
-      (define-key irony-mode-map [remap complete-symbol]
-        'irony-completion-at-point-async))
-
-    (add-hook 'irony-mode-hook 'my-irony-mode-hook)
     (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
 
 (use-package flycheck-irony
