@@ -24,6 +24,7 @@
     (setq ivy-use-virtual-buffers t
           ivy-count-format "(%d/%d) "
           ivy-initial-inputs-alist nil
+          ivy-virtual-abbreviate 'fullpath
           ivy-display-style 'fancy)
     ;; fuzzy matching
     (require 'flx)
