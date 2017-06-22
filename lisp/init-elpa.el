@@ -133,7 +133,8 @@
     color-theme-sanityinc-tomorrow
     solarized-theme
     zenburn-theme
-    gruvbox-theme)
+    gruvbox-theme
+    gotham-theme)
   "A list of theme packages.")
 
 (setq fx-packages (append fx-packages fx-theme-packages))
