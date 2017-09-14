@@ -69,6 +69,8 @@
   :config
   (progn
     (setq counsel-bookmark-avoid-dired t)
+    (setq counsel-grep-base-command
+          "rg -i -M 120 --no-heading --line-number --color never '%s' %s")
     ;; shell history.
     (add-hook 'shell-mode-hook
               (lambda ()
