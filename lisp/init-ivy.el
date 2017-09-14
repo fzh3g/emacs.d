@@ -45,7 +45,7 @@
   :bind (("C-c i r" . ivy-resume)))
 
 (use-package swiper
-  :bind (("C-s"  . swiper)))
+  :bind (("C-s"  . counsel-grep-or-swiper)))
 
 (use-package counsel
   :diminish counsel-mode
