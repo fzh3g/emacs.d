@@ -24,8 +24,9 @@
       (add-hook hook
                 (lambda ()
                   (make-variable-buffer-local 'company-backends)
-                  (add-to-list 'company-backends '(company-shell
-                                                   :with company-yasnippet)))))))
+                  (add-to-list 'company-backends
+                               '(company-shell
+                                 :with company-yasnippet)))))))
 
 ;; move point to the end of buffer on new output
 (setq comint-move-point-for-output t)
