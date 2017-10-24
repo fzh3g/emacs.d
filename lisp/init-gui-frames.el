@@ -39,7 +39,8 @@
   (unless *is-a-mac*
     (menu-bar-mode -1)))
 
-(mouse-avoidance-mode 'exile)
+;; Hide mouse point when typing
+(add-hook 'after-init-hook (lambda () (mouse-avoidance-mode 'exile)))
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
@@ -69,11 +70,11 @@
 (setq x-underline-at-descent-line t)
 
 ;; Toggle line highlighting in all buffers
-(global-hl-line-mode t)
+(add-hook 'after-init-hook 'global-hl-line-mode)
 
 ;; pretty symbols
 (when (fboundp 'global-prettify-symbols-mode)
-  (global-prettify-symbols-mode))
+  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
 
 ;; don't let the cursor go into minibuffer prompt
 ;; Tip taken from Xah Lee: http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html

@@ -120,7 +120,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
      (error "The buffer has been modified"))))
 
 ;; Auto refresh
-(global-auto-revert-mode t)
+(add-hook 'after-init-hook 'global-auto-revert-mode)
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
