@@ -140,15 +140,6 @@
   :bind (("C-c c o" . org-agenda)
          ("C-c c a" . org-agenda-list)))
 
-(use-package org-pomodoro
-  :init
-  (progn
-    (setq org-pomodoro-play-sounds 1)
-    (when *is-a-mac*
-      (setq org-pomodoro-audio-player "/usr/bin/afplay"))
-    )
-  :bind ("C-c c p" . org-pomodoro))
-
 (use-package org-bullets
   :defer t
   :init (add-hook 'org-mode-hook 'org-bullets-mode))

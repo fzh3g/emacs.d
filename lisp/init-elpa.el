@@ -97,7 +97,6 @@
     multi-term
     nlinum
     org-bullets
-    org-pomodoro
     page-break-lines
     powerline
     projectile
