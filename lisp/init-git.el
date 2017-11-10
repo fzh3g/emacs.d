@@ -61,12 +61,6 @@
           'magit-display-buffer-fullframe-status-v1)
     ))
 
-(use-package magit-gitflow
-  :init
-  (progn
-    (setq magit-gitflow-popup-key "%")
-    (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)))
-
 (use-package smerge-mode
   :defer t)
 

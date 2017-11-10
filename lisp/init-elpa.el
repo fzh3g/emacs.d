@@ -89,7 +89,6 @@
     lorem-ipsum
     lua-mode
     magit
-    magit-gitflow
     markdown-mode
     matlab-mode
     mmm-mode
