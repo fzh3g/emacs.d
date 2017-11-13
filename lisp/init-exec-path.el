@@ -22,7 +22,8 @@
     :config
     (progn
       (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO"
-                     "LANG" "LC_CTYPE" "GOPATH" "IDL_LIB_DIR" "IDL_PATH"))
+                     "LANG" "LC_CTYPE" "GOPATH" "IDL_LIB_DIR" "IDL_PATH"
+                     "IDL_STARTUP"))
         (add-to-list 'exec-path-from-shell-variables var))
       (exec-path-from-shell-initialize))))
 
