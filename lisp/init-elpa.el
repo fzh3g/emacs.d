@@ -62,6 +62,7 @@
     dired-subtree
     eshell-prompt-extras
     etags-select
+    exec-path-from-shell
     expand-region
     flx
     flycheck
@@ -136,9 +137,6 @@
   "A list of theme packages.")
 
 (setq fx-packages (append fx-packages fx-theme-packages))
-
-(when *is-a-mac*
-  (add-to-list 'fx-packages 'exec-path-from-shell))
 
 (defvar fx-packages-all-installed-p t
   "Non-nil means all packages in `fx-packages' are installed.")
