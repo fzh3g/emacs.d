@@ -24,9 +24,9 @@
 
 ;; Uncomment L22-23 and comment L26-29 if you find it slow
 (setq package-archives
-      '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 
 ;; Fire up package.el
 (package-initialize)
