@@ -97,6 +97,7 @@
     multi-term
     nlinum
     org-bullets
+    org-plus-contrib
     page-break-lines
     powerline
     projectile
