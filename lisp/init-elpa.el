@@ -35,6 +35,7 @@
 ;; list of installed packages
 (defvar fx-packages
   '(adaptive-wrap
+    amx
     anzu
     auctex
     auctex-latexmk
@@ -108,7 +109,6 @@
     scss-mode
     shell-pop
     smartparens
-    smex
     swiper
     toc-org
     undo-tree

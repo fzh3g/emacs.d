@@ -122,10 +122,10 @@ simplicity and customizability.
 | =C-c i i=  | ivy-imenu-anywhere         |
 | =C-c i r=  | ivy-resume                 |
 
-** Smex
+** Amx
 [[https://github.com/nonsequitur/smex][Smex]] is a M-x enhancement for Emacs which provides a convenient interface to
 your recently and most frequently used commands. It works with ivy just
-fine.
+fine. [[https://github.com/DarwinAwardWinner/amx][Amx]] is an actively maintained alternative to smex.
 ** Avy
 
 [[https://github.com/abo-abo/avy][Avy]] is for jumping to visible text using a char-based decision tree.
