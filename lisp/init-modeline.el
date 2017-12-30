@@ -20,7 +20,7 @@
 (use-package powerline
   :config
   (progn
-    (setq powerline-default-separator 'wave)
+    (setq powerline-default-separator 'nil)
     (defun fx/customize-powerline-faces ()
       "Alter powerline face to make them work with more themes."
       (set-face-attribute 'powerline-inactive2 nil
