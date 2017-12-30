@@ -22,9 +22,9 @@
 ;;   (dolist (i custom-enabled-themes)
 ;;     (disable-theme i)))
 
-(use-package solarized-theme
+(use-package dracula-theme
   :config
-  (load-theme 'solarized-light t)
+  (load-theme 'dracula t)
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
 
