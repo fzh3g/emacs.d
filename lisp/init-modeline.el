@@ -38,7 +38,7 @@
     (eval-after-load "reftex" '(diminish 'reftex-mode))
     (eval-after-load "autorevert" '(diminish 'auto-revert-mode))
     (eval-after-load "outline" '(diminish 'outline-minor-mode))
-    (eval-after-load "simple" '(diminish 'visual-line-mode " ω"))
+    (eval-after-load "simple" '(diminish 'visual-line-mode " ν"))
     (eval-after-load "simple" '(diminish 'auto-fill-function " φ"))
     ))
 
