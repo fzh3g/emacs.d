@@ -45,6 +45,10 @@
           org-clock-in-switch-to-state "STARTED"
           org-clock-into-drawer t
           org-clock-out-remove-zero-time-clocks t)
+
+    ;; Visual-line-mode that works fine with indentation
+    (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+
     )
   :bind (("C-c c c" . org-capture)
          ("C-c c l" . org-store-link)
