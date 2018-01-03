@@ -68,8 +68,6 @@
     (setq org-time-clocksum-format
           '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
 
-    (require 'org-indent)
-
     ;; markdown export
     (require 'ox-md)
     ;; org-latex
