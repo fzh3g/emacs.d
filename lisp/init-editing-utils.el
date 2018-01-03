@@ -327,12 +327,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (define-key hungry-delete-mode-map (kbd "DEL") 'hungry-delete-backward)
     (define-key hungry-delete-mode-map (kbd "S-DEL") 'delete-backward-char)))
 
-(use-package adaptive-wrap
-  :defer t
-  :init
-  (progn
-    (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode)))
-
 (use-package iedit
   :bind
   (("C-;" . iedit-mode)

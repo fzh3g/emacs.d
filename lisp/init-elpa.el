@@ -34,8 +34,7 @@
 
 ;; list of installed packages
 (defvar fx-packages
-  '(adaptive-wrap
-    anzu
+  '(anzu
     auctex
     auctex-latexmk
     auto-compile
