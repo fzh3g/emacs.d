@@ -46,6 +46,9 @@
 (add-hook 'python-mode-hook
           #'(lambda () (setq mode-name "Py")))
 
+(add-hook 'sh-mode-hook
+          #'(lambda () (setq mode-name "Sh")))
+
 (add-hook 'markdown-mode-hook
           #'(lambda () (setq mode-name "M↓")))
 
