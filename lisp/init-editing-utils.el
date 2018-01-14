@@ -263,7 +263,9 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
           anzu-replace-to-string-separator " => "
           anzu-cons-mode-line-p nil
           anzu-deactivate-region t
-          anzu-mode-lighter "")))
+          anzu-mode-lighter "")
+    ;; Spaceline
+    (setq anzu-cons-mode-line-p nil)))
 
 (use-package visual-regexp
   :bind (("C-c v r" . vr/replace)

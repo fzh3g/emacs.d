@@ -59,6 +59,8 @@
 (use-package winum
   :config
   (progn
+    ;; Spaceline
+    (setq winum-auto-setup-mode-line nil)
     (setq winum-ignored-buffers '(" *which-key*"))
     (set-face-attribute 'winum-face nil :weight 'bold)
     (define-key winum-keymap (kbd "M-0") 'winum-select-window-0-or-10)

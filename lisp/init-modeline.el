@@ -16,17 +16,12 @@
 
 ;;; Code:
 
-;; powerline
-(use-package powerline
+;; Spaceline
+(use-package spaceline-config
   :config
   (progn
     (setq powerline-default-separator 'nil)
-    (defun fx/customize-powerline-faces ()
-      "Alter powerline face to make them work with more themes."
-      (set-face-attribute 'powerline-inactive2 nil
-                          :inherit 'font-lock-comment-face))
-    (fx/customize-powerline-faces)
-    (powerline-default-theme)
+    (spaceline-spacemacs-theme)
     ))
 
 (use-package diminish

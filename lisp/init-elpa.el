@@ -108,6 +108,7 @@
     shell-pop
     smartparens
     smex
+    spaceline
     swiper
     toc-org
     undo-tree
