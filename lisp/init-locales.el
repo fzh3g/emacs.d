@@ -22,10 +22,10 @@
 
 (defun fx/locale-is-utf8-p ()
   "Return t if the \"locale\" command or environment variables prefer UTF-8."
-  (or (sanityinc/utf8-locale-p (and (executable-find "locale") (shell-command-to-string "locale")))
-      (sanityinc/utf8-locale-p (getenv "LC_ALL"))
-      (sanityinc/utf8-locale-p (getenv "LC_CTYPE"))
-      (sanityinc/utf8-locale-p (getenv "LANG"))))
+  (or (fx/utf8-locale-p (and (executable-find "locale") (shell-command-to-string "locale")))
+      (fx/utf8-locale-p (getenv "LC_ALL"))
+      (fx/utf8-locale-p (getenv "LC_CTYPE"))
+      (fx/utf8-locale-p (getenv "LANG"))))
 
 (when (or window-system (fx/locale-is-utf8-p))
   (setq locale-coding-system 'utf-8)
