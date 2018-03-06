@@ -69,6 +69,9 @@
   :config
   (progn
     (setq counsel-bookmark-avoid-dired t)
+    (setq counsel-git-cmd "rg --files")
+    (setq counsel-rg-base-command
+          "rg -i -M 120 --no-heading --line-number --color never %s .")
     (setq counsel-grep-base-command
           "rg -i -M 120 --no-heading --line-number --color never '%s' %s")
     ;; shell history.
