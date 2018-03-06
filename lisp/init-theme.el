@@ -1,7 +1,7 @@
 ;;; init-theme.el --- Emacs configuration for color theme
 ;; -*- coding: utf-8 -*-
 ;;
-;; Copyright (c) 2015-2017 Faxiang Zheng
+;; Copyright (c) 2015-2018 Faxiang Zheng
 ;;
 ;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
 ;; URL: https://github.com/zhengfaxiang/emacs.d
@@ -22,9 +22,9 @@
 ;;   (dolist (i custom-enabled-themes)
 ;;     (disable-theme i)))
 
-(use-package dracula-theme
+(use-package solarized-theme
   :config
-  (load-theme 'dracula t)
+  (load-theme 'solarized-light t)
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
 
