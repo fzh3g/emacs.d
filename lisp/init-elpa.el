@@ -57,7 +57,6 @@
     crux
     ctags-update
     diminish
-    dired+
     dired-narrow
     dired-subtree
     eshell-prompt-extras
@@ -100,6 +99,7 @@
     powerline
     projectile
     pyvenv
+    quelpa
     rainbow-delimiters
     rainbow-mode
     sass-mode
@@ -159,6 +159,20 @@
 (fx-install-packages)
 
 (require 'use-package)
+
+;; quelpa
+(use-package quelpa
+  :config
+  (setq quelpa-upgrade-p nil
+        quelpa-self-upgrade-p nil
+        quelpa-checkout-melpa-p nil
+        quelpa-update-melpa-p nil
+        quelpa-melpa-recipe-stores nil)
+  )
+
+;; dired+
+(unless (package-installed-p 'dired+)
+  (quelpa '(dired+ :fetcher wiki)))
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
