@@ -18,13 +18,10 @@
 
 (use-package ibuffer
   :bind (("C-x C-b" . ibuffer))
-  :init
+  :config
   (progn
     (setq ibuffer-show-empty-filter-groups nil)
     (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
-    )
-  :config
-  (progn
     (use-package ibuffer-projectile
       :init
       (add-hook 'ibuffer-hook
@@ -32,6 +29,8 @@
                   (ibuffer-projectile-set-filter-groups)
                   (unless (eq ibuffer-sorting-mode 'alphabetic)
                     (ibuffer-do-sort-by-alphabetic)))))))
+
+
 
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here
