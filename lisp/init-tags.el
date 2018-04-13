@@ -23,11 +23,11 @@
       ;; Don't ask before rereading the TAGS files if they have changed
       (setq tags-revert-without-query t)))
 
-  (use-package etags-select
+  (use-package counsel-etags
     :init
     (progn
-      (local-set-key (kbd "M-s f") 'etags-select-find-tag)
-      (local-set-key (kbd "M-\.") 'etags-select-find-tag-at-point)
+      (local-set-key (kbd "M-s f") 'counsel-etags-find-tag)
+      (local-set-key (kbd "M-\.") 'counsel-etags-find-tag-at-point)
       (local-set-key (kbd "M-\,") 'pop-tag-mark)))
 
   (use-package ctags-update

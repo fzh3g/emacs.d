@@ -53,6 +53,7 @@
     company-statistics
     company-web
     counsel
+    counsel-etags
     crux
     ctags-update
     diminish
@@ -60,7 +61,6 @@
     dired-narrow
     dired-subtree
     eshell-prompt-extras
-    etags-select
     exec-path-from-shell
     expand-region
     flx
