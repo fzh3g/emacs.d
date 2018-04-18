@@ -38,7 +38,8 @@
           org-src-fontify-natively t
           org-cycle-separator-lines 0
           org-completion-use-ido t
-          org-ellipsis "⤵")
+          ;; org-ellipsis "⤵"
+          )
 
     (setq org-clock-persist t
           org-clock-in-resume t
