@@ -37,7 +37,6 @@
           org-fast-tag-selection-single-key 'expert
           org-src-fontify-natively t
           org-cycle-separator-lines 0
-          org-completion-use-ido t
           ;; org-ellipsis "⤵"
           )
 
