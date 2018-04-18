@@ -37,7 +37,7 @@
           org-fast-tag-selection-single-key 'expert
           org-src-fontify-natively t
           org-cycle-separator-lines 0
-          ;; org-ellipsis "⤵"
+          org-ellipsis "⤵"
           )
 
     (setq org-clock-persist t
