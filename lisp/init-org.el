@@ -129,7 +129,7 @@
        (js . t)
        (plantuml . t)
        (perl . t)
-       (sh . t)
+       (shell . t)
        (sql . t)
        (sqlite . t)))
 
