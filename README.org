@@ -118,6 +118,7 @@ simplicity and customizability.
 | =C-h S=    | counsel-info-lookup-symbol |
 | =C-h f=    | counsel-describe-function  |
 | =C-h k=    | counsel-descbinds          |
+| =C-h a=    | counsel-apropos            |
 | =C-h b=    | counsel-bookmark           |
 | =C-c i i=  | ivy-imenu-anywhere         |
 | =C-c i r=  | ivy-resume                 |

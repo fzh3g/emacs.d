@@ -64,7 +64,8 @@
          ("C-h S" . counsel-info-lookup-symbol)
          ("C-h f" . counsel-describe-function)
          ("C-h k" . counsel-descbinds)
-         ("C-h b" . counsel-bookmark))
+         ("C-h b" . counsel-bookmark)
+         ("C-h a" . counsel-apropos))
   :init (add-hook 'after-init-hook 'counsel-mode)
   :config
   (progn
