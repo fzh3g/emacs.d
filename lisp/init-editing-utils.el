@@ -162,10 +162,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
      ediff-merge-split-window-function 'split-window-horizontally)
     (add-hook 'ediff-quit-hook #'winner-undo)))
 
-;; show column number and line number
-(use-package nlinum
-  :bind ("C-x f n" . nlinum-mode))
-
 ;; page break lines
 (use-package page-break-lines
   :diminish page-break-lines-mode

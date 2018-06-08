@@ -93,7 +93,6 @@
     mmm-mode
     multiple-cursors
     multi-term
-    nlinum
     org-bullets
     org-plus-contrib
     page-break-lines
