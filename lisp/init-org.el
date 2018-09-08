@@ -78,8 +78,6 @@
     (require 'ox-latex)
     (setq org-latex-default-packages-alist
           (delete '("" "fixltx2e" nil) org-latex-default-packages-alist))
-    (setq org-latex-default-packages-alist
-          (delete '("AUTO" "inputenc" t) org-latex-default-packages-alist))
     (add-to-list 'org-latex-packages-alist '("" "minted"))
     (setq org-latex-listings 'minted)
     (setq org-latex-minted-options
