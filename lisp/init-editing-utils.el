@@ -181,14 +181,15 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (defalias 'redo 'undo-tree-redo)
     (defalias 'undo 'undo-tree-undo)
     (global-undo-tree-mode))
-  :config
-  (progn
-    (setq undo-tree-auto-save-history t)
-    (let ((undo-dir (concat fx-cache-directory "undo/")))
-      (setq undo-tree-history-directory-alist
-            `(("." . ,undo-dir)))
-      (unless (file-exists-p undo-dir)
-        (make-directory undo-dir t)))))
+  ;; :config
+  ;; (progn
+  ;;   (setq undo-tree-auto-save-history t)
+  ;;   (let ((undo-dir (concat fx-cache-directory "undo/")))
+  ;;     (setq undo-tree-history-directory-alist
+  ;;           `(("." . ,undo-dir)))
+  ;;     (unless (file-exists-p undo-dir)
+  ;;       (make-directory undo-dir t))))
+  )
 
 (use-package highlight-symbol
   :diminish hi-lock-mode
