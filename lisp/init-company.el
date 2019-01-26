@@ -80,7 +80,6 @@
     (add-hook 'company-mode-hook 'company-statistics-mode)))
 
 (defun fx/company-for-tex ()
-  (make-variable-buffer-local 'company-backends)
   (use-package company-auctex
     :defer t
     :init
@@ -97,7 +96,6 @@
       )))
 
 (defun fx/company-for-python ()
-  (make-variable-buffer-local 'company-backends)
   (use-package company-jedi
     :defer t
     :init
@@ -106,7 +104,6 @@
                    '(company-jedi :with company-yasnippet)))))
 
 (defun fx/company-for-c-c++ ()
-  (make-variable-buffer-local 'company-backends)
   (use-package company-irony
     :defer t
     :init
@@ -118,12 +115,10 @@
                      :with company-yasnippet)))))
 
 (defun fx/company-for-css ()
-  (make-variable-buffer-local 'company-backends)
   (add-to-list 'company-backends
                '(company-css :with company-yasnippet)))
 
 (defun fx/company-for-web ()
-  (make-variable-buffer-local 'company-backends)
   (use-package company-web
     :defer t
     :init
@@ -134,11 +129,9 @@
                    '(company-web-html :with company-yasnippet)))))
 
 (defun fx/company-for-nxml ()
-  (make-variable-buffer-local 'company-backends)
   (add-to-list 'company-backends '(company-nxml :with company-yasnippet)))
 
 (defun fx/company-ispell-setup ()
-  (make-local-variable 'company-backends)
   (add-to-list 'company-backends '(company-ispell :with company-yasnippet))
   (setq ispell-complete-word-dict
         (file-truename "~/.emacs.d/misc/english-words.txt")))

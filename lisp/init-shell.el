@@ -23,7 +23,6 @@
     (dolist (hook '(sh-mode-hook shell-mode-hook eshell-mode-hook))
       (add-hook hook
                 (lambda ()
-                  (make-variable-buffer-local 'company-backends)
                   (add-to-list 'company-backends
                                '(company-shell
                                  :with company-yasnippet)))))))

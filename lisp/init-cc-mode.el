@@ -58,7 +58,6 @@
   (progn
     (add-hook 'cmake-mode-hook
               (lambda ()
-                (make-variable-buffer-local 'company-backends)
                 (add-to-list 'company-backends
                              '(company-cmake :with company-yasnippet))))))
 

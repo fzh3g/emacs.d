@@ -21,7 +21,6 @@
   :init
   (progn
     (defun fx/init-matlab ()
-      (make-variable-buffer-local 'company-backends)
       (add-to-list 'company-backends
                    '(company-matlab-shell :with company-yasnippet))
       (define-key matlab-mode-map (kbd "M-s") nil))
