@@ -25,6 +25,7 @@
                      "LANG" "LC_CTYPE" "GOPATH" "IDL_LIB_DIR" "IDL_PATH"
                      "IDL_STARTUP"))
         (add-to-list 'exec-path-from-shell-variables var))
+      (setq-default exec-path-from-shell-arguments nil)
       (exec-path-from-shell-initialize))))
 
 (provide 'init-exec-path)
