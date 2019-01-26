@@ -118,9 +118,11 @@
   (load custom-file))
 
 ;; Allow access from client
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
 
 ;; Locales
 (require 'init-locales)
