@@ -118,16 +118,6 @@
   (add-to-list 'company-backends
                '(company-css :with company-yasnippet)))
 
-(defun fx/company-for-web ()
-  (use-package company-web
-    :defer t
-    :init
-    (progn
-      (add-to-list 'company-backends
-                   '(company-css :with company-yasnippet))
-      (add-to-list 'company-backends
-                   '(company-web-html :with company-yasnippet)))))
-
 (defun fx/company-for-nxml ()
   (add-to-list 'company-backends '(company-nxml :with company-yasnippet)))
 
@@ -139,8 +129,6 @@
 (add-hook 'text-mode-hook #'fx/company-ispell-setup)
 
 (add-hook 'css-mode-hook #'fx/company-for-css)
-
-(add-hook 'web-mode-hook #'fx/company-for-web)
 
 (add-hook 'nxml-mode-hook #'fx/company-for-nxml)
 

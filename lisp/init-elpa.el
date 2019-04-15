@@ -51,7 +51,7 @@
     company-quickhelp
     company-shell
     company-statistics
-    company-web
+    ;; company-web
     counsel
     counsel-etags
     crux
@@ -84,13 +84,10 @@
     ivy
     jedi-core
     latex-extra
-    less-css-mode
     lorem-ipsum
     lua-mode
     magit
-    markdown-mode
     matlab-mode
-    mmm-mode
     multiple-cursors
     multi-term
     org-bullets
@@ -102,8 +99,6 @@
     quelpa
     rainbow-delimiters
     rainbow-mode
-    sass-mode
-    scss-mode
     shell-pop
     smartparens
     smex
@@ -114,8 +109,6 @@
     use-package
     vimrc-mode
     visual-regexp
-    web-beautify
-    web-mode
     wgrep
     winum
     which-key

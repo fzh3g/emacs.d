@@ -99,13 +99,11 @@
 ;; Languages
 (require 'init-latex)
 (require 'init-org)
-(require 'init-markdown)
 (require 'init-python-mode)
 (require 'init-cc-mode)
 (require 'init-lisp)
 (require 'init-lua-mode)
 (require 'init-yaml)
-(require 'init-web)
 (require 'init-css)
 (require 'init-fortran)
 (require 'init-matlab)

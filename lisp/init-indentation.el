@@ -29,12 +29,6 @@
 (eval-after-load 'yaml-mode
   '(setq-default yaml-indent-offset 2))
 
-(eval-after-load 'web-mode
-  '(setq-default web-mode-markup-indent-offset 2
-                 web-mode-css-indent-offset 2
-                 web-mode-code-indent-offset 2
-                 web-mode-attr-indent-offset 2))
-
 (define-key global-map(kbd "RET") 'newline-and-indent)
 
 ;; taken from Prelude
