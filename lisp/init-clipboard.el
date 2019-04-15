@@ -1,7 +1,7 @@
 ;;; init-editing-utils.el --- Emacs configuration for clipboard
 ;; -*- coding: utf-8 -*-
 ;;
-;; Copyright (c) 2015-2018 Faxiang Zheng
+;; Copyright (c) 2015-2019 Faxiang Zheng
 ;;
 ;; Author: Faxiang Zheng <fxzheng0906@outlook.com>
 ;; URL: https://github.com/zhengfaxiang/emacs.d
