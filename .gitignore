@@ -38,3 +38,4 @@ flycheck_init-*.el
 /.cache/
 /.python-environments
 *.desktop
+/transient
