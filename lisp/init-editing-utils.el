@@ -232,6 +232,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (which-key-add-key-based-replacements "C-x a" "abbrev")
     (which-key-add-key-based-replacements "C-x 8" "special character")
     (which-key-add-key-based-replacements "C-x @" "event modifier")
+    (which-key-add-key-based-replacements "C-x g" "magit")
     (which-key-add-key-based-replacements "C-x n" "narrow")
     (which-key-add-key-based-replacements "C-c j" "join line")
     (which-key-add-key-based-replacements "C-x f c" "unix dos")
