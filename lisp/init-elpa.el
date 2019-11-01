@@ -24,9 +24,12 @@
 
 ;; Uncomment L22-23 and comment L26-29 if you find it slow
 (setq package-archives
-      '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+      '(("gnu"       . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa"     . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org"       . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ("emacswiki" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/emacswiki/")))
+
+(setq package-check-signature nil)
 
 ;; Fire up package.el
 (package-initialize)
@@ -57,6 +60,7 @@
     crux
     ctags-update
     diminish
+    dired+
     dired-narrow
     dired-subtree
     eshell-prompt-extras
@@ -96,7 +100,7 @@
     powerline
     projectile
     pyvenv
-    quelpa
+    ; quelpa
     rainbow-delimiters
     rainbow-mode
     shell-pop
@@ -154,18 +158,18 @@
 (require 'use-package)
 
 ;; quelpa
-(use-package quelpa
-  :config
-  (setq quelpa-upgrade-p nil
-        quelpa-self-upgrade-p nil
-        quelpa-checkout-melpa-p nil
-        quelpa-update-melpa-p nil
-        quelpa-melpa-recipe-stores nil)
-  )
+;; (use-package quelpa
+;;   :config
+;;   (setq quelpa-upgrade-p nil
+;;         quelpa-self-upgrade-p nil
+;;         quelpa-checkout-melpa-p nil
+;;         quelpa-update-melpa-p nil
+;;         quelpa-melpa-recipe-stores nil)
+;;   )
 
 ;; dired+
-(unless (package-installed-p 'dired+)
-  (quelpa '(dired+ :fetcher wiki)))
+;; (unless (package-installed-p 'dired+)
+;;   (quelpa '(dired+ :fetcher wiki)))
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
