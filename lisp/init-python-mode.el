@@ -51,12 +51,12 @@
         (executable-find command)))
 
     (defun fx/python-setup-shell (&rest args)
-      (if (fx/pyenv-executable-find "ipython")
+      (if (fx/pyenv-executable-find "ipython3")
           (progn (setq python-shell-interpreter "ipython")
                  (setq python-shell-interpreter-args "--simple-prompt -i"))
         (progn
           (setq python-shell-interpreter-args "-i")
-          (setq python-shell-interpreter "python")))
+          (setq python-shell-interpreter "python3")))
       (setq python-shell-completion-native-enable nil))
 
     (defun fx/inferior-python-shell-setup ()
