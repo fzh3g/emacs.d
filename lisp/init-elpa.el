@@ -54,7 +54,6 @@
     company-quickhelp
     company-shell
     company-statistics
-    ;; company-web
     counsel
     counsel-etags
     crux
