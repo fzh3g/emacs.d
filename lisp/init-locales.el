@@ -16,22 +16,12 @@
 
 ;;; Code:
 
-(defun fx/utf8-locale-p (v)
-  "Return whether locale string V relates to a UTF-8 locale."
-  (and v (string-match "UTF-8" v)))
-
-(defun fx/locale-is-utf8-p ()
-  "Return t if the \"locale\" command or environment variables prefer UTF-8."
-  (or (fx/utf8-locale-p (and (executable-find "locale") (shell-command-to-string "locale")))
-      (fx/utf8-locale-p (getenv "LC_ALL"))
-      (fx/utf8-locale-p (getenv "LC_CTYPE"))
-      (fx/utf8-locale-p (getenv "LANG"))))
-
-(when (or window-system (fx/locale-is-utf8-p))
-  (setq locale-coding-system 'utf-8)
-  (unless (eq system-type 'windows-nt)
-    (set-selection-coding-system 'utf-8))
-  (prefer-coding-system 'utf-8))
+(when (fboundp 'set-charset-priority)
+  (set-charset-priority 'unicode))
+(prefer-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(unless (eq system-type 'windows-nt)
+  (set-selection-coding-system 'utf-8))
 
 (provide 'init-locales)
 ;;; init-locales.el ends here
