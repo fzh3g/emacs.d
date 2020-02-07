@@ -277,7 +277,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
     (defun fx/avy-goto-url()
       "Use avy to go to an URL in the buffer."
       (interactive)
-      (avy--generic-jump "https?://" nil 'pre))
+      (avy-jump "https?://"))
     (defun fx/avy-open-url ()
       "Use avy to select an URL in the buffer and open it."
       (interactive)
