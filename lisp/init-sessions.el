@@ -86,19 +86,6 @@
                      (abbreviate-file-name filename))))))
     ))
 
-(use-package savehist
-  :init
-  (progn
-    (setq savehist-file (concat fx-cache-directory "savehist")
-          history-length 2048
-          savehist-autosave-interval 60
-          savehist-additional-variables '(kill-ring
-                                          mark-ring
-                                          global-mark-ring
-                                          search-ring
-                                          regexp-search-ring))
-    (savehist-mode t)))
-
 (use-package saveplace
   :init
   (progn
