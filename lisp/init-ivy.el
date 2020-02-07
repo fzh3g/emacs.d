@@ -30,7 +30,7 @@
     (require 'flx)
     (setq ivy-re-builders-alist
           '((swiper . ivy--regex-plus)
-            (t . ivy--regex-fuzzy)))
+            (t . ivy--regex-ignore-order)))
     ;; wgrep
     (add-hook 'ivy-occur-grep-mode-hook
               (lambda ()
