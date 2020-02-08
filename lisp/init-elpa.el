@@ -37,7 +37,8 @@
 
 ;; list of installed packages
 (defvar fx-packages
-  '(anzu
+  '(amx
+    anzu
     auctex
     auctex-latexmk
     auto-compile
@@ -104,7 +105,6 @@
     rainbow-mode
     shell-pop
     smartparens
-    smex
     spaceline
     swiper
     toc-org

@@ -98,12 +98,11 @@
                 (define-key eshell-mode-map (kbd "C-c C-l")
                   'counsel-esh-history)))))
 
-(use-package smex
+(use-package amx
   :config
-  (setq smex-history-length 35
-        smex-completion-method 'ivy)
-  (setq-default smex-save-file
-                (expand-file-name "smex-items" fx-cache-directory)))
+  (setq amx-history-length 35)
+  (setq-default amx-save-file
+                (expand-file-name "amx-items" fx-cache-directory)))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
