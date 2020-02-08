@@ -128,8 +128,7 @@
     monokai-theme
     color-theme-sanityinc-tomorrow
     solarized-theme
-    zenburn-theme
-    gruvbox-theme)
+    zenburn-theme)
   "A list of theme packages.")
 
 (setq fx-packages (append fx-packages fx-theme-packages))
