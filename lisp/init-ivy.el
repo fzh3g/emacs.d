@@ -48,6 +48,7 @@
   :bind (("C-s"  . counsel-grep-or-swiper)))
 
 (use-package counsel
+  :after ivy
   :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
          ("M-y" . counsel-yank-pop)
@@ -99,7 +100,8 @@
                   'counsel-esh-history)))))
 
 (use-package amx
-  :config
+  :after counsel
+  :init
   (setq amx-history-length 35)
   (setq-default amx-save-file
                 (expand-file-name "amx-items" fx-cache-directory)))
