@@ -16,15 +16,8 @@
 
 ;;; Code:
 
-(defun fx//show-snippets-in-company (backend)
-  (if (and (listp backend) (member 'company-yasnippet backend))
-      backend
-    (append (if (consp backend) backend (list backend))
-            '(:with company-yasnippet))))
-
 (use-package company
   :diminish company-mode
-  :defer t
   :init
   (progn
     (setq company-idle-delay 0.2
@@ -35,16 +28,22 @@
           company-show-numbers t
           company-auto-complete nil
           company-tooltip-align-annotations t)
-    (add-hook 'after-init-hook 'global-company-mode))
-  :config
-  (progn
     (setq company-backends '(company-capf
                              company-files
                              (company-dabbrev-code
                               company-etags
                               company-keywords)
                              company-dabbrev))
+    (global-company-mode))
+  :config
+  (progn
     (define-key company-active-map (kbd "C-h") 'company-abort)
+    (defun fx//show-snippets-in-company (backend)
+      "Show yasnippet keywords in candidates."
+      (if (and (listp backend) (member 'company-yasnippet backend))
+          backend
+        (append (if (consp backend) backend (list backend))
+                '(:with company-yasnippet))))
     (setq company-backends (mapcar 'fx//show-snippets-in-company
                                    company-backends))
     (defun fx/toggle-shell-auto-completion-based-on-path ()
@@ -56,24 +55,21 @@
               'fx/toggle-shell-auto-completion-based-on-path)))
 
 (use-package company-flx
-  :defer t
-  :init
-  (with-eval-after-load 'company
-    (company-flx-mode +1)))
+  :after company
+  :config (company-flx-mode +1))
 
 (use-package company-quickhelp
   :if (display-graphic-p)
-  :defer t
-  :init
+  :after company
+  :config
   (progn
     (add-hook 'company-mode-hook 'company-quickhelp-mode)
-    (with-eval-after-load 'company
-      (setq company-frontends
-            (delq 'company-echo-metadata-frontend company-frontends)))))
+    (setq company-frontends
+          (delq 'company-echo-metadata-frontend company-frontends))))
 
 (use-package company-statistics
-  :defer t
-  :init
+  :after company
+  :config
   (progn
     (setq company-statistics-file (concat fx-cache-directory
                                           "company-statistics-cache.el"))
@@ -81,8 +77,8 @@
 
 (defun fx/company-for-tex ()
   (use-package company-auctex
-    :defer t
-    :init
+    :after company
+    :config
     (progn
       (add-to-list 'company-backends
                    '(company-auctex-labels :with company-yasnippet))
@@ -97,16 +93,16 @@
 
 (defun fx/company-for-python ()
   (use-package company-jedi
-    :defer t
-    :init
+    :after company
+    :config
     (progn
       (add-to-list 'company-backends
                    '(company-jedi :with company-yasnippet)))))
 
 (defun fx/company-for-c-c++ ()
   (use-package company-irony
-    :defer t
-    :init
+    :after company
+    :config
     (progn
       (require 'company-irony-c-headers)
       (add-to-list 'company-backends
