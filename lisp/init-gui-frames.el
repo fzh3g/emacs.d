@@ -49,7 +49,9 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
-;; (setq initial-major-mode 'org-mode)
+;; scratch buffer mode
+(setq initial-major-mode 'text-mode)
+
 (setq initial-scratch-message
       (concat
        "\n"
