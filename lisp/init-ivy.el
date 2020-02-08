@@ -29,7 +29,7 @@
     ;; fuzzy matching
     (require 'flx)
     (setq ivy-re-builders-alist
-          '((swiper . ivy--regex-plus)
+          '((counsel-M-x . ivy--regex-fuzzy)
             (t . ivy--regex-ignore-order)))
     ;; wgrep
     (add-hook 'ivy-occur-grep-mode-hook
@@ -69,6 +69,11 @@
   :init (add-hook 'after-init-hook 'counsel-mode)
   :config
   (progn
+    (setq-default ivy-initial-inputs-alist
+                  '((counsel-describe-function . "^")
+                    (counsel-describe-variable . "^")
+                    (Man-completion-table . "^")
+                    (woman . "^")))
     (setq counsel-bookmark-avoid-dired t)
     (setq counsel-git-cmd "rg --files")
     (setq counsel-rg-base-command
@@ -94,8 +99,9 @@
                   'counsel-esh-history)))))
 
 (use-package smex
-  :bind ([remap execute-extended-command] . smex)
   :config
+  (setq smex-history-length 35
+        smex-completion-method 'ivy)
   (setq-default smex-save-file
                 (expand-file-name "smex-items" fx-cache-directory)))
 
