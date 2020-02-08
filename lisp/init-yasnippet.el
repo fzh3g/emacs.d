@@ -25,16 +25,13 @@
     ;; use hippie-expand instead
     (setq yas-minor-mode-map (make-sparse-keymap))
 
-    (setq yas-triggers-in-field t)
+    (setq yas-triggers-in-field t
+          yas-wrap-around-region t)
     ;; on multiple keys, fall back to completing read
     ;; typically this means helm
     (setq yas-prompt-functions '(yas-completing-prompt))
 
     (defun fx/load-yasnippet ()
-      (unless yas-global-mode
-        (progn
-          (yas-global-mode 1)
-          (setq yas-wrap-around-region t)))
       (yas-minor-mode 1))
 
     (dolist (hook '(prog-mode-hook
@@ -69,6 +66,10 @@
               (lambda ()
                 (when smartparens-enabled-initially
                   (smartparens-mode 1))))))
+
+(use-package yasnippet-snippets
+  :after yasnippet
+  :config (yas-reload-all))
 
 (provide 'init-yasnippet)
 ;;; init-yasnippet.el ends here

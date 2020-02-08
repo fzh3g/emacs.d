@@ -118,7 +118,8 @@
     writeroom-mode
     xterm-color
     yaml-mode
-    yasnippet)
+    yasnippet
+    yasnippet-snippets)
   "A list of packages to ensure are installed at launch.")
 
 (defvar fx-theme-packages
