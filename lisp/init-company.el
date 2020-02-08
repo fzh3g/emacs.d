@@ -34,18 +34,11 @@
                               company-etags
                               company-keywords)
                              company-dabbrev))
+    (make-variable-buffer-local 'company-backends)
     (global-company-mode))
   :config
   (progn
     (define-key company-active-map (kbd "C-h") 'company-abort)
-    (defun fx//show-snippets-in-company (backend)
-      "Show yasnippet keywords in candidates."
-      (if (and (listp backend) (member 'company-yasnippet backend))
-          backend
-        (append (if (consp backend) backend (list backend))
-                '(:with company-yasnippet))))
-    (setq company-backends (mapcar 'fx//show-snippets-in-company
-                                   company-backends))
     (defun fx/toggle-shell-auto-completion-based-on-path ()
       "Suppress automatic completion on remote paths."
       (if (file-remote-p default-directory)
