@@ -21,8 +21,7 @@
   :init
   (progn
     (defun fx/init-matlab ()
-      (add-to-list 'company-backends
-                   '(company-matlab-shell :with company-yasnippet))
+      (add-to-list 'company-backends 'company-matlab-shell)
       (define-key matlab-mode-map (kbd "M-s") nil))
     (dolist (hook '(matlab-mode-hook matlab-shell-mode-hook))
       (add-hook hook 'fx/init-matlab))))

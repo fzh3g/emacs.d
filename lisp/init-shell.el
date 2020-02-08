@@ -23,9 +23,7 @@
     (dolist (hook '(sh-mode-hook shell-mode-hook eshell-mode-hook))
       (add-hook hook
                 (lambda ()
-                  (add-to-list 'company-backends
-                               '(company-shell
-                                 :with company-yasnippet)))))))
+                  (add-to-list 'company-backends 'company-shell))))))
 
 ;; move point to the end of buffer on new output
 (setq comint-move-point-for-output t)

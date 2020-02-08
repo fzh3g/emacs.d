@@ -118,7 +118,7 @@
   (add-to-list 'company-backends '(company-nxml :with company-yasnippet)))
 
 (defun fx/company-ispell-setup ()
-  (add-to-list 'company-backends '(company-ispell :with company-yasnippet))
+  (add-to-list 'company-backends 'company-ispell)
   (setq ispell-complete-word-dict
         (file-truename "~/.emacs.d/misc/english-words.txt")))
 
