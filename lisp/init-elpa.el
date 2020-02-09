@@ -124,6 +124,7 @@
 
 (defvar fx-theme-packages
   '(dracula-theme
+    leuven-theme
     monokai-theme
     color-theme-sanityinc-tomorrow
     solarized-theme
