@@ -16,10 +16,10 @@
 
 ;;; Code:
 
-(use-package solarized-theme
+(use-package leuven-theme
   :config
   ;; load color theme
-  (load-theme 'solarized-gruvbox-dark t)
+  (load-theme 'leuven t)
   ;; refresh powerline
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
