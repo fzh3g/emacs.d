@@ -19,7 +19,7 @@
 (use-package solarized-theme
   :config
   ;; load color theme
-  (load-theme 'solarized-gruvbox-dark t)
+  (load-theme 'solarized-gruvbox-light t)
   ;; refresh powerline
   (when (fboundp 'powerline-reset)
     (powerline-reset)))
