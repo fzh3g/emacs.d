@@ -27,7 +27,6 @@
           ivy-virtual-abbreviate 'fullpath
           ivy-display-style 'fancy)
     ;; fuzzy matching
-    (require 'flx)
     (setq ivy-re-builders-alist
           '((counsel-M-x . ivy--regex-fuzzy)
             (t . ivy--regex-ignore-order)))

@@ -47,7 +47,6 @@
     cmake-mode
     company
     company-auctex
-    company-flx
     company-irony
     company-irony-c-headers
     company-jedi
@@ -65,7 +64,6 @@
     eshell-prompt-extras
     exec-path-from-shell
     expand-region
-    flx
     flycheck
     flycheck-irony
     flyspell-correct-ivy
