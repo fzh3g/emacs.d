@@ -65,25 +65,27 @@
                     )))
     (desktop-save-mode 1)
 
-    ;; desktop read time
-    (defadvice desktop-read (around time-restore activate)
+    ;; desktop restore time
+    (defun fx/desktop-time-restore (orig &rest args)
       (let ((start-time (current-time)))
         (prog1
-            ad-do-it
+            (apply orig args)
           (message "Desktop restored in %.3fs"
                    (float-time (time-subtract (current-time)
                                               start-time))))))
-    ;; desktop restore time
-    (defadvice desktop-create-buffer (around time-create activate)
-      (let ((start-time (current-time))
-            (filename (ad-get-arg 1)))
+    (advice-add 'desktop-read :around 'fx/desktop-time-restore)
+
+    ;; desktop restore buffer time
+    (defun fx/desktop-time-buffer-create (orig ver filename &rest args)
+      (let ((start-time (current-time)))
         (prog1
-            ad-do-it
+            (apply orig ver filename args)
           (message "Desktop: %.3fs to restore %s"
                    (float-time (time-subtract (current-time)
                                               start-time))
                    (when filename
                      (abbreviate-file-name filename))))))
+    (advice-add 'desktop-create-buffer :around 'fx/desktop-time-buffer-create)
     ))
 
 (use-package saveplace
