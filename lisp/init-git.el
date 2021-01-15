@@ -59,8 +59,6 @@
     (require 'git-rebase)
     (setq magit-display-buffer-function
           'magit-display-buffer-fullframe-status-v1)
-    ;; https://github.com/magit/magit/issues/3522
-    (unbind-key "C-x g" magit-file-mode-map)
     ))
 
 (use-package smerge-mode
